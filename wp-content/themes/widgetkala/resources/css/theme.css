@@ -1,0 +1,294 @@
+@import './font-icon.css';
+@import './iransans.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .product-hover-shadow {
+        @apply relative;
+        box-shadow: 0 1px 25px rgba(0, 0, 0, 0.1);
+    }
+}
+body {
+    direction: rtl;
+    font-family: IRANSans, Tahoma, sans-serif;
+    @apply text-sm;
+    line-height: 27px;
+}
+
+a,
+button {
+    @apply transition-all;
+}
+
+/*#Header */
+
+/*search box*/
+.search-box {
+    @apply relative w-full text-gray-600 focus-within:text-gray-300;
+}
+
+.search-box .submit-button {
+    @apply absolute inset-y-0 left-0 flex items-center pl-2;
+}
+
+.search-box button {
+    @apply p-1 outline-none;
+}
+
+.search-box button .icon {
+    @apply text-3xl;
+}
+
+.search-box button:hover .icon,
+.search-box button:focus .icon,
+.search-box button:active .icon {
+    @apply text-gray-900;
+}
+
+.search-box input[type='search'],
+.search-box input[type='text'] {
+    @apply transition-all py-2 h-full px-4 text-sm text-white border block w-full rounded-md pl-10 focus:outline-none focus:shadow focus:bg-white focus:text-gray-900;
+}
+
+.cart-button {
+    @apply inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm rounded-md text-white bg-customLightblue hover:bg-customDarkblue transition ease-in-out duration-150
+    ring-1 ring-slate-900/10;
+}
+
+.cart-button .cart-count-badge {
+    @apply flex absolute h-7 w-7 text-center text-white -top-2 -left-2;
+}
+
+.cart-button .cart-count-badge .animate {
+    @apply animate-ping absolute inline-flex h-full w-full rounded-full bg-customDarkblue opacity-75;
+}
+
+.cart-button .cart-count-badge .count {
+    @apply relative inline-flex items-center rounded-full text-center h-7 w-7 shadow-2xl bg-customDarkblue;
+}
+
+.register-button {
+    @apply inline-flex gap-x-2 items-center px-2 border hover:bg-customLightgray text-customDarkblue font-medium rounded-md;
+}
+
+.menu-section {
+    @apply col-span-12 text-white bg-customDarkblue;
+}
+
+.menu-section .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.main-menu {
+    @apply col-span-8 gap-x-12 flex overflow-hidden flex-wrap relative;
+}
+
+.main-menu .divider {
+    @apply relative after:w-0.5
+    after:absolute
+    after:bg-customLightgray
+    after:h-6
+    after:left-0
+    after:top-3.5;
+}
+
+.nav-item {
+    @apply block relative overflow-hidden;
+}
+
+.nav-link {
+    @apply py-4 block relative before:absolute inset-x-0
+    whitespace-nowrap
+    before:mx-auto
+    before:rounded-b-full
+    before:h-1
+    before:w-full
+    before:bg-customLightblue
+    before:transition-all before:-top-2
+    hover:before:top-0 hover:before:text-orange-400
+    focus:before:top-0 focus:before:text-orange-400
+    active:before:top-0 active:before:text-orange-400;
+}
+
+.nav-link.active,
+.nav-item.current-menu-item .nav-link {
+    @apply before:top-0 text-white;
+}
+
+.major-shopping-container {
+    @apply col-span-4 justify-end flex items-end;
+}
+
+.major-shopping {
+    @apply py-3 bg-customRed mt-2 px-3 rounded-t hover:bg-orange-500;
+}
+
+.tabs {
+    @apply flex  text-sm items-center gap-x-5 text-gray-500 flex-wrap;
+}
+
+.tabs li {
+    @apply transition ease-in-out duration-150 hover:text-customDarkblue cursor-pointer;
+}
+
+.tabs .active {
+    @apply relative text-customDarkblue after:w-0.5 after:mx-auto after:absolute after:bg-customLightblue after:inset-x-0 after:h-2 after:top-6;
+}
+
+.text-over-image {
+    background: 0 0;
+    background: -moz-linear-gradient(
+            top,
+            transparent 0%,
+            rgba(0, 0, 0, 0.56) 100%
+    );
+    background: -webkit-linear-gradient(
+            top,
+            transparent 0%,
+            rgba(0, 0, 0, 0.56) 100%
+    );
+    background: linear-gradient(
+            to bottom,
+            transparent 0%,
+            rgba(0, 0, 0, 0.56) 100%
+    );
+}
+
+.product-tabs-content {
+    @apply grid mt-7 gap-x-6 grid-cols-12 justify-between;
+}
+
+.product-archive-content .single-product-item,
+.product-tabs-content .single-product-item {
+    @apply flex rounded-md flex-wrap  border border-gray-200 p-3 transition duration-150 transform hover:product-hover-shadow;
+}
+
+.single-product-item:before {
+    @apply transition-all ease-in-out duration-150 rounded-3xl bg-customLightblue;
+    content: var(--tw-content);
+    width: 0;
+    height: 4px;
+    left: 50%;
+    right: 50%;
+    position: absolute;
+    top: 0;
+}
+
+.single-product-item:hover:before {
+    width: 50%;
+    left: 25%;
+    right: 25%;
+}
+
+.custom-btn-secondary-outline {
+    @apply border hover:bg-customLightblue hover:text-white transition ease-in-out duration-150 w-full rounded-md text-sm border-customLightblue text-customLightblue px-3;
+}
+
+.crooked-line:before {
+    position: absolute;
+    content: var(--tw-content);
+    left: -20px;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 30px solid #fff;
+    border-left: 20px solid transparent;
+}
+
+.crooked-line:after {
+    position: absolute;
+    content: var(--tw-content);
+    right: -20px;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 30px solid #fff;
+    border-right: 20px solid transparent;
+}
+
+.footer-list li {
+    @apply text-white mt-1 before:transition before:ease-in-out relative before:absolute before:h-2 items-center cursor-pointer hover:before:bg-customLightblue before:-right-6 before:my-auto before:inset-y-0 before:w-3 before:bg-customGray;
+}
+
+.footer-list {
+    margin-right: 25px;
+}
+
+.news-letter {
+    @apply relative w-full text-gray-600 focus-within:text-gray-300;
+}
+
+.news-letter .submit-button {
+    @apply absolute justify-center inset-y-0 left-0 flex items-center px-4 bg-customLightblue transition ease-in-out hover:bg-customDarkblue hover:text-customLightblue rounded-l-md  text-black;
+}
+
+.news-letter button {
+    @apply p-1 outline-none;
+}
+
+.news-letter button .icon {
+    @apply text-3xl;
+}
+
+.news-letter button:hover .icon,
+.news-letter button:focus .icon,
+.news-letter button:active .icon {
+    @apply text-gray-900;
+}
+
+.news-letter input[type='search'],
+.news-letter input[type='text'] {
+    @apply transition-all py-2 h-full px-4 text-sm text-white border block w-full rounded-md pl-10 focus:outline-none focus:shadow focus:bg-white focus:text-gray-900;
+}
+
+.btn-custom-white {
+    @apply transition ease-in-out duration-150 hover:bg-customDarkblue hover:text-white rounded-md p-2 px-4 justify-center flex cursor-pointer text-base;
+}
+
+.btn-custom-dark-blue {
+    @apply transition ease-in-out duration-150 bg-customDarkblue hover:bg-white hover:text-customDarkblue text-white rounded-md p-2 px-4 justify-center flex cursor-pointer text-base;
+}
+
+.btn-custom-outline-dark-blue {
+    @apply relative transition ease-in-out border-2 border-customDarkblue duration-150 hover:bg-customDarkblue hover:text-white rounded-md p-2 px-4 justify-center flex cursor-pointer text-base;
+}
+
+.btn-custom-outline-dark-blue.active {
+    @apply before:absolute before:w-5 before:h-5 before:top-0 before:right-1.5 before:content-lines bg-customDarkblue text-white;
+}
+.horizontalLines {
+    @apply relative before:absolute before:w-5 before:h-5 before:top-0 before:-right-9 before:content-horizontalLines;
+}
+.darkHorizontalLines {
+    @apply relative before:absolute before:w-5 before:h-5 before:top-0 before:-right-9 before:content-darkHorizontalLines;
+}
+.h-280 {
+    height: 280px;
+}
+.thin-scrollbar::-webkit-scrollbar {
+    width: 1px; /* width of the entire scrollbar */
+}
+
+.thin-scrollbar::-webkit-scrollbar-track {
+    background: #f5f5f5; /* color of the tracking area */
+}
+
+.thin-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #9195a0; /* color of the scroll thumb */
+    border-radius: 20px; /* roundness of the scroll thumb */
+    /*border: 3px solid orange;  !* creates padding around scroll thumb *!*/
+}
+
+/* Toggle A */
+input:checked ~ .dot {
+    transform: translateX(140%);
+    background-color: #fff;
+}
+input:checked ~ .parent {
+
+    background-color: #50a8ea;
+}
+
+

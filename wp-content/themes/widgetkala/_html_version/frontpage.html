@@ -1,0 +1,1535 @@
+<!doctype html>
+<html data-n-head-ssr lang="en" data-n-head="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+<head>
+	<title>widget-kala</title>
+	<meta data-n-head="ssr" charset="utf-8">
+	<meta data-n-head="ssr" name="viewport" content="width=device-width,initial-scale=1">
+	<meta data-n-head="ssr" data-hid="description" name="description" content="">
+	<meta data-n-head="ssr" name="format-detection" content="telephone=no">
+	<link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
+	<link rel="preload" href="/_nuxt/7b67dc5.js" as="script">
+	<link rel="preload" href="/_nuxt/8da0fc2.js" as="script">
+	<link rel="preload" href="/_nuxt/5b5ce35.js" as="script">
+	<link rel="preload" href="/_nuxt/8bc2102.js" as="script">
+	<link rel="preload" href="/_nuxt/e5ed4d4.js" as="script">
+	<link rel="preload" href="/_nuxt/30e9ab6.js" as="script">
+	<link rel="preload" href="/_nuxt/da4a7c2.js" as="script">
+	<style data-vue-ssr-id="17bc9ac2:0 b682ae5a:0">@font-face {
+        font-family: fonticon;
+        src: url(/_nuxt/fonts/fonticon.f0c55a7.eot);
+        src: url(/_nuxt/fonts/fonticon.f0c55a7.eot#iefix) format("embedded-opentype"), url(/_nuxt/fonts/fonticon.297f6a8.ttf) format("truetype"), url(/_nuxt/fonts/fonticon.9f27593.woff) format("woff"), url(/_nuxt/img/fonticon.b5951ba.svg#fonticon) format("svg");
+        font-weight: 400;
+        font-style: normal;
+        font-display: block
+    }
+    .icon {font-family: fonticon !important;speak: never;font-style: normal;font-weight: 400;font-variant: normal;text-transform: none;line-height: 1;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale}
+    .icon-archive:before {content: "\e900"}
+    .icon-badge:before {content: "\e901"}
+    .icon-barcode:before {content: "\e902"}
+    .icon-battery:before {content: "\e903"}
+    .icon-bill:before {content: "\e904"}
+    .icon-book:before {content: "\e905"}
+    .icon-box:before {content: "\e906"}
+    .icon-briefcase:before {content: "\e907"}
+    .icon-calculator:before {content: "\e908"}
+    .icon-calculator-2:before {content: "\e909"}
+    .icon-calendar:before {content: "\e90a"}
+    .icon-call:before {content: "\e90b"}
+    .icon-call-center:before {content: "\e90c"}
+    .icon-charging:before {content: "\e90d"}
+    .icon-chat:before {content: "\e90e"}
+    .icon-chat-bubble:before {content: "\e90f"}
+    .icon-checkout:before {content: "\e910"}
+    .icon-clock:before {content: "\e911"}
+    .icon-cloud:before {content: "\e912"}
+    .icon-coin:before {content: "\e913"}
+    .icon-contact-book:before {content: "\e914"}
+    .icon-control-panel:before {content: "\e915"}
+    .icon-coupon:before {content: "\e916"}
+    .icon-credit-card:before {content: "\e917"}
+    .icon-cursor:before {content: "\e918"}
+    .icon-delivery-time:before {content: "\e919"}
+    .icon-diamond:before {content: "\e91a"}
+    .icon-discount:before {content: "\e91b"}
+    .icon-download:before {content: "\e91c"}
+    .icon-fast-delivery:before {content: "\e91d"}
+    .icon-file:before {content: "\e91e"}
+    .icon-fingerprint:before {content: "\e91f"}
+    .icon-folder:before {content: "\e920"}
+    .icon-gift-box:before {content: "\e921"}
+    .icon-gift-box-2:before {content: "\e922"}
+    .icon-guarantee:before {content: "\e923"}
+    .icon-home:before {content: "\e924"}
+    .icon-hot-sale:before {content: "\e925"}
+    .icon-id-card:before {content: "\e926"}
+    .icon-information:before {content: "\e927"}
+    .icon-internet:before {content: "\e928"}
+    .icon-invisible:before {content: "\e929"}
+    .icon-invoice:before {content: "\e92a"}
+    .icon-like:before {content: "\e92b"}
+    .icon-love:before {content: "\e92c"}
+    .icon-mail:before {content: "\e92d"}
+    .icon-megaphone:before {content: "\e92e"}
+    .icon-memory-card:before {content: "\e92f"}
+    .icon-microphone:before {content: "\e930"}
+    .icon-mobile:before {content: "\e931"}
+    .icon-mobile-payment:before {content: "\e932"}
+    .icon-money:before {content: "\e933"}
+    .icon-monitor:before {content: "\e934"}
+    .icon-monitor-2:before {content: "\e935"}
+    .icon-mute:before {content: "\e936"}
+    .icon-newspaper:before {content: "\e937"}
+    .icon-notification:before {content: "\e938"}
+    .icon-online-shop:before {content: "\e939"}
+    .icon-package:before {content: "\e93a"}
+    .icon-padlock:before {content: "\e93b"}
+    .icon-payment-method:before {content: "\e93c"}
+    .icon-pen:before {content: "\e93d"}
+    .icon-photo-camera:before {content: "\e93e"}
+    .icon-picture:before {content: "\e93f"}
+    .icon-pie-chart:before {content: "\e940"}
+    .icon-piggy-bank:before {content: "\e941"}
+    .icon-pin:before {content: "\e942"}
+    .icon-power-button:before {content: "\e943"}
+    .icon-premium-quality:before {content: "\e944"}
+    .icon-presentation:before {content: "\e945"}
+    .icon-price-tag:before {content: "\e946"}
+    .icon-printer:before {content: "\e947"}
+    .icon-profile:before {content: "\e948"}
+    .icon-profit:before {content: "\e949"}
+    .icon-qr-code:before {content: "\e94a"}
+    .icon-raiting:before {content: "\e94b"}
+    .icon-record:before {content: "\e94c"}
+    .icon-remove-from-cart:before {content: "\e94d"}
+    .icon-search:before {content: "\e94e"}
+    .icon-search-file:before {content: "\e94f"}
+    .icon-setting:before {content: "\e950"}
+    .icon-settings:before {content: "\e951"}
+    .icon-shield:before {content: "\e952"}
+    .icon-shopping:before {content: "\e953"}
+    .icon-shopping-bag:before {content: "\e954"}
+    .icon-sound:before {content: "\e955"}
+    .icon-stopwatch:before {content: "\e956"}
+    .icon-store:before {content: "\e957"}
+    .icon-trash-bin:before {content: "\e958"}
+    .icon-trolley:before {content: "\e959"}
+    .icon-truck:before {content: "\e95a"}
+    .icon-upload:before {content: "\e95b"}
+    .icon-video-camera:before {content: "\e95c"}
+    .icon-video-game:before {content: "\e95d"}
+    .icon-video-player:before {content: "\e95e"}
+    .icon-visibility:before {content: "\e95f"}
+    .icon-vpn:before {content: "\e960"}
+    .icon-wallet:before {content: "\e961"}
+    .icon-whistlist:before {content: "\e962"}
+    .icon-global-shipping:before {content: "\e963"}
+    @font-face {
+        font-family: IRANSans;
+        font-style: normal;
+        font-weight: 900;
+        src: url(/_nuxt/fonts/IRANSansWeb_Black.fee322c.eot);
+        src: url(/_nuxt/fonts/IRANSansWeb_Black.fee322c.eot?#iefix) format("embedded-opentype"), url(/_nuxt/fonts/IRANSansWeb_Black.2d5331d.woff2) format("woff2"), url(/_nuxt/fonts/IRANSansWeb_Black.e94a490.woff) format("woff"), url(/_nuxt/fonts/IRANSansWeb_Black.b856e95.ttf) format("truetype")
+    }
+    @font-face {
+        font-family: IRANSans;
+        font-style: normal;
+        font-weight: 700;
+        src: url(/_nuxt/fonts/IRANSansWeb_Bold.f18db7b.eot);
+        src: url(/_nuxt/fonts/IRANSansWeb_Bold.f18db7b.eot?#iefix) format("embedded-opentype"), url(/_nuxt/fonts/IRANSansWeb_Bold.94bdf55.woff2) format("woff2"), url(/_nuxt/fonts/IRANSansWeb_Bold.dd12fb6.woff) format("woff"), url(/_nuxt/fonts/IRANSansWeb_Bold.e65c9d5.ttf) format("truetype")
+    }
+    @font-face {
+        font-family: IRANSans;
+        font-style: normal;
+        font-weight: 500;
+        src: url(/_nuxt/fonts/IRANSansWeb_Medium.d1f537d.eot);
+        src: url(/_nuxt/fonts/IRANSansWeb_Medium.d1f537d.eot?#iefix) format("embedded-opentype"), url(/_nuxt/fonts/IRANSansWeb_Medium.9f33814.woff2) format("woff2"), url(/_nuxt/fonts/IRANSansWeb_Medium.2d28b58.woff) format("woff"), url(/_nuxt/fonts/IRANSansWeb_Medium.dde1bbb.ttf) format("truetype")
+    }
+    @font-face {
+        font-family: IRANSans;
+        font-style: normal;
+        font-weight: 300;
+        src: url(/_nuxt/fonts/IRANSansWeb_Light.b9db61c.eot);
+        src: url(/_nuxt/fonts/IRANSansWeb_Light.b9db61c.eot?#iefix) format("embedded-opentype"), url(/_nuxt/fonts/IRANSansWeb_Light.b5815f2.woff2) format("woff2"), url(/_nuxt/fonts/IRANSansWeb_Light.b35266c.woff) format("woff"), url(/_nuxt/fonts/IRANSansWeb_Light.f1c0e72.ttf) format("truetype")
+    }
+    @font-face {
+        font-family: IRANSans;
+        font-style: normal;
+        font-weight: 200;
+        src: url(/_nuxt/fonts/IRANSansWeb_UltraLight.aea4127.eot);
+        src: url(/_nuxt/fonts/IRANSansWeb_UltraLight.aea4127.eot?#iefix) format("embedded-opentype"), url(/_nuxt/fonts/IRANSansWeb_UltraLight.801b490.woff2) format("woff2"), url(/_nuxt/fonts/IRANSansWeb_UltraLight.6f6cd66.woff) format("woff"), url(/_nuxt/fonts/IRANSansWeb_UltraLight.69e4612.ttf) format("truetype")
+    }
+    @font-face {
+        font-family: IRANSans;
+        font-style: normal;
+        font-weight: 400;
+        src: url(/_nuxt/fonts/IRANSansWeb.432a2b2.eot);
+        src: url(/_nuxt/fonts/IRANSansWeb.432a2b2.eot?#iefix) format("embedded-opentype"), url(/_nuxt/fonts/IRANSansWeb.cdb118d.woff2) format("woff2"), url(/_nuxt/fonts/IRANSansWeb.9ffdcda.woff) format("woff"), url(/_nuxt/fonts/IRANSansWeb.ae01de6.ttf) format("truetype")
+    }
+    /*! tailwindcss v3.0.24 | MIT License | https://tailwindcss.com*/
+    *, ::after, ::before {box-sizing: border-box;border-width: 0;border-style: solid;border-color: #e5e7eb}
+    ::after, ::before {--tw-content: ''}
+    html {line-height: 1.5;-webkit-text-size-adjust: 100%;-moz-tab-size: 4;-o-tab-size: 4;tab-size: 4;font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"}
+    body {margin: 0;line-height: inherit}
+    hr {height: 0;color: inherit;border-top-width: 1px}
+    abbr:where([title]) {-webkit-text-decoration: underline dotted;text-decoration: underline dotted}
+    h1, h2, h3, h4, h5, h6 {font-size: inherit;font-weight: inherit}
+    a {color: inherit;text-decoration: inherit}
+    b, strong {font-weight: bolder}
+    code, kbd, pre, samp {font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-size: 1em}
+    small {font-size: 80%}
+    sub, sup {font-size: 75%;line-height: 0;position: relative;vertical-align: baseline}
+    sub {bottom: -.25em}
+    sup {top: -.5em}
+    table {text-indent: 0;border-color: inherit;border-collapse: collapse}
+    button, input, optgroup, select, textarea {font-family: inherit;font-size: 100%;line-height: inherit;color: inherit;margin: 0;padding: 0}
+    button, select {text-transform: none}
+    [type=button], [type=reset], [type=submit], button {-webkit-appearance: button;background-color: transparent;background-image: none}
+    :-moz-focusring {outline: auto}
+    :-moz-ui-invalid {box-shadow: none}
+    progress {vertical-align: baseline}
+    ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {height: auto}
+    [type=search] {-webkit-appearance: textfield;outline-offset: -2px}
+    ::-webkit-search-decoration {-webkit-appearance: none}
+    ::-webkit-file-upload-button {-webkit-appearance: button;font: inherit}
+    summary {display: list-item}
+    blockquote, dd, dl, figure, h1, h2, h3, h4, h5, h6, hr, p, pre {margin: 0}
+    fieldset {margin: 0;padding: 0}
+    legend {padding: 0}
+    menu, ol, ul {list-style: none;margin: 0;padding: 0}
+    textarea {resize: vertical}
+    input::-moz-placeholder, textarea::-moz-placeholder {opacity: 1;color: #9ca3af}
+    input:-ms-input-placeholder, textarea:-ms-input-placeholder {opacity: 1;color: #9ca3af}
+    input::placeholder, textarea::placeholder {opacity: 1;color: #9ca3af}
+    [role=button], button {cursor: pointer}
+    :disabled {cursor: default}
+    audio, canvas, embed, iframe, img, object, svg, video {display: block;vertical-align: middle}
+    img, video {max-width: 100%;height: auto}
+    [hidden] {display: none}
+    *, ::after, ::before {--tw-translate-x: 0;--tw-translate-y: 0;--tw-rotate: 0;--tw-skew-x: 0;--tw-skew-y: 0;--tw-scale-x: 1;--tw-scale-y: 1;--tw-scroll-snap-strictness: proximity;--tw-ring-offset-width: 0px;--tw-ring-offset-color: #fff;--tw-ring-color: rgb(59 130 246 / 0.5);--tw-ring-offset-shadow: 0 0 #0000;--tw-ring-shadow: 0 0 #0000;--tw-shadow: 0 0 #0000;--tw-shadow-colored: 0 0 #0000}
+    .container {width: 100%}
+    @media (min-width: 475px) {
+        .container {max-width: 475px}
+    }
+    @media (min-width: 576px) {
+        .container {max-width: 576px}
+    }
+    @media (min-width: 960px) {
+        .container {max-width: 960px}
+    }
+    @media (min-width: 1324px) {
+        .container {max-width: 1324px}
+    }
+    .sr-only {position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0, 0, 0, 0);white-space: nowrap;border-width: 0}
+    .static {position: static}
+    .absolute {position: absolute}
+    .relative {position: relative}
+    .inset-x-0 {left: 0;right: 0}
+    .left-1 {left: .25rem}
+    .top-1 {top: .25rem}
+    .bottom-0 {bottom: 0}
+    .col-span-12 {grid-column: span 12/span 12}
+    .col-span-3 {grid-column: span 3/span 3}
+    .col-span-9 {grid-column: span 9/span 9}
+    .col-span-4 {grid-column: span 4/span 4}
+    .col-span-10 {grid-column: span 10/span 10}
+    .col-span-2 {grid-column: span 2/span 2}
+    .col-span-1 {grid-column: span 1/span 1}
+    .col-span-5 {grid-column: span 5/span 5}
+    .col-span-8 {grid-column: span 8/span 8}
+    .row-span-1 {grid-row: span 1/span 1}
+    .mx-auto {margin-left: auto;margin-right: auto}
+    .my-7 {margin-top: 1.75rem;margin-bottom: 1.75rem}
+    .mt-7 {margin-top: 1.75rem}
+    .mt-3 {margin-top: .75rem}
+    .mb-2 {margin-bottom: .5rem}
+    .block {display: block}
+    .flex {display: flex}
+    .inline-flex {display: inline-flex}
+    .grid {display: grid}
+    .h-4 {height: 1rem}
+    .h-7 {height: 1.75rem}
+    .h-5 {height: 1.25rem}
+    .h-full {height: 100%}
+    .w-full {width: 100%}
+    .w-4 {width: 1rem}
+    .w-14 {width: 3.5rem}
+    .w-5 {width: 1.25rem}
+    .w-1\/3 {width: 33.333333%}
+    .w-10 {width: 2.5rem}
+    .transform {transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
+    .cursor-pointer {cursor: pointer}
+    .grid-cols-12 {grid-template-columns:repeat(12, minmax(0, 1fr))}
+    .grid-cols-3 {grid-template-columns:repeat(3, minmax(0, 1fr))}
+    .grid-cols-7 {grid-template-columns:repeat(7, minmax(0, 1fr))}
+    .grid-cols-6 {grid-template-columns:repeat(6, minmax(0, 1fr))}
+    .grid-cols-4 {grid-template-columns:repeat(4, minmax(0, 1fr))}
+    .grid-cols-2 {grid-template-columns:repeat(2, minmax(0, 1fr))}
+    .grid-rows-2 {grid-template-rows:repeat(2, minmax(0, 1fr))}
+    .flex-col {flex-direction: column}
+    .flex-wrap {flex-wrap: wrap}
+    .items-center {align-items: center}
+    .justify-end {justify-content: flex-end}
+    .justify-center {justify-content: center}
+    .justify-between {justify-content: space-between}
+    .gap-5 {gap: 1.25rem}
+    .gap-6 {gap: 1.5rem}
+    .gap-7 {gap: 1.75rem}
+    .gap-4 {gap: 1rem}
+    .gap-3 {gap: .75rem}
+    .gap-x-5 {-moz-column-gap: 1.25rem;column-gap: 1.25rem}
+    .gap-x-3 {-moz-column-gap: .75rem;column-gap: .75rem}
+    .gap-y-1 {row-gap: .25rem}
+    .gap-y-2 {row-gap: .5rem}
+    .gap-x-2 {-moz-column-gap: .5rem;column-gap: .5rem}
+    .gap-x-7 {-moz-column-gap: 1.75rem;column-gap: 1.75rem}
+    .gap-x-4 {-moz-column-gap: 1rem;column-gap: 1rem}
+    .overflow-y-scroll {overflow-y: scroll}
+    .rounded-md {border-radius: .375rem}
+    .rounded-full {border-radius: 9999px}
+    .rounded-lg {border-radius: .5rem}
+    .rounded {border-radius: .25rem}
+    .rounded-xl {border-radius: .75rem}
+    .rounded-b-md {border-bottom-right-radius: .375rem;border-bottom-left-radius: .375rem}
+    .border {border-width: 1px}
+    .border-2 {border-width: 2px}
+    .border-b {border-bottom-width: 1px}
+    .border-b-2 {border-bottom-width: 2px}
+    .border-customGray {--tw-border-opacity: 1;border-color: rgb(145 149 160 / var(--tw-border-opacity))}
+    .border-customDarkWhite {--tw-border-opacity: 1;border-color: rgb(223 224 227 / var(--tw-border-opacity))}
+    .border-gray-100 {--tw-border-opacity: 1;border-color: rgb(243 244 246 / var(--tw-border-opacity))}
+    .border-customLighterMediumGray {--tw-border-opacity: 1;border-color: rgb(89 92 103 / var(--tw-border-opacity))}
+    .border-customDarkblue {--tw-border-opacity: 1;border-color: rgb(44 50 70 / var(--tw-border-opacity))}
+    .bg-customLightblue {--tw-bg-opacity: 1;background-color: rgb(80 168 234 / var(--tw-bg-opacity))}
+    .bg-customLightgray2 {--tw-bg-opacity: 1;background-color: rgb(216 216 216 / var(--tw-bg-opacity))}
+    .bg-customGray {--tw-bg-opacity: 1;background-color: rgb(145 149 160 / var(--tw-bg-opacity))}
+    .bg-white {--tw-bg-opacity: 1;background-color: rgb(255 255 255 / var(--tw-bg-opacity))}
+    .bg-customLightSky {--tw-bg-opacity: 1;background-color: rgb(159 207 243 / var(--tw-bg-opacity))}
+    .bg-customDarkblue {--tw-bg-opacity: 1;background-color: rgb(44 50 70 / var(--tw-bg-opacity))}
+    .bg-customMediumGray {--tw-bg-opacity: 1;background-color: rgb(75 78 89 / var(--tw-bg-opacity))}
+    .bg-customLighterMediumGray {--tw-bg-opacity: 1;background-color: rgb(89 92 103 / var(--tw-bg-opacity))}
+    .bg-customLightGray {--tw-bg-opacity: 1;background-color: rgb(170 173 181 / var(--tw-bg-opacity))}
+    .fill-white {fill: #fff}
+    .p-5 {padding: 1.25rem}
+    .p-3 {padding: .75rem}
+    .p-2 {padding: .5rem}
+    .p-4 {padding: 1rem}
+    .p-14 {padding: 3.5rem}
+    .px-4 {padding-left: 1rem;padding-right: 1rem}
+    .px-12 {padding-left: 3rem;padding-right: 3rem}
+    .py-4 {padding-top: 1rem;padding-bottom: 1rem}
+    .px-2 {padding-left: .5rem;padding-right: .5rem}
+    .px-5 {padding-left: 1.25rem;padding-right: 1.25rem}
+    .py-9 {padding-top: 2.25rem;padding-bottom: 2.25rem}
+    .py-1 {padding-top: .25rem;padding-bottom: .25rem}
+    .pb-4 {padding-bottom: 1rem}
+    .pb-7 {padding-bottom: 1.75rem}
+    .text-center {text-align: center}
+    .text-justify {text-align: justify}
+    .text-xs {font-size: .75rem;line-height: 1rem}
+    .text-3xl {font-size: 1.875rem;line-height: 2.25rem}
+    .text-2xl {font-size: 1.5rem;line-height: 2rem}
+    .text-xl {font-size: 1.25rem;line-height: 1.75rem}
+    .text-base {font-size: 1rem;line-height: 1.5rem}
+    .text-sm {font-size: .875rem;line-height: 1.25rem}
+    .text-4xl {font-size: 2.25rem;line-height: 2.5rem}
+    .font-thin {font-weight: 100}
+    .font-medium {font-weight: 500}
+    .font-light {font-weight: 300}
+    .leading-5 {line-height: 1.25rem}
+    .leading-7 {line-height: 1.75rem}
+    .text-white {--tw-text-opacity: 1;color: rgb(255 255 255 / var(--tw-text-opacity))}
+    .text-gray-600 {--tw-text-opacity: 1;color: rgb(75 85 99 / var(--tw-text-opacity))}
+    .text-customLighterMediumGray {--tw-text-opacity: 1;color: rgb(89 92 103 / var(--tw-text-opacity))}
+    .text-gray-500 {--tw-text-opacity: 1;color: rgb(107 114 128 / var(--tw-text-opacity))}
+    .text-customDarkblue {--tw-text-opacity: 1;color: rgb(44 50 70 / var(--tw-text-opacity))}
+    .text-customGray {--tw-text-opacity: 1;color: rgb(145 149 160 / var(--tw-text-opacity))}
+    .text-orange-500 {--tw-text-opacity: 1;color: rgb(249 115 22 / var(--tw-text-opacity))}
+    .text-gray-700 {--tw-text-opacity: 1;color: rgb(55 65 81 / var(--tw-text-opacity))}
+    .text-customLightblue {--tw-text-opacity: 1;color: rgb(80 168 234 / var(--tw-text-opacity))}
+    .line-through {-webkit-text-decoration-line: line-through;text-decoration-line: line-through}
+    .grayscale {--tw-grayscale: grayscale(100%);filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}
+    .transition {transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function: cubic-bezier(.4, 0, .2, 1);transition-duration: 150ms}
+    .duration-150 {transition-duration: 150ms}
+    .line-clamp-3 {overflow: hidden;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3}
+    body {direction: rtl;font-family: IRANSans, Tahoma, sans-serif;line-height: 27px;font-size: .875rem;line-height: 1.25rem}
+    a, button {transition-property: all;transition-timing-function: cubic-bezier(.4, 0, .2, 1);transition-duration: 150ms}
+    .search-box {position: relative;width: 100%;--tw-text-opacity: 1;color: rgb(75 85 99 / var(--tw-text-opacity))}
+    .search-box:focus-within {--tw-text-opacity: 1;color: rgb(209 213 219 / var(--tw-text-opacity))}
+    .search-box .submit-button {position: absolute;top: 0;bottom: 0;left: 0;display: flex;align-items: center;padding-left: .5rem}
+    .search-box button {padding: .25rem;outline: 2px solid transparent;outline-offset: 2px}
+    .search-box button .icon {font-size: 1.875rem;line-height: 2.25rem}
+    .search-box button:active .icon, .search-box button:focus .icon, .search-box button:hover .icon {--tw-text-opacity: 1;color: rgb(17 24 39 / var(--tw-text-opacity))}
+    .search-box input[type=search], .search-box input[type=text] {display: block;height: 100%;width: 100%;border-radius: .375rem;border-width: 1px;padding-top: .5rem;padding-bottom: .5rem;padding-right: 1rem;padding-left: 2.5rem;font-size: .875rem;line-height: 1.25rem;--tw-text-opacity: 1;color: rgb(255 255 255 / var(--tw-text-opacity));transition-property: all;transition-timing-function: cubic-bezier(.4, 0, .2, 1);transition-duration: 150ms}
+    .search-box input[type=search]:focus, .search-box input[type=text]:focus {--tw-bg-opacity: 1;background-color: rgb(255 255 255 / var(--tw-bg-opacity));--tw-text-opacity: 1;color: rgb(17 24 39 / var(--tw-text-opacity));--tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);--tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);outline: 2px solid transparent;outline-offset: 2px}
+    .cart-button {display: inline-flex;align-items: center;border-radius: .375rem;--tw-bg-opacity: 1;background-color: rgb(80 168 234 / var(--tw-bg-opacity));padding-left: 1rem;padding-right: 1rem;padding-top: .5rem;padding-bottom: .5rem;font-size: .875rem;font-weight: 600;line-height: 1.5rem;--tw-text-opacity: 1;color: rgb(255 255 255 / var(--tw-text-opacity));--tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);--tw-ring-color: rgb(15 23 42 / 0.1);transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-duration: 150ms;transition-timing-function: cubic-bezier(.4, 0, .2, 1)}
+    .cart-button:hover {--tw-bg-opacity: 1;background-color: rgb(44 50 70 / var(--tw-bg-opacity))}
+    .cart-button .cart-count-badge {position: absolute;top: -.5rem;left: -.5rem;display: flex;height: 1.75rem;width: 1.75rem;text-align: center;--tw-text-opacity: 1;color: rgb(255 255 255 / var(--tw-text-opacity))}
+    .cart-button .cart-count-badge .animate {position: absolute;display: inline-flex;height: 100%;width: 100%}
+    @-webkit-keyframes ping {
+        100%, 75% {transform: scale(2);opacity: 0}
+    }
+    @keyframes ping {
+        100%, 75% {transform: scale(2);opacity: 0}
+    }
+    .cart-button .cart-count-badge .animate {-webkit-animation: ping 1s cubic-bezier(0, 0, .2, 1) infinite;animation: ping 1s cubic-bezier(0, 0, .2, 1) infinite;border-radius: 9999px;--tw-bg-opacity: 1;background-color: rgb(44 50 70 / var(--tw-bg-opacity));opacity: .75}
+    .cart-button .cart-count-badge .count {position: relative;display: inline-flex;height: 1.75rem;width: 1.75rem;align-items: center;border-radius: 9999px;--tw-bg-opacity: 1;background-color: rgb(44 50 70 / var(--tw-bg-opacity));text-align: center;--tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}
+    .register-button {display: inline-flex;align-items: center;-moz-column-gap: .5rem;column-gap: .5rem;border-radius: .375rem;border-width: 1px;padding-left: .5rem;padding-right: .5rem;font-weight: 500;--tw-text-opacity: 1;color: rgb(44 50 70 / var(--tw-text-opacity))}
+    .register-button:hover {--tw-bg-opacity: 1;background-color: rgb(248 248 248 / var(--tw-bg-opacity))}
+    .menu-section {grid-column: span 12/span 12;--tw-bg-opacity: 1;background-color: rgb(44 50 70 / var(--tw-bg-opacity));--tw-text-opacity: 1;color: rgb(255 255 255 / var(--tw-text-opacity))}
+    .menu-section .container {margin-left: auto;margin-right: auto;padding-left: 1rem;padding-right: 1rem}
+    @media (min-width: 576px) {
+        .menu-section .container {padding-left: 1.5rem;padding-right: 1.5rem}
+    }
+    @media (min-width: 1324px) {
+        .menu-section .container {padding-left: 2rem;padding-right: 2rem}
+    }
+    .main-menu {position: relative;grid-column: span 8/span 8;display: flex;flex-wrap: wrap;-moz-column-gap: 3rem;column-gap: 3rem;overflow: hidden}
+    .main-menu .divider {position: relative}
+    .main-menu .divider::after {position: absolute;left: 0;top: .875rem;height: 1.5rem;width: .125rem;content: var(--tw-content);--tw-bg-opacity: 1;background-color: rgb(248 248 248 / var(--tw-bg-opacity))}
+    .nav-item {position: relative;display: block;overflow: hidden}
+    .nav-link {position: relative;left: 0;right: 0;display: block;white-space: nowrap;padding-top: 1rem;padding-bottom: 1rem}
+    .nav-link::before {position: absolute;top: -.5rem;margin-left: auto;margin-right: auto;height: .25rem;width: 100%;border-bottom-right-radius: 9999px;border-bottom-left-radius: 9999px;--tw-bg-opacity: 1;background-color: rgb(80 168 234 / var(--tw-bg-opacity));content: var(--tw-content);transition-property: all;transition-timing-function: cubic-bezier(.4, 0, .2, 1);transition-duration: 150ms}
+    .nav-link:hover::before {top: 0;content: var(--tw-content);--tw-text-opacity: 1;color: rgb(251 146 60 / var(--tw-text-opacity))}
+    .nav-link:focus::before {top: 0;content: var(--tw-content);--tw-text-opacity: 1;color: rgb(251 146 60 / var(--tw-text-opacity))}
+    .nav-link:active::before {top: 0;content: var(--tw-content);--tw-text-opacity: 1;color: rgb(251 146 60 / var(--tw-text-opacity))}
+    .nav-item.current-menu-item .nav-link, .nav-link.active {--tw-text-opacity: 1;color: rgb(255 255 255 / var(--tw-text-opacity))}
+    .nav-item.current-menu-item .nav-link::before, .nav-link.active::before {content: var(--tw-content);top: 0}
+    .major-shopping-container {grid-column: span 4/span 4;display: flex;align-items: flex-end;justify-content: flex-end}
+    .major-shopping {margin-top: .5rem;border-top-left-radius: .25rem;border-top-right-radius: .25rem;--tw-bg-opacity: 1;background-color: rgb(234 133 80 / var(--tw-bg-opacity));padding-top: .75rem;padding-bottom: .75rem;padding-left: .75rem;padding-right: .75rem}
+    .major-shopping:hover {--tw-bg-opacity: 1;background-color: rgb(249 115 22 / var(--tw-bg-opacity))}
+    .tabs {display: flex;flex-wrap: wrap;align-items: center;-moz-column-gap: 1.25rem;column-gap: 1.25rem;font-size: .875rem;line-height: 1.25rem;--tw-text-opacity: 1;color: rgb(107 114 128 / var(--tw-text-opacity))}
+    .tabs li {cursor: pointer;transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-duration: 150ms;transition-timing-function: cubic-bezier(.4, 0, .2, 1)}
+    .tabs li:hover {--tw-text-opacity: 1;color: rgb(44 50 70 / var(--tw-text-opacity))}
+    .tabs .active {position: relative;--tw-text-opacity: 1;color: rgb(44 50 70 / var(--tw-text-opacity))}
+    .tabs .active::after {position: absolute;left: 0;right: 0;top: 1.5rem;margin-left: auto;margin-right: auto;height: .5rem;width: .125rem;content: var(--tw-content);--tw-bg-opacity: 1;background-color: rgb(80 168 234 / var(--tw-bg-opacity))}
+    .text-over-image {background: 0 0;background: linear-gradient(180deg, transparent 0, rgba(0, 0, 0, .56))}
+    .product-tabs-content {margin-top: 1.75rem;display: grid;grid-template-columns:repeat(12, minmax(0, 1fr));justify-content: space-between;-moz-column-gap: 1.5rem;column-gap: 1.5rem}
+    .product-archive-content .single-product-item, .product-tabs-content .single-product-item {display: flex;transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));flex-wrap: wrap;border-radius: .375rem;border-width: 1px;--tw-border-opacity: 1;border-color: rgb(229 231 235 / var(--tw-border-opacity));padding: .75rem;transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function: cubic-bezier(.4, 0, .2, 1);transition-duration: 150ms}
+    .product-archive-content .single-product-item:hover, .product-tabs-content .single-product-item:hover {position: relative;box-shadow: 0 1px 25px rgba(0, 0, 0, .1)}
+    .single-product-item:before {border-radius: 1.5rem;--tw-bg-opacity: 1;background-color: rgb(80 168 234 / var(--tw-bg-opacity));transition-property: all;transition-duration: 150ms;transition-timing-function: cubic-bezier(.4, 0, .2, 1);content: var(--tw-content);width: 0;height: 4px;left: 50%;right: 50%;position: absolute;top: 0}
+    .single-product-item:hover:before {width: 50%;left: 25%;right: 25%}
+    .custom-btn-secondary-outline {width: 100%;border-radius: .375rem;border-width: 1px;--tw-border-opacity: 1;border-color: rgb(80 168 234 / var(--tw-border-opacity));padding-left: .75rem;padding-right: .75rem;font-size: .875rem;line-height: 1.25rem;--tw-text-opacity: 1;color: rgb(80 168 234 / var(--tw-text-opacity));transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-duration: 150ms;transition-timing-function: cubic-bezier(.4, 0, .2, 1)}
+    .custom-btn-secondary-outline:hover {--tw-bg-opacity: 1;background-color: rgb(80 168 234 / var(--tw-bg-opacity));--tw-text-opacity: 1;color: rgb(255 255 255 / var(--tw-text-opacity))}
+    .crooked-line:before {left: -20px;border-left: 20px solid transparent}
+    .crooked-line:after, .crooked-line:before {position: absolute;content: var(--tw-content);top: 0;width: 0;height: 0;border-bottom: 30px solid #fff}
+    .crooked-line:after {right: -20px;border-right: 20px solid transparent}
+    .footer-list li {position: relative;margin-top: .25rem;cursor: pointer;align-items: center;--tw-text-opacity: 1;color: rgb(255 255 255 / var(--tw-text-opacity))}
+    .footer-list li::before {position: absolute;top: 0;bottom: 0;right: -1.5rem;margin-top: auto;margin-bottom: auto;height: .5rem;width: .75rem;--tw-bg-opacity: 1;background-color: rgb(145 149 160 / var(--tw-bg-opacity));transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-duration: 150ms;content: var(--tw-content);transition-timing-function: cubic-bezier(.4, 0, .2, 1)}
+    .footer-list li:hover::before {content: var(--tw-content);--tw-bg-opacity: 1;background-color: rgb(80 168 234 / var(--tw-bg-opacity))}
+    .footer-list {margin-right: 25px}
+    .news-letter {position: relative;width: 100%;--tw-text-opacity: 1;color: rgb(75 85 99 / var(--tw-text-opacity))}
+    .news-letter:focus-within {--tw-text-opacity: 1;color: rgb(209 213 219 / var(--tw-text-opacity))}
+    .news-letter .submit-button {position: absolute;top: 0;bottom: 0;left: 0;display: flex;align-items: center;justify-content: center;border-top-left-radius: .375rem;border-bottom-left-radius: .375rem;--tw-bg-opacity: 1;background-color: rgb(80 168 234 / var(--tw-bg-opacity));padding-left: 1rem;padding-right: 1rem;--tw-text-opacity: 1;color: rgb(0 0 0 / var(--tw-text-opacity));transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-duration: 150ms;transition-timing-function: cubic-bezier(.4, 0, .2, 1)}
+    .news-letter .submit-button:hover {--tw-bg-opacity: 1;background-color: rgb(44 50 70 / var(--tw-bg-opacity));--tw-text-opacity: 1;color: rgb(80 168 234 / var(--tw-text-opacity))}
+    .news-letter button {padding: .25rem;outline: 2px solid transparent;outline-offset: 2px}
+    .news-letter button .icon {font-size: 1.875rem;line-height: 2.25rem}
+    .news-letter button:active .icon, .news-letter button:focus .icon, .news-letter button:hover .icon {--tw-text-opacity: 1;color: rgb(17 24 39 / var(--tw-text-opacity))}
+    .news-letter input[type=search], .news-letter input[type=text] {display: block;height: 100%;width: 100%;border-radius: .375rem;border-width: 1px;padding-top: .5rem;padding-bottom: .5rem;padding-right: 1rem;padding-left: 2.5rem;font-size: .875rem;line-height: 1.25rem;--tw-text-opacity: 1;color: rgb(255 255 255 / var(--tw-text-opacity));transition-property: all;transition-timing-function: cubic-bezier(.4, 0, .2, 1);transition-duration: 150ms}
+    .news-letter input[type=search]:focus, .news-letter input[type=text]:focus {--tw-bg-opacity: 1;background-color: rgb(255 255 255 / var(--tw-bg-opacity));--tw-text-opacity: 1;color: rgb(17 24 39 / var(--tw-text-opacity));--tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);--tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);outline: 2px solid transparent;outline-offset: 2px}
+    .btn-custom-white {display: flex;cursor: pointer;justify-content: center;border-radius: .375rem;padding: .5rem;padding-left: 1rem;padding-right: 1rem;font-size: 1rem;line-height: 1.5rem;transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-duration: 150ms;transition-timing-function: cubic-bezier(.4, 0, .2, 1)}
+    .btn-custom-white:hover {--tw-bg-opacity: 1;background-color: rgb(44 50 70 / var(--tw-bg-opacity));--tw-text-opacity: 1;color: rgb(255 255 255 / var(--tw-text-opacity))}
+    .btn-custom-dark-blue {display: flex;cursor: pointer;justify-content: center;border-radius: .375rem;--tw-bg-opacity: 1;background-color: rgb(44 50 70 / var(--tw-bg-opacity));padding: .5rem;padding-left: 1rem;padding-right: 1rem;font-size: 1rem;line-height: 1.5rem;--tw-text-opacity: 1;color: rgb(255 255 255 / var(--tw-text-opacity));transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-duration: 150ms;transition-timing-function: cubic-bezier(.4, 0, .2, 1)}
+    .btn-custom-dark-blue:hover {--tw-bg-opacity: 1;background-color: rgb(255 255 255 / var(--tw-bg-opacity));--tw-text-opacity: 1;color: rgb(44 50 70 / var(--tw-text-opacity))}
+    .btn-custom-outline-dark-blue {position: relative;display: flex;cursor: pointer;justify-content: center;border-radius: .375rem;border-width: 2px;--tw-border-opacity: 1;border-color: rgb(44 50 70 / var(--tw-border-opacity));padding: .5rem;padding-left: 1rem;padding-right: 1rem;font-size: 1rem;line-height: 1.5rem;transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-duration: 150ms;transition-timing-function: cubic-bezier(.4, 0, .2, 1)}
+    .btn-custom-outline-dark-blue:hover {--tw-bg-opacity: 1;background-color: rgb(44 50 70 / var(--tw-bg-opacity));--tw-text-opacity: 1;color: rgb(255 255 255 / var(--tw-text-opacity))}
+    .btn-custom-outline-dark-blue.active {--tw-bg-opacity: 1;background-color: rgb(44 50 70 / var(--tw-bg-opacity));--tw-text-opacity: 1;color: rgb(255 255 255 / var(--tw-text-opacity))}
+    .btn-custom-outline-dark-blue.active::before {position: absolute;top: 0;right: .375rem;height: 1.25rem;width: 1.25rem;--tw-content: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNSIgaGVpZ2h0PSIyMyIgdmlld0JveD0iMCAwIDE1IDIzIj4NCiAgPGcgaWQ9Ikdyb3VwXzIxNCIgZGF0YS1uYW1lPSJHcm91cCAyMTQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEzLjUpIHJvdGF0ZSg5MCkiPg0KICAgIDxsaW5lIGlkPSJMaW5lXzQ5IiBkYXRhLW5hbWU9IkxpbmUgNDkiIHgyPSIyMyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNTBhOGVhIiBzdHJva2Utd2lkdGg9IjMiLz4NCiAgICA8bGluZSBpZD0iTGluZV81MCIgZGF0YS1uYW1lPSJMaW5lIDUwIiB4Mj0iMTYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgNikiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzUwYThlYSIgc3Ryb2tlLXdpZHRoPSIzIi8+DQogICAgPGxpbmUgaWQ9IkxpbmVfNTEiIGRhdGEtbmFtZT0iTGluZSA1MSIgeDI9IjEwIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDEyKSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNTBhOGVhIiBzdHJva2Utd2lkdGg9IjMiLz4NCiAgPC9nPg0KPC9zdmc+DQo=);content: var(--tw-content)}
+    .horizontalLines {position: relative}
+    .horizontalLines::before {position: absolute;top: 0;right: -2.25rem;height: 1.25rem;width: 1.25rem;--tw-content: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNiIgaGVpZ2h0PSIxMyIgdmlld0JveD0iMCAwIDI2IDEzIj4NCiAgPGcgaWQ9Ikdyb3VwXzIxNSIgZGF0YS1uYW1lPSJHcm91cCAyMTUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEuNSAxLjUpIj4NCiAgICA8bGluZSBpZD0iTGluZV80OSIgZGF0YS1uYW1lPSJMaW5lIDQ5IiB4Mj0iMjMiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzUwYThlYSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjMiLz4NCiAgICA8bGluZSBpZD0iTGluZV81MCIgZGF0YS1uYW1lPSJMaW5lIDUwIiB4Mj0iMTYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgNSkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzUwYThlYSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjMiLz4NCiAgICA8bGluZSBpZD0iTGluZV81MSIgZGF0YS1uYW1lPSJMaW5lIDUxIiB4Mj0iMTAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMTApIiBmaWxsPSJub25lIiBzdHJva2U9IiM1MGE4ZWEiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIzIi8+DQogIDwvZz4NCjwvc3ZnPg0K);content: var(--tw-content)}
+    .darkHorizontalLines {position: relative}
+    .darkHorizontalLines::before {position: absolute;top: 0;right: -2.25rem;height: 1.25rem;width: 1.25rem;--tw-content: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNiIgaGVpZ2h0PSIxMyIgdmlld0JveD0iMCAwIDI2IDEzIj4NCiAgPGcgaWQ9Ikdyb3VwXzIyMyIgZGF0YS1uYW1lPSJHcm91cCAyMjMiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEuNSAxLjUpIj4NCiAgICA8bGluZSBpZD0iTGluZV80OSIgZGF0YS1uYW1lPSJMaW5lIDQ5IiB4Mj0iMjMiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJjMzI0NiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjMiLz4NCiAgICA8bGluZSBpZD0iTGluZV81MCIgZGF0YS1uYW1lPSJMaW5lIDUwIiB4Mj0iMTYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgNSkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJjMzI0NiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjMiLz4NCiAgICA8bGluZSBpZD0iTGluZV81MSIgZGF0YS1uYW1lPSJMaW5lIDUxIiB4Mj0iMTAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMTApIiBmaWxsPSJub25lIiBzdHJva2U9IiMyYzMyNDYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIzIi8+DQogIDwvZz4NCjwvc3ZnPg0K);content: var(--tw-content)}
+    .h-280 {height: 280px}
+    .thin-scrollbar::-webkit-scrollbar {width: 1px}
+    .thin-scrollbar::-webkit-scrollbar-track {background: #f5f5f5}
+    .thin-scrollbar::-webkit-scrollbar-thumb {background-color: #9195a0;border-radius: 20px}
+    input:checked ~ .dot {transform: translateX(140%);background-color: #fff}
+    input:checked ~ .parent {background-color: #50a8ea}
+    .after\:absolute::after {content: var(--tw-content);position: absolute}
+    .after\:left-0::after {content: var(--tw-content);left: 0}
+    .after\:top-1::after {content: var(--tw-content);top: .25rem}
+    .after\:h-6::after {content: var(--tw-content);height: 1.5rem}
+    .after\:w-0\.5::after {content: var(--tw-content);width: .125rem}
+    .after\:w-0::after {content: var(--tw-content);width: 0}
+    .after\:bg-gray-600::after {content: var(--tw-content);--tw-bg-opacity: 1;background-color: rgb(75 85 99 / var(--tw-bg-opacity))}
+    .after\:text-sm::after {content: var(--tw-content);font-size: .875rem;line-height: 1.25rem}
+    .after\:content-\[attr\(data-after\)\]::after {--tw-content: attr(data-after);content: var(--tw-content)}
+    .group:hover .group-hover\:bg-customDarkblue {--tw-bg-opacity: 1;background-color: rgb(44 50 70 / var(--tw-bg-opacity))}
+    .group:hover .group-hover\:text-white {--tw-text-opacity: 1;color: rgb(255 255 255 / var(--tw-text-opacity))}
+    .group:hover .group-hover\:grayscale-0 {--tw-grayscale: grayscale(0);filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}
+    @media (min-width: 576px) {
+        .sm\:px-6 {padding-left: 1.5rem;padding-right: 1.5rem}
+    }
+    @media (min-width: 1324px) {
+        .lg\:px-8 {padding-left: 2rem;padding-right: 2rem}
+    }
+    .nuxt-progress {position: fixed;top: 0;left: 0;right: 0;height: 2px;width: 0;opacity: 1;transition: width .1s, opacity .4s;background-color: #000;z-index: 999999}
+    .nuxt-progress.nuxt-progress-notransition {transition: none}
+    .nuxt-progress-failed {background-color: red}</style>
+	<link rel="preload" href="/_nuxt/static/1652907210/payload.js" as="script">
+	<link rel="preload" href="/_nuxt/static/1652907210/manifest.js" as="script">
+</head>
+<body>
+<div data-server-rendered="true" id="__nuxt"><!---->
+	<div id="__layout">
+		<div class="grid grid-cols-12 gap-x-5">
+			<header class="col-span-12" data-v-4c716efc>
+				<nav aria-label="Top" class="container mx-auto px-4 sm:px-6 lg:px-8" data-v-4c716efc>
+					<div class="grid grid-cols-12 py-9 items-center" data-v-4c716efc>
+						<div class="col-span-2 flex-wrap flex" data-v-4c716efc><span class="flex items-center gap-3 text-2xl w-full" data-v-4c716efc><span data-v-4c716efc>Widget Kala</span></span>
+							<span class="flex text-xs w-full" data-v-4c716efc>online shopping accessories</span></div>
+						<div class="col-span-1 flex-wrap flex" data-v-4c716efc>
+							<svg xmlns="http://www.w3.org/2000/svg" width="32.192" height="32.66" viewBox="0 0 32.192 32.66" data-v-4c716efc>
+								<path id="Path_311" data-name="Path 311"
+								      d="M3328.438,3761.054a.751.751,0,0,0-.181-.278l-4.178-3.937a2.138,2.138,0,0,0-1.467-.583h-8.632a.646.646,0,0,0-.084,0h-.058a.755.755,0,0,0-.278.055h0a.764.764,0,0,0-.415.415h0a.76.76,0,0,0-.055.278v9.924h-9.924a.761.761,0,0,0-.761.761v.026a.749.749,0,0,0-.044.262l.089,8.627a2.176,2.176,0,0,0,.63,1.514l4.023,4.081h0a2.8,2.8,0,0,0,2.008.848h17.28a2.811,2.811,0,0,0,2.806-2.809v-17.28A2.793,2.793,0,0,0,3328.438,3761.054Zm-5.4-3.1,2.344,2.208h-7.315l-2.386-2.386h6.931a.619.619,0,0,1,.425.181Zm-15.585,12.895-2.425-2.386h8.5l2.386,2.386Zm9.538-1.084-2.386-2.386v-8.525l2.386,2.386Zm-13.023,6.824-.073-7.1,2.409,2.362v7.373l-2.144-2.176a.665.665,0,0,1-.192-.452Zm23.705,3.656a1.284,1.284,0,0,1-1.283,1.283H3309.1a1.283,1.283,0,0,1-1.283-1.283v-7.874h9.928a.761.761,0,0,0,.761-.761v-9.926h7.874a1.283,1.283,0,0,1,1.283,1.283Z"
+								      transform="translate(-3297.005 -3750.387)" fill="#008aff" data-v-4c716efc></path>
+								<path id="Path_312" data-name="Path 312"
+								      d="M3287.334,3749.537h0a.76.76,0,0,0,.055-.278h0v-9.924h9.924a.759.759,0,0,0,.48-1.349l-3.7-3.64a.762.762,0,0,0-.69-.446H3282.72a.761.761,0,0,0-.761.761v10.587a.744.744,0,0,0,.013.234v.031a.728.728,0,0,0,.052.152.761.761,0,0,0,.123.187v.016l.016.016h0l3.911,3.91a.753.753,0,0,0,.262.166h0a.74.74,0,0,0,.556,0h0A.763.763,0,0,0,3287.334,3749.537Zm-3.853-13.042,2.386,2.386v8.525l-2.386-2.386Zm9.538-1.081,2.425,2.386h-8.5l-2.386-2.386Z"
+								      transform="translate(-3281.955 -3733.9)" fill="#008aff" data-v-4c716efc></path>
+							</svg>
+						</div>
+						<div class="col-span-4 flex-wrap flex" data-v-4c716efc>
+							<div class="search-box" data-v-7f85b0e4 data-v-4c716efc><input type="search" name="q" placeholder="از بین 7 هزار محصول جانبی موبایل و تبلت جستجو کنید" autocomplete="off"
+							                                                               data-v-7f85b0e4> <span class="submit-button" data-v-7f85b0e4><button type="submit"
+							                                                                                                                                    class="hover:shadow-outline"
+							                                                                                                                                    data-v-7f85b0e4><span
+								class="icon icon-search" data-v-7f85b0e4></span> <span class="sr-only" data-v-7f85b0e4>جستجو</span></button></span></div>
+						</div>
+						<div class="col-span-5 justify-end gap-x-2 flex-wrap flex" data-v-4c716efc>
+							<div class="relative inline-flex" data-v-73a891b2 data-v-4c716efc><a href="#" class="cart-button gap-x-4" data-v-73a891b2><span class="flex" data-v-73a891b2>45,000,000 تومان</span>
+								<span class="icon flex text-3xl text-white icon-trolley" data-v-73a891b2></span> <span class="cart-count-badge" data-v-73a891b2><span class="animate"
+								                                                                                                                                      data-v-73a891b2></span> <span
+									class="count" data-v-73a891b2><span class="w-full text-xs" data-v-73a891b2>2</span></span></span></a></div>
+							<button class="register-button" data-v-0dc02576 data-v-4c716efc>
+								ورود | ثبت نام
+								<span class="icon text-3xl text-gray-500 icon-profile" data-v-0dc02576></span></button>
+						</div>
+					</div>
+				</nav>
+			</header>
+			<div class="menu-section" data-v-309bb614>
+				<div class="container" data-v-309bb614>
+					<div class="grid grid-cols-12 justify-between" data-v-309bb614>
+						<ul id="main-menu" class="navbar-nav main-menu" data-v-309bb614>
+							<li class="menu-item nav-item active current-menu-item" data-v-309bb614><a href="/" aria-current="page" class="nav-link nuxt-link-exact-active nuxt-link-active"><span>لینک منوی 1
+        </span></a></li>
+							<li class="menu-item nav-item" data-v-309bb614><a href="/" aria-current="page" class="nav-link nuxt-link-exact-active nuxt-link-active"><span>لینک منوی 2
+        </span></a></li>
+							<li class="menu-item nav-item" data-v-309bb614><a href="/" aria-current="page" class="nav-link nuxt-link-exact-active nuxt-link-active"><span>لینک منوی 3
+        </span></a></li>
+							<li class="menu-item nav-item" data-v-309bb614><a href="/" aria-current="page" class="nav-link nuxt-link-exact-active nuxt-link-active"><span>لینک منوی 4
+        </span></a></li>
+							<li class="menu-item nav-item" data-v-309bb614><a href="/" aria-current="page" class="nav-link nuxt-link-exact-active nuxt-link-active"><span>لینک منوی 5
+        </span></a></li>
+							<li class="divider" data-v-309bb614></li>
+							<li class="menu-item nav-item" data-v-309bb614><a href="/" aria-current="page" class="nav-link nuxt-link-exact-active nuxt-link-active"><span> منوی 0 </span></a></li>
+							<li class="menu-item nav-item" data-v-309bb614><a href="/categories" class="nav-link"><span> categories </span></a></li>
+						</ul>
+						<div class="major-shopping-container" data-v-309bb614><a href="#" class="major-shopping" data-v-309bb614>خرید عمده محصولات</a></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-span-12 mt-7">
+				<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+					<div class="grid gap-x-7 grid-cols-12 justify-between">
+						<div class="col-span-4">
+							<div class="w-full flex h-full"><img src="/_nuxt/img/image1.6b2f2f5.png" alt class="w-full h-full border rounded-lg"></div>
+						</div>
+						<div class="col-span-8">
+							<div class="w-full flex h-full"><img src="/_nuxt/img/image2.81476f5.png" alt class="w-full h-full border rounded-lg"></div>
+						</div>
+					</div>
+					<div class="grid mt-7 gap-x-7 grid-cols-12 justify-between">
+						<div class="col-span-3">
+							<div class="w-full flex h-full"><img src="/_nuxt/img/image3.07a98dc.png" alt class="w-full h-full border rounded-lg"></div>
+						</div>
+						<div class="col-span-3">
+							<div class="w-full flex h-full"><img src="/_nuxt/img/image3.07a98dc.png" alt class="w-full h-full border rounded-lg"></div>
+						</div>
+						<div class="col-span-3">
+							<div class="w-full flex h-full"><img src="/_nuxt/img/image3.07a98dc.png" alt class="w-full h-full border rounded-lg"></div>
+						</div>
+						<div class="col-span-3">
+							<div class="w-full flex h-full"><img src="/_nuxt/img/image3.07a98dc.png" alt class="w-full h-full border rounded-lg"></div>
+						</div>
+					</div>
+					<div class="w-full">
+						<div class="grid mt-7 gap-x-7 grid-cols-12 justify-between">
+							<div class="col-span-10 flex gap-x-5"><span class="flex"><span class="icon text-3xl icon-shield"></span></span>
+								<div class="flex text-gray-600 text-2xl">پرفروش ترین ها</div>
+								<div class="relative after:w-0.5 after:absolute after:bg-gray-600 after:h-6 after:left-0 after:top-1"></div>
+								<ul class="tabs">
+									<li class="active">
+										<button>هدفون</button>
+									</li>
+									<li>
+										<button>هدفون</button>
+									</li>
+									<li>
+										<button>هدفون</button>
+									</li>
+									<li>
+										<button>هدفون</button>
+									</li>
+								</ul>
+							</div>
+							<div class="col-span-2 justify-end flex">
+								<button class="custom-btn-secondary-outline">
+									همه محصولات را ببینید
+								</button>
+							</div>
+						</div>
+						<div class="product-tabs-content">
+							<div class="single-product-item group col-span-3" data-v-59de207e>
+								<div class="w-full flex" data-v-59de207e><img src="/_nuxt/img/product1.1caab58.png" alt class="w-full rounded-lg" data-v-59de207e></div>
+								<div class="flex" data-v-59de207e><h3 class="text-customDarkblue cursor-pointer text-base font-light leading-7" data-v-59de207e>
+									لنز سوپر واید گوشی موبایل F30 0.3X Super Wide JSJSJSJSJSJSJSJs
+								</h3></div>
+								<div class="flex cursor-pointer text-orange-500 text-xs justify-end w-full" data-v-59de207e><a data-v-59de207e>VIVU برند</a></div>
+								<div class="flex line-through text-gray-700 text-xl w-full" data-v-59de207e><span data-after="هزار تومان"
+								                                                                                  class="after:content-[attr(data-after)] after:text-sm items-center after:left-0 relative"
+								                                                                                  data-v-59de207e>150،000</span></div>
+								<div class="flex gap-x-4 items-center justify-between text-gray-700 text-xl w-full" data-v-59de207e><span data-after="هزار تومان"
+								                                                                                                          class="after:content-[attr(data-after)] text-customLightblue after:text-sm items-center after:left-0 relative"
+								                                                                                                          data-v-59de207e>150،000</span>
+									<div class="px-2 py-1 bg-customLightGray text-xs rounded" data-v-59de207e>40%</div>
+									<div class="border-2 group-hover:bg-customDarkblue group-hover:text-white transition duration-150 items-center justify-center rounded-xl border-customDarkblue"
+									     data-v-59de207e>
+										<button class="flex justify-center" data-v-59de207e><span class="icon justify-center w-10 flex text-4xl icon-trolley" data-v-59de207e></span></button>
+									</div>
+								</div>
+							</div>
+							<div class="single-product-item group col-span-3" data-v-59de207e>
+								<div class="w-full flex" data-v-59de207e><img src="/_nuxt/img/product1.1caab58.png" alt class="w-full rounded-lg" data-v-59de207e></div>
+								<div class="flex" data-v-59de207e><h3 class="text-customDarkblue cursor-pointer text-base font-light leading-7" data-v-59de207e>
+									لنز سوپر واید گوشی موبایل F30 0.3X Super Wide JSJSJSJSJSJSJSJs
+								</h3></div>
+								<div class="flex cursor-pointer text-orange-500 text-xs justify-end w-full" data-v-59de207e><a data-v-59de207e>VIVU برند</a></div>
+								<div class="flex line-through text-gray-700 text-xl w-full" data-v-59de207e><span data-after="هزار تومان"
+								                                                                                  class="after:content-[attr(data-after)] after:text-sm items-center after:left-0 relative"
+								                                                                                  data-v-59de207e>150،000</span></div>
+								<div class="flex gap-x-4 items-center justify-between text-gray-700 text-xl w-full" data-v-59de207e><span data-after="هزار تومان"
+								                                                                                                          class="after:content-[attr(data-after)] text-customLightblue after:text-sm items-center after:left-0 relative"
+								                                                                                                          data-v-59de207e>150،000</span>
+									<div class="px-2 py-1 bg-customLightGray text-xs rounded" data-v-59de207e>40%</div>
+									<div class="border-2 group-hover:bg-customDarkblue group-hover:text-white transition duration-150 items-center justify-center rounded-xl border-customDarkblue"
+									     data-v-59de207e>
+										<button class="flex justify-center" data-v-59de207e><span class="icon justify-center w-10 flex text-4xl icon-trolley" data-v-59de207e></span></button>
+									</div>
+								</div>
+							</div>
+							<div class="single-product-item group col-span-3" data-v-59de207e>
+								<div class="w-full flex" data-v-59de207e><img src="/_nuxt/img/product1.1caab58.png" alt class="w-full rounded-lg" data-v-59de207e></div>
+								<div class="flex" data-v-59de207e><h3 class="text-customDarkblue cursor-pointer text-base font-light leading-7" data-v-59de207e>
+									لنز سوپر واید گوشی موبایل F30 0.3X Super Wide JSJSJSJSJSJSJSJs
+								</h3></div>
+								<div class="flex cursor-pointer text-orange-500 text-xs justify-end w-full" data-v-59de207e><a data-v-59de207e>VIVU برند</a></div>
+								<div class="flex line-through text-gray-700 text-xl w-full" data-v-59de207e><span data-after="هزار تومان"
+								                                                                                  class="after:content-[attr(data-after)] after:text-sm items-center after:left-0 relative"
+								                                                                                  data-v-59de207e>150،000</span></div>
+								<div class="flex gap-x-4 items-center justify-between text-gray-700 text-xl w-full" data-v-59de207e><span data-after="هزار تومان"
+								                                                                                                          class="after:content-[attr(data-after)] text-customLightblue after:text-sm items-center after:left-0 relative"
+								                                                                                                          data-v-59de207e>150،000</span>
+									<div class="px-2 py-1 bg-customLightGray text-xs rounded" data-v-59de207e>40%</div>
+									<div class="border-2 group-hover:bg-customDarkblue group-hover:text-white transition duration-150 items-center justify-center rounded-xl border-customDarkblue"
+									     data-v-59de207e>
+										<button class="flex justify-center" data-v-59de207e><span class="icon justify-center w-10 flex text-4xl icon-trolley" data-v-59de207e></span></button>
+									</div>
+								</div>
+							</div>
+							<div class="single-product-item group col-span-3" data-v-59de207e>
+								<div class="w-full flex" data-v-59de207e><img src="/_nuxt/img/product1.1caab58.png" alt class="w-full rounded-lg" data-v-59de207e></div>
+								<div class="flex" data-v-59de207e><h3 class="text-customDarkblue cursor-pointer text-base font-light leading-7" data-v-59de207e>
+									لنز سوپر واید گوشی موبایل F30 0.3X Super Wide JSJSJSJSJSJSJSJs
+								</h3></div>
+								<div class="flex cursor-pointer text-orange-500 text-xs justify-end w-full" data-v-59de207e><a data-v-59de207e>VIVU برند</a></div>
+								<div class="flex line-through text-gray-700 text-xl w-full" data-v-59de207e><span data-after="هزار تومان"
+								                                                                                  class="after:content-[attr(data-after)] after:text-sm items-center after:left-0 relative"
+								                                                                                  data-v-59de207e>150،000</span></div>
+								<div class="flex gap-x-4 items-center justify-between text-gray-700 text-xl w-full" data-v-59de207e><span data-after="هزار تومان"
+								                                                                                                          class="after:content-[attr(data-after)] text-customLightblue after:text-sm items-center after:left-0 relative"
+								                                                                                                          data-v-59de207e>150،000</span>
+									<div class="px-2 py-1 bg-customLightGray text-xs rounded" data-v-59de207e>40%</div>
+									<div class="border-2 group-hover:bg-customDarkblue group-hover:text-white transition duration-150 items-center justify-center rounded-xl border-customDarkblue"
+									     data-v-59de207e>
+										<button class="flex justify-center" data-v-59de207e><span class="icon justify-center w-10 flex text-4xl icon-trolley" data-v-59de207e></span></button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="w-full">
+						<div class="grid mt-7 gap-x-7 grid-cols-12 justify-between">
+							<div class="col-span-10 flex gap-x-5"><span class="flex"><span class="icon text-3xl icon-shield"></span></span>
+								<div class="flex text-gray-600 text-2xl">پرفروش ترین ها</div>
+								<div class="relative after:w-0.5 after:absolute after:bg-gray-600 after:h-6 after:left-0 after:top-1"></div>
+								<ul class="tabs">
+									<li class="active">
+										<button>هدفون</button>
+									</li>
+									<li>
+										<button>هدفون</button>
+									</li>
+									<li>
+										<button>هدفون</button>
+									</li>
+									<li>
+										<button>هدفون</button>
+									</li>
+								</ul>
+							</div>
+							<div class="col-span-2 justify-end flex">
+								<button class="custom-btn-secondary-outline">
+									همه محصولات را ببینید
+								</button>
+							</div>
+						</div>
+						<div class="product-tabs-content">
+							<div class="single-product-item group col-span-3" data-v-59de207e>
+								<div class="w-full flex" data-v-59de207e><img src="/_nuxt/img/product1.1caab58.png" alt class="w-full rounded-lg" data-v-59de207e></div>
+								<div class="flex" data-v-59de207e><h3 class="text-customDarkblue cursor-pointer text-base font-light leading-7" data-v-59de207e>
+									لنز سوپر واید گوشی موبایل F30 0.3X Super Wide JSJSJSJSJSJSJSJs
+								</h3></div>
+								<div class="flex cursor-pointer text-orange-500 text-xs justify-end w-full" data-v-59de207e><a data-v-59de207e>VIVU برند</a></div>
+								<div class="flex line-through text-gray-700 text-xl w-full" data-v-59de207e><span data-after="هزار تومان"
+								                                                                                  class="after:content-[attr(data-after)] after:text-sm items-center after:left-0 relative"
+								                                                                                  data-v-59de207e>150،000</span></div>
+								<div class="flex gap-x-4 items-center justify-between text-gray-700 text-xl w-full" data-v-59de207e><span data-after="هزار تومان"
+								                                                                                                          class="after:content-[attr(data-after)] text-customLightblue after:text-sm items-center after:left-0 relative"
+								                                                                                                          data-v-59de207e>150،000</span>
+									<div class="px-2 py-1 bg-customLightGray text-xs rounded" data-v-59de207e>40%</div>
+									<div class="border-2 group-hover:bg-customDarkblue group-hover:text-white transition duration-150 items-center justify-center rounded-xl border-customDarkblue"
+									     data-v-59de207e>
+										<button class="flex justify-center" data-v-59de207e><span class="icon justify-center w-10 flex text-4xl icon-trolley" data-v-59de207e></span></button>
+									</div>
+								</div>
+							</div>
+							<div class="single-product-item group col-span-3" data-v-59de207e>
+								<div class="w-full flex" data-v-59de207e><img src="/_nuxt/img/product1.1caab58.png" alt class="w-full rounded-lg" data-v-59de207e></div>
+								<div class="flex" data-v-59de207e><h3 class="text-customDarkblue cursor-pointer text-base font-light leading-7" data-v-59de207e>
+									لنز سوپر واید گوشی موبایل F30 0.3X Super Wide JSJSJSJSJSJSJSJs
+								</h3></div>
+								<div class="flex cursor-pointer text-orange-500 text-xs justify-end w-full" data-v-59de207e><a data-v-59de207e>VIVU برند</a></div>
+								<div class="flex line-through text-gray-700 text-xl w-full" data-v-59de207e><span data-after="هزار تومان"
+								                                                                                  class="after:content-[attr(data-after)] after:text-sm items-center after:left-0 relative"
+								                                                                                  data-v-59de207e>150،000</span></div>
+								<div class="flex gap-x-4 items-center justify-between text-gray-700 text-xl w-full" data-v-59de207e><span data-after="هزار تومان"
+								                                                                                                          class="after:content-[attr(data-after)] text-customLightblue after:text-sm items-center after:left-0 relative"
+								                                                                                                          data-v-59de207e>150،000</span>
+									<div class="px-2 py-1 bg-customLightGray text-xs rounded" data-v-59de207e>40%</div>
+									<div class="border-2 group-hover:bg-customDarkblue group-hover:text-white transition duration-150 items-center justify-center rounded-xl border-customDarkblue"
+									     data-v-59de207e>
+										<button class="flex justify-center" data-v-59de207e><span class="icon justify-center w-10 flex text-4xl icon-trolley" data-v-59de207e></span></button>
+									</div>
+								</div>
+							</div>
+							<div class="single-product-item group col-span-3" data-v-59de207e>
+								<div class="w-full flex" data-v-59de207e><img src="/_nuxt/img/product1.1caab58.png" alt class="w-full rounded-lg" data-v-59de207e></div>
+								<div class="flex" data-v-59de207e><h3 class="text-customDarkblue cursor-pointer text-base font-light leading-7" data-v-59de207e>
+									لنز سوپر واید گوشی موبایل F30 0.3X Super Wide JSJSJSJSJSJSJSJs
+								</h3></div>
+								<div class="flex cursor-pointer text-orange-500 text-xs justify-end w-full" data-v-59de207e><a data-v-59de207e>VIVU برند</a></div>
+								<div class="flex line-through text-gray-700 text-xl w-full" data-v-59de207e><span data-after="هزار تومان"
+								                                                                                  class="after:content-[attr(data-after)] after:text-sm items-center after:left-0 relative"
+								                                                                                  data-v-59de207e>150،000</span></div>
+								<div class="flex gap-x-4 items-center justify-between text-gray-700 text-xl w-full" data-v-59de207e><span data-after="هزار تومان"
+								                                                                                                          class="after:content-[attr(data-after)] text-customLightblue after:text-sm items-center after:left-0 relative"
+								                                                                                                          data-v-59de207e>150،000</span>
+									<div class="px-2 py-1 bg-customLightGray text-xs rounded" data-v-59de207e>40%</div>
+									<div class="border-2 group-hover:bg-customDarkblue group-hover:text-white transition duration-150 items-center justify-center rounded-xl border-customDarkblue"
+									     data-v-59de207e>
+										<button class="flex justify-center" data-v-59de207e><span class="icon justify-center w-10 flex text-4xl icon-trolley" data-v-59de207e></span></button>
+									</div>
+								</div>
+							</div>
+							<div class="single-product-item group col-span-3" data-v-59de207e>
+								<div class="w-full flex" data-v-59de207e><img src="/_nuxt/img/product1.1caab58.png" alt class="w-full rounded-lg" data-v-59de207e></div>
+								<div class="flex" data-v-59de207e><h3 class="text-customDarkblue cursor-pointer text-base font-light leading-7" data-v-59de207e>
+									لنز سوپر واید گوشی موبایل F30 0.3X Super Wide JSJSJSJSJSJSJSJs
+								</h3></div>
+								<div class="flex cursor-pointer text-orange-500 text-xs justify-end w-full" data-v-59de207e><a data-v-59de207e>VIVU برند</a></div>
+								<div class="flex line-through text-gray-700 text-xl w-full" data-v-59de207e><span data-after="هزار تومان"
+								                                                                                  class="after:content-[attr(data-after)] after:text-sm items-center after:left-0 relative"
+								                                                                                  data-v-59de207e>150،000</span></div>
+								<div class="flex gap-x-4 items-center justify-between text-gray-700 text-xl w-full" data-v-59de207e><span data-after="هزار تومان"
+								                                                                                                          class="after:content-[attr(data-after)] text-customLightblue after:text-sm items-center after:left-0 relative"
+								                                                                                                          data-v-59de207e>150،000</span>
+									<div class="px-2 py-1 bg-customLightGray text-xs rounded" data-v-59de207e>40%</div>
+									<div class="border-2 group-hover:bg-customDarkblue group-hover:text-white transition duration-150 items-center justify-center rounded-xl border-customDarkblue"
+									     data-v-59de207e>
+										<button class="flex justify-center" data-v-59de207e><span class="icon justify-center w-10 flex text-4xl icon-trolley" data-v-59de207e></span></button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="bg-customDarkblue my-7 w-full">
+					<div class="container p-14 mx-auto px-5 sm:px-6 lg:px-8"><h3 class="text-2xl text-white">برند ها</h3>
+						<div class="mt-7 grid gap-x-5 grid-cols-6">
+							<div class="col-span-1 flex flex-wrap transition duration-150 group transform"><img src="/_nuxt/img/adv1.d41b13d.png" alt
+							                                                                                    class="w-full grayscale flex rounded-md group-hover:grayscale-0"></div>
+							<div class="col-span-1 flex flex-wrap transition duration-150 group transform"><img src="/_nuxt/img/adv2.330a155.png" alt
+							                                                                                    class="w-full grayscale flex rounded-md group-hover:grayscale-0"></div>
+							<div class="col-span-1 flex flex-wrap transition duration-150 group transform"><img src="/_nuxt/img/adv3.152950c.png" alt
+							                                                                                    class="w-full grayscale flex rounded-md group-hover:grayscale-0"></div>
+							<div class="col-span-1 flex flex-wrap transition duration-150 group transform"><img src="/_nuxt/img/adv4.cabd3d7.png" alt
+							                                                                                    class="w-full grayscale flex rounded-md group-hover:grayscale-0"></div>
+							<div class="col-span-1 flex flex-wrap transition duration-150 group transform"><img src="/_nuxt/img/adv5.cf35e66.png" alt
+							                                                                                    class="w-full grayscale flex rounded-md group-hover:grayscale-0"></div>
+							<div class="col-span-1 flex flex-wrap transition duration-150 group transform"><img src="/_nuxt/img/adv6.4c28a1a.png" alt
+							                                                                                    class="w-full grayscale flex rounded-md group-hover:grayscale-0"></div>
+						</div>
+					</div>
+				</div>
+				<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+					<div class="w-full">
+						<div class="grid mt-7 gap-x-7 grid-cols-12 justify-between">
+							<div class="col-span-10 flex gap-x-5"><span class="flex"><span class="icon text-3xl icon-shield"></span></span>
+								<div class="flex text-gray-600 text-2xl">پرفروش ترین ها</div>
+								<div class="relative after:w-0.5 after:absolute after:bg-gray-600 after:h-6 after:left-0 after:top-1"></div>
+								<ul class="tabs">
+									<li class="active">
+										<button>هدفون</button>
+									</li>
+									<li>
+										<button>هدفون</button>
+									</li>
+									<li>
+										<button>هدفون</button>
+									</li>
+									<li>
+										<button>هدفون</button>
+									</li>
+								</ul>
+							</div>
+							<div class="col-span-2 justify-end flex">
+								<button class="custom-btn-secondary-outline">
+									همه محصولات را ببینید
+								</button>
+							</div>
+						</div>
+						<div class="product-tabs-content">
+							<div class="single-product-item group col-span-3" data-v-59de207e>
+								<div class="w-full flex" data-v-59de207e><img src="/_nuxt/img/product1.1caab58.png" alt class="w-full rounded-lg" data-v-59de207e></div>
+								<div class="flex" data-v-59de207e><h3 class="text-customDarkblue cursor-pointer text-base font-light leading-7" data-v-59de207e>
+									لنز سوپر واید گوشی موبایل F30 0.3X Super Wide JSJSJSJSJSJSJSJs
+								</h3></div>
+								<div class="flex cursor-pointer text-orange-500 text-xs justify-end w-full" data-v-59de207e><a data-v-59de207e>VIVU برند</a></div>
+								<div class="flex line-through text-gray-700 text-xl w-full" data-v-59de207e><span data-after="هزار تومان"
+								                                                                                  class="after:content-[attr(data-after)] after:text-sm items-center after:left-0 relative"
+								                                                                                  data-v-59de207e>150،000</span></div>
+								<div class="flex gap-x-4 items-center justify-between text-gray-700 text-xl w-full" data-v-59de207e><span data-after="هزار تومان"
+								                                                                                                          class="after:content-[attr(data-after)] text-customLightblue after:text-sm items-center after:left-0 relative"
+								                                                                                                          data-v-59de207e>150،000</span>
+									<div class="px-2 py-1 bg-customLightGray text-xs rounded" data-v-59de207e>40%</div>
+									<div class="border-2 group-hover:bg-customDarkblue group-hover:text-white transition duration-150 items-center justify-center rounded-xl border-customDarkblue"
+									     data-v-59de207e>
+										<button class="flex justify-center" data-v-59de207e><span class="icon justify-center w-10 flex text-4xl icon-trolley" data-v-59de207e></span></button>
+									</div>
+								</div>
+							</div>
+							<div class="single-product-item group col-span-3" data-v-59de207e>
+								<div class="w-full flex" data-v-59de207e><img src="/_nuxt/img/product1.1caab58.png" alt class="w-full rounded-lg" data-v-59de207e></div>
+								<div class="flex" data-v-59de207e><h3 class="text-customDarkblue cursor-pointer text-base font-light leading-7" data-v-59de207e>
+									لنز سوپر واید گوشی موبایل F30 0.3X Super Wide JSJSJSJSJSJSJSJs
+								</h3></div>
+								<div class="flex cursor-pointer text-orange-500 text-xs justify-end w-full" data-v-59de207e><a data-v-59de207e>VIVU برند</a></div>
+								<div class="flex line-through text-gray-700 text-xl w-full" data-v-59de207e><span data-after="هزار تومان"
+								                                                                                  class="after:content-[attr(data-after)] after:text-sm items-center after:left-0 relative"
+								                                                                                  data-v-59de207e>150،000</span></div>
+								<div class="flex gap-x-4 items-center justify-between text-gray-700 text-xl w-full" data-v-59de207e><span data-after="هزار تومان"
+								                                                                                                          class="after:content-[attr(data-after)] text-customLightblue after:text-sm items-center after:left-0 relative"
+								                                                                                                          data-v-59de207e>150،000</span>
+									<div class="px-2 py-1 bg-customLightGray text-xs rounded" data-v-59de207e>40%</div>
+									<div class="border-2 group-hover:bg-customDarkblue group-hover:text-white transition duration-150 items-center justify-center rounded-xl border-customDarkblue"
+									     data-v-59de207e>
+										<button class="flex justify-center" data-v-59de207e><span class="icon justify-center w-10 flex text-4xl icon-trolley" data-v-59de207e></span></button>
+									</div>
+								</div>
+							</div>
+							<div class="single-product-item group col-span-3" data-v-59de207e>
+								<div class="w-full flex" data-v-59de207e><img src="/_nuxt/img/product1.1caab58.png" alt class="w-full rounded-lg" data-v-59de207e></div>
+								<div class="flex" data-v-59de207e><h3 class="text-customDarkblue cursor-pointer text-base font-light leading-7" data-v-59de207e>
+									لنز سوپر واید گوشی موبایل F30 0.3X Super Wide JSJSJSJSJSJSJSJs
+								</h3></div>
+								<div class="flex cursor-pointer text-orange-500 text-xs justify-end w-full" data-v-59de207e><a data-v-59de207e>VIVU برند</a></div>
+								<div class="flex line-through text-gray-700 text-xl w-full" data-v-59de207e><span data-after="هزار تومان"
+								                                                                                  class="after:content-[attr(data-after)] after:text-sm items-center after:left-0 relative"
+								                                                                                  data-v-59de207e>150،000</span></div>
+								<div class="flex gap-x-4 items-center justify-between text-gray-700 text-xl w-full" data-v-59de207e><span data-after="هزار تومان"
+								                                                                                                          class="after:content-[attr(data-after)] text-customLightblue after:text-sm items-center after:left-0 relative"
+								                                                                                                          data-v-59de207e>150،000</span>
+									<div class="px-2 py-1 bg-customLightGray text-xs rounded" data-v-59de207e>40%</div>
+									<div class="border-2 group-hover:bg-customDarkblue group-hover:text-white transition duration-150 items-center justify-center rounded-xl border-customDarkblue"
+									     data-v-59de207e>
+										<button class="flex justify-center" data-v-59de207e><span class="icon justify-center w-10 flex text-4xl icon-trolley" data-v-59de207e></span></button>
+									</div>
+								</div>
+							</div>
+							<div class="single-product-item group col-span-3" data-v-59de207e>
+								<div class="w-full flex" data-v-59de207e><img src="/_nuxt/img/product1.1caab58.png" alt class="w-full rounded-lg" data-v-59de207e></div>
+								<div class="flex" data-v-59de207e><h3 class="text-customDarkblue cursor-pointer text-base font-light leading-7" data-v-59de207e>
+									لنز سوپر واید گوشی موبایل F30 0.3X Super Wide JSJSJSJSJSJSJSJs
+								</h3></div>
+								<div class="flex cursor-pointer text-orange-500 text-xs justify-end w-full" data-v-59de207e><a data-v-59de207e>VIVU برند</a></div>
+								<div class="flex line-through text-gray-700 text-xl w-full" data-v-59de207e><span data-after="هزار تومان"
+								                                                                                  class="after:content-[attr(data-after)] after:text-sm items-center after:left-0 relative"
+								                                                                                  data-v-59de207e>150،000</span></div>
+								<div class="flex gap-x-4 items-center justify-between text-gray-700 text-xl w-full" data-v-59de207e><span data-after="هزار تومان"
+								                                                                                                          class="after:content-[attr(data-after)] text-customLightblue after:text-sm items-center after:left-0 relative"
+								                                                                                                          data-v-59de207e>150،000</span>
+									<div class="px-2 py-1 bg-customLightGray text-xs rounded" data-v-59de207e>40%</div>
+									<div class="border-2 group-hover:bg-customDarkblue group-hover:text-white transition duration-150 items-center justify-center rounded-xl border-customDarkblue"
+									     data-v-59de207e>
+										<button class="flex justify-center" data-v-59de207e><span class="icon justify-center w-10 flex text-4xl icon-trolley" data-v-59de207e></span></button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="w-full">
+						<div class="grid mt-7 gap-x-7 grid-cols-12 justify-between">
+							<div class="col-span-10 flex gap-x-5"><span class="flex"><span class="icon text-3xl icon-shield"></span></span>
+								<div class="flex text-gray-600 text-2xl">پرفروش ترین ها</div>
+								<div class="relative after:w-0.5 after:absolute after:bg-gray-600 after:h-6 after:left-0 after:top-1"></div>
+								<ul class="tabs">
+									<li class="active">
+										<button>هدفون</button>
+									</li>
+									<li>
+										<button>هدفون</button>
+									</li>
+									<li>
+										<button>هدفون</button>
+									</li>
+									<li>
+										<button>هدفون</button>
+									</li>
+								</ul>
+							</div>
+							<div class="col-span-2 justify-end flex">
+								<button class="custom-btn-secondary-outline">
+									همه محصولات را ببینید
+								</button>
+							</div>
+						</div>
+						<div class="product-tabs-content">
+							<div class="single-product-item group col-span-3" data-v-59de207e>
+								<div class="w-full flex" data-v-59de207e><img src="/_nuxt/img/product1.1caab58.png" alt class="w-full rounded-lg" data-v-59de207e></div>
+								<div class="flex" data-v-59de207e><h3 class="text-customDarkblue cursor-pointer text-base font-light leading-7" data-v-59de207e>
+									لنز سوپر واید گوشی موبایل F30 0.3X Super Wide JSJSJSJSJSJSJSJs
+								</h3></div>
+								<div class="flex cursor-pointer text-orange-500 text-xs justify-end w-full" data-v-59de207e><a data-v-59de207e>VIVU برند</a></div>
+								<div class="flex line-through text-gray-700 text-xl w-full" data-v-59de207e><span data-after="هزار تومان"
+								                                                                                  class="after:content-[attr(data-after)] after:text-sm items-center after:left-0 relative"
+								                                                                                  data-v-59de207e>150،000</span></div>
+								<div class="flex gap-x-4 items-center justify-between text-gray-700 text-xl w-full" data-v-59de207e><span data-after="هزار تومان"
+								                                                                                                          class="after:content-[attr(data-after)] text-customLightblue after:text-sm items-center after:left-0 relative"
+								                                                                                                          data-v-59de207e>150،000</span>
+									<div class="px-2 py-1 bg-customLightGray text-xs rounded" data-v-59de207e>40%</div>
+									<div class="border-2 group-hover:bg-customDarkblue group-hover:text-white transition duration-150 items-center justify-center rounded-xl border-customDarkblue"
+									     data-v-59de207e>
+										<button class="flex justify-center" data-v-59de207e><span class="icon justify-center w-10 flex text-4xl icon-trolley" data-v-59de207e></span></button>
+									</div>
+								</div>
+							</div>
+							<div class="single-product-item group col-span-3" data-v-59de207e>
+								<div class="w-full flex" data-v-59de207e><img src="/_nuxt/img/product1.1caab58.png" alt class="w-full rounded-lg" data-v-59de207e></div>
+								<div class="flex" data-v-59de207e><h3 class="text-customDarkblue cursor-pointer text-base font-light leading-7" data-v-59de207e>
+									لنز سوپر واید گوشی موبایل F30 0.3X Super Wide JSJSJSJSJSJSJSJs
+								</h3></div>
+								<div class="flex cursor-pointer text-orange-500 text-xs justify-end w-full" data-v-59de207e><a data-v-59de207e>VIVU برند</a></div>
+								<div class="flex line-through text-gray-700 text-xl w-full" data-v-59de207e><span data-after="هزار تومان"
+								                                                                                  class="after:content-[attr(data-after)] after:text-sm items-center after:left-0 relative"
+								                                                                                  data-v-59de207e>150،000</span></div>
+								<div class="flex gap-x-4 items-center justify-between text-gray-700 text-xl w-full" data-v-59de207e><span data-after="هزار تومان"
+								                                                                                                          class="after:content-[attr(data-after)] text-customLightblue after:text-sm items-center after:left-0 relative"
+								                                                                                                          data-v-59de207e>150،000</span>
+									<div class="px-2 py-1 bg-customLightGray text-xs rounded" data-v-59de207e>40%</div>
+									<div class="border-2 group-hover:bg-customDarkblue group-hover:text-white transition duration-150 items-center justify-center rounded-xl border-customDarkblue"
+									     data-v-59de207e>
+										<button class="flex justify-center" data-v-59de207e><span class="icon justify-center w-10 flex text-4xl icon-trolley" data-v-59de207e></span></button>
+									</div>
+								</div>
+							</div>
+							<div class="single-product-item group col-span-3" data-v-59de207e>
+								<div class="w-full flex" data-v-59de207e><img src="/_nuxt/img/product1.1caab58.png" alt class="w-full rounded-lg" data-v-59de207e></div>
+								<div class="flex" data-v-59de207e><h3 class="text-customDarkblue cursor-pointer text-base font-light leading-7" data-v-59de207e>
+									لنز سوپر واید گوشی موبایل F30 0.3X Super Wide JSJSJSJSJSJSJSJs
+								</h3></div>
+								<div class="flex cursor-pointer text-orange-500 text-xs justify-end w-full" data-v-59de207e><a data-v-59de207e>VIVU برند</a></div>
+								<div class="flex line-through text-gray-700 text-xl w-full" data-v-59de207e><span data-after="هزار تومان"
+								                                                                                  class="after:content-[attr(data-after)] after:text-sm items-center after:left-0 relative"
+								                                                                                  data-v-59de207e>150،000</span></div>
+								<div class="flex gap-x-4 items-center justify-between text-gray-700 text-xl w-full" data-v-59de207e><span data-after="هزار تومان"
+								                                                                                                          class="after:content-[attr(data-after)] text-customLightblue after:text-sm items-center after:left-0 relative"
+								                                                                                                          data-v-59de207e>150،000</span>
+									<div class="px-2 py-1 bg-customLightGray text-xs rounded" data-v-59de207e>40%</div>
+									<div class="border-2 group-hover:bg-customDarkblue group-hover:text-white transition duration-150 items-center justify-center rounded-xl border-customDarkblue"
+									     data-v-59de207e>
+										<button class="flex justify-center" data-v-59de207e><span class="icon justify-center w-10 flex text-4xl icon-trolley" data-v-59de207e></span></button>
+									</div>
+								</div>
+							</div>
+							<div class="single-product-item group col-span-3" data-v-59de207e>
+								<div class="w-full flex" data-v-59de207e><img src="/_nuxt/img/product1.1caab58.png" alt class="w-full rounded-lg" data-v-59de207e></div>
+								<div class="flex" data-v-59de207e><h3 class="text-customDarkblue cursor-pointer text-base font-light leading-7" data-v-59de207e>
+									لنز سوپر واید گوشی موبایل F30 0.3X Super Wide JSJSJSJSJSJSJSJs
+								</h3></div>
+								<div class="flex cursor-pointer text-orange-500 text-xs justify-end w-full" data-v-59de207e><a data-v-59de207e>VIVU برند</a></div>
+								<div class="flex line-through text-gray-700 text-xl w-full" data-v-59de207e><span data-after="هزار تومان"
+								                                                                                  class="after:content-[attr(data-after)] after:text-sm items-center after:left-0 relative"
+								                                                                                  data-v-59de207e>150،000</span></div>
+								<div class="flex gap-x-4 items-center justify-between text-gray-700 text-xl w-full" data-v-59de207e><span data-after="هزار تومان"
+								                                                                                                          class="after:content-[attr(data-after)] text-customLightblue after:text-sm items-center after:left-0 relative"
+								                                                                                                          data-v-59de207e>150،000</span>
+									<div class="px-2 py-1 bg-customLightGray text-xs rounded" data-v-59de207e>40%</div>
+									<div class="border-2 group-hover:bg-customDarkblue group-hover:text-white transition duration-150 items-center justify-center rounded-xl border-customDarkblue"
+									     data-v-59de207e>
+										<button class="flex justify-center" data-v-59de207e><span class="icon justify-center w-10 flex text-4xl icon-trolley" data-v-59de207e></span></button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="bg-customLightblue my-7 w-full">
+					<div class="container p-14 mx-auto px-5 sm:px-6 lg:px-8">
+						<div class="grid gap-5 grid-cols-6"><img src="/_nuxt/img/category1.1786de5.png" alt="" class="w-full flex rounded-md col-span-2"><img src="/_nuxt/img/category2.1fa580d.png"
+						                                                                                                                                      alt=""
+						                                                                                                                                      class="w-full flex rounded-md col-span-2"><img
+							src="/_nuxt/img/category3.1786de5.png" alt="" class="w-full flex rounded-md col-span-2">
+							<div class="btn-custom-white col-span-1 font-light bg-customDarkblue text-white"><a href="#">دسته بندی محصولات</a></div>
+							<div class="btn-custom-white col-span-1 font-light bg-white text-customDarkblue"><a href="#">دسته بندی محصولات</a></div>
+							<div class="btn-custom-white col-span-1 font-light bg-white text-customDarkblue"><a href="#">دسته بندی محصولات</a></div>
+							<div class="btn-custom-white col-span-1 font-light bg-white text-customDarkblue"><a href="#">دسته بندی محصولات</a></div>
+							<div class="btn-custom-white col-span-1 font-light bg-white text-customDarkblue"><a href="#">دسته بندی محصولات</a></div>
+							<div class="btn-custom-white col-span-1 font-light bg-white text-customDarkblue"><a href="#">دسته بندی محصولات</a></div>
+						</div>
+					</div>
+				</div>
+				<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+					<div class="w-full">
+						<div class="grid mt-7 gap-x-7 grid-cols-12 justify-between">
+							<div class="col-span-10 flex gap-x-5"><span class="flex"><span class="icon text-3xl icon-shield"></span></span>
+								<div class="flex text-gray-600 text-2xl">مقالات ما</div>
+							</div>
+							<div class="col-span-2 justify-end flex">
+								<button class="custom-btn-secondary-outline">
+									مقالات بیشتر را بخوانید
+								</button>
+							</div>
+						</div>
+						<div class="grid mt-7 gap-7 grid-cols-3">
+							<div class="flex col-span-1 relative">
+								<div class="flex w-full"><img src="/_nuxt/img/blog1.1055fb6.png" alt class="rounded-md w-full"></div>
+								<div class="absolute rounded-md text-over-image bottom-0 text-center inset-x-0"><h2 class="text-white mb-2 text-xl"><a href="#">یک پست اختصاصی</a></h2>
+									<div class="flex justify-center"><span class="bg-white flex items-center px-2 crooked-line relative text-xl"><span class="flex">JANEBI</span> <span
+										class="icon text-xl flex icon-book"></span></span></div>
+								</div>
+							</div>
+							<div class="grid gap-7 grid-rows-2 col-span-1 relative">
+								<div class="grid grid-cols-7 gap-4 row-span-1 w-full border border-customDarkWhite rounded-md p-4">
+									<div class="grid justify-center text-xl font-thin items-center grid-rows-2 col-span-2 w-full h-full bg-customLightSky rounded-md">
+										<div class="flex h-full border-b-2 border-gray-100 row-span-1 items-center justify-center">
+											4
+										</div>
+										<div class="flex h-full row-span-1 items-center justify-center">
+											اردیبشهت
+										</div>
+									</div>
+									<div class="col-span-5 font-thin gap-4 flex flex-wrap">
+										<div class="w-full"><h2 class="text-base font-medium"><a href="#"> چگونه کیبورد بلوتوثی را به گوشی وصل کنیم؟ </a></h2></div>
+										<div class="w-full"><span class="text-justify text-sm">
+        توضیحات در این بخش ایجاد می شود و میتواند یک خط توضیحات در این بخش
+        ایجاد می شود و میتواند یک خط
+      </span></div>
+										<div class="w-full justify-between flex">
+											<div class="flex items-center text-gray-500 gap-x-2"><span class="icon text-base icon-file"></span> <span class="text-xs">اخبار روز</span></div>
+											<div class="flex items-center text-gray-500 gap-x-2"><span class="icon text-base icon-clock"></span> <span class="text-xs">دقیقه مطالعه 14</span></div>
+										</div>
+									</div>
+								</div>
+								<div class="grid grid-cols-7 gap-4 row-span-1 w-full border border-customDarkWhite rounded-md p-4">
+									<div class="grid justify-center text-xl font-thin items-center grid-rows-2 col-span-2 w-full h-full bg-customLightSky rounded-md">
+										<div class="flex h-full border-b-2 border-gray-100 row-span-1 items-center justify-center">
+											4
+										</div>
+										<div class="flex h-full row-span-1 items-center justify-center">
+											اردیبشهت
+										</div>
+									</div>
+									<div class="col-span-5 font-thin gap-4 flex flex-wrap">
+										<div class="w-full"><h2 class="text-base font-medium"><a href="#"> چگونه کیبورد بلوتوثی را به گوشی وصل کنیم؟ </a></h2></div>
+										<div class="w-full"><span class="text-justify text-sm">
+        توضیحات در این بخش ایجاد می شود و میتواند یک خط توضیحات در این بخش
+        ایجاد می شود و میتواند یک خط
+      </span></div>
+										<div class="w-full justify-between flex">
+											<div class="flex items-center text-gray-500 gap-x-2"><span class="icon text-base icon-file"></span> <span class="text-xs">اخبار روز</span></div>
+											<div class="flex items-center text-gray-500 gap-x-2"><span class="icon text-base icon-clock"></span> <span class="text-xs">دقیقه مطالعه 14</span></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="grid gap-7 grid-rows-2 col-span-1 relative">
+								<div class="grid grid-cols-7 gap-4 row-span-1 w-full border border-customDarkWhite rounded-md p-4">
+									<div class="grid justify-center text-xl font-thin items-center grid-rows-2 col-span-2 w-full h-full bg-customLightSky rounded-md">
+										<div class="flex h-full border-b-2 border-gray-100 row-span-1 items-center justify-center">
+											4
+										</div>
+										<div class="flex h-full row-span-1 items-center justify-center">
+											اردیبشهت
+										</div>
+									</div>
+									<div class="col-span-5 font-thin gap-4 flex flex-wrap">
+										<div class="w-full"><h2 class="text-base font-medium"><a href="#"> چگونه کیبورد بلوتوثی را به گوشی وصل کنیم؟ </a></h2></div>
+										<div class="w-full"><span class="text-justify text-sm">
+        توضیحات در این بخش ایجاد می شود و میتواند یک خط توضیحات در این بخش
+        ایجاد می شود و میتواند یک خط
+      </span></div>
+										<div class="w-full justify-between flex">
+											<div class="flex items-center text-gray-500 gap-x-2"><span class="icon text-base icon-file"></span> <span class="text-xs">اخبار روز</span></div>
+											<div class="flex items-center text-gray-500 gap-x-2"><span class="icon text-base icon-clock"></span> <span class="text-xs">دقیقه مطالعه 14</span></div>
+										</div>
+									</div>
+								</div>
+								<div class="grid grid-cols-7 gap-4 row-span-1 w-full border border-customDarkWhite rounded-md p-4">
+									<div class="grid justify-center text-xl font-thin items-center grid-rows-2 col-span-2 w-full h-full bg-customLightSky rounded-md">
+										<div class="flex h-full border-b-2 border-gray-100 row-span-1 items-center justify-center">
+											4
+										</div>
+										<div class="flex h-full row-span-1 items-center justify-center">
+											اردیبشهت
+										</div>
+									</div>
+									<div class="col-span-5 font-thin gap-4 flex flex-wrap">
+										<div class="w-full"><h2 class="text-base font-medium"><a href="#"> چگونه کیبورد بلوتوثی را به گوشی وصل کنیم؟ </a></h2></div>
+										<div class="w-full"><span class="text-justify text-sm">
+        توضیحات در این بخش ایجاد می شود و میتواند یک خط توضیحات در این بخش
+        ایجاد می شود و میتواند یک خط
+      </span></div>
+										<div class="w-full justify-between flex">
+											<div class="flex items-center text-gray-500 gap-x-2"><span class="icon text-base icon-file"></span> <span class="text-xs">اخبار روز</span></div>
+											<div class="flex items-center text-gray-500 gap-x-2"><span class="icon text-base icon-clock"></span> <span class="text-xs">دقیقه مطالعه 14</span></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<footer class="bg-customMediumGray mt-7 w-full">
+					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+						<div class="bg-customLighterMediumGray gap-7 w-full grid justify-between grid-cols-4 p-4 rounded-b-md">
+							<div class="col-span-1 grid grid-cols-4">
+								<div class="col-span-1">
+									<svg id="delivery-fast" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+										<path id="Rectangle_984" d="M48,0H0V48H48Z" fill="none"></path>
+										<g id="Group_6942" transform="translate(1.5 7.312)">
+											<path id="Path_26" d="M37.5,37H30V25l6-3,4.5-12H54V37H49.5" transform="translate(-30 -10)" fill="none" stroke="#d8d8d8" stroke-linecap="round"
+											      stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.3"></path>
+											<circle id="Ellipse_15" cx="6" cy="6" r="6" transform="translate(7.5 21)" fill="none" stroke="#d8d8d8" stroke-linecap="round" stroke-linejoin="round"
+											        stroke-miterlimit="10" stroke-width="2.3"></circle>
+											<path id="Path_27" d="M44,18v6H38" transform="translate(-26 -12)" fill="none" stroke="#d8d8d8" stroke-linecap="round" stroke-linejoin="round"
+											      stroke-miterlimit="10" stroke-width="2.3"></path>
+											<path id="Line_33" d="M0,0H15" transform="translate(30)" fill="none" stroke="#2c3246" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+											      stroke-width="2.3"></path>
+											<path id="Line_34" d="M0,0H10.5" transform="translate(30 7.5)" fill="none" stroke="#2c3246" stroke-linecap="round" stroke-linejoin="round"
+											      stroke-miterlimit="10" stroke-width="2.3"></path>
+											<path id="Line_35" d="M0,0H6" transform="translate(30 15)" fill="none" stroke="#2c3246" stroke-linecap="round" stroke-linejoin="round"
+											      stroke-miterlimit="10" stroke-width="2.3"></path>
+										</g>
+									</svg>
+								</div>
+								<div class="col-span-3 grid grid-rows-2">
+									<div class="row-span-1 text-customGray">Widget Kala</div>
+									<div class="row-span-1 text-white text-xs">
+										ارسال به تمام نقاط کشور
+									</div>
+								</div>
+							</div>
+							<div class="col-span-1 grid grid-cols-4">
+								<div class="col-span-1">
+									<svg xmlns="http://www.w3.org/2000/svg" width="36.544" height="37.724" viewBox="0 0 36.544 37.724">
+										<g id="Group_6941" transform="translate(1.15 1.15)">
+											<path id="Path_23" d="M33.627,20.856V15.542A3.542,3.542,0,0,0,30.085,12H23" transform="translate(-10.601 -6.096)" fill="none" stroke="#2c3246"
+											      stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.3"></path>
+											<path id="Path_24" d="M27.723,13.447,23,8.723,27.723,4" transform="translate(-10.601 -2.819)" fill="none" stroke="#2c3246" stroke-linecap="round"
+											      stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.3"></path>
+											<circle id="Ellipse_13" cx="3.542" cy="3.542" r="3.542" transform="translate(7.085 28.34)" fill="none" stroke="#d8d8d8" stroke-linecap="round"
+											        stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.3"></circle>
+											<circle id="Ellipse_14" cx="3.542" cy="3.542" r="3.542" transform="translate(27.159 28.34)" fill="none" stroke="#d8d8d8" stroke-linecap="round"
+											        stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.3"></circle>
+											<path id="Path_25" d="M30.93,7.9h5.314L33.882,25.616H10.266L6.723,2H2" transform="translate(-2 -2)" fill="none" stroke="#d8d8d8" stroke-linecap="round"
+											      stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.3"></path>
+										</g>
+									</svg>
+								</div>
+								<div class="col-span-3 grid grid-rows-2">
+									<div class="row-span-1 text-customGray">Widget Kala</div>
+									<div class="row-span-1 text-white text-xs">
+										مشاوره و پشتیبانی از سفارش تا تحویل
+									</div>
+								</div>
+							</div>
+							<div class="col-span-1 grid grid-cols-4">
+								<div class="col-span-1">
+									<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+										<g id="hand-card" transform="translate(0 0.105)">
+											<path id="Rectangle_985" d="M0,0H48V48H0Z" transform="translate(0 -0.105)" fill="none"></path>
+											<g id="Group_6943" transform="translate(1.5 6.457)">
+												<path id="Line_36" d="M0,0H17.3" transform="translate(0 7.5)" fill="none" stroke="#2c3246" stroke-linecap="round" stroke-linejoin="round"
+												      stroke-miterlimit="10" stroke-width="2.3"></path>
+												<path id="Line_37" d="M0,0H27.638" transform="translate(0 13.5)" fill="none" stroke="#2c3246" stroke-linecap="round" stroke-linejoin="round"
+												      stroke-miterlimit="10" stroke-width="2.3"></path>
+												<path id="Line_38" d="M0,0H7.5" transform="translate(6 18.75)" fill="none" stroke="#2c3246" stroke-linecap="round" stroke-linejoin="round"
+												      stroke-miterlimit="10" stroke-width="2.3"></path>
+												<path id="Path_28" d="M32,25.871V33H2V9H32v4.5" transform="translate(-2 -9)" fill="none" stroke="#d8d8d8" stroke-linecap="round" stroke-linejoin="round"
+												      stroke-miterlimit="10" stroke-width="2.3"></path>
+												<path id="Path_29" d="M41,30c-4.5,0-9-4.5-9-9H27.5a6,6,0,0,1-6-6H35a15,15,0,1,1,0,30H18.5A4.5,4.5,0,0,1,14,40.5V39H27.5" transform="translate(-5 -10.5)"
+												      fill="none" stroke="#d8d8d8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.3"></path>
+												<path id="Path_30" d="M12.5,45.5A4.5,4.5,0,0,1,8,41" transform="translate(-3.5 -17)" fill="none" stroke="#d8d8d8" stroke-linecap="round"
+												      stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.3"></path>
+											</g>
+										</g>
+									</svg>
+								</div>
+								<div class="col-span-3 grid grid-rows-2">
+									<div class="row-span-1 text-customGray">Widget Kala</div>
+									<div class="row-span-1 text-white text-xs">تحویل درب منزل</div>
+								</div>
+							</div>
+							<div class="col-span-1 grid grid-cols-4">
+								<div class="col-span-1">
+									<svg id="guaranty" xmlns="http://www.w3.org/2000/svg" width="37.618" height="37.618" viewBox="0 0 37.618 37.618">
+										<path id="Path_343" data-name="Path 343" d="M0,0H37.618V37.618H0Z" fill="none"></path>
+										<g id="Group_153" data-name="Group 153" transform="translate(4.702 1.616)">
+											<path id="Path_344" data-name="Path 344" d="M36.214,21.809c0,10.58-14.107,15.282-14.107,15.282S8,32.389,8,21.809V6.527L22.107,3,36.214,6.527Z"
+											      transform="translate(-8 -3)" fill="none" stroke="#d8d8d8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+											      stroke-width="2.3"></path>
+											<path id="Path_345" data-name="Path 345" d="M21,26.6l4.7,4.7,9.4-10.972" transform="translate(-13.359 -10.145)" fill="none" stroke="#2c3246"
+											      stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.3"></path>
+										</g>
+									</svg>
+								</div>
+								<div class="col-span-3 grid grid-rows-2">
+									<div class="row-span-1 text-customGray">Widget Kala</div>
+									<div class="row-span-1 text-white text-xs">
+										اطمینان در خرید انلاین
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container mt-7 mx-auto px-4 sm:px-6 lg:px-8">
+						<div class="grid gap-x-7 grid-cols-2 border-b-2 border-customLighterMediumGray pb-7">
+							<div class="col-span-1 flex flex-wrap gap-4">
+								<div class="flex w-full">
+									<div class="grid grid-cols-3 items-center">
+										<div class="col-span-2 flex-wrap flex"><span class="flex items-center gap-3 text-2xl w-full"><span class="text-white">Widget Kala</span></span> <span
+											class="flex text-xs w-full">online shopping accessories</span></div>
+										<div class="col-span-1 flex-wrap flex">
+											<svg xmlns="http://www.w3.org/2000/svg" width="32.192" height="32.66" viewBox="0 0 32.192 32.66">
+												<path id="Path_311" data-name="Path 311"
+												      d="M3328.438,3761.054a.751.751,0,0,0-.181-.278l-4.178-3.937a2.138,2.138,0,0,0-1.467-.583h-8.632a.646.646,0,0,0-.084,0h-.058a.755.755,0,0,0-.278.055h0a.764.764,0,0,0-.415.415h0a.76.76,0,0,0-.055.278v9.924h-9.924a.761.761,0,0,0-.761.761v.026a.749.749,0,0,0-.044.262l.089,8.627a2.176,2.176,0,0,0,.63,1.514l4.023,4.081h0a2.8,2.8,0,0,0,2.008.848h17.28a2.811,2.811,0,0,0,2.806-2.809v-17.28A2.793,2.793,0,0,0,3328.438,3761.054Zm-5.4-3.1,2.344,2.208h-7.315l-2.386-2.386h6.931a.619.619,0,0,1,.425.181Zm-15.585,12.895-2.425-2.386h8.5l2.386,2.386Zm9.538-1.084-2.386-2.386v-8.525l2.386,2.386Zm-13.023,6.824-.073-7.1,2.409,2.362v7.373l-2.144-2.176a.665.665,0,0,1-.192-.452Zm23.705,3.656a1.284,1.284,0,0,1-1.283,1.283H3309.1a1.283,1.283,0,0,1-1.283-1.283v-7.874h9.928a.761.761,0,0,0,.761-.761v-9.926h7.874a1.283,1.283,0,0,1,1.283,1.283Z"
+												      transform="translate(-3297.005 -3750.387)" fill="#008aff"></path>
+												<path id="Path_312" data-name="Path 312"
+												      d="M3287.334,3749.537h0a.76.76,0,0,0,.055-.278h0v-9.924h9.924a.759.759,0,0,0,.48-1.349l-3.7-3.64a.762.762,0,0,0-.69-.446H3282.72a.761.761,0,0,0-.761.761v10.587a.744.744,0,0,0,.013.234v.031a.728.728,0,0,0,.052.152.761.761,0,0,0,.123.187v.016l.016.016h0l3.911,3.91a.753.753,0,0,0,.262.166h0a.74.74,0,0,0,.556,0h0A.763.763,0,0,0,3287.334,3749.537Zm-3.853-13.042,2.386,2.386v8.525l-2.386-2.386Zm9.538-1.081,2.425,2.386h-8.5l-2.386-2.386Z"
+												      transform="translate(-3281.955 -3733.9)" fill="#008aff"></path>
+											</svg>
+										</div>
+									</div>
+								</div>
+								<div class="flex w-full">
+									<div class="w-full"><span class="text-justify flex font-thin text-white leading-5">
+              ورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+              استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
+              در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
+              نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
+              کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان
+              جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت
+            </span></div>
+								</div>
+								<div class="flex justify-between w-full gap-x-3">
+									<div class="flex gap-x-3 w-full">
+										<div class="flex">
+											<svg xmlns="http://www.w3.org/2000/svg" width="21" height="18.197" viewBox="0 0 21 18.197">
+												<g id="Group_178" data-name="Group 178" transform="translate(-7375 1805)">
+													<line id="Line_52" data-name="Line 52" y2="6" transform="translate(7376.5 -1800.5)" fill="none" stroke="#50a8ea" stroke-linecap="round"
+													      stroke-width="1"></line>
+													<line id="Line_53" data-name="Line 53" x2="4" y2="7" transform="translate(7376.5 -1794.5)" fill="none" stroke="#50a8ea" stroke-linecap="round"
+													      stroke-width="1"></line>
+													<line id="Line_54" data-name="Line 54" x1="5" y2="7" transform="translate(7380.5 -1794.5)" fill="none" stroke="#50a8ea" stroke-linecap="round"
+													      stroke-width="1"></line>
+													<line id="Line_55" data-name="Line 55" y2="7" transform="translate(7385.5 -1800.5)" fill="none" stroke="#50a8ea" stroke-width="1"></line>
+													<line id="Line_56" data-name="Line 56" y2="6" transform="translate(7385.5 -1800.5)" fill="none" stroke="#50a8ea" stroke-linecap="round"
+													      stroke-width="1"></line>
+													<line id="Line_57" data-name="Line 57" x2="5" y2="7" transform="translate(7385.5 -1794.5)" fill="none" stroke="#50a8ea" stroke-linecap="round"
+													      stroke-width="1"></line>
+													<line id="Line_58" data-name="Line 58" x1="4" y2="7" transform="translate(7390.5 -1794.5)" fill="none" stroke="#50a8ea" stroke-linecap="round"
+													      stroke-width="1"></line>
+													<line id="Line_59" data-name="Line 59" y2="6.5" transform="translate(7394.5 -1801)" fill="none" stroke="#50a8ea" stroke-linecap="round"
+													      stroke-width="1"></line>
+													<g id="Rectangle_459" data-name="Rectangle 459" transform="translate(7375 -1805)" fill="none" stroke="#50a8ea" stroke-width="1">
+														<rect width="3" height="2" stroke="none"></rect>
+														<rect x="0.5" y="0.5" width="2" height="1" fill="none"></rect>
+													</g>
+													<g id="Rectangle_460" data-name="Rectangle 460" transform="translate(7384 -1805)" fill="none" stroke="#50a8ea" stroke-width="1">
+														<rect width="3" height="2" stroke="none"></rect>
+														<rect x="0.5" y="0.5" width="2" height="1" fill="none"></rect>
+													</g>
+													<g id="Rectangle_461" data-name="Rectangle 461" transform="translate(7393 -1805)" fill="none" stroke="#50a8ea" stroke-width="1">
+														<rect width="3" height="2" stroke="none"></rect>
+														<rect x="0.5" y="0.5" width="2" height="1" fill="none"></rect>
+													</g>
+												</g>
+											</svg>
+										</div>
+										<div class="flex"><span class="text-white">ما را در شبکه اجتماعی همراهی کنید</span></div>
+									</div>
+									<div class="flex">
+										<div class="flex gap-x-3"><span class="flex"><a href><svg xmlns="http://www.w3.org/2000/svg" width="21.992" height="20.007" viewBox="0 0 21.992 20.007"
+										                                                          class="fill-white"><path id="icons8-telegram-app-150"
+										                                                                                   d="M24.576,6.277A1.533,1.533,0,0,0,23,6.158h0c-.641.257-18.137,7.762-18.85,8.068-.13.045-1.261.467-1.144,1.408a1.7,1.7,0,0,0,1.124,1.239L8.58,18.4c.3.982,1.383,4.607,1.624,5.381.15.483.395,1.117.823,1.247a1.022,1.022,0,0,0,.992-.178l2.72-2.522,4.39,3.424.1.063a2.114,2.114,0,0,0,.856.2,1.584,1.584,0,0,0,.606-.119,1.835,1.835,0,0,0,.948-.968L24.923,7.878A1.511,1.511,0,0,0,24.576,6.277ZM12.5,19.006l-1.5,4-1.5-5,11.5-8.5Z"
+										                                                                                   transform="translate(-2.999 -6.002)"></path></svg></a></span> <span
+											class="flex"><a href><svg xmlns="http://www.w3.org/2000/svg" width="21.645" height="17.753" viewBox="0 0 21.645 17.753" class="fill-white"><path
+											id="icons8-twitter-150"
+											d="M14.8,5.469a4.7,4.7,0,0,0-4.692,4.692,4.6,4.6,0,0,0,.054.46,11.633,11.633,0,0,1-7.95-4.205.435.435,0,0,0-.374-.164.431.431,0,0,0-.343.218,4.594,4.594,0,0,0,.311,5.125c-.112-.049-.233-.076-.338-.135a.432.432,0,0,0-.635.379v.054a4.668,4.668,0,0,0,2.042,3.827.334.334,0,0,1-.041,0,.432.432,0,0,0-.487.554,4.7,4.7,0,0,0,3.245,3.069,8.084,8.084,0,0,1-4.151,1.149,8.124,8.124,0,0,1-.96-.054.433.433,0,0,0-.284.8,12.478,12.478,0,0,0,6.761,1.988,12.152,12.152,0,0,0,9.33-4.1,13.021,13.021,0,0,0,3.232-8.464c0-.123-.01-.243-.014-.365a9.063,9.063,0,0,0,2.055-2.15.433.433,0,0,0-.541-.636c-.223.1-.483.11-.717.189a4.592,4.592,0,0,0,.73-1.352.432.432,0,0,0-.635-.5,8.108,8.108,0,0,1-2.42.933A4.658,4.658,0,0,0,14.8,5.469Zm0,.865a3.831,3.831,0,0,1,2.8,1.217.436.436,0,0,0,.406.122,8.9,8.9,0,0,0,1.623-.487A3.852,3.852,0,0,1,18.52,8.2a.433.433,0,0,0,.284.811,8.94,8.94,0,0,0,1.23-.338,8.219,8.219,0,0,1-1.217,1.082.431.431,0,0,0-.176.379c.007.176.013.35.013.527a12.173,12.173,0,0,1-3.015,7.883,11.241,11.241,0,0,1-8.681,3.813A11.571,11.571,0,0,1,2.132,21.3,8.957,8.957,0,0,0,7,19.45a.433.433,0,0,0-.257-.771,3.79,3.79,0,0,1-3.259-2.028h.068A4.72,4.72,0,0,0,4.8,16.488a.433.433,0,0,0-.027-.838,3.8,3.8,0,0,1-2.961-3.123,4.594,4.594,0,0,0,1.366.284.433.433,0,0,0,.257-.8,3.831,3.831,0,0,1-1.7-3.191,3.759,3.759,0,0,1,.3-1.379,12.49,12.49,0,0,0,8.613,4.124.438.438,0,0,0,.355-.152.432.432,0,0,0,.091-.375,3.863,3.863,0,0,1-.108-.879A3.819,3.819,0,0,1,14.8,6.334Z"
+											transform="translate(0.008 -5.469)"></path></svg></a></span> <span class="flex"><a href><svg xmlns="http://www.w3.org/2000/svg" width="20.366"
+										                                                                                                 height="20.366" viewBox="0 0 20.366 20.366" class="fill-white"><path
+											id="icons8-whatsapp-150"
+											d="M12.183,2A10.14,10.14,0,0,0,3.321,17.145L2.016,21.8a.443.443,0,0,0,.533.549l4.857-1.2A10.173,10.173,0,1,0,12.183,2Zm0,.885A9.3,9.3,0,1,1,7.65,20.3a.443.443,0,0,0-.323-.043L3.074,21.311l1.141-4.069A.443.443,0,0,0,4.17,16.9,9.3,9.3,0,0,1,12.183,2.885ZM8.483,6.87a1.408,1.408,0,0,0-1.022.464A3.448,3.448,0,0,0,6.427,9.789a5.221,5.221,0,0,0,1.157,2.937h0c-.012-.016.158.231.386.527a14.025,14.025,0,0,0,.944,1.1,10.253,10.253,0,0,0,3.314,2.406,15.77,15.77,0,0,0,1.531.559,4.081,4.081,0,0,0,1.844.118,3.113,3.113,0,0,0,1.16-.479,2.152,2.152,0,0,0,.956-1.036,3.652,3.652,0,0,0,.208-.911,2.089,2.089,0,0,0,0-.348.607.607,0,0,0-.1-.348c-.206-.338-.44-.347-.683-.468-.135-.067-.521-.255-.907-.439s-.72-.347-.926-.42A1.043,1.043,0,0,0,14.8,12.9a.881.881,0,0,0-.587.387c-.125.185-.628.778-.781.953l-.049-.025c-.19-.094-.421-.174-.764-.355A6.326,6.326,0,0,1,11.378,13h0a7.312,7.312,0,0,1-1.343-1.647c.01-.012,0,0,.021-.019h0c.158-.155.3-.341.416-.477a2.208,2.208,0,0,0,.322-.522.979.979,0,0,0-.022-.849h0c.006.013-.05-.112-.111-.255s-.138-.33-.221-.529c-.166-.4-.351-.844-.461-1.105h0a1.152,1.152,0,0,0-.534-.636.856.856,0,0,0-.44-.077H9C8.841,6.872,8.661,6.87,8.483,6.87Zm0,.885c.171,0,.339,0,.48.009s.136.008.108-.005.01-.017.093.178c.108.256.294.7.46,1.1.083.2.161.387.223.534s.1.229.135.307h0c.038.076.035.027.022.054a1.289,1.289,0,0,1-.2.34c-.144.166-.291.351-.368.427a.952.952,0,0,0-.267.374.856.856,0,0,0,.082.693,8.1,8.1,0,0,0,1.543,1.9,7.242,7.242,0,0,0,1.414.981c.393.207.714.329.785.364a.994.994,0,0,0,.572.124.862.862,0,0,0,.521-.291h0c.158-.179.627-.715.853-1.045.01,0,.006,0,.081.028h0c.034.012.462.2.844.386s.769.371.895.433c.182.09.267.148.29.149a1.038,1.038,0,0,1,0,.145,2.817,2.817,0,0,1-.158.687,1.67,1.67,0,0,1-.6.589,2.753,2.753,0,0,1-.817.351,3.173,3.173,0,0,1-1.449-.086,14.8,14.8,0,0,1-1.449-.528,9.463,9.463,0,0,1-3.02-2.2,13.16,13.16,0,0,1-.885-1.035c-.212-.276-.3-.42-.382-.521h0a4.783,4.783,0,0,1-.977-2.4,2.334,2.334,0,0,1,.8-1.852A.525.525,0,0,1,8.483,7.755Z"
+											transform="translate(-2 -2)"></path></svg></a></span> <span class="flex"><a href><svg xmlns="http://www.w3.org/2000/svg" width="20.5" height="20.5"
+										                                                                                          viewBox="0 0 20.5 20.5" class="fill-white"><path
+											id="icons8-instagram-64"
+											d="M6.95,1A5.962,5.962,0,0,0,1,6.95v8.605A5.961,5.961,0,0,0,6.95,21.5h8.605A5.961,5.961,0,0,0,21.5,15.55V6.95A5.962,5.962,0,0,0,15.55,1Zm0,1.577h8.6A4.359,4.359,0,0,1,19.923,6.95v8.6a4.357,4.357,0,0,1-4.367,4.373H6.95a4.357,4.357,0,0,1-4.374-4.367V6.95A4.359,4.359,0,0,1,6.95,2.577ZM17.558,4.154a.788.788,0,1,0,.788.788A.786.786,0,0,0,17.558,4.154ZM11.25,5.731a5.519,5.519,0,1,0,5.519,5.519A5.534,5.534,0,0,0,11.25,5.731Zm0,1.577A3.942,3.942,0,1,1,7.308,11.25,3.93,3.93,0,0,1,11.25,7.308Z"
+											transform="translate(-1 -1)"></path></svg></a></span></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-span-1 grid grid-cols-3 gap-4">
+								<div class="flex flex-wrap gap-4 col-span-1 w-full">
+									<div class="flex w-full"><span class="text-white">عنوان تیتر اول</span></div>
+									<div class="flex w-full">
+										<ul class="footer-list">
+											<li>عنوان تیتر اول</li>
+											<li>عنوان تیتر اول</li>
+											<li>عنوان تیتر اول</li>
+											<li>عنوان تیتر اول</li>
+											<li>عنوان تیتر اول</li>
+											<li>عنوان تیتر اول</li>
+											<li>عنوان تیتر اول</li>
+										</ul>
+									</div>
+								</div>
+								<div class="flex flex-wrap gap-4 col-span-1 w-full">
+									<div class="flex w-full"><span class="text-white">عنوان تیتر اول</span></div>
+									<div class="flex w-full">
+										<ul class="footer-list">
+											<li>عنوان تیتر اول</li>
+											<li>عنوان تیتر اول</li>
+											<li>عنوان تیتر اول</li>
+											<li>عنوان تیتر اول</li>
+											<li>عنوان تیتر اول</li>
+											<li>عنوان تیتر اول</li>
+											<li>عنوان تیتر اول</li>
+										</ul>
+									</div>
+								</div>
+								<div class="flex flex-wrap gap-4 col-span-1 w-full">
+									<div class="flex w-full"><span class="text-white">عنوان تیتر اول</span></div>
+									<div class="flex w-full">
+										<ul class="footer-list">
+											<li>عنوان تیتر اول</li>
+											<li>عنوان تیتر اول</li>
+											<li>عنوان تیتر اول</li>
+											<li>عنوان تیتر اول</li>
+											<li>عنوان تیتر اول</li>
+											<li>عنوان تیتر اول</li>
+											<li>عنوان تیتر اول</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="mt-7 grid gap-x-7 grid-cols-2 pb-7">
+							<div class="flex flex-wrap col-span-1 gap-4">
+								<div class="flex gap-x-3 w-full">
+									<div class="flex">
+										<svg xmlns="http://www.w3.org/2000/svg" width="21" height="18.197" viewBox="0 0 21 18.197">
+											<g id="Group_178" data-name="Group 178" transform="translate(-7375 1805)">
+												<line id="Line_52" data-name="Line 52" y2="6" transform="translate(7376.5 -1800.5)" fill="none" stroke="#50a8ea" stroke-linecap="round"
+												      stroke-width="1"></line>
+												<line id="Line_53" data-name="Line 53" x2="4" y2="7" transform="translate(7376.5 -1794.5)" fill="none" stroke="#50a8ea" stroke-linecap="round"
+												      stroke-width="1"></line>
+												<line id="Line_54" data-name="Line 54" x1="5" y2="7" transform="translate(7380.5 -1794.5)" fill="none" stroke="#50a8ea" stroke-linecap="round"
+												      stroke-width="1"></line>
+												<line id="Line_55" data-name="Line 55" y2="7" transform="translate(7385.5 -1800.5)" fill="none" stroke="#50a8ea" stroke-width="1"></line>
+												<line id="Line_56" data-name="Line 56" y2="6" transform="translate(7385.5 -1800.5)" fill="none" stroke="#50a8ea" stroke-linecap="round"
+												      stroke-width="1"></line>
+												<line id="Line_57" data-name="Line 57" x2="5" y2="7" transform="translate(7385.5 -1794.5)" fill="none" stroke="#50a8ea" stroke-linecap="round"
+												      stroke-width="1"></line>
+												<line id="Line_58" data-name="Line 58" x1="4" y2="7" transform="translate(7390.5 -1794.5)" fill="none" stroke="#50a8ea" stroke-linecap="round"
+												      stroke-width="1"></line>
+												<line id="Line_59" data-name="Line 59" y2="6.5" transform="translate(7394.5 -1801)" fill="none" stroke="#50a8ea" stroke-linecap="round"
+												      stroke-width="1"></line>
+												<g id="Rectangle_459" data-name="Rectangle 459" transform="translate(7375 -1805)" fill="none" stroke="#50a8ea" stroke-width="1">
+													<rect width="3" height="2" stroke="none"></rect>
+													<rect x="0.5" y="0.5" width="2" height="1" fill="none"></rect>
+												</g>
+												<g id="Rectangle_460" data-name="Rectangle 460" transform="translate(7384 -1805)" fill="none" stroke="#50a8ea" stroke-width="1">
+													<rect width="3" height="2" stroke="none"></rect>
+													<rect x="0.5" y="0.5" width="2" height="1" fill="none"></rect>
+												</g>
+												<g id="Rectangle_461" data-name="Rectangle 461" transform="translate(7393 -1805)" fill="none" stroke="#50a8ea" stroke-width="1">
+													<rect width="3" height="2" stroke="none"></rect>
+													<rect x="0.5" y="0.5" width="2" height="1" fill="none"></rect>
+												</g>
+											</g>
+										</svg>
+									</div>
+									<div class="flex"><span class="text-white"> خبرنامه ویجت کالا </span></div>
+								</div>
+								<div class="flex flex-wrap"><span class="w-full text-white text-xs">برای اطلاع از جدیدترین محصولات ما ایمیل خود را برای ما ارسال
+            کنید</span></div>
+								<div class="flex w-full news-letter"><input type="search" name="q" placeholder="برای اطلاع از جدیدترین محصولات ما ایمیل خود را برای ما ارسال کنید" autocomplete="off">
+									<span class="submit-button"><button type="submit" class="hover:shadow-outline"><span>جستجو</span></button></span></div>
+							</div>
+							<div class="grid grid-cols-2 col-span-1 gap-4">
+								<div class="flex-wrap flex col-span-1 gap-4">
+									<div class="flex gap-x-3 w-full">
+										<div class="flex">
+											<svg xmlns="http://www.w3.org/2000/svg" width="21" height="18.197" viewBox="0 0 21 18.197">
+												<g id="Group_178" data-name="Group 178" transform="translate(-7375 1805)">
+													<line id="Line_52" data-name="Line 52" y2="6" transform="translate(7376.5 -1800.5)" fill="none" stroke="#50a8ea" stroke-linecap="round"
+													      stroke-width="1"></line>
+													<line id="Line_53" data-name="Line 53" x2="4" y2="7" transform="translate(7376.5 -1794.5)" fill="none" stroke="#50a8ea" stroke-linecap="round"
+													      stroke-width="1"></line>
+													<line id="Line_54" data-name="Line 54" x1="5" y2="7" transform="translate(7380.5 -1794.5)" fill="none" stroke="#50a8ea" stroke-linecap="round"
+													      stroke-width="1"></line>
+													<line id="Line_55" data-name="Line 55" y2="7" transform="translate(7385.5 -1800.5)" fill="none" stroke="#50a8ea" stroke-width="1"></line>
+													<line id="Line_56" data-name="Line 56" y2="6" transform="translate(7385.5 -1800.5)" fill="none" stroke="#50a8ea" stroke-linecap="round"
+													      stroke-width="1"></line>
+													<line id="Line_57" data-name="Line 57" x2="5" y2="7" transform="translate(7385.5 -1794.5)" fill="none" stroke="#50a8ea" stroke-linecap="round"
+													      stroke-width="1"></line>
+													<line id="Line_58" data-name="Line 58" x1="4" y2="7" transform="translate(7390.5 -1794.5)" fill="none" stroke="#50a8ea" stroke-linecap="round"
+													      stroke-width="1"></line>
+													<line id="Line_59" data-name="Line 59" y2="6.5" transform="translate(7394.5 -1801)" fill="none" stroke="#50a8ea" stroke-linecap="round"
+													      stroke-width="1"></line>
+													<g id="Rectangle_459" data-name="Rectangle 459" transform="translate(7375 -1805)" fill="none" stroke="#50a8ea" stroke-width="1">
+														<rect width="3" height="2" stroke="none"></rect>
+														<rect x="0.5" y="0.5" width="2" height="1" fill="none"></rect>
+													</g>
+													<g id="Rectangle_460" data-name="Rectangle 460" transform="translate(7384 -1805)" fill="none" stroke="#50a8ea" stroke-width="1">
+														<rect width="3" height="2" stroke="none"></rect>
+														<rect x="0.5" y="0.5" width="2" height="1" fill="none"></rect>
+													</g>
+													<g id="Rectangle_461" data-name="Rectangle 461" transform="translate(7393 -1805)" fill="none" stroke="#50a8ea" stroke-width="1">
+														<rect width="3" height="2" stroke="none"></rect>
+														<rect x="0.5" y="0.5" width="2" height="1" fill="none"></rect>
+													</g>
+												</g>
+											</svg>
+										</div>
+										<div class="flex"><span class="text-white">اطلاعات تماس</span></div>
+									</div>
+									<div class="flex item-center gap-x-3 w-full">
+										<div class="flex">
+											<svg xmlns="http://www.w3.org/2000/svg" width="27.647" height="27.647" viewBox="0 0 27.647 27.647">
+												<g id="_31_Call" data-name="31_Call" transform="matrix(0.974, 0.225, -0.225, 0.974, 4.945, -10.812)">
+													<path id="Path_84" data-name="Path 84"
+													      d="M23.8,24.362a3.631,3.631,0,0,0-5.129,0h0a2.475,2.475,0,0,1-3.419,0l-3.419-3.419a2.417,2.417,0,0,1,0-3.419,3.633,3.633,0,0,0,0-5.129l-.855-.854a3.629,3.629,0,0,0-5.128,0,10.879,10.879,0,0,0,0,15.386l3.419,3.419a10.879,10.879,0,0,0,15.386,0,3.63,3.63,0,0,0,0-5.128Zm-.855,4.275a8.462,8.462,0,0,1-11.968,0L7.563,25.218a8.462,8.462,0,0,1,0-11.968,1.209,1.209,0,0,1,1.709,0l.855.854a1.211,1.211,0,0,1,0,1.71,4.834,4.834,0,0,0,0,6.838l3.419,3.419a4.951,4.951,0,0,0,6.838,0,1.209,1.209,0,0,1,1.709,0l.855.855a1.21,1.21,0,0,1,0,1.709Z"
+													      transform="translate(0)" fill="#9195a0"></path>
+												</g>
+											</svg>
+										</div>
+										<div class="flex gap-3"><span class="flex text-white text-xs">۹۹۰۳ ۱۷۱ ۰۹۱۲</span> <span class="flex text-white text-xs">۹۹۰۳ ۱۷۱ ۰۹۱۲</span></div>
+									</div>
+									<div class="flex item-center gap-x-3 w-full">
+										<div class="flex">
+											<svg xmlns="http://www.w3.org/2000/svg" width="23.538" height="17.653" viewBox="0 0 23.538 17.653">
+												<g id="_47_Mail" data-name="47_Mail" transform="translate(0 -8)">
+													<path id="Path_285" data-name="Path 285"
+													      d="M18.634,8H4.9A4.909,4.909,0,0,0,0,12.9V20.75a4.909,4.909,0,0,0,4.9,4.9h13.73a4.909,4.909,0,0,0,4.9-4.9V12.9A4.909,4.909,0,0,0,18.634,8Zm2.942,12.75a2.945,2.945,0,0,1-2.942,2.942H4.9A2.945,2.945,0,0,1,1.961,20.75V12.9A2.945,2.945,0,0,1,4.9,9.961h13.73A2.945,2.945,0,0,1,21.576,12.9Z"
+													      fill="#9195a0"></path>
+													<path id="Path_286" data-name="Path 286"
+													      d="M22.605,24.039l2.852-3.8a.981.981,0,1,0-1.569-1.177l-4.707,6.277a2.943,2.943,0,0,1-4.709,0L9.766,19.059A.981.981,0,1,0,8.2,20.236l2.852,3.8L8.288,26.8a.981.981,0,1,0,1.387,1.387l2.562-2.562.667.889a4.9,4.9,0,0,0,7.846,0l.667-.889,2.563,2.563A.981.981,0,1,0,25.366,26.8Z"
+													      transform="translate(-5.058 -6.744)" fill="#9195a0"></path>
+												</g>
+											</svg>
+										</div>
+										<div class="flex gap-3"><span class="flex text-white text-xs">info@widgetkala.com</span></div>
+									</div>
+								</div>
+								<div class="flex-wrap flex col-span-1 gap-4">
+									<div class="flex gap-x-3 w-full">
+										<div class="flex">
+											<svg xmlns="http://www.w3.org/2000/svg" width="21" height="18.197" viewBox="0 0 21 18.197">
+												<g id="Group_178" data-name="Group 178" transform="translate(-7375 1805)">
+													<line id="Line_52" data-name="Line 52" y2="6" transform="translate(7376.5 -1800.5)" fill="none" stroke="#50a8ea" stroke-linecap="round"
+													      stroke-width="1"></line>
+													<line id="Line_53" data-name="Line 53" x2="4" y2="7" transform="translate(7376.5 -1794.5)" fill="none" stroke="#50a8ea" stroke-linecap="round"
+													      stroke-width="1"></line>
+													<line id="Line_54" data-name="Line 54" x1="5" y2="7" transform="translate(7380.5 -1794.5)" fill="none" stroke="#50a8ea" stroke-linecap="round"
+													      stroke-width="1"></line>
+													<line id="Line_55" data-name="Line 55" y2="7" transform="translate(7385.5 -1800.5)" fill="none" stroke="#50a8ea" stroke-width="1"></line>
+													<line id="Line_56" data-name="Line 56" y2="6" transform="translate(7385.5 -1800.5)" fill="none" stroke="#50a8ea" stroke-linecap="round"
+													      stroke-width="1"></line>
+													<line id="Line_57" data-name="Line 57" x2="5" y2="7" transform="translate(7385.5 -1794.5)" fill="none" stroke="#50a8ea" stroke-linecap="round"
+													      stroke-width="1"></line>
+													<line id="Line_58" data-name="Line 58" x1="4" y2="7" transform="translate(7390.5 -1794.5)" fill="none" stroke="#50a8ea" stroke-linecap="round"
+													      stroke-width="1"></line>
+													<line id="Line_59" data-name="Line 59" y2="6.5" transform="translate(7394.5 -1801)" fill="none" stroke="#50a8ea" stroke-linecap="round"
+													      stroke-width="1"></line>
+													<g id="Rectangle_459" data-name="Rectangle 459" transform="translate(7375 -1805)" fill="none" stroke="#50a8ea" stroke-width="1">
+														<rect width="3" height="2" stroke="none"></rect>
+														<rect x="0.5" y="0.5" width="2" height="1" fill="none"></rect>
+													</g>
+													<g id="Rectangle_460" data-name="Rectangle 460" transform="translate(7384 -1805)" fill="none" stroke="#50a8ea" stroke-width="1">
+														<rect width="3" height="2" stroke="none"></rect>
+														<rect x="0.5" y="0.5" width="2" height="1" fill="none"></rect>
+													</g>
+													<g id="Rectangle_461" data-name="Rectangle 461" transform="translate(7393 -1805)" fill="none" stroke="#50a8ea" stroke-width="1">
+														<rect width="3" height="2" stroke="none"></rect>
+														<rect x="0.5" y="0.5" width="2" height="1" fill="none"></rect>
+													</g>
+												</g>
+											</svg>
+										</div>
+										<div class="flex"><span class="text-white">نمادهای اعتماد</span></div>
+									</div>
+									<div class="flex flex-wrap item-center gap-3 w-full">
+										<div class="flex gap-3 w-full"><span class="flex text-white text-xs">خرید خود را با اطمینان انجام دهید</span></div>
+										<div class="flex w-full gap-3">
+											<div class="flex w-1/3"><img src="/_nuxt/img/enamad.72028b4.png" alt class="w-full"></div>
+											<div class="flex w-1/3"><img src="/_nuxt/img/enamad.72028b4.png" alt class="w-full"></div>
+											<div class="flex w-1/3"><img src="/_nuxt/img/enamad.72028b4.png" alt class="w-full"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</footer>
+			</div>
+		</div>
+	</div>
+</div>
+<script>window.__NUXT__ = {
+	staticAssetsBase: '/_nuxt/static/1652907210',
+	layout: 'default',
+	error: null,
+	serverRendered: !0,
+	routePath: '/',
+	config: {_app: {basePath: '/', assetsPath: '/_nuxt/', cdnURL: null}},
+};</script>
+<script src="/_nuxt/7b67dc5.js" defer></script>
+<script src="/_nuxt/e5ed4d4.js" defer></script>
+<script src="/_nuxt/30e9ab6.js" defer></script>
+<script src="/_nuxt/da4a7c2.js" defer></script>
+<script src="/_nuxt/8da0fc2.js" defer></script>
+<script src="/_nuxt/5b5ce35.js" defer></script>
+<script src="/_nuxt/8bc2102.js" defer></script>
+</body>
+</html>
