@@ -2,99 +2,58 @@
 get_template_part('template-parts/frontpage-top-advertises'); ?>
 
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-
+        <?php
+if ( have_rows( 'front_page_options', 'options' ) ) {
+    while (have_rows('front_page_options', 'options')):
+        the_row();
+        $categories = get_sub_field('frontpage_sales_categories');
+        ?>
         <div class="w-full">
             <div class="grid mt-7 gap-x-7 grid-cols-12 justify-between">
                 <div class="col-span-10 flex gap-x-5"><span class="flex"><span class="icon text-3xl icon-shield"></span></span>
                     <div class="flex text-gray-600 text-2xl">پرفروش ترین ها</div>
                     <div class="relative after:w-0.5 after:absolute after:bg-gray-600 after:h-6 after:left-0 after:top-1"></div>
                     <ul class="tabs">
-                        <li class="active">
-                            <button>هدفون</button>
-                        </li>
-                        <li>
-                            <button>هدفون</button>
-                        </li>
-                        <li>
-                            <button>هدفون</button>
-                        </li>
-                        <li>
-                            <button>هدفون</button>
-                        </li>
+                        <?php
+                        foreach ($categories as $k=> $category) {
+                            ?>
+                            <li <?php if($k == 0){echo 'class="active"';} ?>>
+                                <button data-id="<?php esc_attr($category['value']); ?>"><?php echo $category['label'];?></button>
+                            </li>
+                        <?php }
+                         ?>
                     </ul>
                 </div>
                 <div class="col-span-2 justify-end flex">
-                    <button class="custom-btn-secondary-outline">
+                    <a href="" class="custom-btn-secondary-outline">
                         همه محصولات را ببینید
-                    </button>
+                    </a>
                 </div>
             </div>
             <div class="product-tabs-content">
-
                 <?php
-
                 $products = new WP_Query([
-
                     'post_type' => 'product',
                     'per_page' => '4',
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'product_cat',
+                            'field' => 'id',
+                            'terms' => ['17'], /*category id*/
+                            'operator' => 'IN',
+                        )
+                    ),
                 ]);
                 while ($products->have_posts()) {
-                    $products->the_post(); ?>
-
-
-                    <div class="single-product-item group col-span-3">
-                        <div class="w-full flex">
-                            <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>"
-                                 class="w-full rounded-lg">
-                        </div>
-                        <div class="flex">
-                            <h3 class="text-customDarkblue cursor-pointer text-base font-light leading-7">
-                                <?php the_title(); ?>
-                            </h3>
-                        </div>
-                        <div class="flex cursor-pointer text-orange-500 text-xs justify-end w-full">
-                            <a href="<?php  get_term_link( get_the_ID(), 'product_cat' ) ; ?>">
-                                <?php echo (get_the_term_list( get_the_ID(), 'product_cat' )); ?>
-                            </a>
-                        </div>
-                        <?php
-                        $product = wc_get_product( get_the_ID() );
-
-
-
-                        if( $product->get_regular_price() != $product->get_price() ){ ?>
-                            <div class="flex line-through text-gray-700 text-xl w-full">
-                            <span data-after="هزار تومان" class="after:content-[attr(data-after)] after:text-sm items-center after:left-0 relative">
-                                <?php echo $product->get_regular_price(); ?>
-                            </span>
-                            </div>
-                        <?php }
-                        ?>
-
-                        <div class="flex gap-x-4 items-center justify-between text-gray-700 text-xl w-full">
-                            <span data-after="هزار تومان" class="after:content-[attr(data-after)] text-customLightblue after:text-sm items-center after:left-0 relative">
-                                <?php echo $product->get_price(); ?>
-                            </span>
-
-                            <?php if( $product->get_regular_price() != $product->get_price() ){ ?>
-                            <div class="px-2 py-1 bg-customLightGray text-xs rounded">
-                                <?php echo round(($product->get_price() / 100) * $product->get_regular_price()); ?>%
-                            </div>
-                            <?php }
-                            ?>
-
-
-                            <div class="border-2 group-hover:bg-customDarkblue group-hover:text-white transition duration-150 items-center justify-center rounded-xl border-customDarkblue">
-                                <button class="flex justify-center">
-                                    <span class="icon justify-center w-10 flex text-4xl icon-trolley"></span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                <?php } wp_reset_postdata(); ?>
+                    $products->the_post();
+                    wc_get_template_part('content','product');
+                }
+                wp_reset_postdata(); ?>
             </div>
         </div>
+    <?php
+    endwhile;
+} ?>
     </div>
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="w-full">

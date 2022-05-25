@@ -384,9 +384,9 @@
 					<div class="flex flex-wrap item-center gap-3 w-full">
 						<div class="flex gap-3 w-full"><span class="flex text-white text-xs">خرید خود را با اطمینان انجام دهید</span></div>
 						<div class="flex w-full gap-3">
-							<div class="flex w-1/3"><img src="<?php mt_asset( 'img/enamad.72028b4.png' ); ?>" alt class="w-full"></div>
-							<div class="flex w-1/3"><img src="<?php mt_asset( 'img/enamad.72028b4.png' ); ?>" alt class="w-full"></div>
-							<div class="flex w-1/3"><img src="<?php mt_asset( 'img/enamad.72028b4.png' ); ?>" alt class="w-full"></div>
+							<div class="flex w-1/3"><img src="<?php mt_asset( 'images/enamad.72028b4.png' ); ?>" alt class="w-full"></div>
+							<div class="flex w-1/3"><img src="<?php mt_asset( 'images/enamad.72028b4.png' ); ?>" alt class="w-full"></div>
+							<div class="flex w-1/3"><img src="<?php mt_asset( 'images/enamad.72028b4.png' ); ?>" alt class="w-full"></div>
 						</div>
 					</div>
 				</div>
