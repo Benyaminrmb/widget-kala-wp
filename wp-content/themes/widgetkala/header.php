@@ -10,8 +10,20 @@
 <div class="grid grid-cols-12 gap-x-5">
 	<header class="col-span-12">
 		<nav aria-label="Top" class="container mx-auto px-4 sm:px-6 lg:px-8">
-			<div class="grid grid-cols-12 py-9 items-center">
-				<div class="col-span-3 flex-wrap flex logo-container"></div>
+			<div class="md:grid flex justify-between md:grid-cols-12 flex-wrap py-9 items-center">
+                <div class="md:hidden flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="14" viewBox="0 0 17 14">
+                        <g id="Group_2048" data-name="Group 2048" transform="translate(-348.5 -8.5)">
+                            <line id="Line_554" data-name="Line 554" x2="15" transform="translate(349.5 9.5)" fill="none" stroke="#9195a0" stroke-linecap="round" stroke-width="2"/>
+                            <line id="Line_555" data-name="Line 555" x2="15" transform="translate(349.5 15.5)" fill="none" stroke="#9195a0" stroke-linecap="round" stroke-width="2"/>
+                            <line id="Line_556" data-name="Line 556" x2="15" transform="translate(349.5 21.5)" fill="none" stroke="#9195a0" stroke-linecap="round" stroke-width="2"/>
+                        </g>
+                    </svg>
+
+                </div>
+				<div class="col-span-3 flex-wrap flex logo-container">
+                    Widget Kala
+                </div>
 				<div class="col-span-4 flex-wrap flex">
 					<?php get_search_form(); ?>
 				</div>
@@ -20,17 +32,22 @@
 						<?php if ( WC()->cart->get_cart_contents_count() ) { ?>
 							<a href="<?php echo wc_get_cart_url(); ?>" class="cart-button gap-x-4">
 								<span class="flex"><?php wc_cart_totals_subtotal_html(); ?></span>
-								<span class="icon flex text-3xl text-white icon-trolley"></span>
+								<span class="icon flex text-6xl text-white icon-trolley"></span>
+
 								<span class="cart-count-badge">
                      <span class="animate"></span>
                      <span class="count">
 	                     <span class="w-full text-xs"><?php echo WC()->cart->get_cart_contents_count() ?></span></span></span>
 							</a>
 						<?php } else { ?>
-							<a href="<?php echo get_permalink( wc_get_page_id( 'shop' ) ) ?>" class="cart-button gap-x-4">همین الان خرید کنید</a>
+							<a href="<?php echo get_permalink( wc_get_page_id( 'shop' ) ) ?>" class="cart-button gap-x-4">
+                                <span class="md:flex hidden">همین الان خرید کنید</span>
+                                <span class="md:hidden icon flex md:text-3xl text-6xl text-customGray md:text-white icon-trolley"></span>
+                            </a>
+
 						<?php } ?>
 					</div>
-					<a class="register-button" href="<?php echo get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ); ?>">
+					<a class="register-button hidden md:inline-flex" href="<?php echo get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ); ?>">
 						<?php if ( ! is_user_logged_in() ) { ?>
 							ورود | ثبت نام
 						<?php } else { ?>
@@ -41,7 +58,7 @@
 			</div>
 		</nav>
 	</header>
-	<div class="menu-section">
+	<div class="menu-section invisible">
 		<div class="container">
 			<div class="grid grid-cols-12 justify-between">
 				<?php

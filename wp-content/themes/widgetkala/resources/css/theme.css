@@ -53,24 +53,25 @@ button {
 }
 
 .cart-button {
-    @apply inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm rounded-md text-white bg-customLightblue hover:bg-customDarkblue transition ease-in-out duration-150
-    ring-1 ring-slate-900/10;
+
+    @apply md:inline-flex md:items-center md:px-4 md:py-2 md:font-semibold md:leading-6 md:text-sm md:rounded-md md:text-white md:bg-customLightblue
+    md:hover:bg-customDarkblue md:ring-1 md:ring-slate-900/10;
 }
 
-.cart-button .cart-count-badge {
+.cart-button .cart-count-badge{
     @apply flex absolute h-7 w-7 text-center text-white -top-2 -left-2;
 }
 
-.cart-button .cart-count-badge .animate {
+
+.cart-button .cart-count-badge .animate{
     @apply animate-ping absolute inline-flex h-full w-full rounded-full bg-customDarkblue opacity-75;
 }
 
-.cart-button .cart-count-badge .count {
+.cart-button .cart-count-badge .count{
     @apply relative inline-flex items-center rounded-full text-center h-7 w-7 shadow-2xl bg-customDarkblue;
 }
-
 .register-button {
-    @apply inline-flex gap-x-2 items-center px-2 border hover:bg-customLightgray text-customDarkblue font-medium rounded-md;
+    @apply gap-x-2 items-center px-2 border hover:bg-customLightgray text-customDarkblue font-medium rounded-md;
 }
 
 .menu-section {
