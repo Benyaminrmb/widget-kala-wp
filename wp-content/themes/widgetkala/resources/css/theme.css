@@ -1,5 +1,6 @@
 @import './font-icon.css';
 @import './iransans.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -58,18 +59,19 @@ button {
     md:hover:bg-customDarkblue md:ring-1 md:ring-slate-900/10;
 }
 
-.cart-button .cart-count-badge{
+.cart-button .cart-count-badge {
     @apply flex absolute h-7 w-7 text-center text-white -top-2 -left-2;
 }
 
 
-.cart-button .cart-count-badge .animate{
+.cart-button .cart-count-badge .animate {
     @apply animate-ping absolute inline-flex h-full w-full rounded-full bg-customDarkblue opacity-75;
 }
 
-.cart-button .cart-count-badge .count{
+.cart-button .cart-count-badge .count {
     @apply relative inline-flex items-center rounded-full text-center h-7 w-7 shadow-2xl bg-customDarkblue;
 }
+
 .register-button {
     @apply gap-x-2 items-center px-2 border hover:bg-customLightgray text-customDarkblue font-medium rounded-md;
 }
@@ -158,6 +160,9 @@ button {
 }
 
 .product-tabs-content {
+    @apply grid mt-7 gap-x-6 grid-cols-12 justify-between hidden;
+}
+.product-tabs-content.active{
     @apply grid mt-7 gap-x-6 grid-cols-12 justify-between;
 }
 
@@ -184,7 +189,8 @@ button {
 }
 
 .custom-btn-secondary-outline {
-    @apply border hover:bg-customLightblue hover:text-white transition ease-in-out duration-150 w-full rounded-md text-sm border-customLightblue text-customLightblue px-3;
+    @apply border hover:bg-customLightblue hover:text-white transition ease-in-out duration-150 w-full rounded-md text-sm border-customLightblue text-customLightblue px-3 text-center;
+    line-height: 2rem;
 }
 
 .crooked-line:before {
@@ -209,13 +215,14 @@ button {
     border-right: 20px solid transparent;
 }
 
+.footer-list ul {
+    margin-right: 25px;
+}
+
 .footer-list li {
     @apply text-white mt-1 before:transition before:ease-in-out relative before:absolute before:h-2 items-center cursor-pointer hover:before:bg-customLightblue before:-right-6 before:my-auto before:inset-y-0 before:w-3 before:bg-customGray;
 }
 
-.footer-list {
-    margin-right: 25px;
-}
 
 .news-letter {
     @apply relative w-full text-gray-600 focus-within:text-gray-300;
@@ -259,15 +266,19 @@ button {
 .btn-custom-outline-dark-blue.active {
     @apply before:absolute before:w-5 before:h-5 before:top-0 before:right-1.5 before:content-lines bg-customDarkblue text-white;
 }
+
 .horizontalLines {
     @apply relative before:absolute before:w-5 before:h-5 before:top-0 before:-right-9 before:content-horizontalLines;
 }
+
 .darkHorizontalLines {
     @apply relative before:absolute before:w-5 before:h-5 before:top-0 before:-right-9 before:content-darkHorizontalLines;
 }
+
 .h-280 {
     height: 280px;
 }
+
 .thin-scrollbar::-webkit-scrollbar {
     width: 1px; /* width of the entire scrollbar */
 }
@@ -287,6 +298,7 @@ input:checked ~ .dot {
     transform: translateX(140%);
     background-color: #fff;
 }
+
 input:checked ~ .parent {
 
     background-color: #50a8ea;

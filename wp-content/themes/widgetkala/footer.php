@@ -190,48 +190,11 @@
 				</div>
 			</div>
 			<div class="col-span-1 grid grid-cols-3 gap-4">
-				<div class="flex flex-wrap gap-4 col-span-1 w-full">
-					<div class="flex w-full"><span class="text-white">عنوان تیتر اول</span></div>
-					<div class="flex w-full">
-						<ul class="footer-list">
-							<li>عنوان تیتر اول</li>
-							<li>عنوان تیتر اول</li>
-							<li>عنوان تیتر اول</li>
-							<li>عنوان تیتر اول</li>
-							<li>عنوان تیتر اول</li>
-							<li>عنوان تیتر اول</li>
-							<li>عنوان تیتر اول</li>
-						</ul>
-					</div>
-				</div>
-				<div class="flex flex-wrap gap-4 col-span-1 w-full">
-					<div class="flex w-full"><span class="text-white">عنوان تیتر اول</span></div>
-					<div class="flex w-full">
-						<ul class="footer-list">
-							<li>عنوان تیتر اول</li>
-							<li>عنوان تیتر اول</li>
-							<li>عنوان تیتر اول</li>
-							<li>عنوان تیتر اول</li>
-							<li>عنوان تیتر اول</li>
-							<li>عنوان تیتر اول</li>
-							<li>عنوان تیتر اول</li>
-						</ul>
-					</div>
-				</div>
-				<div class="flex flex-wrap gap-4 col-span-1 w-full">
-					<div class="flex w-full"><span class="text-white">عنوان تیتر اول</span></div>
-					<div class="flex w-full">
-						<ul class="footer-list">
-							<li>عنوان تیتر اول</li>
-							<li>عنوان تیتر اول</li>
-							<li>عنوان تیتر اول</li>
-							<li>عنوان تیتر اول</li>
-							<li>عنوان تیتر اول</li>
-							<li>عنوان تیتر اول</li>
-							<li>عنوان تیتر اول</li>
-						</ul>
-					</div>
-				</div>
+                <?php
+                if ( is_active_sidebar('footer-1') ){
+                    dynamic_sidebar('footer-1');
+                }
+                ?>
 			</div>
 		</div>
 		<div class="mt-7 grid gap-x-7 grid-cols-2 pb-7">
@@ -272,11 +235,10 @@
 					</div>
 					<div class="flex"><span class="text-white"> خبرنامه ویجت کالا </span></div>
 				</div>
-				<div class="flex flex-wrap"><span class="w-full text-white text-xs">برای اطلاع از جدیدترین محصولات ما ایمیل خود را برای ما ارسال
-            کنید</span></div>
-				<div class="flex w-full news-letter"><input title="seqrch query" type="search" name="q" placeholder="برای اطلاع از جدیدترین محصولات ما ایمیل خود را برای ما ارسال کنید"
-				                                            autocomplete="off">
-					<span class="submit-button"><button type="submit" class="hover:shadow-outline"><span>جستجو</span></button></span></div>
+				<div class="flex flex-wrap"><span class="w-full text-white text-xs">برای اطلاع از جدیدترین محصولات ما ایمیل خود را برای ما ارسال کنید</span></div>
+				<div class="flex w-full news-letter">
+                    <input title="your email" type="email" name="subscribe-email" placeholder="برای اطلاع از جدیدترین محصولات ما ایمیل خود را برای ما ارسال کنید" autocomplete="off">
+					<span class="submit-button"><button type="submit" class="hover:shadow-outline"><span>عضویت در خبرنامه</span></button></span></div>
 			</div>
 			<div class="grid grid-cols-2 col-span-1 gap-4">
 				<div class="flex-wrap flex col-span-1 gap-4">

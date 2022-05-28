@@ -13,7 +13,7 @@ if ( ! function_exists( 'mt_setup' ) ) {
 			[
 				'primary'   => __( 'Primary', 'widgetize' ),
 				'mobile'    => __( 'Mobile', 'widgetize' ),
-				'secondary' => __( 'Secondary', 'widgetize' ),
+//				'secondary' => __( 'Secondary', 'widgetize' ),
 			]
 		);
 		/*
@@ -64,6 +64,24 @@ if ( ! function_exists( 'mt_setup' ) ) {
 	}
 
 	add_action( 'after_setup_theme', 'mt_setup' );
+}
+if(!function_exists('mt_register_widgets')){
+    function mt_register_widgets(){
+        register_sidebar(
+
+            [
+                'id' => 'footer-1',
+                'name' => esc_html__( 'footer-1', 'widgetkala' ),
+                'description' => esc_html__( 'please add only list and links to this widget area', 'widgetkala' ),
+                'before_widget' => '<div id="%1$s" class="footer-list flex flex-wrap gap-4 col-span-1 w-full %2$s">',
+                'after_widget' => '</div></div>',
+                'before_title' => '<div class="flex w-full"><h4 class="text-white">',
+                'after_title' => '</h4></div><div class="flex w-full">'
+            ]
+        );
+    }
+
+    add_action('widgets_init','mt_register_widgets');
 }
 if ( ! function_exists( 'mt_excerpt_more' ) ) {
 	function mt_excerpt_more( $link ) {
@@ -138,9 +156,9 @@ if ( ! function_exists( 'mt_scripts' ) ) {
 //			'mt-bootstrap', mt_asset( 'js/bootstrap.bundle.min.js', FALSE ), [ 'jquery' ],
 //			wp_get_theme()->get( 'Version' ), TRUE
 //		);
-//		wp_enqueue_script(
-//			'mt-app', mt_asset( 'js/app.js', FALSE ), [], wp_get_theme()->get( 'Version' ), TRUE
-//		);
+		wp_enqueue_script(
+			'mt-app', mt_asset( 'js/app.js', FALSE ), [], wp_get_theme()->get( 'Version' ), TRUE
+		);
 	}
 
 	add_action( 'wp_enqueue_scripts', 'mt_scripts' );

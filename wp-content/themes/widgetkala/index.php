@@ -34,7 +34,9 @@ if ( have_rows( 'front_page_options', 'options' ) ) {
                 <?php
                 $products = new WP_Query([
                     'post_type' => 'product',
-                    'per_page' => '4',
+                    'posts_per_page' => '4',
+                    'meta_key' => 'total_sales',
+                    'orderby' => 'meta_value_num',
                     'tax_query' => array(
                         array(
                             'taxonomy' => 'product_cat',
