@@ -37,14 +37,14 @@ if($categories){
                 $products = new WP_Query([
                     'post_type'      => 'product',
                     'posts_per_page' => '4',
-                    'tax_query'      => array(
-                        array(
+                    'tax_query'      => [
+                        [
                             'taxonomy' => 'product_cat',
                             'field'    => 'id',
                             'terms'    => [$cat['value']], /*category id*/
                             'operator' => 'IN',
-                        )
-                    ),
+                        ]
+                    ],
                 ]);
                 while ($products->have_posts()) {
                     $products->the_post();
