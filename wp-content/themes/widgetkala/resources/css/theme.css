@@ -162,7 +162,8 @@ button {
 .product-tabs-content {
     @apply grid mt-7 gap-x-6 grid-cols-12 justify-between hidden;
 }
-.product-tabs-content.active{
+
+.product-tabs-content.active {
     @apply grid mt-7 gap-x-6 grid-cols-12 justify-between;
 }
 
@@ -252,7 +253,11 @@ button {
 }
 
 .btn-custom-white {
-    @apply transition ease-in-out duration-150 hover:bg-customDarkblue hover:text-white rounded-md p-2 px-4 justify-center flex cursor-pointer text-base;
+    @apply transition ease-in-out duration-150 hover:bg-customDarkblue hover:text-white rounded-md p-2 px-4 justify-center flex cursor-pointer text-base text-customDarkblue bg-white;
+}
+
+.btn-custom-white.active {
+    @apply bg-customDarkblue text-white
 }
 
 .btn-custom-dark-blue {

@@ -8,8 +8,8 @@ if ( ! function_exists('it_acf_options')) {
             // Register options page.
             $option_page = acf_add_options_page(
                 [
-                    'page_title' => __('Theme General Settings', 'it'),
-                    'menu_title' => __('Theme Settings', 'it'),
+                    'page_title' => __('Theme General Settings', 'widgetize'),
+                    'menu_title' => __('Theme Settings', 'widgetize'),
                     'menu_slug'  => 'theme-general-settings',
                     'capability' => 'edit_posts',
                     'redirect'   => false,
@@ -179,11 +179,11 @@ if ( ! function_exists('it_comment')) {
                 ?>
                 <p><?php esc_html_e(
                         'Pingback:',
-                        'it'
+                        'widgetize'
                     ); ?><?php comment_author_link(); ?><?php edit_comment_link(
                         esc_html__(
                             '(Edit)',
-                            'it'
+                            'widgetize'
                         ), '<span class="edit-link">', '</span>'
                     ); ?></p>
                 <?php
@@ -209,7 +209,7 @@ if ( ! function_exists('it_comment')) {
                                 get_comment_author_link(), '<a class="comment-edit-link" href="'.
                                                            esc_url(
                                                                get_edit_comment_link($comment)
-                                                           ).'">'.esc_html__('Edit', 'it').
+                                                           ).'">'.esc_html__('Edit', 'widgetize').
                                                            '</a>'
                             );
                             comment_reply_link(
@@ -217,7 +217,7 @@ if ( ! function_exists('it_comment')) {
                                     $args, [
                                         'reply_text' => sprintf(
                                             '<span class="reply-text">%s</span>',
-                                            __('Send Reply', 'it')
+                                            __('Send Reply', 'widgetize')
                                         ),
                                         'depth'      => $depth,
                                         'max_depth'  => $args['max_depth'],
@@ -232,7 +232,7 @@ if ( ! function_exists('it_comment')) {
                             <?php if ('0' == $comment->comment_approved) : ?>
                                 <p class="comment-awaiting-moderation p-1 alert alert-info alert-link"><?php esc_html_e(
                                         'Your comment is awaiting moderation.',
-                                        'it'
+                                        'widgetize'
                                     ); ?></p>
                             <?php endif; ?>
                             <?php comment_text(); ?>
@@ -246,23 +246,23 @@ if ( ! function_exists('it_comment')) {
                                 esc_url(get_comment_link($comment->comment_ID)),
                                 get_comment_time('c'),
                                 sprintf(
-                                    esc_html__('%1$s', 'it'), get_comment_date('F j')
+                                    esc_html__('%1$s', 'widgetize'), get_comment_date('F j')
                                 )
                             );
                             if (0 === $childCount) {
                                 printf(
                                     '<span class="reply-count">%s</span>',
-                                    esc_html__('No&zwnj;Replies', 'it')
+                                    esc_html__('No&zwnj;Replies', 'widgetize')
                                 );
                             } elseif (1 === $childCount) {
                                 printf(
                                     '<span class="reply-count">%s</span>',
-                                    sprintf(esc_html__('One reply', 'it'))
+                                    sprintf(esc_html__('One reply', 'widgetize'))
                                 );
                             } else {
                                 printf(
                                     '<span class="reply-count">%s</span>',
-                                    sprintf(esc_html__('%d Replies', 'it'), $childCount)
+                                    sprintf(esc_html__('%d Replies', 'widgetize'), $childCount)
                                 );
                             }
                             ?>

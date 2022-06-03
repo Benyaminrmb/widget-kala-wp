@@ -3,8 +3,10 @@ jQuery(document).ready(function ($) {
         e.preventDefault();
         let cat_id = $(this).data('category-id');
         let parent_li = $(this).parent();
-        let tab_element = $('#product-tabs-content-'+cat_id);
-        let all_tabs = $('.product-tabs-content');
+        let container_element = $(this).closest('.product-section-container');
+        console.log(container_element.attr('class'));
+        let tab_element = container_element.find('#product-tabs-content-'+cat_id);
+        let all_tabs = container_element.find('.product-tabs-content');
 
         parent_li.siblings('.product-category-tab').removeClass('active');
         parent_li.addClass('active');
