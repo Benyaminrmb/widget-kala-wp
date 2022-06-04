@@ -1,6 +1,7 @@
+<?php get_template_part('template-parts/global/breadcrumb'); ?>
 </div>
 </div>
-<footer class="bg-customMediumGray mt-7 w-full">
+<footer class="bg-customMediumGray w-full">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="bg-customLighterMediumGray gap-7 w-full grid justify-between grid-cols-4 p-4 rounded-b-md">
             <div class="col-span-1 grid grid-cols-4">

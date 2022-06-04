@@ -1,7 +1,7 @@
 module.exports = {
 	content: [
-        './*.{js,php}',
-        './template-parts/*.{js,php}',
+        './*.{js,php,html}',
+        './template-parts/*.{js,php,html}',
     ],
   theme: {
     screens: {

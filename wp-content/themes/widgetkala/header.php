@@ -32,7 +32,7 @@
 						<?php if ( WC()->cart->get_cart_contents_count() ) { ?>
 							<a href="<?php echo wc_get_cart_url(); ?>" class="cart-button gap-x-4">
 								<span class="flex"><?php wc_cart_totals_subtotal_html(); ?></span>
-								<span class="icon flex text-6xl text-white icon-trolley"></span>
+								<span class="icon flex text-white icon-trolley"></span>
 
 								<span class="cart-count-badge">
                      <span class="animate"></span>
@@ -42,7 +42,7 @@
 						<?php } else { ?>
 							<a href="<?php echo get_permalink( wc_get_page_id( 'shop' ) ) ?>" class="cart-button gap-x-4">
                                 <span class="md:flex hidden">همین الان خرید کنید</span>
-                                <span class="md:hidden icon flex md:text-3xl text-6xl text-customGray md:text-white icon-trolley"></span>
+                                <span class="md:hidden icon flex md:text-3xl text-customGray md:text-white icon-trolley"></span>
                             </a>
 
 						<?php } ?>

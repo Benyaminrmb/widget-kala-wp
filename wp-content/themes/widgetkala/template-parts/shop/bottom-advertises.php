@@ -23,7 +23,7 @@
                 ?>
             </div>
         </div>
-        <div class="col-span-8 ">
+        <div class="col-span-8">
             <div class="w-full flex h-full">
                 <?php if ($big_image_link) {
                     echo '<a href="'.$big_image_link['url'].'" >';

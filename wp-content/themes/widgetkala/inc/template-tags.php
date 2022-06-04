@@ -55,7 +55,7 @@ if (function_exists('yoast_breadcrumb')) {
      */
     function it_breadcrumb_output_class($class)
     {
-        return 'breadcrumb flex-nowrap mb-0';
+        return 'breadcrumb flex flex-nowrap mb-0 w-full';
     }
 
     add_filter('wpseo_breadcrumb_output_class', 'it_breadcrumb_output_class', 10, 1);
@@ -101,7 +101,7 @@ if (function_exists('yoast_breadcrumb')) {
         } elseif (isset($link['term_id'])) {
             $type = 'term';
             $id   = $link['term_id'];
-            $icon = 'category';
+            $icon = 'folder';
         }
 
         $result = str_replace(
@@ -111,8 +111,8 @@ if (function_exists('yoast_breadcrumb')) {
                 '</span>',
             ],
             [
-                '<li class="breadcrumb-item"><i class="icon-'.$icon.'"></i> ',
-                ' </li><li class="breadcrumb-item text-truncate active" aria-current="page"><i class="icon-page"></i>',
+                '<li class="breadcrumb-item"><i class="icon icon-'.$icon.'"></i> ',
+                ' </li><li class="breadcrumb-item text-truncate active" aria-current="page"><i class="icon icon-file"></i>',
                 '</li>',
             ],
             $link_output

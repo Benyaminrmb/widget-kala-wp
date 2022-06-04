@@ -27,7 +27,7 @@ echo apply_filters(
 		'<a href="%s" data-quantity="%s" class="%s" %s>%s</a>',
 		esc_url( $product->add_to_cart_url() ),
 		esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
-		esc_attr( isset( $args['class'] ) ? ($args['class'].' border-2 group-hover:bg-customDarkblue group-hover:text-white transition duration-150 items-center justify-center rounded-xl border-customDarkblue') : 'button' ),
+		esc_attr( isset( $args['class'] ) ? ($args['class'].' add-to-cart-button') : 'button' ),
 		isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
          '<span class="icon justify-center w-10 flex text-4xl icon-trolley"></span>'
 	),
