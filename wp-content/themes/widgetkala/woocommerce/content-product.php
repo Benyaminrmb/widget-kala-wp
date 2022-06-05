@@ -24,19 +24,23 @@ if (empty($product) || !$product->is_visible()) {
     return;
 }
 $col_class = '';
-if (is_shop()) {
+if (is_shop() || is_front_page()) {
     $col_class = 'col-span-3';
-} else{
+} else {
     $col_class = 'col-span-4';
 }
 ?>
-<div <?php wc_product_class(['single-product-item','group',$col_class], $product); ?>>
+<div <?php wc_product_class(['single-product-item', 'group', $col_class], $product); ?>>
     <div class="w-full flex">
-        <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="w-full rounded-lg">
+        <a href="<?php the_permalink(); ?>">
+            <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="w-full rounded-lg">
+        </a>
     </div>
     <div class="flex">
         <h3 class="text-customDarkblue cursor-pointer text-base font-light leading-7">
-            <?php echo $product->get_title(); ?>
+            <a href="<?php the_permalink(); ?>">
+                <?php echo $product->get_title(); ?>
+            </a>
         </h3>
     </div>
     <?php echo(get_the_term_list(get_the_ID(), 'product_brand', '<div class="mb-7 flex cursor-pointer text-orange-500 text-xs justify-end w-full">', '&nbsp;,&nbsp;', '</div>')); ?>

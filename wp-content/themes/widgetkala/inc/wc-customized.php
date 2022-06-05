@@ -7,7 +7,7 @@ add_action( 'pre_get_posts', 'mt_pre_get_products_query',99 );
 function mt_pre_get_products_query( $query ) {
     $per_page = filter_input(INPUT_GET, 'perpage', FILTER_SANITIZE_NUMBER_INT);
 //    echo $per_page;die();
-    if( /*$query->is_main_query() &&*/ !is_admin() /*&& is_post_type_archive( 'product' )*/ ){
+    if( $query->is_main_query() && !is_admin() && is_post_type_archive( 'product' ) ){
 //        echo 'test';
         $query->set( 'posts_per_page', $per_page );
     }

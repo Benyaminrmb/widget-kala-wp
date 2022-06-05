@@ -2,7 +2,15 @@ module.exports = {
 	content: [
         './*.{js,php,html}',
         './template-parts/*.{js,php,html}',
-        './woocommerce/*.{js,php,html}',
+        './woocommerce/loop/orderby.php',
+        './woocommerce/loop/pagination.php',
+        './woocommerce/loop/loop-start.php',
+        './woocommerce/loop/result-count.php',
+        './woocommerce/content-product.php',
+        './woocommerce/taxonomy-product-brand.php',
+        './woocommerce/taxonomy-product-cat.php',
+        './woocommerce/taxonomy-product-tag.php',
+                
     ],
   theme: {
     screens: {
