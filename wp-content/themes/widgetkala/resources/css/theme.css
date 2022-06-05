@@ -177,26 +177,19 @@ button {
     @apply flex rounded-md flex-wrap  border border-gray-200 p-3 transition duration-150 transform hover:product-hover-shadow;
 }
 
-.single-product-item:before {
-    @apply transition-all ease-in-out duration-150 rounded-3xl bg-customLightblue;
-    content: var(--tw-content);
-    width: 0;
-    height: 4px;
-    left: 50%;
-    right: 50%;
-    position: absolute;
-    top: 0;
+.single-product-item {
+    @apply before:transition-all before:ease-in-out before:duration-150 before:rounded-3xl before:bg-customLightblue before:w-0 before:h-1 before:left-1/2 before:right-1/2 before:absolute before:top-0;
+    @apply hover:before:w-1/2 hover:before:left-1/4 hover:before:right-1/4
 }
 
-.single-product-item:hover:before {
-    width: 50%;
-    left: 25%;
-    right: 25%;
-}
+/*.single-product-item:hover:before {*/
+/*    width: 50%;*/
+/*    left: 25%;*/
+/*    right: 25%;*/
+/*}*/
 
 .woocommerce a.button.add-to-cart-button, .add-to-cart-button {
-    border: 2px solid;
-    @apply bg-white p-0 flex hover:bg-customDarkblue hover:text-white transition duration-150 items-center justify-center rounded-xl border-customDarkblue;
+    @apply border-2 bg-white p-0 flex hover:bg-customDarkblue hover:text-white transition duration-150 items-center justify-center rounded-xl border-customDarkblue text-4xl;
 }
 
 .group:hover a.button.add-to-cart-button, .woocommerce a.button.add-to-cart-button:hover, .add-to-cart-button:hover {
@@ -204,9 +197,30 @@ button {
 }
 
 .custom-btn-secondary-outline {
-    @apply border hover:bg-customLightblue hover:text-white transition ease-in-out duration-150 w-full rounded-md text-sm border-customLightblue text-customLightblue px-3 text-center;
-    line-height: 2rem;
+    @apply border leading-8 hover:bg-customLightblue hover:text-white transition ease-in-out duration-150 w-full rounded-md text-sm border-customLightblue text-customLightblue px-3 text-center;
 }
+
+.pagination-container{
+    @apply flex justify-evenly w-full;
+}
+.pagination-container .page,
+.pagination-container .current,
+.pagination-container .next-link,
+.pagination-container .pages-container,
+.pagination-container .wp-pagenavi,
+.pagination-container .prev-link{
+    @apply flex justify-evenly items-center border border-customDarkWhite rounded-md px-3 py-2 gap-3
+}
+.pagination-container .page:hover,
+.pagination-container .page:focus,
+.pagination-container .current,
+.wp-pagenavi span.current{
+    @apply bg-customLightblue text-white border-transparent;
+}
+.pagination-container .wp-pagenavi .extend{
+    @apply flex flex-wrap w-full justify-center gap-4 border-none
+}
+
 
 .crooked-line:before {
     position: absolute;
@@ -331,7 +345,7 @@ input:checked ~ .parent {
     @apply relative overflow-hidden block w-full rounded-md;
     @apply before:bg-gradient-to-b before:from-transparent before:to-customDarkblue before:block before:absolute
     before:h-full before:w-full before:opacity-0 before:top-0 before:left-0 before:z-10 before:transition-all
-        hover:before:opacity-100 hover:after:opacity-100;
+    hover:before:opacity-100 hover:after:opacity-100;
     z-index: 1;
 }
 
@@ -342,35 +356,53 @@ input:checked ~ .parent {
 .post-item .meta-data {
     @apply bottom-0 text-white flex flex-nowrap justify-between opacity-0 p-3 absolute transition-all w-full z-10;
 }
-.post-item .post-image-container:hover .meta-data{
+
+.post-item .post-image-container:hover .meta-data {
     @apply opacity-100
 }
 
-.post-item .post-title{
+.post-item .post-title {
     @apply mt-7 text-xl pr-6 relative text-customDarkblue before:absolute before:w-4 before:h-2 before:bg-customLightblue before:right-0 before:top-3
 }
-.post-item .post-text{
+
+.post-item .post-text {
     @apply mt-4 text-justify font-light text-sm;
 }
 
-.breadcrumb-container{
-    @apply bg-customDarkblue text-white p-3 rounded-t
+.breadcrumb-container {
+    @apply bg-customDarkblue text-white p-3 rounded-t-lg flex bottom-0
 }
-.breadcrumb-container .breadcrumb-title{
+
+.breadcrumb-container .breadcrumb-title {
     @apply whitespace-nowrap pl-10;
 }
 
-.breadcrumb-container .breadcrumb-item+.breadcrumb-item:before{
-    @apply float-right pr-2 pl-0 text-customLighterMediumGray text-xl
+.breadcrumb-container .breadcrumb-item + .breadcrumb-item {
+    @apply before:float-right before:pr-2 before:pl-0 before:text-customLighterMediumGray before:text-xl;
 }
-.breadcrumb-container .breadcrumb-item i{
-    @apply align-bottom leading-7 pr-4 pl-1 text-3xl text-customGray
+
+.breadcrumb-container .breadcrumb-item i {
+    @apply align-bottom leading-7 pr-4 pl-1 text-3xl text-customGray float-right
 }
+
 .breadcrumb-item:hover a,
-.breadcrumb-item a:hover, .breadcrumb-item a:focus{
+.breadcrumb-item a:hover, .breadcrumb-item a:focus {
     @apply text-customLightblue;
 }
 
-.breadcrumb-item + .breadcrumb-item:before{
+.breadcrumb-item + .breadcrumb-item:before {
     @apply absolute
+}
+
+/*woocommerce*/
+.woocommerce .category-title {
+    @apply horizontalLines text-customDarkblue cursor-pointer text-xl font-light leading-7
+}
+
+.woocommerce .category-description {
+    @apply text-xs text-gray-500 leading-7 text-justify line-clamp-3;
+}
+
+.woocommerce .scroll-to-products {
+    @apply bg-customLightblue absolute left-1/2 -ml-3.5 -bottom-2.5 w-7 h-5 flex justify-center items-center
 }

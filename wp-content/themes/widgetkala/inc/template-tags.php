@@ -151,18 +151,38 @@ if (function_exists('wp_pagenavi')) {
     {
         $out = str_replace(
             [
-                'class=\'wp-pagenavi\' role=\'navigation\'>', '<a', '<div', '</a>',
-                '<span aria-current=\'page\' class=\'current\'', '<span class=\'pages\'',
-                '<span class=\'extend\'', '</span>', '</div>',
+//                'class=\'wp-pagenavi\' role=\'navigation\'>',
+//                '<a class=\'previouspostslink\'',
+//                '<a',
+//                'class=\'current\'',
+//                '<a class=\'nextpostslink\'',
+//                '</div></a>',
+//                '</a>',
+//                '<span aria-current=\'page\' class=\'current\'',
+//                '<span class=\'pages\'',
+//                '<span class=\'extend\'',
+//                '</span>',
+//                '</div>',
+
             ], [
-            '<ul class="pagination pagination-lg justify-content-center flex-wrap rounded rounded-pill" role="navigation">',
-            '<li class="page-item"><a class="page-link"', '', '</a></li>',
-            '<li aria-current="page" class="page-item active"><span class="page-link current"',
-            '<li class="page-item"><span class="page-link pages"',
-            '<li class="page-item"><span class="page-link extend"', '</span></li>', '</ul>',
+//                'class="flex flex-wrap w-full justify-center gap-4">',
+//                '<a class="previous-link flex justify-center items-center border border-customDarkWhite rounded-md px-3 py-1 gap-3"',
+//                '<a class="page-link flex justify-center items-center border border-customDarkWhite rounded-md px-3 py-1 gap-3"',
+//                'class="page-link flex justify-center items-center border border-customDarkWhite rounded-md px-3 py-1 gap-3 bg-customLightblue text-white"',
+//                '<a class="next-page flex justify-center items-center border border-customDarkWhite rounded-md px-3 py-1 gap-3"',
+//                '</a><div class="test">',
+//                '</div>',
+//                '</a></li>',
+//                '<li aria-current="page" class="flex justify-center items-center border border-customDarkWhite rounded-md px-3 gap-3 bg-customLightblue text-white"><span class="page-link current"',
+//                '<li class="flex justify-center items-center border border-customDarkWhite rounded-md px-3 gap-3"><span class="page-link pages"',
+//                '<li class="flex justify-center items-center border border-customDarkWhite rounded-md px-3 gap-3"><span class="page-link extend"',
+//                '</span></li>',
+//                '</ul>',
         ], $html
         );
+//        $contains = (bool) preg_match('/class="[^"]*\binsights\b[^"]*"/', $out);
 
+//        $out = preg_replace('/(aria-current="page"|class="current")="\d*"\s/', "page-link flex justify-center items-center border border-customDarkWhite rounded-md px-3 py-1 gap-3 bg-customLightblue text-white",$out);
         return $out;
     }
 }
@@ -330,3 +350,4 @@ if ( ! function_exists('mt_ajax_products')) {
         wp_reset_postdata();
     }
 }
+

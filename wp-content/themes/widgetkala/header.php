@@ -58,7 +58,7 @@
 			</div>
 		</nav>
 	</header>
-	<div class="menu-section invisible">
+	<div class="menu-section">
 		<div class="container">
 			<div class="grid grid-cols-12 justify-between">
 				<?php

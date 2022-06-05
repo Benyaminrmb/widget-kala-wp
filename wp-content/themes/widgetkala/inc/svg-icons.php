@@ -4,9 +4,15 @@ class mtSvgIcons
 {
     public function svg_icon($icon, $size)
     {
+        $width = $height = $size;
+        if(is_array($size)){
+            $width = $size[0];
+            $height = $size[1];
+        }
+
         $icons_array = $this->icons_array();
         $repl        = sprintf('<svg class="svg-icon" width="%s" height="%s" aria-hidden="true" role="img" focusable="false" ',
-            $size, $size);
+            $width, $height);
         $svg         = preg_replace('/^<svg /', $repl, trim($icons_array[$icon])); // Add extra attributes to SVG code.
         $svg         = preg_replace("/([\n\t]+)/", ' ', $svg); // Remove newlines & tabs.
         $svg         = preg_replace('/>\s*</', '><', $svg);    // Remove whitespace between SVG tags.
@@ -85,6 +91,23 @@ class mtSvgIcons
             'phone_call' => '<svg xmlns="http://www.w3.org/2000/svg" width="27.647" height="27.647" viewBox="0 0 27.647 27.647"><g id="_31_Call" data-name="31_Call" transform="matrix(0.974, 0.225, -0.225, 0.974, 4.945, -10.812)"><path id="Path_84" data-name="Path 84" d="M23.8,24.362a3.631,3.631,0,0,0-5.129,0h0a2.475,2.475,0,0,1-3.419,0l-3.419-3.419a2.417,2.417,0,0,1,0-3.419,3.633,3.633,0,0,0,0-5.129l-.855-.854a3.629,3.629,0,0,0-5.128,0,10.879,10.879,0,0,0,0,15.386l3.419,3.419a10.879,10.879,0,0,0,15.386,0,3.63,3.63,0,0,0,0-5.128Zm-.855,4.275a8.462,8.462,0,0,1-11.968,0L7.563,25.218a8.462,8.462,0,0,1,0-11.968,1.209,1.209,0,0,1,1.709,0l.855.854a1.211,1.211,0,0,1,0,1.71,4.834,4.834,0,0,0,0,6.838l3.419,3.419a4.951,4.951,0,0,0,6.838,0,1.209,1.209,0,0,1,1.709,0l.855.855a1.21,1.21,0,0,1,0,1.709Z" transform="translate(0)" fill="#9195a0"></path></g></svg>',
             'email'      => '<svg xmlns="http://www.w3.org/2000/svg" width="23.538" height="17.653" viewBox="0 0 23.538 17.653"><g id="_47_Mail" data-name="47_Mail" transform="translate(0 -8)"><path id="Path_285" data-name="Path 285" d="M18.634,8H4.9A4.909,4.909,0,0,0,0,12.9V20.75a4.909,4.909,0,0,0,4.9,4.9h13.73a4.909,4.909,0,0,0,4.9-4.9V12.9A4.909,4.909,0,0,0,18.634,8Zm2.942,12.75a2.945,2.945,0,0,1-2.942,2.942H4.9A2.945,2.945,0,0,1,1.961,20.75V12.9A2.945,2.945,0,0,1,4.9,9.961h13.73A2.945,2.945,0,0,1,21.576,12.9Z" fill="#9195a0"></path><path id="Path_286" data-name="Path 286" d="M22.605,24.039l2.852-3.8a.981.981,0,1,0-1.569-1.177l-4.707,6.277a2.943,2.943,0,0,1-4.709,0L9.766,19.059A.981.981,0,1,0,8.2,20.236l2.852,3.8L8.288,26.8a.981.981,0,1,0,1.387,1.387l2.562-2.562.667.889a4.9,4.9,0,0,0,7.846,0l.667-.889,2.563,2.563A.981.981,0,1,0,25.366,26.8Z" transform="translate(-5.058 -6.744)" fill="#9195a0"></path></g></svg>',
 
+            'arrow_down'=>'<svg xmlns="http://www.w3.org/2000/svg" width="9.414" height="12.207" viewBox="0 0 9.414 12.207"><g id="Group_217" data-name="Group 217" transform="translate(-557.793 -448)">
+<line id="Line_81" data-name="Line 81" y2="11" transform="translate(562.5 448.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1"/>
+    <line id="Line_82" data-name="Line 82" x1="4" y2="4" transform="translate(562.5 455.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1"/>
+    <line id="Line_83" data-name="Line 83" x2="4" y2="4" transform="translate(558.5 455.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1"/>
+  </g>
+</svg>
+',
+            'orderby'=>'<svg xmlns="http://www.w3.org/2000/svg" width="32.065" height="18.938" viewBox="0 0 32.065 18.938">
+<g id="Group_1869" data-name="Group 1869" transform="translate(32.065 12.438) rotate(180)">
+<line id="Line_49" data-name="Line 49" x2="23" transform="translate(0 10)" fill="none" stroke="#9195a0" stroke-width="3"></line>
+<line id="Line_50" data-name="Line 50" x2="18.5" transform="translate(0 5)" fill="none" stroke="#9195a0" stroke-width="3"></line>
+<line id="Line_51" data-name="Line 51" x2="14.5" fill="none" stroke="#9195a0" stroke-width="3"></line>
+<line id="Line_95" data-name="Line 95" x2="10.5" transform="translate(0 -5)" fill="none" stroke="#9195a0" stroke-width="3"></line>
+</g>
+<path id="Path_427" data-name="Path 427" d="M14.94,18.09a1,1,0,0,1-.72-.3L10.69,14.2a1,1,0,1,1,1.43-1.41l2.82,2.88,2.82-2.88a1,1,0,1,1,1.41,1.42L15.63,17.8A1,1,0,0,1,14.94,18.09Z" transform="translate(-10.401 0.438)" fill="#9195a0"></path>
+<path id="Path_428" data-name="Path 428" d="M15,18a1,1,0,0,1-1-1V.562a1,1,0,0,1,2,0V17A1,1,0,0,1,15,18Z" transform="translate(-10.401 0.438)" fill="#9195a0"></path>
+</svg>',
         ];
     }
 }

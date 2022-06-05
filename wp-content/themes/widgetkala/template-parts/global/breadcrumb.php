@@ -2,7 +2,7 @@
     <?php if ( ! is_front_page()) { ?>
         <div class="w-full">
             <div class="grid gap-7 grid-cols-2 relative">
-                <div class="col-span-1 flex breadcrumb-container bottom-0">
+                <div class="breadcrumb-container">
                     <?php if (function_exists('yoast_breadcrumb')) {
                         echo '<div class="breadcrumb-title">'.__('شما در اینجا هستید','widgetize').'</div>';
                         yoast_breadcrumb();

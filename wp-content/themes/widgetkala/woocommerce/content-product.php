@@ -15,17 +15,22 @@
  * @version 3.6.0
  */
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 global $product;
 
 // Ensure visibility.
-if ( empty( $product ) || ! $product->is_visible() ) {
-	return;
+if (empty($product) || !$product->is_visible()) {
+    return;
+}
+$col_class = '';
+if (is_shop()) {
+    $col_class = 'col-span-3';
+} else{
+    $col_class = 'col-span-4';
 }
 ?>
-
-<div <?php wc_product_class( 'single-product-item group col-span-3', $product ); ?>>
+<div <?php wc_product_class(['single-product-item','group',$col_class], $product); ?>>
     <div class="w-full flex">
         <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="w-full rounded-lg">
     </div>
@@ -34,13 +39,9 @@ if ( empty( $product ) || ! $product->is_visible() ) {
             <?php echo $product->get_title(); ?>
         </h3>
     </div>
-    <div class="flex cursor-pointer text-orange-500 text-xs justify-end w-full">
-        <a href="<?php  get_term_link( get_the_ID(), 'product_cat' ) ; ?>">
-            <?php echo (get_the_term_list( get_the_ID(), 'product_cat' )); ?>
-        </a>
-    </div>
+    <?php echo(get_the_term_list(get_the_ID(), 'product_brand', '<div class="mb-7 flex cursor-pointer text-orange-500 text-xs justify-end w-full">', '&nbsp;,&nbsp;', '</div>')); ?>
     <?php
-    if( $product->get_regular_price() != $product->get_price() ){ ?>
+    if ($product->get_regular_price() != $product->get_price()) { ?>
         <div class="flex line-through text-gray-700 text-xl w-full">
             <span data-after="<?php echo esc_attr(get_woocommerce_currency_symbol()); ?>" class="after:content-[attr(data-after)] after:text-sm items-center after:left-0 relative">
                 <?php echo $product->get_regular_price(); ?>
@@ -49,20 +50,20 @@ if ( empty( $product ) || ! $product->is_visible() ) {
     <?php }
     ?>
     <div class="flex gap-x-4 items-center justify-between text-gray-700 text-xl w-full">
-        <span data-after="<?php echo esc_attr(get_woocommerce_currency_symbol())?>" class="after:content-[attr(data-after)] text-customLightblue after:text-sm items-center after:left-0 relative">
+        <span data-after="<?php echo esc_attr(get_woocommerce_currency_symbol()) ?>" class="after:content-[attr(data-after)] text-customLightblue after:text-sm items-center after:left-0 relative">
             <?php echo $product->get_price(); ?>
         </span>
         <?php
-        $regular_price = (float) $product->get_regular_price();
-        $sale_price    = (float) $product->get_sale_price();
-        if ( $sale_price != 0 || ! empty($sale_price) ) {
-            $percentage    = round(100 - ($sale_price / $regular_price * 100)) . '%';
+        $regular_price = (float)$product->get_regular_price();
+        $sale_price = (float)$product->get_sale_price();
+        if ($sale_price != 0 || !empty($sale_price)) {
+            $percentage = round(100 - ($sale_price / $regular_price * 100)) . '%';
             ?>
             <div class="px-2 py-1 bg-customLightGray text-xs rounded">
                 <?php echo $percentage; ?>
             </div>
         <?php }
-         do_action( 'woocommerce_after_shop_loop_item' ); ?>
+        do_action('woocommerce_after_shop_loop_item'); ?>
     </div>
 </div>
 <?php

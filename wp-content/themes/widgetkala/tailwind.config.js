@@ -2,6 +2,7 @@ module.exports = {
 	content: [
         './*.{js,php,html}',
         './template-parts/*.{js,php,html}',
+        './woocommerce/*.{js,php,html}',
     ],
   theme: {
     screens: {

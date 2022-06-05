@@ -136,7 +136,7 @@ if ( ! function_exists('mt_scripts')) {
 //		);
         //		wp_style_add_data('mt-app', 'rtl', 'replace');
         wp_enqueue_style(
-            'mt-print-style', get_theme_file_uri('print.css'), [], wp_get_theme()->get('Version'),
+            'mt-print-style', mt_asset('css/print.css',false), [], wp_get_theme()->get('Version'),
             'print'
         );
 //		if ( is_page_template( 'template-category.php' ) ) {
@@ -173,6 +173,8 @@ if ( ! function_exists('mt_scripts')) {
 require get_template_directory().'/inc/svg-icons.php';
 require get_template_directory().'/inc/template-functions.php';
 require get_template_directory().'/inc/acf/acf.php';
+require get_template_directory().'/inc/product_brand-tax.php';
+require get_template_directory().'/inc/wc-customized.php';
 define('THEME_ACF_PATH', get_template_directory().'/inc/acf/');
 define('THEME_ACF_URL', get_theme_file_uri('/inc/acf/'));
 add_filter('acf/settings/url', function ($url) {
