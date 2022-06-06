@@ -37,6 +37,7 @@ module.exports = {
         customGray: '#9195A0',
         customLightGray: '#AAADB5',
         customRed: '#EA8550',
+        customBlack : '#707070',
         customMediumGray: '#4B4E59',
         customLighterMediumGray: '#595C67',
       },

@@ -303,12 +303,48 @@ button {
     @apply before:absolute before:w-5 before:h-5 before:top-0 before:right-1.5 before:content-lines bg-customDarkblue text-white;
 }
 
+.section-title {
+    @apply text-customBlack;
+    font: normal bold 22px/30px "IRANSans", Tahoma, sans-serif;
+    @apply after:relative after:w-0.5 after:absolute after:bg-gray-600 after:h-6 after:left-0 after:top-1 after:mx-14
+}
+
+.front-brands-title {
+    @apply text-2xl text-white;
+}
+
+.shop-banners-container,
+.shop-top-categories-container {
+    @apply mx-auto pt-7 pb-16 px-4 sm:px-6 lg:px-8
+}
+
+.shop-top-categories-container .categories-list {
+    @apply flex flex-wrap gap-x-3 gap-y-1 w-full
+}
+
+.shop-top-categories-container .categories-list .item {
+    @apply relative transition ease-in-out border-2 border-customDarkblue duration-150
+    rounded-md p-2 px-4 justify-center flex cursor-pointer text-base
+    hover:bg-customDarkblue
+    hover:text-white
+    hover:before:absolute hover:before:w-5 hover:before:h-5 hover:before:top-0 hover:before:right-1.5 hover:before:content-lines
+}
+
 .horizontalLines {
-    @apply relative before:absolute before:w-5 before:h-5 before:top-0 before:-right-9 before:content-horizontalLines;
+    @apply relative
+    before:relative before:w-5 before:h-5 before:right-0 before:block before:pt-2 before:content-horizontalLines;
 }
 
 .darkHorizontalLines {
     @apply relative before:absolute before:w-5 before:h-5 before:top-0 before:-right-9 before:content-darkHorizontalLines;
+}
+
+.brand-adv-small {
+    @apply col-span-1 row-span-1 overflow-hidden rounded-md;
+}
+
+.brand-adv-large {
+    @apply col-span-1 row-span-2 overflow-hidden rounded-md;
 }
 
 .h-280 {

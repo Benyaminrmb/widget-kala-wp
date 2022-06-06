@@ -34,7 +34,7 @@
                             echo '<a href="'.esc_url($small_image_link['url']).'" >';
                         }
                         if ($top_small_image) {
-                            echo wp_get_attachment_image($top_small_image, 'full', false,
+                            echo wp_get_attachment_image($top_small_image['id'], 'full', false,
                                 ['class' => 'w-full h-full border rounded-lg']);
                         }
                         if (get_field('small_image_link',$page_id)) {
@@ -49,7 +49,7 @@
                             echo '<a href="'.$big_image_link['url'].'" >';
                         }
                         if ($top_big_image) {
-                            echo wp_get_attachment_image($top_big_image, 'full', false,
+                            echo wp_get_attachment_image($top_big_image['id'], 'full', false,
                                 ['class' => 'w-full h-full border rounded-lg']);
                         }
                         if ($big_image_link) {

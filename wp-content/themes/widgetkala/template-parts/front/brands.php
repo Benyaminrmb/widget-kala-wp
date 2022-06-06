@@ -2,7 +2,7 @@
 $page_id = get_option('page_on_front');
 if(have_rows('frontpage_brands',$page_id)){?>
 <div class="bg-customDarkblue my-7 w-full">
-    <div class="container p-14 mx-auto px-5 sm:px-6 lg:px-8"><h3 class="text-2xl text-white"><?php _e('برند ها','widgetize');?></h3>
+    <div class="container p-14 mx-auto px-5 sm:px-6 lg:px-8"><h3 class="front-brands-title"><?php _e('برند ها','widgetize');?></h3>
         <div class="mt-7 grid gap-x-5 grid-cols-6">
             <?php while (have_rows('frontpage_brands')) : the_row();
             $image = get_sub_field('brand');

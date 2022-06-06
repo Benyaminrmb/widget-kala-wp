@@ -43,8 +43,8 @@ if ( ! function_exists('mt_setup')) {
         add_theme_support(
             'custom-logo',
             [
-                'height'      => 115,
-                'width'       => 84,
+                'height'      => 40,
+                'width'       => 145,
                 'flex-width'  => true,
                 'flex-height' => true,
             ]

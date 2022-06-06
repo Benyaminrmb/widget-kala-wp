@@ -136,7 +136,11 @@
         <div class="grid gap-x-7 grid-cols-2 border-b-2 border-customLighterMediumGray pb-7">
             <div class="col-span-1 flex flex-wrap gap-4">
                 <div class="flex w-full">
-                    <?php mt_svg_icon('link', 40); ?>
+                    <?php
+                    if(function_exists('the_custom_logo')){
+                        the_custom_logo();
+                    }
+                    ?>
                 </div>
 
                 <div class="flex w-full">
@@ -185,11 +189,23 @@
                         <?php mt_svg_icon('footer_title_icon');?>
                     </div>
                     <div class="flex">
-                        <span class="text-white"><?php the_field('newsletter_title','options'); ?></span>
+                        <span class="text-white"><?php
+                            if(get_field('newsletter_title','options')){
+                                the_field('newsletter_title','options');
+                            }else{
+                                _e('خبرنامه ویجت کالا','widgetize');
+                            }
+                            ?></span>
                     </div>
                 </div>
                 <div class="flex flex-wrap">
-                    <span class="w-full text-white text-xs"><?php the_field('newsletter_subtitle','options'); ?></span>
+                    <span class="w-full text-white text-xs"><?php
+                        if(get_field('newsletter_subtitle','options')){
+                            the_field('newsletter_subtitle','options');
+                        }else{
+                            _e('برای اطلاع از جدیدترین محصولات ما ایمیل خود را برای ما ارسال کنید','widgetize');
+                        }
+                        ?></span>
                 </div>
                 <div class="flex w-full news-letter">
                     <input title="your email" type="email" name="subscribe-email"
@@ -207,7 +223,7 @@
                         <div class="flex"><span class="text-white"><?php the_field('footer_contact_title','options'); ?></span></div>
                     </div>
                     <?php if(get_field('footer_phone','options')){?>
-                    <div class="flex item-center gap-x-3 w-full">
+                    <div class="flex items-center gap-x-3 w-full">
                         <div class="flex">
                             <?php mt_svg_icon('phone_call',27);?>
                         </div>
@@ -215,7 +231,7 @@
                     </div>
                     <?php }
                     if(get_field('footer_email','options')){?>
-                    <div class="flex item-center gap-x-3 w-full">
+                    <div class="flex items-center gap-x-3 w-full">
                         <div class="flex">
                             <?php mt_svg_icon('email',27);?>
                         </div>
@@ -228,10 +244,22 @@
                         <div class="flex">
                             <?php mt_svg_icon('footer_title_icon');?>
                         </div>
-                        <div class="flex"><span class="text-white"><?php the_field('namad_title','options');?></span></div>
+                        <div class="flex"><span class="text-white"><?php
+                                if(get_field('namad_title','options')){
+                                    the_field('namad_title','options');
+                                }else{
+                                    _e('نمادهای اعتماد','widgetize');
+                                }
+                        ?></span></div>
                     </div>
-                    <div class="flex flex-wrap item-center gap-3 w-full">
-                        <div class="flex gap-3 w-full"><span class="flex text-white text-xs"><?php the_field('namad_subtitle','options'); ?></span>
+                    <div class="flex flex-wrap items-center gap-3 w-full">
+                        <div class="flex gap-3 w-full mb-4"><span class="flex text-white text-xs"><?php
+                                if(get_field('namad_subtitle','options')){
+                                    the_field('namad_subtitle','options');
+                                }else{
+                                    _e('خرید خود را با اطمینان انجام دهید','widgetize');
+                                }
+                                ?></span>
                         </div>
                         <div class="flex w-full gap-3">
                             <?php

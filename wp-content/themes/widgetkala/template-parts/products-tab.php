@@ -1,4 +1,5 @@
 <?php
+/** @var array $args */
 $section_title = $args['section_title'];
 $categories = $args['categories'];
 $archive_link = $args['archive_link'];
@@ -13,9 +14,9 @@ $container_class = implode(' ',$container_class);
     if ($categories) : ?>
         <div class="w-full">
             <div class="grid mt-7 gap-x-7 grid-cols-12 justify-between">
-                <div class="col-span-10 flex gap-x-5"><span class="flex"><span class="icon text-3xl icon-shield"></span></span>
-                    <div class="flex text-gray-600 text-2xl"><?php echo esc_attr($section_title);?></div>
-                    <div class="relative after:w-0.5 after:absolute after:bg-gray-600 after:h-6 after:left-0 after:top-1"></div>
+                <div class="col-span-10 flex gap-x-5"><span class="horizontalLines"></span>
+                    <div class="flex text-gray-600 section-title"><?php echo esc_attr($section_title);?></div>
+<!--                    <div class="relative after:w-0.5 after:absolute after:bg-gray-600 after:h-6 after:left-0 after:top-1"></div>-->
                     <ul class="tabs">
                         <?php
                         foreach ($categories as $k => $category) {

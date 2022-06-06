@@ -8,7 +8,7 @@ $articles = new WP_Query([
     <div class="w-full">
         <div class="grid mt-7 gap-x-7 grid-cols-12 justify-between">
             <div class="col-span-10 flex gap-x-5"><span class="flex"><span
-                            class="icon text-3xl icon-shield"></span></span>
+                            class="horizontalLines"></span></span>
                 <div class="flex text-gray-600 text-2xl">مقالات ما</div>
             </div>
             <div class="col-span-2 justify-end flex">

@@ -22,7 +22,11 @@
 
                 </div>
 				<div class="col-span-3 flex-wrap flex logo-container">
-                    Widget Kala
+                    <?php
+                    if ( function_exists( 'the_custom_logo' ) ) {
+                        the_custom_logo();
+                    }
+                    ?>
                 </div>
 				<div class="col-span-4 flex-wrap flex">
 					<?php get_search_form(); ?>
