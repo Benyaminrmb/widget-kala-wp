@@ -160,7 +160,7 @@ button {
 }
 
 .product-section-container {
-    @apply my-7
+    @apply mb-7 mt-24
 }
 
 .product-tabs-content {
@@ -279,7 +279,7 @@ button {
 
 .news-letter input[type='email'],
 .news-letter input[type='text'] {
-    @apply pl-40 pr-8 transition transition-all ease-linear py-2 h-full text-sm text-white border block w-full rounded-md pl-10 bg-transparent placeholder-customGray
+    @apply pl-40 pr-8 transition transition-all ease-linear py-1 h-full text-sm text-white border block w-full rounded-md pl-10 bg-transparent placeholder-customGray
     focus:outline-none focus:bg-white focus:text-gray-900 focus:bg-transparent focus:text-white focus:border-customLightblue
 }
 
