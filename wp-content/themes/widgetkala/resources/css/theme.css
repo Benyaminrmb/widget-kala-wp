@@ -27,8 +27,8 @@ button {
 
 /*search box*/
 .search-box {
-    @apply hidden md:flex relative w-full text-gray-600 focus-within:text-gray-300
-    before:absolute before:block  before:inset-x-4 md:before:inset-x-8 before:rounded-full before:h-1 before:-top-0.5 before:bg-customDarkblue
+    @apply flex relative w-full text-gray-600 focus-within:text-gray-300
+    before:absolute before:block  before:inset-x-32 md:before:inset-x-8 before:rounded-full before:h-1 before:-top-0.5 before:bg-customDarkblue
     ;
 }
 
@@ -131,7 +131,7 @@ button {
 }
 
 .tabs {
-    @apply flex  text-sm items-center gap-x-5 text-gray-500 flex-wrap;
+    @apply md:flex hidden  text-sm items-center gap-x-5 text-gray-500 flex-wrap;
 }
 
 .tabs li {
@@ -199,7 +199,7 @@ button {
 }
 
 .custom-btn-secondary-outline {
-    @apply border leading-8 hover:bg-customLightblue hover:text-white transition ease-in-out duration-150 w-full rounded-md text-sm border-customLightblue text-customLightblue px-3 text-center;
+    @apply md:border leading-8 hover:bg-customLightblue hover:text-white transition ease-in-out duration-150 w-full rounded-md text-sm border-customLightblue text-customLightblue px-3 text-center;
 }
 
 .pagination-container {
@@ -308,7 +308,7 @@ button {
 .section-title {
     @apply text-customBlack;
     font: normal bold 22px/30px "IRANSans", Tahoma, sans-serif;
-    @apply after:relative after:w-0.5 after:absolute after:bg-gray-600 after:h-6 after:left-0 after:top-1 after:mx-14
+    @apply after:md:block after:hidden after:w-0.5 after:absolute after:bg-gray-600 after:h-6 after:left-0 after:top-1 after:mx-14
 }
 
 .heading-with-icon{
@@ -553,4 +553,7 @@ header .icon-trolley{
 }
 .paginate-btn{
     @apply flex border border-customDarkWhite rounded-md p-2 px-3 gap-2 text-customGray hover:bg-customLightblue transition ease-in-out hover:text-white
+}
+.min-w-1\/2 {
+    min-width: 50%;
 }
