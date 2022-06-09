@@ -62,7 +62,7 @@ button {
 }
 
 .cart-button .cart-count-badge {
-    @apply flex absolute h-7 w-7 text-center text-white -top-2 -left-2;
+    @apply flex absolute h-7 w-7 text-center text-white -top-2 -right-2;
 }
 
 
@@ -544,4 +544,13 @@ input:checked ~ .parent {
 
 .comments-area .comment-form-container{
     @apply rounded-md py-10 px-12 bg-customDarkblue/5
+}
+header .icon-trolley{
+    @apply text-5xl
+}
+.paginate-btn.active{
+    @apply border-customDarkWhite bg-customLightblue text-white
+}
+.paginate-btn{
+    @apply flex border border-customDarkWhite rounded-md p-2 px-3 gap-2 text-customGray hover:bg-customLightblue transition ease-in-out hover:text-white
 }
