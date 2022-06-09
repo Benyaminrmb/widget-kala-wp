@@ -1,5 +1,5 @@
 <?php
-if ( ! function_exists('it_acf_options')) {
+if (!function_exists('it_acf_options')) {
 //    add_action('acf/init', 'it_acf_options');
     function it_acf_options()
     {
@@ -10,15 +10,15 @@ if ( ! function_exists('it_acf_options')) {
                 [
                     'page_title' => __('Theme General Settings', 'widgetize'),
                     'menu_title' => __('Theme Settings', 'widgetize'),
-                    'menu_slug'  => 'theme-general-settings',
+                    'menu_slug' => 'theme-general-settings',
                     'capability' => 'edit_posts',
-                    'redirect'   => false,
+                    'redirect' => false,
                 ]
             );
         }
     }
 }
-if ( ! function_exists('it_template_choose')) {
+if (!function_exists('it_template_choose')) {
     function it_template_choose($template)
     {
         global $wp_query;
@@ -89,18 +89,18 @@ if (function_exists('yoast_breadcrumb')) {
      */
     function mt_breadcrumb_single_link($link_output, $link)
     {
-        $id   = null;
+        $id = null;
         $icon = 'search';
         if (isset($link['id'])) {
             $type = 'post';
-            $id   = $link['id'];
+            $id = $link['id'];
             $icon = 'book';
             if ($id == get_option('page_on_front')) {
                 $icon = 'home';
             }
         } elseif (isset($link['term_id'])) {
             $type = 'term';
-            $id   = $link['term_id'];
+            $id = $link['term_id'];
             $icon = 'folder';
         }
 
@@ -111,7 +111,7 @@ if (function_exists('yoast_breadcrumb')) {
                 '</span>',
             ],
             [
-                '<li class="breadcrumb-item"><i class="icon icon-'.$icon.'"></i> ',
+                '<li class="breadcrumb-item"><i class="icon icon-' . $icon . '"></i> ',
                 ' </li><li class="breadcrumb-item text-truncate active" aria-current="page"><i class="icon icon-file"></i>',
                 '</li>',
             ],
@@ -123,14 +123,14 @@ if (function_exists('yoast_breadcrumb')) {
 
     add_filter('wpseo_breadcrumb_single_link', 'mt_breadcrumb_single_link', 10, 2);
 }
-if (class_exists('WP_Bootstrap_Navwalker') && ! function_exists('mt_bs5_dropdown_attr')) {
+if (class_exists('WP_Bootstrap_Navwalker') && !function_exists('mt_bs5_dropdown_attr')) {
     add_filter('nav_menu_link_attributes', 'prefix_bs5_dropdown_data_attribute', 20, 3);
     /**
      * Use namespaced data attribute for Bootstrap's dropdown toggles.
      *
-     * @param  array  $atts  HTML attributes applied to the item's `<a>` element.
-     * @param  WP_Post  $item  The current menu item.
-     * @param  stdClass  $args  An object of wp_nav_menu() arguments.
+     * @param array $atts HTML attributes applied to the item's `<a>` element.
+     * @param WP_Post $item The current menu item.
+     * @param stdClass $args An object of wp_nav_menu() arguments.
      *
      * @return array
      */
@@ -146,7 +146,7 @@ if (class_exists('WP_Bootstrap_Navwalker') && ! function_exists('mt_bs5_dropdown
     }
 }
 if (function_exists('wp_pagenavi')) {
-    add_filter('wp_pagenavi', __NAMESPACE__.'\\mt_pagination', 10, 2);
+    add_filter('wp_pagenavi', __NAMESPACE__ . '\\mt_pagination', 10, 2);
     function mt_pagination($html)
     {
         $out = str_replace(
@@ -192,24 +192,24 @@ if (!function_exists('mt_pagination')) {
     {
         global $wp_query;
         $max_num_pages = $wp_query->max_num_pages;
-        $paged         = get_query_var( 'paged' );
+        $paged = get_query_var('paged');
         $defaults = [
-            'echo'=>true,
-            'max_num_pages'=>$max_num_pages,
+            'echo' => true,
+            'max_num_pages' => $max_num_pages,
         ];
         $args = wp_parse_args($args, $defaults);
         $html = '<div class="pagination-container">' . __('لطفا پلاگین wp_pagenavi را نصب کنید', 'widgetize') . '</div>';
         if (function_exists('wp_pagenavi')) {
             $html = '<div class="pagination-container">';
-            if($paged > 1){
+            if ($paged > 1) {
                 $html .= '<a href="' . previous_posts(false) . '" class="page-link prev-link">' . __('قبلی ', 'widgetize') . '</a>';
-            }else{
+            } else {
                 $html .= '<div></div>';
             }
             $html .= wp_pagenavi(['echo' => false]);
-            if($paged < $max_num_pages){
-                $html .= '<a href="' . next_posts($max_num_pages,false) . '" class="page-link next-link">' . __('بعدی', 'widgetize') . '</a>';
-            }else{
+            if ($paged < $max_num_pages) {
+                $html .= '<a href="' . next_posts($max_num_pages, false) . '" class="page-link next-link">' . __('بعدی', 'widgetize') . '</a>';
+            } else {
                 $html .= '<div></div>';
             }
             $html .= '</div>';
@@ -224,16 +224,16 @@ if (!function_exists('mt_pagination')) {
     }
 }
 
-if ( ! function_exists('mt_comment')) {
+if (!function_exists('mt_comment')) {
     function mt_comment($comment, $args, $depth)
     {
         global $comment;
         switch ($comment->comment_type) :
             case 'pingback' :
             case 'trackback' :
-                echo '<li class="'.implode(' ', get_comment_class()).'" id="li-comment-'.
-                     get_comment_ID().
-                     '" >';
+                echo '<li class="' . implode(' ', get_comment_class()) . '" id="li-comment-' .
+                    get_comment_ID() .
+                    '" >';
                 ?>
                 <p><?php esc_html_e(
                         'Pingback:',
@@ -248,91 +248,61 @@ if ( ! function_exists('mt_comment')) {
                 break;
             default :
                 global $post;
-                echo '<li class="'.implode(' ', get_comment_class()).'" id="li-comment-'.
-                     get_comment_ID().
-                     '" >';
-                $childArgs  = [
-                    'post_id' => $post->ID, //main post id
-                    'parent'  => get_comment_ID(), //the comment id
-                    'count'   => true, //just count
-                ];
-                $childCount = get_comments($childArgs);
+                echo '<li class="' . implode(' ', get_comment_class()) . '" id="li-comment-' .
+                    get_comment_ID() .
+                    '" >';
+//                $childArgs = [
+//                    'post_id' => $post->ID, //main post id
+//                    'parent' => get_comment_ID(), //the comment id
+//                    'count' => true, //just count
+//                ];
+//                $childCount = get_comments($childArgs);
                 ?>
                 <article id="comment-<?php comment_ID(); ?>" class="comment">
-                    <div>
-                        <div class="comment-meta-first">
-                            <?php
-                            printf(
-                                '<span class="comment-author" itemprop="name">%1$s %2$s</span>',
-                                get_comment_author_link(), '<a class="comment-edit-link" href="'.
-                                                           esc_url(
-                                                               get_edit_comment_link($comment)
-                                                           ).'">'.esc_html__('Edit', 'widgetize').
-                                                           '</a>'
-                            );
-                            comment_reply_link(
-                                array_merge(
-                                    $args, [
-                                        'reply_text' => sprintf(
-                                            '<span class="reply-text">%s</span>',
-                                            __('Send Reply', 'widgetize')
-                                        ),
-                                        'depth'      => $depth,
-                                        'max_depth'  => $args['max_depth'],
-                                    ]
-                                )
-                            );
-                            ?>
-                        </div>
+                    <div class="comment-meta-first">
+                        <?php
+                        printf('<div class="comment-avatar">%s</div>', get_avatar(get_comment_author(), '72'));
+                        printf(
+                            '<span class="comment-author" itemprop="name">%1$s</span>',
+                            get_comment_author_link(),
+                        );
+                        printf(
+                            '<time class="comment-date" datetime="%1$s">%2$s</time></a>',
+                            get_comment_time('c'),
+                            sprintf(
+                                esc_html__('%1$s', 'widgetize'), get_comment_date('Y-m-d')
+                            )
+                        );
+                        comment_reply_link(
+                            array_merge(
+                                $args, [
+                                    'reply_text' => sprintf(
+                                        '<span class="reply-text">%s</span>',
+                                        __('Send Reply', 'widgetize')
+                                    ),
+                                    'depth' => $depth,
+                                    'max_depth' => $args['max_depth'],
+                                ]
+                            )
+                        );
+                        ?>
                     </div>
-                    <div class="col">
-                        <section class="comment-content" itemprop="text">
-                            <?php if ('0' == $comment->comment_approved) : ?>
-                                <p class="comment-awaiting-moderation p-1 alert alert-info alert-link"><?php esc_html_e(
-                                        'Your comment is awaiting moderation.',
-                                        'widgetize'
-                                    ); ?></p>
-                            <?php endif; ?>
-                            <?php comment_text(); ?>
-                        </section>
-                    </div>
-                    <div>
-                        <footer class="comment-meta-last">
-                            <?php
-                            printf(
-                                '<a class="d-block comment-date" itemprop="datePublished" href="%1$s"><time datetime="%2$s">%3$s</time></a>',
-                                esc_url(get_comment_link($comment->comment_ID)),
-                                get_comment_time('c'),
-                                sprintf(
-                                    esc_html__('%1$s', 'widgetize'), get_comment_date('F j')
-                                )
-                            );
-                            if (0 === $childCount) {
-                                printf(
-                                    '<span class="reply-count">%s</span>',
-                                    esc_html__('No&zwnj;Replies', 'widgetize')
-                                );
-                            } elseif (1 === $childCount) {
-                                printf(
-                                    '<span class="reply-count">%s</span>',
-                                    sprintf(esc_html__('One reply', 'widgetize'))
-                                );
-                            } else {
-                                printf(
-                                    '<span class="reply-count">%s</span>',
-                                    sprintf(esc_html__('%d Replies', 'widgetize'), $childCount)
-                                );
-                            }
-                            ?>
-                        </footer>
-                    </div>
+                    <section class="comment-content" itemprop="text">
+                        <?php if ('0' == $comment->comment_approved) : ?>
+                            <p class="comment-awaiting-moderation p-1 alert alert-info alert-link"><?php esc_html_e(
+                                    'Your comment is awaiting moderation.',
+                                    'widgetize'
+                                ); ?></p>
+                        <?php endif; ?>
+                        <?php comment_text(); ?>
+                    </section>
                 </article>
                 <?php
                 break;
         endswitch;
     }
 }
-if ( ! function_exists('mt_move_comment_field_to_bottom')) {
+if (!function_exists('mt_move_comment_field_to_bottom')) {
     function mt_move_comment_field_to_bottom($fields)
     {
         $comment_field = $fields['comment'];
@@ -344,7 +314,7 @@ if ( ! function_exists('mt_move_comment_field_to_bottom')) {
 
     add_filter('comment_form_fields', 'mt_move_comment_field_to_bottom');
 }
-if ( ! function_exists('change_js_view_cart_button')) {
+if (!function_exists('change_js_view_cart_button')) {
     function change_js_view_cart_button($params, $handle)
     {
         if ('wc-add-to-cart' !== $handle) {
@@ -361,22 +331,22 @@ if ( ! function_exists('change_js_view_cart_button')) {
 }
 add_filter('woocommerce_get_script_data', 'change_js_view_cart_button', 10, 2);
 
-if ( ! function_exists('mt_ajax_products')) {
+if (!function_exists('mt_ajax_products')) {
     function mt_ajax_products($params = [])
     {
 
-        $count    = $params['count'];
+        $count = $params['count'];
         $category = $params['cat_id'];
         $products = new WP_Query([
-            'post_type'      => 'product',
+            'post_type' => 'product',
             'posts_per_page' => $count,
-            'meta_key'       => 'total_sales',
-            'orderby'        => 'meta_value_num',
-            'tax_query'      => array(
+            'meta_key' => 'total_sales',
+            'orderby' => 'meta_value_num',
+            'tax_query' => array(
                 array(
                     'taxonomy' => 'product_cat',
-                    'field'    => 'id',
-                    'terms'    => [$category], /*category id*/
+                    'field' => 'id',
+                    'terms' => [$category], /*category id*/
                     'operator' => 'IN',
                 )
             ),
@@ -389,3 +359,48 @@ if ( ! function_exists('mt_ajax_products')) {
     }
 }
 
+add_action('comment_post', 'mt_save_comment_meta_data');
+if (!function_exists('mt_save_comment_meta_data')) {
+
+    function mt_save_comment_meta_data($comment_id)
+    {
+        if ((isset($_POST['phone'])) && ($_POST['phone'] != ''))
+            $phone = wp_filter_nohtml_kses($_POST['phone']);
+        add_comment_meta($comment_id, 'phone', $phone);
+    }
+}
+
+if (!function_exists('mt_add_meta_box')) {
+    function mt_add_meta_box()
+    {
+        add_meta_box('title', __('Comment Metadata - Extend Comment'), 'mt_comment_meta_box', 'comment', 'normal', 'high');
+    }
+}
+add_action('add_meta_boxes_comment', 'mt_add_meta_box');
+if (!function_exists('mt_comment_meta_box')) {
+    function mt_comment_meta_box($comment)
+    {
+        $phone = get_comment_meta($comment->comment_ID, 'phone', true);
+        wp_nonce_field('mt_comment_update', 'mt_comment_update', false);
+        ?>
+        <p>
+            <label for="phone"><?php _e('Phone'); ?></label>
+            <input type="text" name="phone" value="<?php echo esc_attr($phone); ?>" class="widefat"/>
+        </p>
+        <?php
+    }
+}
+if (!function_exists('mt_comment_edit_metafields')) {
+    function mt_comment_edit_metafields($comment_id)
+    {
+        if (!isset($_POST['mt_comment_update']) || !wp_verify_nonce($_POST['mt_comment_update'], 'mt_comment_update')) return;
+
+        if ((isset($_POST['phone'])) && ($_POST['phone'] != '')) :
+            $phone = wp_filter_nohtml_kses($_POST['phone']);
+            update_comment_meta($comment_id, 'phone', $phone);
+        else :
+            delete_comment_meta($comment_id, 'phone');
+        endif;
+    }
+}
+add_action('edit_comment', 'mt_comment_edit_metafields');

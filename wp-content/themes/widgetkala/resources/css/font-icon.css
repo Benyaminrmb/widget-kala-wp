@@ -325,3 +325,10 @@
 .icon-global-shipping:before {
   content: '\e963';
 }
+
+.icon-replies:before {
+  content: "\e964";
+}
+.icon-chavron-left:before {
+  content: "\e965";
+}

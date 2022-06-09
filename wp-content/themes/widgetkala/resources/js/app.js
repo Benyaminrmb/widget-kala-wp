@@ -13,5 +13,28 @@ jQuery(document).ready(function ($) {
         all_tabs.removeClass('active');
         tab_element.addClass('active');
         console.log(tab_element.attr('id'),cat_id);
-    })
+    });
+
+    /*woocommerce quantity input*/
+    $('form.cart,form.woocommerce-cart-form').on('click', '.btn.plus, .btn.minus', function () {
+        let qty = $(this).closest('.quantity-container').find('.qty'),
+            val = parseFloat(qty.val()),
+            max = parseFloat(qty.attr('max')),
+            min = parseFloat(qty.attr('min')),
+            step = parseFloat(qty.attr('step'));
+        if ($(this).is('.plus')) {
+            if (max && (max <= val)) {
+                qty.val(max);
+            } else {
+                qty.val(val + step);
+            }
+        } else {
+            if (min && (min >= val)) {
+                qty.val(min);
+            } else if (val > 1) {
+                qty.val(val - step);
+            }
+        }
+
+    });
 });

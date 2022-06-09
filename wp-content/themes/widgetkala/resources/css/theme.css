@@ -10,6 +10,13 @@
         @apply relative;
         box-shadow: 0 1px 25px rgba(0, 0, 0, 0.1);
     }
+
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        -moz-appearance: textfield;
+        margin: 0;
+    }
 }
 body {
     direction: rtl;
@@ -311,7 +318,7 @@ button {
     @apply after:relative after:w-0.5 after:absolute after:bg-gray-600 after:h-6 after:left-0 after:top-1 after:mx-14
 }
 
-.heading-with-icon{
+.heading-with-icon {
     @apply text-customBlack pr-11 relative mt-36 mb-11 before:content-horizontalLines before:absolute before:right-0 before:top-0;
     font: normal bold 22px/30px "IRANSans", Tahoma, sans-serif;
 }
@@ -508,20 +515,24 @@ input:checked ~ .parent {
     @apply block flex-wrap col-span-7 pl-8;
 
 }
-.single-post .single-meta-container .meta-title{
+
+.single-post .single-meta-container .meta-title {
     @apply flex font-bold text-customMediumGray text-xs;
 }
-.single-post .single-meta-container .meta-value{
+
+.single-post .single-meta-container .meta-value {
     @apply flex text-xs text-customGray;
 }
-.single-post .single-meta-container .meta-value .separator{
+
+.single-post .single-meta-container .meta-value .separator {
     @apply bg-customLightblue w-1 h-1 rounded my-2 mx-1;
 }
-.single-post .single-meta-container .meta-value a{
+
+.single-post .single-meta-container .meta-value a {
     @apply text-customBlack hover:text-customDarkblue focus:text-customDarkblue;
 }
 
-.single-post .single-meta-container .social-share-list{
+.single-post .single-meta-container .social-share-list {
     @apply flex gap-4
 }
 
@@ -534,14 +545,198 @@ input:checked ~ .parent {
     @apply block flex-wrap col-span-12 text-base;
 }
 
-.comments-area{
+.comments-area {
     @apply mt-20 mx-auto px-4 sm:px-6 lg:px-44
 }
 
-.comments-area .comment-form{
-    @apply flex w-full flex-row
+.page-title-center,
+.comments-area .title-container {
+    @apply mx-auto flex justify-center items-center
+}
+.page-title-center h1{
+
 }
 
-.comments-area .comment-form-container{
+.comments-area .comment-reply-title {
+    @apply mt-14 mb-16
+}
+
+.comments-area .comment-respond {
     @apply rounded-md py-10 px-12 bg-customDarkblue/5
+}
+
+.comments-area .comment-form {
+    @apply grid gap-y-5 gap-x-6 grid-cols-1 md:grid-cols-2
+}
+
+.comments-area .comment-form .logged-in-as,
+.comments-area .comment-form .form-col {
+    @apply flex col-span-1 relative flex-col
+}
+
+.comments-area .comment-form .author-detail {
+    @apply gap-7 placeholder-customGray
+}
+
+.comments-area .comment-form .form-control {
+    @apply bg-white px-4 py-2 rounded-md border border-customLightGray w-full h-full
+    focus:border-customDarkblue focus:outline-none
+    focus-visible:border-customDarkblue focus-visible:outline-none
+}
+
+.comment-form .form-group {
+    @apply relative
+}
+
+.comment-form .form-group span.svg-icon {
+    @apply absolute top-4 left-4;
+}
+
+.comments-area .comment-form .author-detail [name='author'] {
+
+}
+
+.comments-area .comment-form .author-detail [name='email'] {
+}
+
+.comments-area .comment-form .author-detail [name='phone'] {
+}
+
+.comments-area .comment-form .comment-textbox textarea {
+    max-height: 190px;
+}
+
+.comments-area .comment-form .form-submit {
+    @apply flex col-span-2 relative justify-end items-end
+}
+
+.comments-area .comment-form .form-submit button.submit {
+    @apply py-2 px-4 rounded-md cursor-pointer bg-customDarkblue text-white border border-r-transparent
+    hover:bg-customRed hover:text-white hover:outline-none
+    focus:bg-customRed focus:text-white focus:outline-none
+}
+
+.commentlist-container {
+    @apply mt-12 mb-20 rounded-md py-10 px-12 bg-customDarkblue/5 grid gap-y-5 gap-x-6
+}
+
+.commentlist-container article.comment {
+    @apply flex flex-col md:flex-row md:flex-nowrap mb-11 md:mb-16;
+}
+
+.comment .comment-meta-first {
+    @apply flex-grow md:flex-1 w-full md:w-1/4 border-l border-customLightgraytwo text-center flex flex-col p-4 md:pl-12
+}
+
+.comment .comment-content {
+    @apply flex-grow md:flex-auto w-full md:w-3/4 p-8 text-sm;
+}
+
+.comment .comment-content .comment-awaiting-moderation {
+    @apply p-1 bg-customLightblue/10 border border-customLightblue rounded text-customDarkblue
+}
+
+.comment .children {
+    @apply relative pr-14 before:absolute before:text-4xl before:text-customDarkblue before:top-4 before:right-0
+}
+
+.comment .children:before {
+    content: "\e964";
+    font-family: 'fonticon' !important;
+}
+
+.comment .comment-meta-first .comment-avatar {
+    @apply mb-1.5;
+}
+
+.comment .comment-meta-first .comment-author {
+    @apply text-customDarkblue text-sm mb-1.5;
+}
+
+.comment .comment-meta-first .comment-date {
+    @apply text-customLightgraytwo text-sm pb-4;
+}
+
+.comment .comment-meta-first .comment-reply-link {
+    @apply text-customLightblue text-sm;
+}
+
+.woocommerce-cart article.page .woocommerce {
+    @apply grid grid-cols-12 gap-x-6
+}
+
+.woocommerce-cart article.page .woocommerce .woocommerce-notices-wrapper {
+    @apply col-span-12 my-4;
+}
+
+.woocommerce-cart article.page .woocommerce .woocommerce-cart-form {
+    @apply col-span-8
+}
+
+.woocommerce-cart article.page .woocommerce .cart-collaterals {
+    @apply col-span-4 bg-customLightgraytwo rounded-b-md px-6 py-7
+}
+
+.woocommerce-cart article.page .woocommerce table.shop_table {
+    @apply border-transparent overflow-hidden
+}
+
+.woocommerce-cart article.page .woocommerce table.shop_table.woocommerce-cart-form__contents {
+
+}
+
+.woocommerce-cart article.page .woocommerce table.shop_table.woocommerce-cart-form__contents thead {
+    @apply bg-customGray text-white
+}
+
+.woocommerce-cart article.page .woocommerce table.shop_table.woocommerce-cart-form__contents thead th {
+    @apply text-center
+}
+
+.woocommerce-cart article.page .woocommerce table.shop_table.woocommerce-cart-form__contents tbody tr.cart_item {
+    @apply even:bg-customDarkblue/10 odd:bg-customDarkblue/5;
+}
+
+.woocommerce-cart article.page .woocommerce table.cart img {
+    @apply w-16 h-14;
+}
+
+.woocommerce-cart article.page .woocommerce table.cart .quantity-container {
+    @apply inline-block rounded-md bg-white inline-block border border-customGray w-auto h-11 pt-1
+}
+
+.woocommerce-cart article.page .woocommerce table.cart .input-text.qty {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    @apply border-x border-customLightgraytwo
+}
+
+.woocommerce-cart article.page .woocommerce table.cart .plus,
+.woocommerce-cart article.page .woocommerce table.cart .minus {
+    @apply py-1 px-2 text-base
+}
+
+.woocommerce-cart article.page .woocommerce .cart-collaterals .cart_totals {
+    @apply float-none w-full
+}
+
+.woocommerce-cart article.page .woocommerce .cart-collaterals .cart_totals table tr th,
+.woocommerce-cart article.page .woocommerce .cart-collaterals .cart_totals table .cart-subtotal td,
+.woocommerce-cart article.page .woocommerce .cart-collaterals .cart_totals table tr td {
+    @apply leading-7 py-3 px-4 border-t border-customLightgraytwo
+}
+
+.woocommerce-cart article.page .woocommerce .coupon .input-text {
+    @apply w-44 rounded-md border-customGray
+}
+
+.woocommerce-cart article.page .woocommerce button.button[name="update_cart"] {
+    @apply bg-white border border-customLightblue rounded-md text-sm text-center
+}
+
+.woocommerce-cart article.page .woocommerce .coupon button.button[name="apply_coupon"],
+.woocommerce-cart article.page .woocommerce a.button.alt {
+    @apply bg-customDarkblue text-white
+    hover:bg-customRed hover:text-white
+    focus:bg-customRed focus:text-white
 }
