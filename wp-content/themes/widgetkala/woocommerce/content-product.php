@@ -24,7 +24,7 @@ if (empty($product) || !$product->is_visible()) {
     return;
 }
 $col_class = '';
-if (is_shop() || is_front_page()) {
+if (is_shop() || is_front_page() || is_singular('product')) {
     $col_class = 'col-span-3';
 } else {
     $col_class = 'col-span-4';
