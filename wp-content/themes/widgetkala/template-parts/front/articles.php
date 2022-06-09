@@ -25,11 +25,11 @@ $sticky   = new WP_Query($args);
                 </a>
             </div>
         </div>
-        <div class="grid mt-7 gap-7 grid-cols-3">
+        <div class="md:grid flex overflow-x-auto md:overflow-hidden mt-7 gap-7 grid-cols-3">
             <?php if ($sticky->have_posts()) {
                 while ($sticky->have_posts()) {
                     $sticky->the_post(); ?>
-                    <div class="flex col-span-1 relative">
+                    <div class="hidden md:flex col-span-1 relative">
                         <div class="flex w-full">
                             <?php if (has_post_thumbnail()) {
                                 the_post_thumbnail('large', ['class' => 'rounded-md w-full']);
@@ -53,13 +53,13 @@ $sticky   = new WP_Query($args);
 
             ?>
             <?php if ($articles->have_posts()){ ?>
-            <div class="grid gap-7 grid-rows-2 col-span-1 relative">
+            <div class="flex md:grid  gap-7 grid-rows-2 col-span-1 relative">
                 <?php
                 $index = 0;
                 while ($articles->have_posts()) {
                     $index ++;
                     $articles->the_post(); ?>
-                    <div class="grid grid-cols-7 gap-4 row-span-1 w-full border border-customDarkWhite rounded-md p-4">
+                    <div class="grid min-w-full grid-cols-7 gap-4 row-span-1 w-full border border-customDarkWhite rounded-md p-4">
                         <div class="grid justify-center text-xl font-thin items-center grid-rows-2 col-span-2 w-full h-full bg-customLightSky rounded-md">
                             <div class="flex h-full border-b-2 border-gray-100 row-span-1 items-center justify-center">
                                 <?php the_time('d'); ?>

@@ -279,6 +279,13 @@ button {
     @apply text-3xl;
 }
 
+.news-letter button:hover .icon,
+.news-letter button:focus .icon,
+.news-letter button:active .icon {
+    @apply text-gray-900;
+}
+
+.news-letter input[type='search'],
 .news-letter input[type='email'],
 .news-letter input[type='text'] {
     @apply pl-40 pr-8 transition transition-all ease-linear py-1 h-full text-sm text-white border block w-full rounded-md pl-10 bg-transparent placeholder-customGray
@@ -556,4 +563,7 @@ header .icon-trolley{
 }
 .min-w-1\/2 {
     min-width: 50%;
+}
+.w-388{
+    width: 388px;
 }
