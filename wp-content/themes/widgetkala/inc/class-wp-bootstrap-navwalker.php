@@ -261,6 +261,7 @@ if ( ! class_exists('WP_Bootstrap_Navwalker') ) :
 				// With no link mod type set this must be a standard <a> tag.
 				$item_output .= '<a' . $attributes . '>';
 			}
+
 			/*
 			 * Initiate empty icon var, then if we have a string containing any
 			 * icon classes form the icon markup with an <i> element. This is
@@ -294,6 +295,8 @@ if ( ! class_exists('WP_Bootstrap_Navwalker') ) :
 					unset($linkmod_classes[ $k ]);
 				}
 			}
+
+
 			// Put the item contents into $output.
 			$item_output .= isset($args->link_before) ?
 				$args->link_before . $icon_html . $title . $args->link_after : '';
@@ -301,6 +304,9 @@ if ( ! class_exists('WP_Bootstrap_Navwalker') ) :
 			 * This is the end of the internal nav item. We need to close the
 			 * correct element depending on the type of link or link mod.
 			 */
+            if($linkmod_type == 'divider'){
+                $item_output = '&nbsp;';
+            }
 			if ( '' !== $linkmod_type ){
 				// Is linkmod, output the required closing element.
 				$item_output .= self::linkmod_element_close($linkmod_type);
@@ -464,6 +470,11 @@ if ( ! class_exists('WP_Bootstrap_Navwalker') ) :
 					$icon_classes[] = $class;
 					unset($classes[ $key ]);
 				}
+				elseif ( preg_match('/^divider(\S*)?|^seperator(\s?)$/i', $class) ) {
+					// divider.
+                    $linkmod_classes[] = $class;
+//					unset($classes[ $key ]);
+				}
 			}
 			
 			return $classes;
@@ -489,6 +500,9 @@ if ( ! class_exists('WP_Bootstrap_Navwalker') ) :
 						// Check for special class types and set a flag for them.
 						if ( 'dropdown-header' === $link_class ){
 							$linkmod_type = 'dropdown-header';
+						}
+                        if ( 'divider' === $link_class ){
+							$linkmod_type = 'divider';
 						}
 						elseif ( 'dropdown-divider' === $link_class ) {
 							$linkmod_type = 'dropdown-divider';
@@ -537,7 +551,11 @@ if ( ! class_exists('WP_Bootstrap_Navwalker') ) :
 							// Store a type flag and unset href and target.
 							unset($atts[ 'href' ]);
 							unset($atts[ 'target' ]);
-						}
+						}elseif( 'divider'=== $link_class){
+                            unset($atts['href']);
+                            unset($atts['target']);
+                            unset($atts['title']);
+                        }
 					}
 				}
 			}
@@ -589,7 +607,9 @@ if ( ! class_exists('WP_Bootstrap_Navwalker') ) :
 			elseif ( 'dropdown-divider' === $linkmod_type ) {
 				// This is a divider.
 				$output .= '<div class="dropdown-divider"' . $attributes . '>';
-			}
+//			}elseif('divider' === $linkmod_type){
+//                $output .= '<span class="divider">';
+            }
 			
 			return $output;
 		}

@@ -90,7 +90,7 @@ $image_id = get_term_meta($current_cat->term_id, 'thumbnail_id', true);
                                                 <label for="toggleA" class="cursor-pointer">
                                                     <span class="relative">
                                                         <input type="checkbox" id="toggleA" class="sr-only"/>
-                                                        <span class="block parent bg-customLightgray2 w-14 h-7 rounded-md"></span>
+                                                        <span class="block parent bg-customLightgraytwo w-14 h-7 rounded-md"></span>
                                                         <span class="dot absolute left-1 top-1 bg-customGray w-5 h-5 rounded-full transition"></span>
                                                     </span>
                                                 </label>
@@ -104,7 +104,7 @@ $image_id = get_term_meta($current_cat->term_id, 'thumbnail_id', true);
                                                 <label for="toggleB" class="cursor-pointer">
                                                     <span class="relative">
                                                         <input type="checkbox" id="toggleB" class="sr-only"/>
-                                                        <span class="block parent bg-customLightgray2 w-14 h-7 rounded-md"></span>
+                                                        <span class="block parent bg-customLightgraytwo w-14 h-7 rounded-md"></span>
                                                         <span class="dot absolute left-1 top-1 bg-customGray w-5 h-5 rounded-full transition"></span>
                                                     </span>
                                                 </label>

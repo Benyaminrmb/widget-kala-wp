@@ -1,6 +1,6 @@
 <?php
 if ( ! function_exists('it_acf_options')) {
-    add_action('acf/init', 'it_acf_options');
+//    add_action('acf/init', 'it_acf_options');
     function it_acf_options()
     {
         // Check function exists.
@@ -42,59 +42,59 @@ if (function_exists('yoast_breadcrumb')) {
      *
      * @return string
      */
-    function it_breadcrumb_output_wrapper($wrapper)
+    function mt_breadcrumb_output_wrapper($wrapper)
     {
         return 'ol';
     }
 
-    add_filter('wpseo_breadcrumb_output_wrapper', 'it_breadcrumb_output_wrapper', 10, 1);
+    add_filter('wpseo_breadcrumb_output_wrapper', 'mt_breadcrumb_output_wrapper', 10, 1);
     /**
      * @param $class
      *
      * @return string
      */
-    function it_breadcrumb_output_class($class)
+    function mt_breadcrumb_output_class($class)
     {
         return 'breadcrumb flex flex-nowrap mb-0 w-full';
     }
 
-    add_filter('wpseo_breadcrumb_output_class', 'it_breadcrumb_output_class', 10, 1);
+    add_filter('wpseo_breadcrumb_output_class', 'mt_breadcrumb_output_class', 10, 1);
     /**
      * @param $separator
      *
      * @return string
      */
-    function it_breadcrumb_separator($separator)
+    function mt_breadcrumb_separator($separator)
     {
         return '';
     }
 
-    add_filter('wpseo_breadcrumb_separator', 'it_breadcrumb_separator', 10, 1);
+    add_filter('wpseo_breadcrumb_separator', 'mt_breadcrumb_separator', 10, 1);
     /**
      * @param $wrapper
      *
      * @return string
      */
-    function it_breadcrumb_single_link_wrapper($wrapper)
+    function mt_breadcrumb_single_link_wrapper($wrapper)
     {
         return 'li';
     }
 
-    add_filter('wpseo_breadcrumb_single_link_wrapper', 'it_breadcrumb_single_link_wrapper', 10, 1);
+    add_filter('wpseo_breadcrumb_single_link_wrapper', 'mt_breadcrumb_single_link_wrapper', 10, 1);
     /**
      * @param $link_output
      * @param $link
      *
      * @return string|string[]
      */
-    function it_breadcrumb_single_link($link_output, $link)
+    function mt_breadcrumb_single_link($link_output, $link)
     {
         $id   = null;
         $icon = 'search';
         if (isset($link['id'])) {
             $type = 'post';
             $id   = $link['id'];
-            $icon = 'page';
+            $icon = 'book';
             if ($id == get_option('page_on_front')) {
                 $icon = 'home';
             }
@@ -121,9 +121,9 @@ if (function_exists('yoast_breadcrumb')) {
         return $result;
     }
 
-    add_filter('wpseo_breadcrumb_single_link', 'it_breadcrumb_single_link', 10, 2);
+    add_filter('wpseo_breadcrumb_single_link', 'mt_breadcrumb_single_link', 10, 2);
 }
-if (class_exists('WP_Bootstrap_Navwalker') && ! function_exists('it_bs5_dropdown_attr')) {
+if (class_exists('WP_Bootstrap_Navwalker') && ! function_exists('mt_bs5_dropdown_attr')) {
     add_filter('nav_menu_link_attributes', 'prefix_bs5_dropdown_data_attribute', 20, 3);
     /**
      * Use namespaced data attribute for Bootstrap's dropdown toggles.
@@ -134,7 +134,7 @@ if (class_exists('WP_Bootstrap_Navwalker') && ! function_exists('it_bs5_dropdown
      *
      * @return array
      */
-    function it_bs5_dropdown_attr($atts, $item, $args)
+    function mt_bs5_dropdown_attr($atts, $item, $args)
     {
         //		if ( is_a($args->walker, 'WP_Bootstrap_Navwalker') ){
         //			if ( array_key_exists('data-toggle', $atts) ){
@@ -146,8 +146,8 @@ if (class_exists('WP_Bootstrap_Navwalker') && ! function_exists('it_bs5_dropdown
     }
 }
 if (function_exists('wp_pagenavi')) {
-    add_filter('wp_pagenavi', __NAMESPACE__.'\\it_pagination', 10, 2);
-    function it_pagination($html)
+    add_filter('wp_pagenavi', __NAMESPACE__.'\\mt_pagination', 10, 2);
+    function mt_pagination($html)
     {
         $out = str_replace(
             [
@@ -186,8 +186,46 @@ if (function_exists('wp_pagenavi')) {
         return $out;
     }
 }
-if ( ! function_exists('it_comment')) {
-    function it_comment($comment, $args, $depth)
+
+if (!function_exists('mt_pagination')) {
+    function mt_pagination($args = [])
+    {
+        global $wp_query;
+        $max_num_pages = $wp_query->max_num_pages;
+        $paged         = get_query_var( 'paged' );
+        $defaults = [
+            'echo'=>true,
+            'max_num_pages'=>$max_num_pages,
+        ];
+        $args = wp_parse_args($args, $defaults);
+        $html = '<div class="pagination-container">' . __('لطفا پلاگین wp_pagenavi را نصب کنید', 'widgetize') . '</div>';
+        if (function_exists('wp_pagenavi')) {
+            $html = '<div class="pagination-container">';
+            if($paged > 1){
+                $html .= '<a href="' . previous_posts(false) . '" class="page-link prev-link">' . __('قبلی ', 'widgetize') . '</a>';
+            }else{
+                $html .= '<div></div>';
+            }
+            $html .= wp_pagenavi(['echo' => false]);
+            if($paged < $max_num_pages){
+                $html .= '<a href="' . next_posts($max_num_pages,false) . '" class="page-link next-link">' . __('بعدی', 'widgetize') . '</a>';
+            }else{
+                $html .= '<div></div>';
+            }
+            $html .= '</div>';
+        }
+
+        if ($args['echo'] != true) {
+            return $html;
+        }
+        echo $html;
+        return null;
+
+    }
+}
+
+if ( ! function_exists('mt_comment')) {
+    function mt_comment($comment, $args, $depth)
     {
         global $comment;
         switch ($comment->comment_type) :
@@ -294,8 +332,8 @@ if ( ! function_exists('it_comment')) {
         endswitch;
     }
 }
-if ( ! function_exists('it_move_comment_field_to_bottom')) {
-    function it_move_comment_field_to_bottom($fields)
+if ( ! function_exists('mt_move_comment_field_to_bottom')) {
+    function mt_move_comment_field_to_bottom($fields)
     {
         $comment_field = $fields['comment'];
         unset($fields['comment']);
@@ -304,7 +342,7 @@ if ( ! function_exists('it_move_comment_field_to_bottom')) {
         return $fields;
     }
 
-    add_filter('comment_form_fields', 'it_move_comment_field_to_bottom');
+    add_filter('comment_form_fields', 'mt_move_comment_field_to_bottom');
 }
 if ( ! function_exists('change_js_view_cart_button')) {
     function change_js_view_cart_button($params, $handle)

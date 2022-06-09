@@ -2,7 +2,7 @@
     <div class="post-item">
         <a href="<?php the_permalink(); ?>" class="post-image-container">
             <?php the_post_thumbnail(
-                [404,283], ['class' => 'w-full rounded-md']
+                'post_archive', ['class' => 'w-full rounded-md']
             ); ?>
             <div class="meta-data d-flex">
                 <div class="category"><?php

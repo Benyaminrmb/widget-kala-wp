@@ -14,7 +14,7 @@
 body {
     direction: rtl;
     font-family: IRANSans, Tahoma, sans-serif;
-    @apply text-sm;
+    /*@apply text-sm;*/
     line-height: 27px;
 }
 
@@ -27,7 +27,9 @@ button {
 
 /*search box*/
 .search-box {
-    @apply relative w-full text-gray-600 focus-within:text-gray-300;
+    @apply hidden md:flex relative w-full text-gray-600 focus-within:text-gray-300
+    before:absolute before:block  before:inset-x-4 md:before:inset-x-8 before:rounded-full before:h-1 before:-top-0.5 before:bg-customDarkblue
+    ;
 }
 
 .search-box .submit-button {
@@ -85,7 +87,7 @@ button {
 }
 
 .main-menu {
-    @apply col-span-8 gap-x-12 flex overflow-hidden flex-wrap relative;
+    @apply col-span-10 gap-x-12 flex overflow-hidden flex-wrap relative;
 }
 
 .main-menu .divider {
@@ -106,13 +108,13 @@ button {
     whitespace-nowrap
     before:mx-auto
     before:rounded-b-full
-    before:h-1
+    before:h-1.5
     before:w-full
     before:bg-customLightblue
-    before:transition-all before:-top-2
-    hover:before:top-0 hover:before:text-orange-400
-    focus:before:top-0 focus:before:text-orange-400
-    active:before:top-0 active:before:text-orange-400;
+    before:transition-all before:duration-200 before:-top-1.5
+    hover:before:top-0 hover:text-orange-400
+    focus:before:top-0 focus:text-orange-400
+    active:before:top-0 active:text-orange-400;
 }
 
 .nav-link.active,
@@ -121,7 +123,7 @@ button {
 }
 
 .major-shopping-container {
-    @apply col-span-4 justify-end flex items-end;
+    @apply col-span-2 justify-end flex items-end;
 }
 
 .major-shopping {
@@ -309,6 +311,11 @@ button {
     @apply after:relative after:w-0.5 after:absolute after:bg-gray-600 after:h-6 after:left-0 after:top-1 after:mx-14
 }
 
+.heading-with-icon{
+    @apply text-customBlack pr-11 relative mt-36 mb-11 before:content-horizontalLines before:absolute before:right-0 before:top-0;
+    font: normal bold 22px/30px "IRANSans", Tahoma, sans-serif;
+}
+
 .front-brands-title {
     @apply text-2xl text-white;
 }
@@ -376,6 +383,10 @@ input:checked ~ .parent {
     background-color: #50a8ea;
 }
 
+.archive-title {
+    @apply flex items-center justify-center w-full gap-3 flex-row mb-16
+}
+
 .post-item {
 
 }
@@ -384,12 +395,25 @@ input:checked ~ .parent {
     @apply relative overflow-hidden block w-full rounded-md;
     @apply before:bg-gradient-to-b before:from-transparent before:to-customDarkblue before:block before:absolute
     before:h-full before:w-full before:opacity-0 before:top-0 before:left-0 before:z-10 before:transition-all
-    hover:before:opacity-100 hover:after:opacity-100;
+    hover:before:opacity-100 after:p-4 after:rounded-2xl after:bg-customDarkWhite/70;
     z-index: 1;
 }
 
 .post-item .post-image-container:after {
+    @apply absolute transition-all ease-in-out duration-150 right-1/2
+    bg-logo-image z-20 translate-x-1/2
+    bg-no-repeat bg-center;
+    width: 190px;
+    height: 110px;
+    display: block;
+    top: -110px;
+    /*left: 50%;*/
+    /*transform: translateX(-50%);*/
+}
 
+.post-item .post-image-container:hover:after,
+.post-item .post-image-container:focus:after {
+    top: calc(50% - 55px);
 }
 
 .post-item .meta-data {
@@ -401,7 +425,7 @@ input:checked ~ .parent {
 }
 
 .post-item .post-title {
-    @apply mt-7 text-xl pr-6 relative text-customDarkblue before:absolute before:w-4 before:h-2 before:bg-customLightblue before:right-0 before:top-3
+    @apply mt-7 text-lg pr-6 relative text-customDarkblue before:absolute before:w-4 before:h-2 before:bg-customLightblue before:right-0 before:top-3
 }
 
 .post-item .post-text {
@@ -433,6 +457,10 @@ input:checked ~ .parent {
     @apply absolute
 }
 
+.call-to-action-container {
+    @apply bg-customLightgray text-customDarkblue flex rounded-t-md p-3 bottom-0 text-sm justify-between items-center
+}
+
 /*woocommerce*/
 .woocommerce .category-title {
     @apply horizontalLines text-customDarkblue cursor-pointer text-xl font-light leading-7
@@ -444,4 +472,76 @@ input:checked ~ .parent {
 
 .woocommerce .scroll-to-products {
     @apply bg-customLightblue absolute left-1/2 -ml-3.5 -bottom-2.5 w-7 h-5 flex justify-center items-center
+}
+
+.error-title {
+    @apply text-customLightblue font-bold mb-4;
+    font-size: 130px;
+    line-height: 175px;
+}
+
+.return-to-home {
+    @apply flex flex-col justify-center items-center text-customDarkblue text-lg mt-8 mb-20;
+}
+
+.return-to-home .icon {
+    @apply text-customBlack block text-xl;
+}
+
+.single-post {
+
+}
+
+.single-post h1.post-title {
+    @apply relative text-customDarkblue mr-10 text-xl font-light leading-7 before:content-horizontalLines before:absolute before:-right-8 before:top-0;
+}
+
+.single-post .single-content {
+    @apply bg-customDarkblue/5 border border-customLightgraytwo gap-4 grid grid-cols-12 p-6 px-9 relative rounded-md w-full;
+}
+
+.single-post .single-top-container {
+    @apply grid grid-cols-12 gap-4 col-span-12 w-full;
+}
+
+.single-post .single-meta-container {
+    @apply block flex-wrap col-span-7 pl-8;
+
+}
+.single-post .single-meta-container .meta-title{
+    @apply flex font-bold text-customMediumGray text-xs;
+}
+.single-post .single-meta-container .meta-value{
+    @apply flex text-xs text-customGray;
+}
+.single-post .single-meta-container .meta-value .separator{
+    @apply bg-customLightblue w-1 h-1 rounded my-2 mx-1;
+}
+.single-post .single-meta-container .meta-value a{
+    @apply text-customBlack hover:text-customDarkblue focus:text-customDarkblue;
+}
+
+.single-post .single-meta-container .social-share-list{
+    @apply flex gap-4
+}
+
+
+.single-post .single-image-container {
+    @apply flex flex-wrap col-span-5 overflow-hidden -mt-24 -ml-6 mr-6 rounded-md;
+}
+
+.single-post .post-content {
+    @apply block flex-wrap col-span-12 text-base;
+}
+
+.comments-area{
+    @apply mt-20 mx-auto px-4 sm:px-6 lg:px-44
+}
+
+.comments-area .comment-form{
+    @apply flex w-full flex-row
+}
+
+.comments-area .comment-form-container{
+    @apply rounded-md py-10 px-12 bg-customDarkblue/5
 }

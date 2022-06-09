@@ -9,8 +9,9 @@
                     } ?>
 
                 </div>
-                <div class="col-span-1 call-to-action-container">
-
+                <div class="call-to-action-container">
+                    <span>اگر در مورد حین خرید سوال یا مشکلی برای شما پیش آمد با شماره پشتیبانی تماس بگیرید</span>
+                    <span>۹۹۰۳ ۱۷۱ ۰۹۱۲</span>
                 </div>
             </div>
         </div>

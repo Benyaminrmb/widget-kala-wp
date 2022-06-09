@@ -107,8 +107,9 @@ if (!function_exists('mt_share_links')) {
             if (!in_array($icon, $final_icons)) {
                 continue;
             }
+            $svg_icon = mt_svg_icon($icon,24,false);
             $html[]
-                = "<li><a class='{$icon}' target='_blank' href='{$url}'><i class='icon-{$icon}'></i> </a> </li>";
+                = "<li><a class='{$icon}' target='_blank' href='{$url}'>$svg_icon</i> </a> </li>";
         }
         $html[] = '</ul>';
 
@@ -252,42 +253,5 @@ if (!function_exists('mt_current_URL')) {
         }
 
         return $pageURL;
-    }
-}
-
-if (!function_exists('mt_pagination')) {
-    function mt_pagination($args = [])
-    {
-        global $wp_query;
-        $max_num_pages = $wp_query->max_num_pages;
-        $paged         = get_query_var( 'paged' );
-        $defaults = [
-            'echo'=>true,
-            'max_num_pages'=>$max_num_pages,
-        ];
-        $args = wp_parse_args($args, $defaults);
-        $html = '<div class="pagination-container">' . __('لطفا پلاگین wp_pagenavi را نصب کنید', 'widgetize') . '</div>';
-        if (function_exists('wp_pagenavi')) {
-            $html = '<div class="pagination-container">';
-            if($paged > 1){
-                $html .= '<a href="' . previous_posts(false) . '" class="page-link prev-link">' . __('قبلی ', 'widgetize') . '</a>';
-            }else{
-                $html .= '<div></div>';
-            }
-            $html .= wp_pagenavi(['echo' => false]);
-            if($paged < $max_num_pages){
-                $html .= '<a href="' . next_posts($max_num_pages,false) . '" class="page-link next-link">' . __('بعدی', 'widgetize') . '</a>';
-            }else{
-                $html .= '<div></div>';
-            }
-            $html .= '</div>';
-        }
-
-        if ($args['echo'] != true) {
-            return $html;
-        }
-        echo $html;
-        return null;
-
     }
 }
