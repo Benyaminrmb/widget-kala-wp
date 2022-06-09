@@ -25,9 +25,9 @@ if (empty($product) || !$product->is_visible()) {
 }
 $col_class = '';
 if (is_shop() || is_front_page() || is_singular('product')) {
-    $col_class = 'col-span-3';
+    $col_class = 'col-span-12 md:col-span-3';
 } else {
-    $col_class = 'col-span-4';
+    $col_class = 'col-span-12 md:col-span-4';
 }
 ?>
 <div <?php wc_product_class(['single-product-item', 'group', $col_class], $product); ?>>

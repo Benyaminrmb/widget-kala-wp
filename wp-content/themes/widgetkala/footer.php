@@ -2,7 +2,7 @@
 </div>
 </div>
 <footer class="bg-customMediumGray w-full">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="md:block hidden container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="bg-customLighterMediumGray gap-7 w-full grid justify-between grid-cols-4 p-4 rounded-b-md">
             <div class="col-span-1 grid grid-cols-4">
                 <div class="col-span-1">
@@ -133,9 +133,9 @@
         </div>
     </div>
     <div class="container mt-7 mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid gap-x-7 grid-cols-2 border-b-2 border-customLighterMediumGray pb-7">
+        <div class="md:grid flex flex-wrap justify-center gap-x-7 grid-cols-2 border-b-2 border-customLighterMediumGray pb-7">
             <div class="col-span-1 flex flex-wrap gap-4">
-                <div class="flex w-full">
+                <div class="flex justify-center md:justify-start w-full">
                     <?php
                     if(function_exists('the_custom_logo')){
                         the_custom_logo();
@@ -143,14 +143,14 @@
                     ?>
                 </div>
 
-                <div class="flex w-full">
+                <div class="md:flex hidden w-full">
                     <div class="w-full">
                         <span class="text-justify flex font-thin text-white leading-5">
                             <?php the_field('about_text', 'options'); ?>
                         </span>
                     </div>
                 </div>
-                <div class="flex justify-between w-full gap-x-3">
+                <div class="flex justify-between w-full gap-x-3 mb-4">
                     <div class="flex gap-x-3 w-full">
                         <div class="flex">
                             <?php mt_svg_icon('footer_title_icon'); ?>
@@ -174,7 +174,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-span-1 grid grid-cols-3 gap-4">
+            <div class="col-span-1 grid grid-cols-2 md:grid-cols-3 gap-4">
                 <?php
                 if (is_active_sidebar('footer-1')) {
                     dynamic_sidebar('footer-1');
@@ -182,8 +182,8 @@
                 ?>
             </div>
         </div>
-        <div class="mt-7 grid gap-x-7 grid-cols-2 pb-7">
-            <div class="flex flex-wrap col-span-1 gap-4">
+        <div class="mt-7 grid gap-x-7 grid-cols-1 md:grid-cols-2 pb-7">
+            <div class="md:flex hidden flex-wrap col-span-1 gap-4">
                 <div class="flex gap-x-3 w-full">
                     <div class="flex">
                         <?php mt_svg_icon('footer_title_icon');?>

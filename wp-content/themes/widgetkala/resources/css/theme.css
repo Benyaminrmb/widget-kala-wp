@@ -315,7 +315,7 @@ button {
 .section-title {
     @apply text-customBlack;
     font: normal bold 22px/30px "IRANSans", Tahoma, sans-serif;
-    @apply after:relative after:w-0.5 after:absolute after:bg-gray-600 after:h-6 after:left-0 after:top-1 after:mx-14
+    @apply after:md:block after:hidden after:w-0.5 after:absolute after:bg-gray-600 after:h-6 after:left-0 after:top-1 after:mx-14
 }
 
 .heading-with-icon {
@@ -739,4 +739,20 @@ input:checked ~ .parent {
     @apply bg-customDarkblue text-white
     hover:bg-customRed hover:text-white
     focus:bg-customRed focus:text-white
+}
+
+header .icon-trolley{
+    @apply text-5xl
+}
+.paginate-btn.active{
+    @apply border-customDarkWhite bg-customLightblue text-white
+}
+.paginate-btn{
+    @apply flex border border-customDarkWhite rounded-md p-2 px-3 gap-2 text-customGray hover:bg-customLightblue transition ease-in-out hover:text-white
+}
+.min-w-1\/2 {
+    min-width: 50%;
+}
+.w-388{
+    width: 388px;
 }
