@@ -132,12 +132,12 @@
             </div>
         </div>
     </div>
-    <div class="container mt-7 mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="container mt-7 pt-7 sm:pt-3 mx-auto px-4 sm:px-6 lg:px-8">
         <div class="md:grid flex flex-wrap justify-center gap-x-7 grid-cols-2 border-b-2 border-customLighterMediumGray pb-7">
             <div class="col-span-1 flex flex-wrap gap-4">
                 <div class="flex justify-center md:justify-start w-full">
                     <?php
-                    if(function_exists('the_custom_logo')){
+                    if (function_exists('the_custom_logo')) {
                         the_custom_logo();
                     }
                     ?>
@@ -155,7 +155,7 @@
                         <div class="flex">
                             <?php mt_svg_icon('footer_title_icon'); ?>
                         </div>
-                        <div class="flex"><span class="text-white"><?php the_field('social_title','options'); ?></span></div>
+                        <div class="flex"><span class="text-white"><?php the_field('social_title', 'options'); ?></span></div>
                     </div>
                     <div class="flex">
                         <div class="flex gap-x-3">
@@ -165,8 +165,8 @@
                                     the_row();
                                     $social_link = get_sub_field('social_link');
                                     $social_icon = get_sub_field('social_icon');
-                                    echo '<span class="flex"><a target="'.$social_link['target'].'" href="'.$social_link['url'].'">'.mt_svg_icon($social_icon,
-                                            24, false).'</a></span>';
+                                    echo '<span class="flex"><a target="' . $social_link['target'] . '" href="' . $social_link['url'] . '">' . mt_svg_icon($social_icon,
+                                            24, false) . '</a></span>';
                                 }
                             }
                             ?>
@@ -186,24 +186,24 @@
             <div class="md:flex hidden flex-wrap col-span-1 gap-4">
                 <div class="flex gap-x-3 w-full">
                     <div class="flex">
-                        <?php mt_svg_icon('footer_title_icon');?>
+                        <?php mt_svg_icon('footer_title_icon'); ?>
                     </div>
                     <div class="flex">
                         <span class="text-white"><?php
-                            if(get_field('newsletter_title','options')){
-                                the_field('newsletter_title','options');
-                            }else{
-                                _e('خبرنامه ویجت کالا','widgetize');
+                            if (get_field('newsletter_title', 'options')) {
+                                the_field('newsletter_title', 'options');
+                            } else {
+                                _e('خبرنامه ویجت کالا', 'widgetize');
                             }
                             ?></span>
                     </div>
                 </div>
                 <div class="flex flex-wrap">
                     <span class="w-full text-white text-xs"><?php
-                        if(get_field('newsletter_subtitle','options')){
-                            the_field('newsletter_subtitle','options');
-                        }else{
-                            _e('برای اطلاع از جدیدترین محصولات ما ایمیل خود را برای ما ارسال کنید','widgetize');
+                        if (get_field('newsletter_subtitle', 'options')) {
+                            the_field('newsletter_subtitle', 'options');
+                        } else {
+                            _e('برای اطلاع از جدیدترین محصولات ما ایمیل خود را برای ما ارسال کنید', 'widgetize');
                         }
                         ?></span>
                 </div>
@@ -218,60 +218,61 @@
                 <div class="flex-wrap flex col-span-1 gap-4">
                     <div class="flex gap-x-3 w-full">
                         <div class="flex">
-                            <?php mt_svg_icon('footer_title_icon');?>
+                            <?php mt_svg_icon('footer_title_icon'); ?>
                         </div>
-                        <div class="flex"><span class="text-white"><?php the_field('footer_contact_title','options'); ?></span></div>
+                        <div class="flex"><span class="text-white"><?php the_field('footer_contact_title', 'options'); ?></span></div>
                     </div>
-                    <?php if(get_field('footer_phone','options')){?>
-                    <div class="flex items-center gap-x-3 w-full">
-                        <div class="flex">
-                            <?php mt_svg_icon('phone_call',27);?>
+                    <?php if (get_field('footer_phone', 'options')) { ?>
+                        <div class="flex items-center gap-x-3 w-full">
+                            <div class="flex">
+                                <?php mt_svg_icon('phone_call', 27); ?>
+                            </div>
+                            <div class="flex gap-3 text-white text-xs"><?php the_field('footer_phone', 'options'); ?></div>
                         </div>
-                        <div class="flex gap-3 text-white text-xs"><?php the_field('footer_phone','options'); ?></div>
-                    </div>
                     <?php }
-                    if(get_field('footer_email','options')){?>
-                    <div class="flex items-center gap-x-3 w-full">
-                        <div class="flex">
-                            <?php mt_svg_icon('email',27);?>
+                    if (get_field('footer_email', 'options')) {
+                        ?>
+                        <div class="flex items-center gap-x-3 w-full">
+                            <div class="flex">
+                                <?php mt_svg_icon('email', 27); ?>
+                            </div>
+                            <div class="flex gap-3 text-white text-xs"><?php the_field('footer_email', 'options'); ?></div>
                         </div>
-                        <div class="flex gap-3 text-white text-xs"><?php the_field('footer_email','options'); ?></div>
-                    </div>
-                    <?php }?>
+                    <?php } ?>
                 </div>
                 <div class="flex-wrap flex col-span-1 gap-4">
                     <div class="flex gap-x-3 w-full">
                         <div class="flex">
-                            <?php mt_svg_icon('footer_title_icon');?>
+                            <?php mt_svg_icon('footer_title_icon'); ?>
                         </div>
                         <div class="flex"><span class="text-white"><?php
-                                if(get_field('namad_title','options')){
-                                    the_field('namad_title','options');
-                                }else{
-                                    _e('نمادهای اعتماد','widgetize');
+                                if (get_field('namad_title', 'options')) {
+                                    the_field('namad_title', 'options');
+                                } else {
+                                    _e('نمادهای اعتماد', 'widgetize');
                                 }
-                        ?></span></div>
+                                ?></span></div>
                     </div>
                     <div class="flex flex-wrap items-center gap-3 w-full">
                         <div class="flex gap-3 w-full mb-4"><span class="flex text-white text-xs"><?php
-                                if(get_field('namad_subtitle','options')){
-                                    the_field('namad_subtitle','options');
-                                }else{
-                                    _e('خرید خود را با اطمینان انجام دهید','widgetize');
+                                if (get_field('namad_subtitle', 'options')) {
+                                    the_field('namad_subtitle', 'options');
+                                } else {
+                                    _e('خرید خود را با اطمینان انجام دهید', 'widgetize');
                                 }
                                 ?></span>
                         </div>
                         <div class="flex w-full gap-3">
                             <?php
-                            if(have_rows('footer_logo_scripts','options')){
-                                while(have_rows('footer_logo_scripts','options')){
+                            if (have_rows('footer_logo_scripts', 'options')) {
+                                while (have_rows('footer_logo_scripts', 'options')) {
                                     the_row();
-                                    echo '<div class="flex w-1/3">'.get_sub_field('script').'</div>';
+                                    echo '<div class="flex w-1/3">' . get_sub_field('script') . '</div>';
                                 }
-                            }else{
-                                echo '<div class="flex w-1/3"><img alt="namad1" class="w-full" src="'.mt_asset('images/sample/namad1.png',false).'"></div>';
-                                echo '<div class="flex w-1/3"><img alt="namad2" class="w-full" src="'.mt_asset('images/sample/namad2.png',false).'"></div>';
-                                echo '<div class="flex w-1/3"><img alt="namad3" class="w-full" src="'.mt_asset('images/sample/namad3.png',false).'"></div>';
+                            } else {
+                                echo '<div class="flex w-1/3"><img alt="namad1" class="w-full" src="' . mt_asset('images/sample/namad1.png', false) . '"></div>';
+                                echo '<div class="flex w-1/3"><img alt="namad2" class="w-full" src="' . mt_asset('images/sample/namad2.png', false) . '"></div>';
+                                echo '<div class="flex w-1/3"><img alt="namad3" class="w-full" src="' . mt_asset('images/sample/namad3.png', false) . '"></div>';
                             }
                             ?>
 

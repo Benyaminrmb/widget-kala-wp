@@ -1,31 +1,80 @@
 <?php
-$articles = new WP_Query([
-    'posts_per_page'      => '4',
+$articles_args = [
+    'posts_per_page' => '4',
     'ignore_sticky_posts' => 1,
-]);
-$args     = array(
+];
+if (wp_is_mobile()) {
+    $articles_args = [
+        'posts_per_page' => '5',
+//        'ignore_sticky_posts' => 0
+    ];
+}
+$articles = new WP_Query($articles_args);
+$args = array(
     // display the first sticky post, if none return the last post published
-    'posts_per_page'      => 1,
-    'post__in'            => get_option('sticky_posts'),
+    'posts_per_page' => 1,
+    'post__in' => get_option('sticky_posts'),
     'ignore_sticky_posts' => 0,
 );
-$sticky   = new WP_Query($args);
+$sticky = new WP_Query($args);
+
 ?>
 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="w-full">
         <div class="grid mt-7 gap-x-7 grid-cols-12 justify-between">
-            <div class="col-span-10 flex gap-x-5"><span class="flex"><span
+            <div class="col-span-6 md:col-span-10 flex gap-x-5"><span class="flex"><span
                             class="horizontalLines"></span></span>
                 <div class="section-title">مقالات ما</div>
             </div>
-            <div class="col-span-2 justify-end flex">
+            <div class="col-span-6 md:col-span-2 justify-end flex">
                 <a href="<?php echo esc_url(get_permalink(get_option('page_for_posts'))) ?>"
                    class="custom-btn-secondary-outline">
                     مقالات بیشتر را بخوانید
                 </a>
             </div>
         </div>
-        <div class="md:grid flex overflow-y-hidden overflow-x-auto md:overflow-hidden mt-7 gap-7 grid-cols-3">
+        <?php if (wp_is_mobile()) {
+            if ($articles->have_posts()) { ?>
+                <div class="owl-carousel  owl-theme owl-posts">
+                    <?php while ($articles->have_posts()) {
+                        $articles->the_post(); ?>
+                        <div class="item">
+
+                            <div class="grid min-w-full grid-cols-7 gap-4 row-span-1 w-full border border-customDarkWhite rounded-md p-4">
+                                <div class="grid justify-center text-xl font-thin items-center grid-rows-2 col-span-2 w-full h-full bg-customLightSky rounded-md">
+                                    <div class="flex h-full border-b-2 border-gray-100 row-span-1 items-center justify-center">
+                                        <?php the_time('d'); ?>
+                                    </div>
+                                    <div class="flex h-full row-span-1 items-center justify-center">
+                                        <?php the_time('F'); ?>
+                                    </div>
+                                </div>
+                                <div class="col-span-5 font-thin gap-4 flex flex-wrap">
+                                    <div class="w-full">
+                                        <?php the_title('<h2 class="text-base font-medium"><a href="' . esc_url(get_permalink()) . '">',
+                                            '</a></h2>'); ?>
+                                    </div>
+                                    <div class="w-full">
+                            <span class="text-justify text-sm">
+                            <?php echo wp_trim_words(get_the_excerpt(), 10, '&hellip;'); ?>
+                            </span></div>
+                                    <div class="w-full justify-between flex">
+                                        <div class="flex items-center text-gray-500 gap-x-2"><span
+                                                    class="icon text-base icon-file"></span> <span
+                                                    class="text-xs"><?php the_category(' '); ?></span></div>
+                                        <div class="flex items-center text-gray-500 gap-x-2"><span
+                                                    class="icon text-base icon-clock"></span> <span
+                                                    class="text-xs"><?php echo mt_reading_time(); ?></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
+            <?php }
+        } else { ?>
+            <div class="md:grid flex overflow-y-hidden overflow-x-auto md:overflow-hidden mt-7 gap-7 grid-cols-3">
             <?php if ($sticky->have_posts()) {
                 while ($sticky->have_posts()) {
                     $sticky->the_post(); ?>
@@ -52,49 +101,50 @@ $sticky   = new WP_Query($args);
             wp_reset_query();
 
             ?>
-            <?php if ($articles->have_posts()){ ?>
-            <div class="flex md:grid  gap-7 grid-rows-2 col-span-1 relative">
-                <?php
-                $index = 0;
-                while ($articles->have_posts()) {
-                    $index ++;
-                    $articles->the_post(); ?>
-                    <div class="grid min-w-full grid-cols-7 gap-4 row-span-1 w-full border border-customDarkWhite rounded-md p-4">
-                        <div class="grid justify-center text-xl font-thin items-center grid-rows-2 col-span-2 w-full h-full bg-customLightSky rounded-md">
-                            <div class="flex h-full border-b-2 border-gray-100 row-span-1 items-center justify-center">
-                                <?php the_time('d'); ?>
+            <?php if ($articles->have_posts()) { ?>
+                <div class="flex md:grid  gap-7 grid-rows-2 col-span-1 relative">
+                    <?php
+                    $index = 0;
+                    while ($articles->have_posts()) {
+                        $index++;
+                        $articles->the_post(); ?>
+                        <div class="grid min-w-full grid-cols-7 gap-4 row-span-1 w-full border border-customDarkWhite rounded-md p-4">
+                            <div class="grid justify-center text-xl font-thin items-center grid-rows-2 col-span-2 w-full h-full bg-customLightSky rounded-md">
+                                <div class="flex h-full border-b-2 border-gray-100 row-span-1 items-center justify-center">
+                                    <?php the_time('d'); ?>
+                                </div>
+                                <div class="flex h-full row-span-1 items-center justify-center">
+                                    <?php the_time('F'); ?>
+                                </div>
                             </div>
-                            <div class="flex h-full row-span-1 items-center justify-center">
-                                <?php the_time('F'); ?>
-                            </div>
-                        </div>
-                        <div class="col-span-5 font-thin gap-4 flex flex-wrap">
-                            <div class="w-full">
-                                <?php the_title('<h2 class="text-base font-medium"><a href="'.esc_url(get_permalink()).'">',
-                                    '</a></h2>'); ?>
-                            </div>
-                            <div class="w-full">
+                            <div class="col-span-5 font-thin gap-4 flex flex-wrap">
+                                <div class="w-full">
+                                    <?php the_title('<h2 class="text-base font-medium"><a href="' . esc_url(get_permalink()) . '">',
+                                        '</a></h2>'); ?>
+                                </div>
+                                <div class="w-full">
                             <span class="text-justify text-sm">
-                            <?php echo wp_trim_words(get_the_excerpt(),10,'&hellip;'); ?>
+                            <?php echo wp_trim_words(get_the_excerpt(), 10, '&hellip;'); ?>
                             </span></div>
-                            <div class="w-full justify-between flex">
-                                <div class="flex items-center text-gray-500 gap-x-2"><span
-                                            class="icon text-base icon-file"></span> <span
-                                            class="text-xs"><?php the_category(' '); ?></span></div>
-                                <div class="flex items-center text-gray-500 gap-x-2"><span
-                                            class="icon text-base icon-clock"></span> <span
-                                            class="text-xs"><?php echo mt_reading_time(); ?></span>
+                                <div class="w-full justify-between flex">
+                                    <div class="flex items-center text-gray-500 gap-x-2"><span
+                                                class="icon text-base icon-file"></span> <span
+                                                class="text-xs"><?php the_category(' '); ?></span></div>
+                                    <div class="flex items-center text-gray-500 gap-x-2"><span
+                                                class="icon text-base icon-clock"></span> <span
+                                                class="text-xs"><?php echo mt_reading_time(); ?></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <?php
-                    if($index == 2){
-                        echo '</div><div class="grid gap-7 grid-rows-2 col-span-1 relative">';
-                    }
-                } ?>
-            </div>
-        </div>
+                        <?php
+                        if ($index == 2) {
+                            echo '</div><div class="grid gap-7 grid-rows-2 col-span-1 relative">';
+                        }
+                    } ?>
+                </div>
+                </div>
+            <?php } ?>
         <?php } ?>
     </div>
 </div>

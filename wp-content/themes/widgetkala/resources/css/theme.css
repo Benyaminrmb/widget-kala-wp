@@ -1,5 +1,7 @@
 @import './font-icon.css';
 @import './iransans.css';
+@import 'owl.carousel/dist/assets/owl.carousel.css';
+@import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 @tailwind base;
 @tailwind components;
@@ -776,6 +778,7 @@ input:checked ~ .parent {
 .woocommerce .order_review_sidebar .woocommerce-checkout-review-order-table thead th {
     @apply border-l-transparent
 }
+
 .woocommerce .order_review_sidebar .button-place-order {
     @apply bg-customDarkblue text-white rounded-md w-full py-2 mt-4 block !float-none
     hover:bg-customRed hover:text-customDarkblue
@@ -802,16 +805,62 @@ header .icon-trolley {
 .w-388 {
     width: 388px;
 }
-.btn-cart-icon{
-    @apply   flex md:text-3xl text-6xl text-customGray md:text-white
+
+.btn-cart-icon {
+    @apply flex md:text-3xl text-6xl text-customGray md:text-white
 }
-.brands-box{
+
+.brands-box {
     @apply container p-7 md:p-14 mx-auto px-5 sm:px-6 lg:px-8
 }
-.brands-box .item{
+
+.brands-box .item {
     /*group*/
     @apply col-span-1 w-1/2 flex flex-wrap transition duration-150  transform
 }
+
+.brands-box .owl-item .item {
+    @apply block w-full;
+}
+
+.brands-box .owl-item {
+    @apply pb-4;
+}
+
 .brands-box .item img {
     @apply w-full grayscale flex rounded-md group-hover:grayscale-0
+}
+
+.owl-slider .item, .owl-slider .owl-stage {
+    @apply flex;
+}
+
+.owl-slider .item, .owl-slider .item img {
+    height: 100%;
+}
+
+.owl-carousel.owl-slider .owl-stage-outer {
+    @apply -z-10
+}
+
+.owl-slider .owl-nav.disabled + .owl-dots {
+    @apply z-10 -mt-10
+}
+
+.owl-brands .owl-dots .owl-dot span,
+.owl-slider .owl-dots .owl-dot span {
+    @apply bg-white;
+}
+
+.owl-slider .owl-dots .owl-dot.active span, .owl-slider .owl-dots .owl-dot:hover span,
+.owl-brands .owl-dots .owl-dot.active span, .owl-brands .owl-dots .owl-dot:hover span {
+    @apply bg-customLightblue;
+}
+
+.owl-posts .owl-dots .owl-dot span {
+    @apply bg-customDarkblue;
+}
+
+.owl-posts .owl-dots .owl-dot.active span, .owl-posts .owl-dots .owl-dot:hover span {
+    @apply bg-customLightblue;
 }

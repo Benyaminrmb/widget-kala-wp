@@ -255,3 +255,30 @@ if (!function_exists('mt_current_URL')) {
         return $pageURL;
     }
 }
+
+if(!function_exists('mt_customize_register')) {
+    function mt_customize_register($wp_customize)
+    {
+        //All our sections, settings, and controls will be added here
+
+        $wp_customize->add_section('mt_site_logo', array(
+            'title' => __('My Site Logo dark', 'widgetize'),
+            'priority' => 30,
+        ));
+
+        $wp_customize->add_control(
+            new WP_Customize_Image_Control(
+                $wp_customize,
+                'logo',
+                array(
+                    'label' => __('Upload a logo', 'widgetize'),
+                    'section' => 'mt_site_logo',
+                    'settings' => 'mt_site_logo_id'
+                )
+            )
+        );
+
+    }
+
+}
+add_action('customize_register', 'mt_customize_register');

@@ -8,6 +8,7 @@ if ( ! function_exists('mt_setup')) {
         add_theme_support('title-tag');
         add_theme_support('post-thumbnails');
         add_theme_support('woocommerce');
+        add_image_size('mobile_slider', 390, 220, true);
         add_image_size('post_archive', 365, 273, true);
         add_image_size('transcript_archive', 330, 324, true);
         set_post_thumbnail_size(1140, 9999);

@@ -2,6 +2,7 @@ module.exports = {
     content: [
         './*.{js,php,html}',
         './template-parts/*.php',
+        './template-parts/*/*.php',
         './woocommerce/checkout/*.php',
         './woocommerce/loop/orderby.php',
         './woocommerce/loop/pagination.php',

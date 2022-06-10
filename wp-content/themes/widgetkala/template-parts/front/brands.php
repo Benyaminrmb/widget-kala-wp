@@ -4,7 +4,11 @@ if(have_rows('frontpage_brands',$page_id)){?>
 <div class="bg-customDarkblue my-7 w-full">
     <div class="brands-box">
         <h3 class="front-brands-title"><?php _e('برند ها','widgetize');?></h3>
+        <?php if(wp_is_mobile()) {
+            echo '<div class="owl-carousel owl-theme owl-brands">';
+        }else{?>
         <div class="mt-7 flex overflow-x-auto md:overflow-x-hidden md:grid gap-x-5 grid-cols-6">
+        <?php }?>
             <?php while (have_rows('frontpage_brands')) : the_row();
             $image = get_sub_field('brand');
             $link = get_sub_field('link')
