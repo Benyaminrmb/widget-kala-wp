@@ -49,7 +49,7 @@
                         <?php } else { ?>
                             <a href="<?php echo get_permalink(wc_get_page_id('shop')) ?>" class="cart-button gap-x-4">
                                 <span class="md:flex hidden">همین الان خرید کنید</span>
-                                <span class="icon flex md:text-3xl text-6xl text-customGray md:text-white icon-trolley"></span>
+                                <span class="btn-cart-icon icon icon-trolley"></span>
                             </a>
 
                         <?php } ?>

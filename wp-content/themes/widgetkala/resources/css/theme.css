@@ -34,7 +34,7 @@ button {
 
 /*search box*/
 .search-box {
-    @apply hidden md:flex relative w-full text-gray-600 focus-within:text-gray-300
+    @apply relative w-full text-gray-600 focus-within:text-gray-300
     before:absolute before:block  before:inset-x-4 md:before:inset-x-8 before:rounded-full before:h-1 before:-top-0.5 before:bg-customDarkblue
     ;
 }
@@ -138,7 +138,7 @@ button {
 }
 
 .tabs {
-    @apply flex  text-sm items-center gap-x-5 text-gray-500 flex-wrap;
+    @apply md:flex hidden text-sm items-center gap-x-5 text-gray-500 flex-wrap;
 }
 
 .tabs li {
@@ -206,7 +206,7 @@ button {
 }
 
 .custom-btn-secondary-outline {
-    @apply border leading-8 hover:bg-customLightblue hover:text-white transition ease-in-out duration-150 w-full rounded-md text-sm border-customLightblue text-customLightblue px-3 text-center;
+    @apply md:border leading-8 hover:bg-customLightblue hover:text-white transition ease-in-out duration-150 w-full rounded-md text-sm border-customLightblue text-customLightblue px-3 text-center;
 }
 
 .pagination-container {
@@ -313,8 +313,9 @@ button {
 }
 
 .section-title {
-    @apply text-customBlack;
-    font: normal bold 22px/30px "IRANSans", Tahoma, sans-serif;
+    @apply text-customBlack font-bold text-base md:text-xl;
+    /*font: normal bold 22px/30px "IRANSans", Tahoma, sans-serif;*/
+
     @apply after:md:block after:hidden after:w-0.5 after:absolute after:bg-gray-600 after:h-6 after:left-0 after:top-1 after:mx-14
 }
 
@@ -800,4 +801,17 @@ header .icon-trolley {
 
 .w-388 {
     width: 388px;
+}
+.btn-cart-icon{
+    @apply   flex md:text-3xl text-6xl text-customGray md:text-white
+}
+.brands-box{
+    @apply container p-7 md:p-14 mx-auto px-5 sm:px-6 lg:px-8
+}
+.brands-box .item{
+    /*group*/
+    @apply col-span-1 w-1/2 flex flex-wrap transition duration-150  transform
+}
+.brands-box .item img {
+    @apply w-full grayscale flex rounded-md group-hover:grayscale-0
 }

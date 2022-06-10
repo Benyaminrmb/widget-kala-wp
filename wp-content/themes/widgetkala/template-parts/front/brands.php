@@ -2,13 +2,14 @@
 $page_id = get_option('page_on_front');
 if(have_rows('frontpage_brands',$page_id)){?>
 <div class="bg-customDarkblue my-7 w-full">
-    <div class="container p-7 md:p-14 mx-auto px-5 sm:px-6 lg:px-8"><h3 class="front-brands-title"><?php _e('برند ها','widgetize');?></h3>
+    <div class="brands-box">
+        <h3 class="front-brands-title"><?php _e('برند ها','widgetize');?></h3>
         <div class="mt-7 flex overflow-x-auto md:overflow-x-hidden md:grid gap-x-5 grid-cols-6">
             <?php while (have_rows('frontpage_brands')) : the_row();
             $image = get_sub_field('brand');
             $link = get_sub_field('link')
             ?>
-            <div class="col-span-1 min-w-1/2 flex flex-wrap transition duration-150 group transform">
+            <div class="item">
                 <?php
                 $before = $after = '';
                 if($link){

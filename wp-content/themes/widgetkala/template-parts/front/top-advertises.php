@@ -27,7 +27,7 @@
 
             ?>
             <div class="grid gap-x-7 grid-cols-12 justify-between">
-                <div class="col-span-4">
+                <div class="md:col-span-4 col-span-12">
                     <div class="w-full flex h-full">
                         <?php
                         if (get_field('small_image_link',$page_id)) {
@@ -43,7 +43,7 @@
                         ?>
                     </div>
                 </div>
-                <div class="col-span-8">
+                <div class="md:col-span-8 col-span-12">
                     <div class="w-full flex h-full">
                         <?php if ($big_image_link) {
                             echo '<a href="'.$big_image_link['url'].'" >';
