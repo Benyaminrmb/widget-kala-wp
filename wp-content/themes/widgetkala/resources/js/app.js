@@ -1,6 +1,20 @@
 import 'owl.carousel';
 
 jQuery(document).ready(function ($) {
+
+    $('.dropdown-toggle').on('click', function (e) {
+        e.preventDefault();
+        $(this).toggleClass('show');
+        $(this).next('.dropdown-menu').toggleClass('show');
+    })
+    $('.navbar-close,.mobile-menu-backdrop').on('click', function () {
+        $('.mobile-menu-section,.mobile-menu-backdrop').removeClass('show');
+    })
+
+    $('.menu-toggle').on('click', function () {
+        $('.mobile-menu-section,.mobile-menu-backdrop').addClass('show');
+    });
+
     $('.owl-slider').owlCarousel({
         loop: true,
         rtl: true,

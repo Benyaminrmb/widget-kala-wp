@@ -28,11 +28,18 @@ module.exports = {
             logo: 'url("../images/logo.svg")',
         },
         extend: {
+            zIndex: {
+                '999': '999',
+                '998': '998',
+                '1': '1',
+                '2': '2',
+                '3': '3'
+            },
             backgroundImage: {
                 'logo-image': 'url("../images/logo.svg")',
             },
             fontSize: {
-                xs: ['10px','16px'],
+                xs: ['10px', '16px'],
                 sm: ['12px', '19px'],
                 base: ['14px', '26px'],
                 lg: ['18px', '28px'],

@@ -11,30 +11,51 @@
             برندهای ویجت کالا
         </div>
     </div>
-    <div class="grid <?php echo 'grid-cols-' . $cols; ?> grid-rows-2 grid-flow-col gap-3">
-        <?php
-        foreach ($brands_list as $key => $item) {
-            $col_class = 'brand-adv-small';
-            if ($key == 0 && ($total % 2 == 1)) {
-                $col_class = 'brand-adv-large';
-            }
-            echo '<div class="' . $col_class . ' rounded-md">';
-            if ($item['link']) {
-                echo '<a href="' .
-                    $item['link']['url'] .
-                    '" target="' .
-                    $item['link']['target'] .
-                    '" >';
+    <?php if (wp_is_mobile()) { ?>
+        <div class="owl-carousel owl-slider owl-theme">
+            <?php foreach ($brands_list as $key => $item) { ?>
+                <div class="item">
+                    <?php if ($item['link']) {
+                        echo '<a href="' .
+                            $item['link']['url'] .
+                            '" target="' .
+                            $item['link']['target'] .
+                            '" >';
+                    }
+                    echo wp_get_attachment_image($item['image']['ID'], 'mobile_slider', false, ['class' => 'w-full']);
+                    if ($item['link']) {
+                        echo '</a>';
+                    }
+                    ?>
+                </div>
+            <?php } ?>
+        </div>
+    <?php } else { ?>
+        <div class="grid <?php echo 'grid-cols-' . $cols; ?> grid-rows-2 grid-flow-col gap-3">
+            <?php
+            foreach ($brands_list as $key => $item) {
+                $col_class = 'brand-adv-small';
+                if ($key == 0 && ($total % 2 == 1)) {
+                    $col_class = 'brand-adv-large';
+                }
+                echo '<div class="' . $col_class . ' rounded-md">';
+                if ($item['link']) {
+                    echo '<a href="' .
+                        $item['link']['url'] .
+                        '" target="' .
+                        $item['link']['target'] .
+                        '" >';
 
-            }
-            echo wp_get_attachment_image($item['image']['ID'], 'full', false, ['class' => 'w-full']);
+                }
+                echo wp_get_attachment_image($item['image']['ID'], 'full', false, ['class' => 'w-full']);
 //            var_dump($item['image']['ID']);
-            if ($item['link']) {
-                echo '</a>';
-            }
+                if ($item['link']) {
+                    echo '</a>';
+                }
 
-            echo '</div>';
+                echo '</div>';
 
-        } ?>
-    </div>
+            } ?>
+        </div>
+    <?php } ?>
 </div>

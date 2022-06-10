@@ -76,7 +76,7 @@ button {
 
 
 .cart-button .cart-count-badge .animate {
-    @apply animate-ping absolute inline-flex h-full w-full rounded-full bg-customDarkblue opacity-75;
+    @apply animate-ping absolute hidden md:inline-flex h-full w-full rounded-full bg-customDarkblue opacity-75 ;
 }
 
 .cart-button .cart-count-badge .count {
@@ -108,11 +108,11 @@ button {
     after:top-3.5;
 }
 
-.nav-item {
+.main-menu .nav-item {
     @apply block relative overflow-hidden;
 }
 
-.nav-link {
+.main-menu .nav-link {
     @apply py-4 block relative before:absolute inset-x-0
     whitespace-nowrap
     before:mx-auto
@@ -126,8 +126,8 @@ button {
     active:before:top-0 active:text-orange-400;
 }
 
-.nav-link.active,
-.nav-item.current-menu-item .nav-link {
+.main-menu .nav-link.active,
+.main-menu .nav-item.current-menu-item .nav-link {
     @apply before:top-0 text-white;
 }
 
@@ -138,6 +138,71 @@ button {
 .major-shopping {
     @apply py-3 bg-customRed mt-2 px-3 rounded-t hover:bg-orange-500;
 }
+
+.menu-toggle {
+    @apply md:hidden flex;
+}
+
+.mobile-menu-section {
+    @apply hidden bg-white fixed left-0 right-0 -top-40 max-h-fit flex md:hidden flex-col z-999 transition
+}
+
+.mobile-menu-section.show {
+    @apply block top-0
+}
+
+.mobile-menu {
+    @apply flex flex-col flex-wrap
+}
+
+.mobile-menu .menu-item {
+    @apply block p-0 relative
+}
+
+.mobile-menu .menu-item a {
+    @apply block text-customDarkblue py-3 border-b border-customLightgray hover:text-customRed hover:border-customBlack
+}
+
+.mobile-menu .menu-item .dropdown-toggle {
+    @apply pt-2.5 block h-12 left-0 absolute top-0 w-12 leading-10 text-center text-3xl before:content-['+'] text-customDarkblue
+}
+
+.mobile-menu .menu-item .dropdown-toggle.show {
+    @apply before:content-['-']
+}
+
+.mobile-menu .menu-item .dropdown-menu {
+    @apply hidden;
+}
+
+.mobile-menu .menu-item .dropdown-menu.show {
+    @apply block pr-4
+}
+
+.mobile-menu-section .login-button {
+    @apply w-full text-center py-2 px-6 block bg-customDarkblue text-customLightblue hover:bg-customLightblue hover:text-white;
+}
+
+.mobile-menu-section .register-button {
+    @apply w-full text-center py-2 px-6 block bg-customGray text-customDarkblue hover:bg-customLightblue hover:text-white;
+}
+
+.mobile-menu-section .profile-button {
+    @apply w-full text-center py-2 px-6 block bg-customDarkblue text-customLightblue hover:bg-customLightblue hover:text-white;
+}
+
+.mobile-menu-backdrop {
+    @apply hidden bg-customDarkblue/60 fixed top-0 bottom-0 left-0 right-0 z-998
+}
+
+.mobile-menu-backdrop.show {
+    @apply block
+}
+
+.mobile-menu .menu-item.divider {
+    @apply p-0 h-0 border-b border-customLightgray;
+}
+
 
 .tabs {
     @apply md:flex hidden text-sm items-center gap-x-5 text-gray-500 flex-wrap;
@@ -336,11 +401,11 @@ button {
 }
 
 .shop-top-categories-container .categories-list {
-    @apply flex flex-wrap gap-x-3 gap-y-1 w-full
+    @apply flex flex-nowrap overflow-auto pb-3 md:pb-0 md:overflow-visible md:flex-wrap gap-x-3 gap-y-1 w-full
 }
 
 .shop-top-categories-container .categories-list .item {
-    @apply relative transition ease-in-out border-2 border-customDarkblue duration-150
+    @apply relative transition ease-in-out border-2 border-customDarkblue duration-150 whitespace-nowrap
     rounded-md p-2 px-4 justify-center flex cursor-pointer text-base
     hover:bg-customDarkblue
     hover:text-white
@@ -443,7 +508,7 @@ input:checked ~ .parent {
 }
 
 .breadcrumb-container {
-    @apply bg-customDarkblue text-white p-3 rounded-t-lg flex bottom-0
+    @apply bg-customDarkblue text-white p-3 md:rounded-t-lg flex bottom-0 -mx-4 md:mx-0
 }
 
 .breadcrumb-container .breadcrumb-title {
@@ -468,7 +533,7 @@ input:checked ~ .parent {
 }
 
 .call-to-action-container {
-    @apply bg-customLightgray text-customDarkblue flex rounded-t-md p-3 bottom-0 text-sm justify-between items-center
+    @apply bg-customLightgray text-customDarkblue hidden md:flex md:rounded-t-md p-3 bottom-0 text-sm justify-between items-center
 }
 
 /*woocommerce*/
@@ -816,7 +881,7 @@ header .icon-trolley {
 
 .brands-box .item {
     /*group*/
-    @apply col-span-1 w-1/2 flex flex-wrap transition duration-150  transform
+    @apply col-span-1 w-full flex flex-wrap transition duration-150  transform
 }
 
 .brands-box .owl-item .item {
@@ -833,6 +898,10 @@ header .icon-trolley {
 
 .owl-slider .item, .owl-slider .owl-stage {
     @apply flex;
+}
+
+.owl-slider .item a {
+    width: 100%;
 }
 
 .owl-slider .item, .owl-slider .item img {

@@ -132,7 +132,7 @@
             </div>
         </div>
     </div>
-    <div class="container mt-7 pt-7 sm:pt-3 mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="container md:mt-7 pt-7 sm:pt-3 mx-auto px-4 sm:px-6 lg:px-8">
         <div class="md:grid flex flex-wrap justify-center gap-x-7 grid-cols-2 border-b-2 border-customLighterMediumGray pb-7">
             <div class="col-span-1 flex flex-wrap gap-4">
                 <div class="flex justify-center md:justify-start w-full">

@@ -11,18 +11,8 @@
     <header class="col-span-12">
         <nav aria-label="Top" class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="md:grid flex justify-between md:grid-cols-12 flex-wrap py-9 items-center">
-                <div class="md:hidden flex">
-                    <svg xmlns="http://www.w3.org/2000/svg" class='h-6 w-6' viewBox="0 0 17 14">
-                        <g id="Group_2048" data-name="Group 2048" transform="translate(-348.5 -8.5)">
-                            <line id="Line_554" data-name="Line 554" x2="15" transform="translate(349.5 9.5)"
-                                  fill="none" stroke="#9195a0" stroke-linecap="round" stroke-width="2"/>
-                            <line id="Line_555" data-name="Line 555" x2="15" transform="translate(349.5 15.5)"
-                                  fill="none" stroke="#9195a0" stroke-linecap="round" stroke-width="2"/>
-                            <line id="Line_556" data-name="Line 556" x2="15" transform="translate(349.5 21.5)"
-                                  fill="none" stroke="#9195a0" stroke-linecap="round" stroke-width="2"/>
-                        </g>
-                    </svg>
-
+                <div class="menu-toggle">
+                    <?php echo mt_svg_icon('menu_toggle'); ?>
                 </div>
                 <div class="col-span-2 flex-wrap flex logo-container">
                     <?php
@@ -38,8 +28,8 @@
                     <div class="relative inline-flex">
                         <?php if (WC()->cart->get_cart_contents_count()) { ?>
                             <a href="<?php echo wc_get_cart_url(); ?>" class="cart-button gap-x-4">
-                                <span class="flex"><?php wc_cart_totals_subtotal_html(); ?></span>
-                                <span class="icon flex text-white icon-trolley"></span>
+                                <span class="md:flex hidden"><?php wc_cart_totals_subtotal_html(); ?></span>
+                                <span class="icon flex text-customDarkblue md:text-white icon-trolley"></span>
 
                                 <span class="cart-count-badge">
                      <span class="animate"></span>
@@ -71,7 +61,6 @@
     <div class="col-span-12 flex px-6 justify-between container mx-auto md:hidden">
         <?php get_search_form(); ?>
     </div>
-
 
 
     <div class="menu-section md:flex hidden">
@@ -106,4 +95,53 @@
             </div>
         </div>
     </div>
+
+    <div class="mobile-menu-section menu-section">
+        <div class="container p-4">
+            <div class="flex justify-between gap-3">
+                <?php
+                if (function_exists('the_custom_logo')) {
+                    the_custom_logo();
+                }
+                ?>
+                <button type="button" class="navbar-close">
+                    <?php echo mt_svg_icon('close'); ?>
+                </button>
+            </div>
+        </div>
+        <div class="container py-3 max-h-full thin-scrollbar overflow-auto">
+            <?php
+            wp_nav_menu(
+                [
+                    'theme_location' => 'primary',
+                    'depth' => 2,
+                    'container' => '',
+                    'container_class' => '',
+                    'container_id' => '',
+                    'menu_class' => 'navbar-nav mobile-menu',
+                    'menu_id' => 'main-menu',
+                    'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
+                    'walker' => new WP_Bootstrap_Navwalker(),
+                    'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                ]
+            );
+            ?>
+        </div>
+        <div class="container p-4">
+            <div class="flex justify-center gap-4">
+                <?php
+                $register = wp_registration_url();
+                $login = wp_login_url(mt_current_URL());
+                if(!is_user_logged_in()){
+                ?>
+                <a href="<?php echo esc_url($login); ?>" class="login-button"><?php _e('ورود', 'widgetize'); ?></a>
+                <a href="<?php echo esc_url($register); ?>" class="register-button"><?php _e('ثبت نام', 'widgetize'); ?></a>
+                <?php } else{?>
+                <a href="<?php echo esc_url($login); ?>" class="profile-button"><?php _e('حساب کاربری', 'widgetize'); ?></a>
+                <?php }?>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-menu-backdrop"></div>
+
     <div class="col-span-12 mt-7">

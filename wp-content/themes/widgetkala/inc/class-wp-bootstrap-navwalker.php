@@ -317,7 +317,7 @@ if ( ! class_exists('WP_Bootstrap_Navwalker') ) :
 			}
 //			var_dump($item);
 			if($this->has_children ){
-				$item_output  .= '<span data-bs-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"></span>';
+				$item_output  .= '<span data-bs-toggle="dropdown" data-before="+" type="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"></span>';
 			}
 			$item_output .= isset($args->after) ? $args->after : '';
 			// END appending the internal item contents to the output.
