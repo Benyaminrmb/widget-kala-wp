@@ -182,7 +182,7 @@
                 ?>
             </div>
         </div>
-        <div class="mt-7 grid gap-x-7 grid-cols-1 md:grid-cols-2 pb-7">
+        <div class="container mx-auto  px-4 sm:px-6 lg:px-8 mt-7 grid gap-x-7 grid-cols-1 md:grid-cols-2 pb-7">
             <div class="md:flex hidden flex-wrap col-span-1 gap-4">
                 <div class="flex gap-x-3 w-full">
                     <div class="flex">
@@ -211,7 +211,7 @@
                     <input title="your email" type="email" name="subscribe-email"
                            placeholder="برای اطلاع از جدیدترین محصولات ما ایمیل خود را برای ما ارسال کنید"
                            autocomplete="off">
-                    <span class="submit-button"><button type="submit" class="hover:shadow-outline"><span>عضویت در خبرنامه</span></button></span>
+                    <span class="submit-button"><button type="submit" class="hover:shadow-outline"><span>ارسال ایمیل</span></button></span>
                 </div>
             </div>
             <div class="grid grid-cols-2 col-span-1 gap-4">

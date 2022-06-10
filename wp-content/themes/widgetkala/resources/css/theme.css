@@ -334,7 +334,7 @@ button {
 
 .news-letter {
     @apply relative w-full text-gray-600 focus-within:text-gray-300
-    before:w-2 before:h-2 before:rounded-full before:absolute before:bg-customLightblue before:right-4 before:top-6
+    before:w-2 before:h-2 before:rounded-full before:absolute before:bg-customLightblue before:right-4 before:top-5
     ;
 }
 
@@ -346,7 +346,7 @@ button {
 }
 
 .news-letter button {
-    @apply p-1 outline-none;
+    @apply p-2 outline-none;
 }
 
 .news-letter button .icon {
@@ -355,7 +355,7 @@ button {
 
 .news-letter input[type='email'],
 .news-letter input[type='text'] {
-    @apply pl-40 pr-8 transition transition-all ease-linear py-1 h-full text-sm text-white border block w-full rounded-md pl-10 bg-transparent placeholder-customGray
+    @apply pl-40 pr-8 transition transition-all ease-linear py-3 h-full text-sm text-white border block w-full rounded-md pl-10 bg-transparent placeholder-customGray
     focus:outline-none focus:bg-white focus:text-gray-900 focus:bg-transparent focus:text-white focus:border-customLightblue
 }
 
