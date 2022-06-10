@@ -13,8 +13,8 @@ $container_class = implode(' ',$container_class);
     <?php
     if ($categories) : ?>
         <div class="w-full">
-            <div class="flex    mt-7 gap-x-7  justify-between">
-                <div class="flex gap-x-5"><span class="horizontalLines"></span>
+            <div class="flex mt-7 gap-x-7 gap-y-4 justify-between flex-wrap md:flex-nowrap">
+                <div class="flex flex-wrap gap-5"><span class="horizontalLines"></span>
                     <div class="flex text-gray-600 section-title">
                         <?php echo esc_attr($section_title);?>
                     </div>
@@ -37,7 +37,6 @@ $container_class = implode(' ',$container_class);
                         <a href="<?php echo esc_url($archive_link['url']); ?>"
                            target="<?php echo esc_attr($archive_link['target']); ?>"
                            class="custom-btn-secondary-outline">
-
                              <span class='flex items-center gap-2'>
                                 <?php echo esc_attr($archive_link['title']); ?>
                                 <svg xmlns="http://www.w3.org/2000/svg" class='md:hidden flex' width="14.49" height="11.146" viewBox="0 0 14.49 11.146">

@@ -25,7 +25,7 @@ $sticky   = new WP_Query($args);
                 </a>
             </div>
         </div>
-        <div class="md:grid flex overflow-x-auto md:overflow-hidden mt-7 gap-7 grid-cols-3">
+        <div class="md:grid flex overflow-y-hidden overflow-x-auto md:overflow-hidden mt-7 gap-7 grid-cols-3">
             <?php if ($sticky->have_posts()) {
                 while ($sticky->have_posts()) {
                     $sticky->the_post(); ?>

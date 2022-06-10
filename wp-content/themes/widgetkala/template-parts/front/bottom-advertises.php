@@ -1,9 +1,9 @@
 <?php
 $page_id = get_option('page_on_front');
 if (have_rows('frontpage_bottom_advertises', $page_id) || have_rows('frontpage_bottom_buttons',$page_id)):?>
-    <div class="bg-customLightblue my-7 w-full">
+    <div class="bg-customLightblue my-7 w-full overflow-hidden">
         <div class="container p-7 md:p-14 mx-auto px-5 sm:px-6 lg:px-8">
-        <div class="grid gap-5 grid-cols-1 w-full">
+        <div class="grid gap-5 grid-cols-1 w-full overflow-x-auto">
             <?php if (have_rows('frontpage_bottom_advertises', $page_id)): ?>
                 <div class="flex overflow-x-auto md:overflow-x-hidden md:grid gap-5 grid-cols-6">
                     <?php while (have_rows('frontpage_bottom_advertises',$page_id)): the_row();

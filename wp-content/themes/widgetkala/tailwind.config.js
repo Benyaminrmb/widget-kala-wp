@@ -1,7 +1,8 @@
 module.exports = {
     content: [
         './*.{js,php,html}',
-        './template-parts/*.{js,php,html}',
+        './template-parts/*.php',
+        './woocommerce/checkout/*.php',
         './woocommerce/loop/orderby.php',
         './woocommerce/loop/pagination.php',
         './woocommerce/loop/loop-start.php',
@@ -30,6 +31,7 @@ module.exports = {
                 'logo-image': 'url("../images/logo.svg")',
             },
             fontSize: {
+                xs: ['10px','16px'],
                 sm: ['12px', '19px'],
                 base: ['14px', '26px'],
                 lg: ['18px', '28px'],

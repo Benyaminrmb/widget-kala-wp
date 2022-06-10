@@ -18,9 +18,7 @@
 defined( 'ABSPATH' ) || exit;
 
 do_action( 'woocommerce_before_cart' ); ?>
-<div class="page-title-center">
-    <h1 class="text-center heading-with-icon mb-5"><?php the_title(); ?></h1>
-</div>
+
 <form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 	<?php do_action( 'woocommerce_before_cart_table' ); ?>
 

@@ -69,7 +69,7 @@ button {
 }
 
 .cart-button .cart-count-badge {
-    @apply flex absolute h-7 w-7 text-center text-white -top-2 -left-2;
+    @apply flex absolute h-7 w-7 text-center text-white -top-2 -left-2 overflow-hidden md:overflow-visible;
 }
 
 
@@ -174,16 +174,16 @@ button {
 
 .product-tabs-content {
     row-gap: 3.125rem;
-    @apply grid mt-7 gap-x-6 grid-cols-12 justify-between hidden;
+    @apply hidden;
 }
 
 .product-tabs-content.active {
-    @apply grid mt-7 gap-x-6 grid-cols-12 justify-between;
+    @apply flex mt-5 gap-x-6 md:grid-cols-12 justify-between md:grid md:mt-7 overflow-x-auto md:overflow-x-hidden
 }
 
 .product-archive-content .single-product-item,
 .product-tabs-content .single-product-item {
-    @apply flex rounded-md flex-wrap  border border-gray-200 p-3 transition duration-150 transform hover:product-hover-shadow;
+    @apply w-full flex-grow flex rounded-md flex-wrap border border-gray-200 p-3 transition duration-150 transform hover:product-hover-shadow min-w-fit
 }
 
 .single-product-item {
@@ -551,10 +551,11 @@ input:checked ~ .parent {
 
 .page-title-center,
 .comments-area .title-container {
-    @apply mx-auto flex justify-center items-center
+    @apply mx-auto flex justify-center items-center col-span-12
 }
-.page-title-center h1{
 
+.page-title-center h1 {
+    @apply !mt-4 !mb-4
 }
 
 .comments-area .comment-reply-title {
@@ -741,18 +742,62 @@ input:checked ~ .parent {
     focus:bg-customRed focus:text-white
 }
 
-header .icon-trolley{
-    @apply text-5xl
+.woocommerce-checkout .select2-container--default .select2-selection--single,
+.woocommerce-checkout .input-text {
+    @apply py-1.5 px-4 h-10 bg-customLightgraytwo/30 rounded-md border border-customLightgraytwo
+    focus:border-customDarkblue focus:border
+    focus-visible:border-customDarkblue focus-visible:border
+    focus-within:border-customDarkblue focus-within:border
 }
-.paginate-btn.active{
+
+.woocommerce-checkout label {
+    @apply text-sm text-customDarkblue/75;
+}
+
+.woocommerce .order_review_sidebar {
+    @apply rounded-md px-7 pt-5 pb-9 border border-customLightgraytwo;
+}
+
+.woocommerce .order_review_sidebar #order_review_heading {
+    @apply text-center pt-5 pb-8 bg-customDarkblue/10
+}
+
+.woocommerce .order_review_sidebar .woocommerce-checkout-review-order-table {
+    @apply bg-customDarkblue/10 border-collapse;
+}
+
+.woocommerce .order_review_sidebar .woocommerce-checkout-review-order-table tfoot .cart-subtotal,
+.woocommerce .order_review_sidebar .woocommerce-checkout-review-order-table thead {
+    @apply bg-customLightSky/40
+}
+
+.woocommerce .order_review_sidebar .woocommerce-checkout-review-order-table tfoot .cart-subtotal th,
+.woocommerce .order_review_sidebar .woocommerce-checkout-review-order-table thead th {
+    @apply border-l-transparent
+}
+.woocommerce .order_review_sidebar .button-place-order {
+    @apply bg-customDarkblue text-white rounded-md w-full py-2 mt-4 block !float-none
+    hover:bg-customRed hover:text-customDarkblue
+    focus:bg-customRed focus:text-customDarkblue
+}
+
+
+header .icon-trolley {
+    @apply text-3xl
+}
+
+.paginate-btn.active {
     @apply border-customDarkWhite bg-customLightblue text-white
 }
-.paginate-btn{
+
+.paginate-btn {
     @apply flex border border-customDarkWhite rounded-md p-2 px-3 gap-2 text-customGray hover:bg-customLightblue transition ease-in-out hover:text-white
 }
+
 .min-w-1\/2 {
     min-width: 50%;
 }
-.w-388{
+
+.w-388 {
     width: 388px;
 }

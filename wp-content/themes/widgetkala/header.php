@@ -25,11 +25,6 @@
 
                 </div>
                 <div class="col-span-2 flex-wrap flex logo-container">
-                    <span class="flex items-center md:justify-start justify-center gap-3 text-2xl w-full">
-                     <span>Widget Kala</span>
-                    </span>
-                    <span class="flex text-xs md:justify-start justify-center w-full">online shopping accessories</span>
-
                     <?php
                     if (function_exists('the_custom_logo')) {
                         the_custom_logo();
