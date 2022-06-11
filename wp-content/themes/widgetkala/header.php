@@ -9,8 +9,8 @@
 <body <?php body_class(); ?>>
 <div class="grid grid-cols-12 gap-x-5">
     <header class="col-span-12">
-        <nav aria-label="Top" class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="md:grid flex justify-between md:grid-cols-12 flex-wrap py-9 items-center">
+        <nav aria-label="Top" class="container mx-auto px-4 sm:px-6 lg:px-8 nav-container">
+            <div class="md:grid flex justify-between md:grid-cols-12 flex-wrap py-5 items-center">
                 <div class="menu-toggle">
                     <?php echo mt_svg_icon('menu_toggle'); ?>
                 </div>
@@ -21,7 +21,7 @@
                     }
                     ?>
                 </div>
-                <div class="col-span-4 flex-wrap flex hidden md:block">
+                <div class="col-span-5 flex-wrap flex hidden md:block md:-ml-2.5">
                     <?php get_search_form(); ?>
                 </div>
                 <div class="col-span-5 justify-end gap-x-2 flex-wrap flex">
