@@ -34,8 +34,9 @@ button {
 
 /*#Header */
 
-header .nav-container {
-    @apply border-t border-customDarkblue border-t-4 rounded-b
+header .nav-container > div {
+    @apply border-t border-customDarkblue rounded-b;
+    border-top-width: 3px;
 }
 
 .logo-container {
@@ -58,13 +59,13 @@ header .nav-container {
 }
 
 .search-box button .icon {
-    @apply text-3xl;
+    @apply text-3xl text-gray-400;
 }
 
 .search-box button:hover .icon,
 .search-box button:focus .icon,
 .search-box button:active .icon {
-    @apply text-gray-900;
+    @apply text-customDarkblue
 }
 
 .search-box input[type='search'],
@@ -121,7 +122,7 @@ header .nav-container {
 }
 
 .main-menu .nav-link {
-    @apply overflow-hidden py-4 block relative before:absolute inset-x-0
+    @apply overflow-hidden text-base block relative before:absolute inset-x-0
     whitespace-nowrap
     before:mx-auto
     before:rounded-b-full
@@ -132,6 +133,7 @@ header .nav-container {
     hover:before:top-0 hover:text-orange-400
     focus:before:top-0 focus:text-orange-400
     active:before:top-0 active:text-orange-400;
+    line-height: 40px;
 }
 
 .main-menu .nav-link.active,
@@ -158,7 +160,7 @@ header .nav-container {
 }
 
 .major-shopping {
-    @apply py-3 bg-customRed mt-2 px-3 rounded-t hover:bg-orange-500;
+    @apply py-3 bg-customRed mt-1 py-1 px-3 rounded-t hover:bg-orange-500;
 }
 
 .menu-toggle {
