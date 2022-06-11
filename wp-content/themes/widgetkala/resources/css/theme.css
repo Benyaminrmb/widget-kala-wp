@@ -216,11 +216,11 @@ header .nav-container > div {
 }
 
 .mobile-menu-backdrop {
-    @apply opacity-0 invisible bg-customDarkblue fixed top-0 bottom-0 left-0 right-0 z-998 transition transition-all
+    @apply opacity-0 invisible bg-customDarkblue/50 fixed top-0 bottom-0 left-0 right-0 z-998 transition transition-all
 }
 
 .mobile-menu-backdrop.show {
-    @apply opacity-50 visible
+    @apply opacity-100 visible
 }
 
 .mobile-menu .menu-item.divider {
