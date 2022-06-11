@@ -1,7 +1,7 @@
 <?php
 if (function_exists('acf_add_local_field_group')):
     acf_add_local_field_group([
-        'key'                   => 'theme_setting_group',
+        'key'                   => 'theme_header_setting_group',
         'title'                 => 'تنظیمات سربرگ',
         'fields'                => [
             [
@@ -56,7 +56,7 @@ if (function_exists('acf_add_local_field_group')):
         'description'           => '',
     ]);
     acf_add_local_field_group([
-        'key'                   => 'moortak_theme_group_settings',
+        'key'                   => 'theme_footer_group_settings',
         'title'                 => 'تنظیمات فوتر',
         'fields'                => [
             [
@@ -904,7 +904,6 @@ if (function_exists('acf_add_local_field_group')):
         'active'                => true,
         'description'           => '',
     ]);
-
 
     acf_add_local_field_group(array(
         'key' => 'group_6287f5a3bfa13',

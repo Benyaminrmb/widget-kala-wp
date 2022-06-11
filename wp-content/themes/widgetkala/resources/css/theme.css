@@ -34,6 +34,10 @@ button {
 
 /*#Header */
 
+.header .container {
+    @apply border-t border-customDarkblue border-t-4
+}
+
 /*search box*/
 .search-box {
     @apply relative w-full text-gray-600 focus-within:text-gray-300
@@ -96,7 +100,7 @@ button {
 }
 
 .main-menu {
-    @apply col-span-10 gap-x-12 flex overflow-hidden flex-wrap relative;
+    @apply col-span-10 gap-x-12 flex flex-wrap relative;
 }
 
 .main-menu .divider {
@@ -109,11 +113,11 @@ button {
 }
 
 .main-menu .nav-item {
-    @apply block relative overflow-hidden;
+    @apply block relative;
 }
 
 .main-menu .nav-link {
-    @apply py-4 block relative before:absolute inset-x-0
+    @apply overflow-hidden py-4 block relative before:absolute inset-x-0
     whitespace-nowrap
     before:mx-auto
     before:rounded-b-full
@@ -131,6 +135,20 @@ button {
     @apply before:top-0 text-white;
 }
 
+.main-menu .menu-item .dropdown-menu {
+    @apply invisible opacity-0 absolute right-0 rounded-b-md py-3 w-64 bg-customLightblue leading-6 top-40 transition transition-all duration-200
+}
+
+.main-menu .menu-item:hover .dropdown-menu {
+    @apply visible opacity-100 top-full
+}
+
+.main-menu .menu-item .dropdown-menu .nav-link,
+.main-menu .menu-item .dropdown-menu a {
+    @apply block py-2 px-3 transition transition-all duration-200 text-white hover:text-customBlack hover:bg-customRed;
+}
+
+
 .major-shopping-container {
     @apply col-span-2 justify-end flex items-end;
 }
@@ -144,11 +162,11 @@ button {
 }
 
 .mobile-menu-section {
-    @apply hidden bg-white fixed left-0 right-0 -top-40 max-h-fit flex md:hidden flex-col z-999 transition
+    @apply opacity-0 invisible bg-white fixed left-0 right-0 -top-full max-h-fit flex md:hidden flex-col z-999 transition transition-all duration-300
 }
 
 .mobile-menu-section.show {
-    @apply block top-0
+    @apply opacity-100 visible top-0
 }
 
 .mobile-menu {
@@ -192,11 +210,11 @@ button {
 }
 
 .mobile-menu-backdrop {
-    @apply hidden bg-customDarkblue/60 fixed top-0 bottom-0 left-0 right-0 z-998
+    @apply opacity-0 invisible bg-customDarkblue fixed top-0 bottom-0 left-0 right-0 z-998 transition transition-all
 }
 
 .mobile-menu-backdrop.show {
-    @apply block
+    @apply opacity-50 visible
 }
 
 .mobile-menu .menu-item.divider {
@@ -380,10 +398,10 @@ button {
 }
 
 .section-title {
-    @apply text-customBlack font-bold text-base md:text-xl;
+    @apply text-customBlack font-bold text-base md:text-xl relative;
     /*font: normal bold 22px/30px "IRANSans", Tahoma, sans-serif;*/
 
-    @apply after:md:block after:hidden after:w-0.5 after:absolute after:bg-gray-600 after:h-6 after:left-0 after:top-1 after:mx-14
+    @apply after:hidden after:w-0.5 after:absolute after:bg-gray-600 after:h-6 after:left-0 after:top-1 after:mx-14
 }
 
 .heading-with-icon {
@@ -849,7 +867,6 @@ input:checked ~ .parent {
     hover:bg-customRed hover:text-customDarkblue
     focus:bg-customRed focus:text-customDarkblue
 }
-
 
 header .icon-trolley {
     @apply text-3xl
