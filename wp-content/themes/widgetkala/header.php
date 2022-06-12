@@ -56,13 +56,9 @@
             </div>
         </nav>
     </header>
-
-
-    <div class="col-span-12 flex px-6 justify-between container mx-auto md:hidden">
+    <div class="col-span-12 flex px-4 justify-between container mx-auto md:hidden">
         <?php get_search_form(); ?>
     </div>
-
-
     <div class="menu-section md:flex hidden">
         <div class="container">
             <div class="grid grid-cols-12 justify-between">
@@ -132,13 +128,13 @@
                 <?php
                 $register = wp_registration_url();
                 $login = wp_login_url(mt_current_URL());
-                if(!is_user_logged_in()){
-                ?>
-                <a href="<?php echo esc_url($login); ?>" class="login-button"><?php _e('ورود', 'widgetize'); ?></a>
-                <a href="<?php echo esc_url($register); ?>" class="register-button"><?php _e('ثبت نام', 'widgetize'); ?></a>
-                <?php } else{?>
-                <a href="<?php echo esc_url($login); ?>" class="profile-button"><?php _e('حساب کاربری', 'widgetize'); ?></a>
-                <?php }?>
+                if (!is_user_logged_in()) {
+                    ?>
+                    <a href="<?php echo esc_url($login); ?>" class="login-button"><?php _e('ورود', 'widgetize'); ?></a>
+                    <a href="<?php echo esc_url($register); ?>" class="register-button"><?php _e('ثبت نام', 'widgetize'); ?></a>
+                <?php } else { ?>
+                    <a href="<?php echo esc_url($login); ?>" class="profile-button"><?php _e('حساب کاربری', 'widgetize'); ?></a>
+                <?php } ?>
             </div>
         </div>
     </div>

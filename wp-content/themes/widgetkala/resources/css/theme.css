@@ -229,7 +229,7 @@ header .nav-container > div {
 
 
 .tabs {
-    @apply md:flex hidden text-sm items-center gap-x-5 text-gray-500 flex-wrap;
+    @apply md:flex hidden text-base items-center gap-x-5 text-gray-300 flex-wrap;
 }
 
 .tabs li {
@@ -274,12 +274,43 @@ header .nav-container > div {
 
 .product-archive-content .single-product-item,
 .product-tabs-content .single-product-item {
-    @apply w-full flex-grow flex rounded-md flex-wrap border border-gray-200 p-3 transition duration-150 transform hover:product-hover-shadow min-w-fit
+    @apply w-full flex-grow flex rounded-md flex-wrap border border-gray-200 p-3 transition duration-150 transform hover:product-hover-shadow min-w-fit;
+    max-height: 330px;
 }
 
 .single-product-item {
     @apply before:transition-all before:ease-in-out before:duration-150 before:rounded-3xl before:bg-customLightblue before:w-0 before:h-1 before:left-1/2 before:right-1/2 before:absolute before:top-0;
     @apply hover:before:w-1/2 hover:before:left-1/4 hover:before:right-1/4
+}
+
+.single-product-item h3.product-title {
+    @apply text-customDarkblue cursor-pointer text-rem font-normal whitespace-nowrap md:whitespace-normal h-14
+}
+
+.single-product-item img {
+    @apply pb-1.5 mx-auto;
+    max-height: 9.5rem;
+}
+
+.single-product-item .product-brands-list {
+    @apply mb-4 flex cursor-pointer text-orange-500 text-sm justify-end w-full;
+    line-height: 1rem;
+}
+
+.single-product-item .price-removed {
+    @apply flex line-through text-gray-700 text-lg font-bold w-full whitespace-nowrap md:whitespace-normal;
+}
+
+.single-product-item .price-removed span {
+    @apply after:content-[attr(data-after)] after:text-xs after:left-0 after:font-light  items-center relative;
+}
+
+.single-product-item .product-price {
+    @apply flex gap-x-4 items-center justify-between text-gray-700 text-lg font-bold w-full;
+}
+
+.single-product-item .product-price > span {
+    @apply after:content-[attr(data-after)] after:text-xs after:font-light after:left-0 text-customLightblue items-center relative
 }
 
 /*.single-product-item:hover:before {*/
@@ -763,11 +794,11 @@ input:checked ~ .parent {
 }
 
 .woocommerce-cart article.page .woocommerce .woocommerce-cart-form {
-    @apply col-span-8
+    @apply col-span-12 md:col-span-8
 }
 
 .woocommerce-cart article.page .woocommerce .cart-collaterals {
-    @apply col-span-4 bg-customLightgraytwo rounded-b-md px-6 py-7
+    @apply col-span-12 md:col-span-4 bg-customLightgraytwo rounded-b-md px-6 py-7
 }
 
 .woocommerce-cart article.page .woocommerce table.shop_table {

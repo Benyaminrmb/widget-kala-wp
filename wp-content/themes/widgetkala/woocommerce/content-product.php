@@ -31,30 +31,30 @@ if (is_shop() || is_front_page() || is_singular('product')) {
 }
 ?>
 <div <?php wc_product_class(['single-product-item', 'group', $col_class], $product); ?>>
-    <div class="w-full flex">
+    <div class="w-full flex justify-center">
         <a href="<?php the_permalink(); ?>">
-            <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="w-full rounded-lg">
+            <img src="<?php the_post_thumbnail_url('thumbnail'); ?>" alt="<?php the_title(); ?>" class="w-full rounded-lg">
         </a>
     </div>
     <div class="flex">
-        <h3 class="text-customDarkblue cursor-pointer text-base font-light leading-7 whitespace-nowrap md:whitespace-normal">
+        <h3 class="product-title">
             <a href="<?php the_permalink(); ?>">
                 <?php echo $product->get_title(); ?>
             </a>
         </h3>
     </div>
-    <?php echo(get_the_term_list(get_the_ID(), 'product_brand', '<div class="mb-7 flex cursor-pointer text-orange-500 text-xs justify-end w-full">', '&nbsp;,&nbsp;', '</div>')); ?>
+    <?php echo(get_the_term_list(get_the_ID(), 'product_brand', '<div class="product-brands-list">', '&nbsp;,&nbsp;', '</div>')); ?>
     <?php
     if ($product->get_regular_price() != $product->get_price()) { ?>
-        <div class="flex line-through text-gray-700 text-xl w-full whitespace-nowrap md:whitespace-normal">
-            <span data-after="<?php echo esc_attr(get_woocommerce_currency_symbol()); ?>" class="after:content-[attr(data-after)] after:text-sm items-center after:left-0 relative">
+        <div class="price-removed">
+            <span data-after="<?php echo esc_attr(get_woocommerce_currency_symbol()); ?>" class="">
                 <?php echo $product->get_regular_price(); ?>
             </span>
         </div>
     <?php }
     ?>
-    <div class="flex gap-x-4 items-center justify-between text-gray-700 text-xl w-full">
-        <span data-after="<?php echo esc_attr(get_woocommerce_currency_symbol()) ?>" class="after:content-[attr(data-after)] text-customLightblue after:text-sm items-center after:left-0 relative">
+    <div class="product-price">
+        <span data-after="<?php echo esc_attr(get_woocommerce_currency_symbol()) ?>" class="">
             <?php echo $product->get_price(); ?>
         </span>
         <?php

@@ -39,13 +39,14 @@
         ?>
         <div class="owl-carousel owl-slider owl-theme">
             <?php
-            foreach ($mobile_images as $item) { ?>
-                <div class="item">
-                    <a  class="rounded-md overflow-hidden" href="<?php echo $item['link']['url']; ?>">
-                        <?php echo wp_get_attachment_image($item['img'],'mobile_slider',false, ['class' => 'w-full rounded-md', 'title' => $item['link']]); ?>
-                    </a>
-                </div>
-            <?php } ?>
+            foreach ($mobile_images as $item) {
+                $item_html = '<div class="item">';
+                $item_html .= (isset($item['link']['url'])) ? '<a href="' . $item['link']['url'] . '" class="rounded-md overflow-hidden">' : '<div class="rounded-md overflow-hidden">';
+                $item_html .= wp_get_attachment_image($item['img'], 'mobile_slider', false, ['class' => 'w-full rounded-md', 'title' => $item['link']]);
+                $item_html .= (isset($item['link']['url'])) ? '</a>' : '</div>';
+                $item_html .= '</div>';
+                echo $item_html;
+            } ?>
         </div>
     <?php } else { ?>
         <div class="hidden md:grid gap-x-7 grid-cols-12 justify-between">
