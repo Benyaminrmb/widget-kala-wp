@@ -160,7 +160,7 @@ header .nav-container > div {
 }
 
 .major-shopping {
-    @apply py-3 bg-customRed mt-1 py-1 px-3 rounded-t hover:bg-orange-500;
+    @apply py-3 bg-customRed mt-2 px-3 rounded-t hover:bg-orange-500;
 }
 
 .menu-toggle {
@@ -216,11 +216,11 @@ header .nav-container > div {
 }
 
 .mobile-menu-backdrop {
-    @apply opacity-0 invisible bg-customDarkblue/50 fixed top-0 bottom-0 left-0 right-0 z-998 transition transition-all
+    @apply opacity-0 invisible bg-customDarkblue fixed top-0 bottom-0 left-0 right-0 z-998 transition transition-all
 }
 
 .mobile-menu-backdrop.show {
-    @apply opacity-100 visible
+    @apply opacity-50 visible
 }
 
 .mobile-menu .menu-item.divider {
@@ -229,7 +229,7 @@ header .nav-container > div {
 
 
 .tabs {
-    @apply md:flex hidden text-base items-center gap-x-5 text-gray-300 flex-wrap;
+    @apply md:flex hidden text-sm items-center gap-x-5 text-gray-500 flex-wrap;
 }
 
 .tabs li {
@@ -274,43 +274,12 @@ header .nav-container > div {
 
 .product-archive-content .single-product-item,
 .product-tabs-content .single-product-item {
-    @apply w-full flex-grow flex rounded-md flex-wrap border border-gray-200 p-3 transition duration-150 transform hover:product-hover-shadow min-w-fit;
-    max-height: 330px;
+    @apply w-full flex-grow flex rounded-md flex-wrap border border-gray-200 p-3 transition duration-150 transform hover:product-hover-shadow min-w-fit
 }
 
 .single-product-item {
     @apply before:transition-all before:ease-in-out before:duration-150 before:rounded-3xl before:bg-customLightblue before:w-0 before:h-1 before:left-1/2 before:right-1/2 before:absolute before:top-0;
     @apply hover:before:w-1/2 hover:before:left-1/4 hover:before:right-1/4
-}
-
-.single-product-item h3.product-title {
-    @apply text-customDarkblue cursor-pointer text-rem font-normal whitespace-nowrap md:whitespace-normal h-14
-}
-
-.single-product-item img {
-    @apply pb-1.5 mx-auto;
-    max-height: 9.25rem;
-}
-
-.single-product-item .product-brands-list {
-    @apply mb-4 flex cursor-pointer text-orange-500 text-sm justify-end w-full;
-    line-height: 1rem;
-}
-
-.single-product-item .price-removed {
-    @apply flex line-through text-gray-700 text-lg font-bold w-full whitespace-nowrap md:whitespace-normal;
-}
-
-.single-product-item .price-removed span {
-    @apply after:content-[attr(data-after)] after:text-xs after:left-0 after:font-light  items-center relative;
-}
-
-.single-product-item .product-price {
-    @apply flex gap-x-4 items-center justify-between text-gray-700 text-lg font-bold w-full;
-}
-
-.single-product-item .product-price > span {
-    @apply after:content-[attr(data-after)] after:text-xs after:font-light after:left-0 text-customLightblue items-center relative
 }
 
 /*.single-product-item:hover:before {*/
@@ -320,7 +289,7 @@ header .nav-container > div {
 /*}*/
 
 .woocommerce a.button.add-to-cart-button, .add-to-cart-button {
-    @apply border-2 bg-white p-0 flex hover:bg-customDarkblue hover:text-white transition duration-150 items-center justify-center rounded-five border-customDarkblue text-4xl;
+    @apply border-2 bg-white p-0 flex hover:bg-customDarkblue hover:text-white transition duration-150 items-center justify-center rounded-xl border-customDarkblue text-4xl;
 }
 
 .group:hover a.button.add-to-cart-button, .woocommerce a.button.add-to-cart-button:hover, .add-to-cart-button:hover {
@@ -794,11 +763,11 @@ input:checked ~ .parent {
 }
 
 .woocommerce-cart article.page .woocommerce .woocommerce-cart-form {
-    @apply col-span-12 md:col-span-8
+    @apply col-span-8
 }
 
 .woocommerce-cart article.page .woocommerce .cart-collaterals {
-    @apply col-span-12 md:col-span-4 bg-customLightgraytwo rounded-b-md px-6 py-7
+    @apply col-span-4 bg-customLightgraytwo rounded-b-md px-6 py-7
 }
 
 .woocommerce-cart article.page .woocommerce table.shop_table {
@@ -987,19 +956,102 @@ header .icon-trolley {
 .owl-posts .owl-dots .owl-dot.active span, .owl-posts .owl-dots .owl-dot:hover span {
     @apply bg-customLightblue;
 }
-.has-post-thumbnail .summary.entry-summary{
+
+.has-post-thumbnail .summary.entry-summary {
     @apply flex flex-wrap gap-3 col-span-6
 }
-.has-post-thumbnail .summary.entry-summary h1{
+
+.has-post-thumbnail .summary.entry-summary h1 {
     @apply flex w-full text-xl text-customDarkblue font-bold
 }
-.product-main-category{
+
+.product-main-category {
     @apply flex w-full text-base justify-between pb-2 border-b border-customLightgray2
 }
-.product-main-category .posted_in{
+
+.product-main-category .posted_in {
     @apply flex gap-1 font-bold text-xs text-customDarkblue
 }
-.product-main-category .posted_in a{
+
+.product-main-category .posted_in a {
     @apply text-customRed font-bold text-xs font-medium
 }
 
+.woocommerce-product-details__short-description {
+    @apply flex w-full text-base text-customDarkblue
+}
+
+.product form.cart {
+
+    @apply flex w-full flex-wrap border border-customLightgray2 rounded-md justify-center
+}
+
+.product form.cart .main-item {
+
+    @apply flex gap-4 w-full mt-4 justify-center items-center
+}
+
+.product form.cart .main-item .quantity {
+
+    @apply flex
+}
+
+.product form.cart .main-item .quantity .quantity-container {
+
+    @apply border p-3 border-customLightGray rounded-md
+}
+
+.product form.cart .main-item .quantity .quantity-container button.plus {
+
+    @apply border-l pl-3;
+    border-color: #C6C6C6;
+}
+
+.product form.cart .main-item .quantity .quantity-container button.minus {
+
+    @apply border-r pr-3;
+    border-color: #C6C6C6;
+}
+
+.product form.cart .main-footer-logo {
+    @apply flex flex-wrap bg-customLightgray3 gap-3 justify-around w-full p-1 mt-4
+}
+
+.woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page div.product div.images {
+    float: left;
+}
+
+.woocommerce #content div.product div.summary, .woocommerce div.product div.summary, .woocommerce-page #content div.product div.summary, .woocommerce-page div.product div.summary {
+    float: right;
+}
+
+.woocommerce-tabs.wc-tabs-wrapper {
+    @apply flex w-full flex-wrap border border-customLightgray2 rounded-md justify-center !important
+}
+
+.woocommerce-tabs.wc-tabs-wrapper ul {
+    @apply flex flex-wrap bg-customLightgray3 gap-6 border-b border-customLightgray2 w-full p-2 px-4 before:hidden !important;
+    overflow: inherit !important;
+}
+
+.woocommerce-tabs.wc-tabs-wrapper ul li {
+    @apply flex bg-customLightgray3 gap-2 border-0 items-center relative !important;
+
+}
+
+.woocommerce-tabs.wc-tabs-wrapper ul li.active {
+    @apply bg-customLightgray3 before:absolute
+    before:mx-auto
+    before:rounded-full
+    before:h-1.5
+    before:w-full
+    before:right-0
+    before:bg-customLightblue
+    before:-bottom-3 after:hidden !important;
+
+
+}
+
+.woocommerce-tabs.wc-tabs-wrapper ul li a {
+    @apply flex text-sm text-customDarkblue !important;
+}

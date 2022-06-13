@@ -55,6 +55,7 @@ module.exports = {
                 current: 'currentColor',
                 customLightgray: '#F8F8F8',
                 customLightgray2: '#D8D8D8',
+                customLightgray3: '#F4F4F5',
                 customLightgraytwo: '#D8D8D8',
                 customDarkWhite: '#DFE0E3',
                 customLightblue: '#50A8EA',
