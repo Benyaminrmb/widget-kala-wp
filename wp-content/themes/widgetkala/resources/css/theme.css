@@ -987,3 +987,19 @@ header .icon-trolley {
 .owl-posts .owl-dots .owl-dot.active span, .owl-posts .owl-dots .owl-dot:hover span {
     @apply bg-customLightblue;
 }
+.has-post-thumbnail .summary.entry-summary{
+    @apply flex flex-wrap gap-3 col-span-6
+}
+.has-post-thumbnail .summary.entry-summary h1{
+    @apply flex w-full text-xl text-customDarkblue font-bold
+}
+.product-main-category{
+    @apply flex w-full text-base justify-between pb-2 border-b border-customLightgray2
+}
+.product-main-category .posted_in{
+    @apply flex gap-1 font-bold text-xs text-customDarkblue
+}
+.product-main-category .posted_in a{
+    @apply text-customRed font-bold text-xs font-medium
+}
+
