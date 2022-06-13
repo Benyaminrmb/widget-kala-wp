@@ -116,7 +116,12 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 
 		<?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
 
-		<button type="submit" class="single_add_to_cart_button button alt"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
+		<button type="submit" class="cart-button single_add_to_cart_button button alt">
+            <span class="md:flex hidden">
+            <?php echo esc_html( $product->single_add_to_cart_text() ); ?>
+            </span>
+            <span class="btn-cart-icon icon icon-trolley"></span>
+        </button>
 
 		<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
 

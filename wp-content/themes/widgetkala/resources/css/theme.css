@@ -74,9 +74,13 @@ header .nav-container > div {
     focus:outline-none focus:shadow focus:bg-white focus:text-gray-900;
 }
 
-.cart-button {
+.woocommerce button.button.single_add_to_cart_button, .cart-button, .woocommerce button.cart-button.disabled {
     @apply md:inline-flex md:items-center md:px-4 md:py-1 md:font-normal md:leading-6 md:text-base md:rounded-md md:text-white md:bg-customLightblue
     md:hover:bg-customDarkblue md:ring-1 md:ring-slate-900/10;
+}
+
+.woocommerce #respond input#submit.alt.disabled, .woocommerce #respond input#submit.alt.disabled:hover, .woocommerce #respond input#submit.alt:disabled, .woocommerce #respond input#submit.alt:disabled:hover, .woocommerce #respond input#submit.alt:disabled[disabled], .woocommerce #respond input#submit.alt:disabled[disabled]:hover, .woocommerce a.button.alt.disabled, .woocommerce a.button.alt.disabled:hover, .woocommerce a.button.alt:disabled, .woocommerce a.button.alt:disabled:hover, .woocommerce a.button.alt:disabled[disabled], .woocommerce a.button.alt:disabled[disabled]:hover, .woocommerce button.button.alt.disabled, .woocommerce button.button.alt.disabled:hover, .woocommerce button.button.alt:disabled, .woocommerce button.button.alt:disabled:hover, .woocommerce button.button.alt:disabled[disabled], .woocommerce button.button.alt:disabled[disabled]:hover, .woocommerce input.button.alt.disabled, .woocommerce input.button.alt.disabled:hover, .woocommerce input.button.alt:disabled, .woocommerce input.button.alt:disabled:hover, .woocommerce input.button.alt:disabled[disabled], .woocommerce input.button.alt:disabled[disabled]:hover {
+    @apply bg-customLightblue;
 }
 
 .cart-button .cart-count-badge {
@@ -965,56 +969,120 @@ header .icon-trolley {
     @apply flex w-full text-xl text-customDarkblue font-bold
 }
 
+.woocommerce span.onsale {
+    @apply hidden -left-2 right-auto top-10 text-xs leading-none;
+}
+
+.woocommerce .like-product-button {
+    @apply float-left;
+}
+
+.woocommerce .share-links {
+    @apply float-left relative px-2 pb-4;
+}
+
+.woocommerce .share-links .share-items {
+    @apply hidden absolute left-full top-0 w-0 transition duration-300 transition-all;
+}
+
+.woocommerce .share-links:hover .share-items {
+    @apply block w-auto;
+}
+
+.woocommerce .share-links .share-items .social-share-list {
+    @apply flex gap-x-2;
+}
+
+.social-share-list .telegram:hover .svg-icon {
+    fill: #0088cc;
+}
+
+.social-share-list .whatsapp:hover .svg-icon {
+    fill: #25D366;
+}
+
+.social-share-list .facebook:hover .svg-icon {
+    fill: #4267B2;
+}
+
+.social-share-list .linkedin:hover .svg-icon {
+    fill: #006192;
+}
+
+.social-share-list .gmail:hover .svg-icon {
+    fill: #1da1f2;
+}
+
+.social-share-list .twitter:hover .svg-icon {
+    fill: #1da1f2;
+}
+
+.woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page div.product div.images {
+    @apply w-full float-none;
+}
+
 .product-main-category {
-    @apply flex w-full text-base justify-between pb-2 border-b border-customLightgray2
+    @apply flex w-full text-base justify-start gap-7 pb-2 border-b border-customLightgray2
 }
 
 .product-main-category .posted_in {
-    @apply flex gap-1 font-bold text-xs text-customDarkblue
+    @apply flex gap-1 font-medium text-base text-customDarkblue
 }
 
 .product-main-category .posted_in a {
-    @apply text-customRed font-bold text-xs font-medium
+    @apply text-customRed font-bold text-base font-light
 }
 
 .woocommerce-product-details__short-description {
-    @apply flex w-full text-base text-customDarkblue
+    @apply flex w-full flex-shrink text-base text-customDarkblue
 }
 
 .product form.cart {
-
     @apply flex w-full flex-wrap border border-customLightgray2 rounded-md justify-center
 }
 
-.product form.cart .main-item {
-
-    @apply flex gap-4 w-full mt-4 justify-center items-center
+.single-product-add-to-cart {
+    @apply bg-customLightgraytwo/5 border border-customLightgraytwo rounded-five pt-5 px-8 mt-6 overflow-hidden
 }
 
-.product form.cart .main-item .quantity {
+.woocommerce-product-details__short-description ul {
+    @apply grid grid-cols-12 gap-4
+}
 
+.woocommerce-product-details__short-description ul li {
+    @apply col-span-4
+}
+
+.product .single-product-add-to-cart form.cart {
+    @apply border-none flex gap-4 w-full mt-4 justify-center items-center
+}
+
+.product .single-product-add-to-cart form.cart .quantity {
     @apply flex
 }
 
-.product form.cart .main-item .quantity .quantity-container {
+.product .single-product-add-to-cart form.cart .quantity .quantity-container {
 
-    @apply border p-3 border-customLightGray rounded-md
+    @apply border py-2 px-3 border-customLightGray rounded-md
 }
 
-.product form.cart .main-item .quantity .quantity-container button.plus {
+.product .single-product-add-to-cart form.cart .quantity .quantity-container button.plus {
 
     @apply border-l pl-3;
     border-color: #C6C6C6;
 }
 
-.product form.cart .main-item .quantity .quantity-container button.minus {
-
+.product .single-product-add-to-cart form.cart .quantity .quantity-container button.minus {
     @apply border-r pr-3;
     border-color: #C6C6C6;
 }
 
-.product form.cart .main-footer-logo {
-    @apply flex flex-wrap bg-customLightgray3 gap-3 justify-around w-full p-1 mt-4
+/*.woocommerce button.button.single_add_to_cart_button{*/
+
+/*}*/
+
+.product .single-product-add-to-cart .main-footer-logo {
+    @apply flex flex-wrap bg-customLightgray3 gap-3 justify-around  py-2 px-12 mt-4 -mx-8
 }
 
 .woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page div.product div.images {

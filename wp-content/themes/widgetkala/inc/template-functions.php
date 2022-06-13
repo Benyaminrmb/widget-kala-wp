@@ -116,6 +116,23 @@ if (!function_exists('mt_share_links')) {
         return implode('', $html);
     }
 }
+
+if(!function_exists('show_mt_product_like_button')){
+    function show_mt_product_like_button(){
+        echo '<div class="like-product-button">';
+        mt_svg_icon('love',20);
+        echo '</div>';
+    }
+}
+
+if(!function_exists('show_mt_sharing_links')){
+    function show_mt_sharing_links(){
+        $link = get_permalink();
+        echo '<div class="share-links"><span class="sharing-link-icon">'.mt_svg_icon('share',20,false).'</span><div class="share-items">';
+        echo mt_share_links($link);
+        echo '</div></div>';
+    }
+}
 if (!function_exists('mt_convert_numbers')) {
     function mt_convert_numbers($string = '', $to = 'en')
     {

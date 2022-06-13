@@ -1,7 +1,4 @@
-<div class="product-main-category">
-
-
-    <?php
+<?php
     /**
      * Single product short description
      *
@@ -23,34 +20,13 @@
     }
 
     global $post;
-    $product = wc_get_product($post);
-
-    ?>
-    <span class="posted_in">
-        برند:
-       <?php echo get_the_term_list(get_the_id(), 'product_brand'); ?>
-    </span>
-
-
-    <?php
-    echo wc_get_product_category_list($product->get_id(), ',', '<span class="posted_in">' . _n('Category:', 'Categories:', count($product->get_category_ids()), 'woocommerce') . ' ', '</span>');
-
-//    echo wc_get_product_tag_list($product->get_id(), '', '<span class="tagged_as">' . _n('Tag:', 'Tags:', count($product->get_tag_ids()), 'woocommerce') . ' ', '</span>');
 
     $short_description = apply_filters('woocommerce_short_description', $post->post_excerpt);
 
     if (!$short_description) {
         return;
     }
-
     ?>
-    <span class="posted_in">
-        کد محصول:
-      <a><?php echo get_the_id(); ?></a>
-    </span>
-
-
-</div>
 <div class="woocommerce-product-details__short-description">
     <?php echo $short_description; // WPCS: XSS ok. ?>
 </div>
