@@ -38,6 +38,9 @@ module.exports = {
             backgroundImage: {
                 'logo-image': 'url("../images/logo.svg")',
             },
+            borderRadius: {
+                'five': '5px'
+            },
             fontSize: {
                 xs: ['10px', '16px'],
                 sm: ['12px', '19px'],
