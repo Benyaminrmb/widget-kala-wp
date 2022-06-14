@@ -109,7 +109,7 @@ $sticky = new WP_Query($args);
                         $index++;
                         $articles->the_post(); ?>
                         <div class="grid min-w-full grid-cols-7 gap-4 row-span-1 w-full border border-customDarkWhite rounded-md p-4">
-                            <div class="grid justify-center text-xl font-thin items-center grid-rows-2 col-span-2 w-full h-full bg-customLightSky rounded-md">
+                            <div class="grid justify-center text-22  items-center grid-rows-2 col-span-2 w-full h-full bg-customLightSky rounded-md">
                                 <div class="flex h-full border-b-2 border-gray-100 row-span-1 items-center justify-center">
                                     <?php the_time('d'); ?>
                                 </div>

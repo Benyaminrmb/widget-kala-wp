@@ -1123,3 +1123,6 @@ header .icon-trolley {
 .woocommerce-tabs.wc-tabs-wrapper ul li a {
     @apply flex text-sm text-customDarkblue !important;
 }
+.text-22{
+    font-size: 22px !important;
+}
