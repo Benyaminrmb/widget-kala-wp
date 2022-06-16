@@ -31,9 +31,9 @@ if (post_password_required()) {
     return;
 }
 ?>
-<div id="product-<?php the_ID(); ?>" <?php wc_product_class('container mx-auto px-4 lg:px-6', $product); ?>>
-    <div class="flex grid-cols-12 gap-16">
-        <div class="col-span-6 w-full">
+<div id="product-<?php the_ID(); ?>" <?php wc_product_class('container mt-10 mx-auto px-4 lg:px-6', $product); ?>>
+    <div class="product-box-container">
+        <div class="short-description-container">
             <div class="single-product-title">
                 <?php
                 /**
@@ -64,7 +64,7 @@ if (post_password_required()) {
                 <?php do_action('mt_wc_template_single_add_to_cart'); ?>
             </div>
         </div>
-        <div class="col-span-6 w-full">
+        <div class="gallery-container">
             <?php
             do_action('mt_wc_template_single_rating');
             do_action('mt_wc_template_single_sharing');
@@ -77,7 +77,6 @@ if (post_password_required()) {
             do_action('woocommerce_before_single_product_summary');
             ?>
         </div>
-
     </div>
     <?php
     /**

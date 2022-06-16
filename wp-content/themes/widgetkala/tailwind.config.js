@@ -4,6 +4,7 @@ module.exports = {
         './template-parts/*.php',
         './template-parts/*/*.php',
         './woocommerce/checkout/*.php',
+        './woocommerce/single-product/tabs/*.php',
         './woocommerce/loop/orderby.php',
         './woocommerce/loop/pagination.php',
         './woocommerce/loop/loop-start.php',
@@ -12,7 +13,7 @@ module.exports = {
         './woocommerce/taxonomy-product-brand.php',
         './woocommerce/taxonomy-product-cat.php',
         './woocommerce/taxonomy-product-tag.php',
-
+        './woocommerce/single-product/tabs/tabs.php'
     ],
     theme: {
         screens: {
@@ -26,8 +27,29 @@ module.exports = {
             horizontalLines: 'url("../images/horizontal_lines.svg")',
             darkHorizontalLines: 'url("../images/dark_horizontal_lines.svg")',
             logo: 'url("../images/logo.svg")',
+            none: 'none',
+            space: '',
         },
         extend: {
+            // gridTemplateColumns: {
+            //     '16': 'repeat(16, minmax(0, 1fr))',
+            //     '18' : 'repeat(18, minmax(0, 1fr))',
+            //     '24': 'repeat(24,minmax(0,1fr))'
+            // },
+            // gridColumn: {
+            //     'span-13': 'span 13 / span 13',
+            //     'span-14': 'span 14 / span 14',
+            //     'span-15': 'span 15 / span 15',
+            //     'span-16': 'span 16 / span 16',
+            //     'span-17': 'span 17 / span 17',
+            //     'span-18': 'span 18 / span 18',
+            //     'span-19': 'span 19 / span 19',
+            //     'span-20': 'span 20 / span 20',
+            //     'span-21': 'span 21 / span 21',
+            //     'span-22': 'span 22 / span 22',
+            //     'span-23': 'span 23 / span 23',
+            //     'span-24': 'span 24 / span 24',
+            // },
             zIndex: {
                 '999': '999',
                 '998': '998',

@@ -28,6 +28,7 @@ add_action('woocommerce_share', 'show_mt_sharing_links', 10);
 add_action('mt_wc_template_single_title', 'woocommerce_template_single_title', 5);
 add_action('mt_wc_template_single_rating', 'woocommerce_template_single_rating', 10);
 add_action('mt_wc_template_single_price', 'woocommerce_template_single_price', 10);
+//add_action('woocommerce_before_add_to_cart_button', 'woocommerce_template_single_price', 10);
 add_action('mt_wc_template_single_top_categories', 'mt_wc_template_single_top_categories', 10);
 add_action('mt_wc_template_single_add_to_cart', 'woocommerce_template_single_excerpt', 10);
 add_action('mt_wc_template_single_add_to_cart', 'woocommerce_template_single_add_to_cart', 20);
@@ -35,6 +36,18 @@ add_action('mt_wc_template_single_sharing', 'show_mt_product_like_button', 40);
 add_action('mt_wc_template_single_sharing', 'woocommerce_template_single_sharing', 50);
 add_action('mt_wc_template_single_meta', 'woocommerce_template_single_meta', 40);
 add_action('woocommerce_after_add_to_cart_form', 'mt_wc_template_single_add_to_cart_footer_logo', 10);
+
+if (!function_exists('mt_reorder_tabs')) {
+    add_filter('woocommerce_product_tabs', 'mt_reorder_tabs',98);
+    function mt_reorder_tabs($tabs){
+        $tabs['description']['title'] = __('بررسی محصول','widgetize');
+        $tabs['description']['priority'] = 20;
+        $tabs['additional_information']['priority'] = 10;
+        $tabs['additional_information']['title'] = __('ویژگی محصول','widgetize');
+
+        return $tabs;
+    }
+}
 
 if (!function_exists('mt_wc_template_single_add_to_cart_footer_logo')) {
     function mt_wc_template_single_add_to_cart_footer_logo()
