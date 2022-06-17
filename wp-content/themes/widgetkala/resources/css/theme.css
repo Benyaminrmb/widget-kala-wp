@@ -229,7 +229,7 @@ header .nav-container > div {
 }
 
 .mobile-menu-section .profile-button {
-    @apply w-full text-center py-2 px-6 block bg-customDarkblue text-customLightblue hover:bg-customLightblue hover:text-white;
+    @apply w-full text-center py-2 px-6 block bg-customDarkblue text-customLightblue hover:bg-customLightblue hover:text-white  rounded-md;
 }
 
 .mobile-menu-backdrop {
@@ -296,7 +296,7 @@ header .nav-container > div {
 
 .single-product-item {
     @apply before:transition-all before:ease-in-out before:duration-150 before:rounded-3xl before:bg-customLightblue before:w-0 before:h-1 before:left-1/2 before:right-1/2 before:absolute before:top-0;
-    @apply hover:before:w-1/2 hover:before:left-1/4 hover:before:right-1/4
+    @apply hover:before:w-1/2 hover:before:left-1/4 hover:before:right-1/4;
 }
 
 /*.single-product-item:hover:before {*/
@@ -421,7 +421,7 @@ header .nav-container > div {
 }
 
 .section-title {
-    @apply text-customBlack font-bold text-base md:text-xl relative;
+    @apply text-customBlack font-bold text-base_17 md:text-xl relative;
     /*font: normal bold 22px/30px "IRANSans", Tahoma, sans-serif;*/
 
     @apply after:hidden after:w-0.5 after:absolute after:bg-gray-600 after:h-6 after:left-0 after:top-1 after:mx-14
@@ -455,7 +455,7 @@ header .nav-container > div {
 
 .horizontalLines {
     @apply relative
-    before:relative before:w-5 before:h-5 before:right-0 before:block before:pt-2 before:content-horizontalLines;
+    before:relative before:w-5 before:md:top-0 before:-top-1.5 before:h-5 before:right-0 before:block before:pt-2 before:content-horizontalLines;
 }
 
 .darkHorizontalLines {
