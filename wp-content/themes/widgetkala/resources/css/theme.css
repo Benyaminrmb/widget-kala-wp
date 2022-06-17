@@ -1420,5 +1420,8 @@ svg.svg-icon{
     width: 100%;
 }
 .footer-list:last-child li {
-    min-width: 50%;
+    min-width: calc(50% - 25px);
+}
+.footer-list:last-child li:nth-child(even) {
+    margin-right: 25px;
 }
