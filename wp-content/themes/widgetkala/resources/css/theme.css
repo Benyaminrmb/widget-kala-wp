@@ -1411,4 +1411,14 @@ svg.svg-icon{
 .main-footer-list{
     @apply footer-list block flex-wrap gap-4 col-span-1 w-full
 }
-
+.footer-list:last-child {
+    grid-column: span 2/ span 2;
+}
+.footer-list:last-child ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.footer-list:last-child li {
+    min-width: 50%;
+}
