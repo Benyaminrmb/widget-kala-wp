@@ -46,8 +46,7 @@ header .nav-container > div {
 /*search box*/
 .search-box {
     @apply relative w-full text-gray-600 focus-within:text-gray-300
-    before:absolute before:block  before:inset-x-4 md:before:inset-x-8 before:rounded-full before:h-1 before:-top-0.5 before:bg-customDarkblue
-    ;
+    before:absolute before:block before:inset-x-4 md:before:inset-x-8 before:rounded-full before:h-1 before:-top-0.5 before:bg-customDarkblue
 }
 
 .search-box .submit-button {
@@ -70,9 +69,19 @@ header .nav-container > div {
 
 .search-box input[type='search'],
 .search-box input[type='text'] {
-    @apply transition-all py-2.5 h-full px-4 text-sm border block w-full rounded-md pl-10
-    focus:outline-none focus:shadow focus:bg-white focus:text-gray-900;
+    @apply transition-all py-2.5 h-full px-4 text-sm border border-customLightgray2 block w-full rounded-five pl-10
+    focus:outline-none focus:shadow focus:bg-white focus:text-gray-900
 }
+
+.search-box.search-brands {
+    @apply before:top-4 before:rounded-none before:h-2 before:w-3 before:-right-6 before:bg-customLightblue
+}
+
+.search-box.search-brands input[type='search'],
+.search-box.search-brands input[type='text'] {
+    @apply border-customDarkblue
+}
+
 
 .woocommerce button.button.single_add_to_cart_button, .cart-button, .woocommerce button.cart-button.disabled {
     @apply md:inline-flex md:items-center md:px-4 md:py-1 md:font-normal md:leading-6 md:text-base md:rounded-md md:text-white md:bg-customLightblue
@@ -137,7 +146,7 @@ header .nav-container > div {
     hover:before:top-0 hover:text-orange-400
     focus:before:top-0 focus:text-orange-400
     active:before:top-0 active:text-orange-400;
-    line-height: 40px;
+    line-height: 45px;
 }
 
 .main-menu .nav-link.active,
@@ -168,7 +177,7 @@ header .nav-container > div {
 }
 
 .major-shopping {
-    @apply py-0.5 bg-customRed mt-2 px-4 rounded-t hover:bg-orange-500;
+    @apply py-1.5 bg-customRed mt-2 px-4 rounded-t hover:bg-orange-500 text-base
 }
 
 .menu-toggle {
@@ -977,6 +986,18 @@ header .icon-trolley {
     @apply flex w-full text-xl text-customDarkblue font-bold
 }
 
+.woocommerce .single-product-title {
+    @apply mb-7;
+}
+
+.woocommerce .single-product-title .product_title {
+    @apply text-xl text-customDarkblue font-bold
+}
+
+.woocommerce .single-product-title .subtitle {
+    @apply text-base text-customDarkblue font-normal
+}
+
 .woocommerce span.onsale {
     @apply hidden -left-2 right-auto top-10 text-xs leading-none;
 }
@@ -1067,11 +1088,27 @@ header .icon-trolley {
 }
 
 .woocommerce div.product .gallery-container div.images .flex-control-thumbs {
-    @apply grid grid-cols-12 gap-4 mt-4
+    @apply flex gap-4 mt-4 overflow-x-auto mb-2;
+}
+
+.flex-control-thumbs::-webkit-scrollbar {
+    @apply w-1 h-1 bg-customLightgraytwo mt-2
+}
+
+.flex-control-thumbs::-webkit-scrollbar-button {
+    @apply bg-customBlack w-0 h-0
+}
+
+.flex-control-thumbs::-webkit-scrollbar-track-piece {
+    @apply bg-customLightgray
+}
+
+.flex-control-thumbs::-webkit-scrollbar-thumb {
+    @apply bg-customBlack
 }
 
 .woocommerce div.product div.images .flex-control-thumbs li {
-    @apply w-full float-none col-span-3 overflow-hidden border border-customLightgray2 rounded-five
+    @apply w-full float-none col-span-3 overflow-hidden border border-customLightgray2 rounded-five basis-1/5 grow-0 shrink-0
 }
 
 .woocommerce div.product div.images .flex-control-thumbs li img.flex-active, .woocommerce div.product div.images .flex-control-thumbs li img:hover {
@@ -1099,10 +1136,10 @@ header .icon-trolley {
 }
 
 .woocommerce-product-details__short-description ul li {
-    @apply col-span-12 md:col-span-6
+    @apply min-w-full md:min-w-[48%]
 }
 
-.woocommerce-variation-price {
+.woocommerce .single-product-add-to-cart .price {
     @apply flex items-center justify-center w-full mb-6;
 }
 

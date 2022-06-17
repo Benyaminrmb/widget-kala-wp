@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @see woocommerce_default_product_tabs()
  */
 $product_tabs = apply_filters( 'woocommerce_product_tabs', array() );
-echo '<code>'.json_encode($product_tabs,256|64).'</code>';
+//echo '<code>'.json_encode($product_tabs,256|64).'</code>';
 
 if ( ! empty( $product_tabs ) ) : ?>
 <div class="woocommerce-tabs-container">

@@ -58,7 +58,6 @@ if (post_password_required()) {
 
                 ?>
             </div>
-            <div class="single-product-subtitle"><?php do_action('mt_wc_template_single_subtitle'); ?></div>
             <?php do_action('mt_wc_template_single_top_categories'); ?>
             <div class="single-product-add-to-cart">
                 <?php do_action('mt_wc_template_single_add_to_cart'); ?>
