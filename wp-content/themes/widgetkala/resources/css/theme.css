@@ -155,7 +155,7 @@ header .nav-container > div {
 }
 
 .main-menu .menu-item .dropdown-menu {
-    @apply invisible opacity-0 absolute right-0 rounded-b-md py-3 w-64 bg-customLightblue leading-6 top-40 transition transition-all duration-200
+    @apply invisible opacity-0 absolute right-0 rounded-five shadow w-48 bg-white leading-6 top-40 transition transition-all duration-200 px-2.5
 }
 
 .main-menu .menu-item:hover .dropdown-menu {
@@ -407,12 +407,11 @@ header .nav-container > div {
 .news-letter {
     @apply relative w-full text-gray-600 focus-within:text-gray-300
     before:w-2 before:h-2 before:rounded-full before:absolute before:bg-customLightblue before:right-4 before:top-5
-    ;
 }
 
 .news-letter .submit-button button {
     @apply absolute justify-center inset-y-2.5 left-2.5 flex items-center px-4 bg-customLightblue transition ease-linear
-    rounded-md text-black
+    rounded-five text-black
     hover:bg-customDarkblue hover:text-customLightblue
     focus:bg-customDarkblue focus:text-customLightblue
 }
@@ -427,8 +426,8 @@ header .nav-container > div {
 
 .news-letter input[type='email'],
 .news-letter input[type='text'] {
-    @apply pl-40 pr-8 transition transition-all ease-linear py-3 h-full text-sm text-white border block w-full rounded-md pl-10 bg-transparent placeholder-customGray
-    focus:outline-none focus:bg-white focus:text-gray-900 focus:bg-transparent focus:text-white focus:border-customLightblue
+    @apply pl-40 pr-8 transition transition-all ease-linear py-0.5 h-full text-sm text-white border block w-full rounded-md bg-transparent placeholder-customGray
+    focus:outline-none focus:bg-white focus:text-gray-900 focus:bg-transparent focus:text-white focus:border-customLightblue focus:placeholder-transparent
 }
 
 .btn-custom-white {
@@ -810,8 +809,13 @@ input:checked ~ .parent {
     @apply grid grid-cols-12 gap-x-6
 }
 
+.woocommerce-error, .woocommerce-info, .woocommerce-message, .return-to-shop, .cart-empty.woocommerce-info,
 .woocommerce-cart article.page .woocommerce .woocommerce-notices-wrapper {
     @apply col-span-12 my-4;
+}
+
+.button.wc-backward {
+    @apply bg-customDarkblue text-white font-black hover:bg-customRed focus-visible:bg-customRed !important
 }
 
 .woocommerce-cart article.page .woocommerce .woocommerce-cart-form {
