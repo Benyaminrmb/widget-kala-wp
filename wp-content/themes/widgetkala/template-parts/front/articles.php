@@ -21,17 +21,24 @@ $sticky = new WP_Query($args);
 ?>
 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="w-full">
-        <div class="grid mt-7 gap-x-7 grid-cols-12 justify-between">
-            <div class="col-span-6 md:col-span-10 flex gap-x-5"><span class="flex"><span
-                            class="horizontalLines"></span></span>
-                <div class="section-title">مقالات ما</div>
+        <div class="grid my-7 gap-x-7 grid-cols-12 justify-between">
+            <div class="col-span-12 justify-between flex gap-x-5">
+                <div class="flex flex-wrap gap-4">
+                    <span class="flex"><span
+                                class="horizontalLines"></span></span>
+                    <div class="section-title">مقالات ما</div>
+                </div>
+
+
+                <div class=" justify-end flex">
+                    <a href="<?php echo esc_url(get_permalink(get_option('page_for_posts'))) ?>"
+                       class="custom-btn-secondary-outline">
+                        مقالات بیشتر را بخوانید
+                    </a>
+                </div>
+
             </div>
-            <div class="col-span-6 md:col-span-2 justify-end flex">
-                <a href="<?php echo esc_url(get_permalink(get_option('page_for_posts'))) ?>"
-                   class="custom-btn-secondary-outline">
-                    مقالات بیشتر را بخوانید
-                </a>
-            </div>
+
         </div>
         <?php if (wp_is_mobile()) {
             if ($articles->have_posts()) { ?>
