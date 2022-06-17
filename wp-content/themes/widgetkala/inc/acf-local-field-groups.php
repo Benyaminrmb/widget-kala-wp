@@ -1205,6 +1205,74 @@ if (function_exists('acf_add_local_field_group')):
         'show_in_rest' => 0,
     ));
 
+    acf_add_local_field_group(array(
+        'key' => 'group_62ac4ffcce021',
+        'title' => 'گزینه های صفحه برند',
+        'fields' => array(
+            array(
+                'key' => 'field_62ac501dcc3d5',
+                'label' => 'دسته بندی مقالات',
+                'name' => 'articles_categories',
+                'type' => 'taxonomy',
+                'instructions' => '',
+                'required' => 1,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'taxonomy' => 'category',
+                'field_type' => 'checkbox',
+                'add_term' => 1,
+                'save_terms' => 0,
+                'load_terms' => 0,
+                'return_format' => 'id',
+                'multiple' => 0,
+                'allow_null' => 0,
+            ),
+            array(
+                'key' => 'field_62ac50c7cc3d6',
+                'label' => 'تعداد نوشته ها',
+                'name' => 'post_count',
+                'type' => 'number',
+                'instructions' => '',
+                'required' => 1,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => 3,
+                'placeholder' => 'تعداد نوشته ها برای نشان دادن',
+                'prepend' => '',
+                'append' => '',
+                'min' => 3,
+                'max' => 6,
+                'step' => 3,
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'page_template',
+                    'operator' => '==',
+                    'value' => 'page-brand.php',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => true,
+        'description' => '',
+        'show_in_rest' => 0,
+    ));
+
 endif;
 
 function product_categyries_field($field)
