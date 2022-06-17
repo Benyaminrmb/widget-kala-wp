@@ -30,6 +30,7 @@ if (is_shop() || is_front_page() || is_singular('product')) {
     $col_class = 'col-span-12 md:col-span-4';
 }
 ?>
+
 <div <?php wc_product_class(['single-product-item', 'group', $col_class], $product); ?>>
     <div class="w-full flex justify-center">
         <a href="<?php the_permalink(); ?>">

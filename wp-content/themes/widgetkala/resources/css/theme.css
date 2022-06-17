@@ -433,7 +433,7 @@ header .nav-container > div {
 }
 
 .front-brands-title {
-    @apply text-2xl text-white;
+    @apply text-2xl text-white mt-7;
 }
 
 .shop-banners-container,
@@ -920,7 +920,7 @@ header .icon-trolley {
 }
 
 .brands-box {
-    @apply container p-7 md:p-14 mx-auto px-5 sm:px-6 lg:px-8
+    @apply container pb-7 flex flex-wrap w-full mx-auto px-5 sm:px-6 lg:px-8 !important;
 }
 
 .brands-box .item {
@@ -1358,4 +1358,13 @@ header .icon-trolley {
 
 .text-22 {
     font-size: 22px !important;
+}
+.text-40{
+    font-size: 40px;
+}
+.basket-logo{
+    @apply md:text-3xl text-40 !important;
+}
+.text-white{
+    color:white!important;
 }
