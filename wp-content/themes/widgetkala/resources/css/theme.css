@@ -1086,7 +1086,7 @@ header .icon-trolley {
 }
 
 .product-main-category {
-    @apply flex w-full text-base justify-start gap-7 pb-2 border-b border-customLightgray2
+    @apply flex w-full text-base justify-start gap-x-7 gap-y-3 pb-2 border-b border-customLightgray2 flex-wrap md:flex-nowrap
 }
 
 .product-main-category .posted_in {
@@ -1106,7 +1106,7 @@ header .icon-trolley {
 }
 
 .product-box-container {
-    @apply grid gap-20 lg:px-36 grid-cols-11;
+    @apply md:grid gap-20 lg:px-36 md:grid-cols-11 flex flex-wrap
     /*grid-template-columns : repeat(11,minmax(0,1fr));*/
 }
 
@@ -1425,6 +1425,10 @@ svg.svg-icon {
 
 .footer-list {
     @apply last:col-span-2 last:md:col-span-1
+}
+
+.footer-list .menu-primary-container {
+    @apply overflow-hidden
 }
 
 .footer-list:last-child ul {
