@@ -15,18 +15,20 @@
         <div class="owl-carousel owl-slider owl-theme">
             <?php foreach ($brands_list as $key => $item) { ?>
                 <div class="item">
-                    <?php if ($item['link']) {
-                        echo '<a href="' .
-                            $item['link']['url'] .
-                            '" target="' .
-                            $item['link']['target'] .
-                            '" >';
-                    }
-                    echo wp_get_attachment_image($item['image']['ID'], 'mobile_slider', false, ['class' => 'w-full']);
-                    if ($item['link']) {
-                        echo '</a>';
-                    }
-                    ?>
+                    <div class="mx-auto overflow-hidden rounded-five">
+                        <?php if ($item['link']) {
+                            echo '<a href="' .
+                                $item['link']['url'] .
+                                '" target="' .
+                                $item['link']['target'] .
+                                '" >';
+                        }
+                        echo wp_get_attachment_image($item['image']['ID'], 'mobile_slider', false, ['class' => 'w-full']);
+                        if ($item['link']) {
+                            echo '</a>';
+                        }
+                        ?>
+                    </div>
                 </div>
             <?php } ?>
         </div>
