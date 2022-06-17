@@ -26,7 +26,7 @@ if (have_rows('frontpage_bottom_advertises', $page_id) || have_rows('frontpage_b
                         the_row();
                         $link = get_sub_field('link');?>
                         <a href="<?php echo esc_url($link['url']);?>"
-                        class="btn-custom-white col-span-1 min-w-1/2 font-light text-white"
+                        class="btn-custom-white col-span-1 min-w-1/2 font-light"
                         target="<?php echo esc_attr($link['target']);?>"><?php echo esc_attr($link['title']); ?></a>
                     <?php } ?>
                 </div>
