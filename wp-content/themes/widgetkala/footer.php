@@ -134,7 +134,7 @@
     </div>
     <div class="container md:mt-7 pt-7 sm:pt-3 mx-auto px-4 sm:px-6 lg:px-8">
         <div class="md:grid flex flex-wrap justify-center gap-x-7 grid-cols-2 border-b-2 border-customLighterMediumGray pb-7">
-            <div class="col-span-1 flex flex-wrap gap-4">
+            <div class="col-span-1 flex flex-wrap gap-4 main-footer-social">
                 <div class="flex justify-center md:justify-start w-full">
                     <?php
                     if (function_exists('the_custom_logo')) {
@@ -145,28 +145,30 @@
 
                 <div class="md:flex hidden w-full">
                     <div class="w-full">
-                        <span class="text-justify flex font-thin text-white leading-5">
+                        <span class="text-justify flex font-thin text-white leading-25 text-base_14">
                             <?php the_field('about_text', 'options'); ?>
                         </span>
                     </div>
                 </div>
-                <div class="flex justify-between w-full gap-x-3 mb-4">
-                    <div class="flex gap-x-3 w-full">
+                <div class="flex justify-between w-full gap-x-3 mb-4 ">
+                    <div class="hidden md:flex gap-x-3 w-full">
                         <div class="flex">
                             <?php mt_svg_icon('footer_title_icon'); ?>
                         </div>
                         <div class="flex"><span class="text-white"><?php the_field('social_title', 'options'); ?></span></div>
                     </div>
-                    <div class="flex">
-                        <div class="flex gap-x-3">
+                    <div class="flex w-full md:w-auto">
+                        <div class="flex gap-x-3 w-full md:w-auto justify-center">
                             <?php
                             if (have_rows('footer_social_links', 'options')) {
                                 while (have_rows('footer_social_links', 'options')) {
                                     the_row();
                                     $social_link = get_sub_field('social_link');
                                     $social_icon = get_sub_field('social_icon');
-                                    echo '<span class="flex"><a target="' . $social_link['target'] . '" href="' . $social_link['url'] . '">' . mt_svg_icon($social_icon,
-                                            24, false) . '</a></span>';
+                                    if ($social_link && $social_icon) {
+                                        echo '<span class="flex"><a target="' . $social_link['target'] . '" href="' . $social_link['url'] . '">' . mt_svg_icon($social_icon,
+                                                24, false) . '</a></span>';
+                                    }
                                 }
                             }
                             ?>

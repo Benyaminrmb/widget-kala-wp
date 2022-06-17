@@ -155,7 +155,7 @@ header .nav-container > div {
 }
 
 .main-menu .menu-item .dropdown-menu {
-    @apply invisible opacity-0 absolute right-0 rounded-five shadow w-48 bg-white leading-6 top-40 transition transition-all duration-200 px-2.5
+    @apply invisible opacity-0 absolute right-0 rounded-b-md py-3 w-64 bg-customLightblue leading-6 top-40 transition transition-all duration-200
 }
 
 .main-menu .menu-item:hover .dropdown-menu {
@@ -394,11 +394,13 @@ header .nav-container > div {
 }
 
 .footer-list ul {
+    @apply mt-4;
     margin-right: 25px;
 }
 
 .footer-list li {
-    @apply text-white mt-1 before:transition before:ease-in-out relative before:absolute before:h-2 items-center cursor-pointer hover:before:bg-customLightblue before:-right-6 before:my-auto before:inset-y-0 before:w-3 before:bg-customGray;
+    @apply text-white before:transition before:ease-in-out relative before:absolute before:h-2 items-center cursor-pointer hover:before:bg-customLightblue before:-right-6 before:my-auto before:inset-y-0 before:w-3 before:bg-customGray;
+    @apply text-base_14 leading-25 mb-14px;
 }
 
 
@@ -1388,15 +1390,25 @@ header .icon-trolley {
 .text-22 {
     font-size: 22px !important;
 }
-
-.text-40 {
+.text-40{
     font-size: 40px;
 }
-
-.basket-logo {
+.basket-logo{
     @apply md:text-3xl text-40 !important;
 }
-
-.text-white {
-    color: white !important;
+.text-white{
+    color:white!important;
 }
+footer .footer-list h2{
+    @apply text-white text-base_16 font-bold
+}
+.main-footer-social{
+    @apply w-full md:w-auto
+}
+svg.svg-icon{
+    @apply fill-white
+}
+.main-footer-list{
+    @apply footer-list block flex-wrap gap-4 col-span-1 w-full
+}
+

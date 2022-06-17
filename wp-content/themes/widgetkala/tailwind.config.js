@@ -67,11 +67,20 @@ module.exports = {
                 xs: ['10px', '16px'],
                 sm: ['12px', '19px'],
                 base_17: ['17px'],
+                base_16: ['16px'],
+                base_14: ['14px'],
                 base: ['14px', '26px'],
                 rem: ['1rem', '1.7rem'],
                 lg: ['18px', '28px'],
                 xl: ['22px', '32px'],
                 xxl: ['24px', '36px'],
+            },
+            lineHeight: {
+
+                '25': '25px',
+            },
+            margin: {
+                '14px': '14px',
             },
             colors: {
                 transparent: 'transparent',

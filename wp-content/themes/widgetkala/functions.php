@@ -77,9 +77,9 @@ if (!function_exists('mt_register_widgets')) {
                 'id' => 'footer-1',
                 'name' => esc_html__('footer-1', 'widgetkala'),
                 'description' => esc_html__('please add only list and links to this widget area', 'widgetkala'),
-                'before_widget' => '<div id="%1$s" class="footer-list flex flex-wrap gap-4 col-span-1 w-full %2$s">',
+                'before_widget' => '<div id="%1$s" class="footer-list block flex-wrap gap-4 col-span-1 w-full %2$s">',
                 'after_widget' => '</div></div>',
-                'before_title' => '<div class="flex w-full"><h4 class="text-white">',
+                'before_title' => '<div class="flex w-full"><h4 class="text-white text-base_16">',
                 'after_title' => '</h4></div><div class="flex w-full">'
             ]
         );

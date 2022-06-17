@@ -81,12 +81,13 @@
                     while (have_rows('header_options', 'options')) {
                         the_row();
                         $major_buy_link = get_sub_field('major_buy_link');
+                        if($major_buy_link){
                         ?>
                         <div class="major-shopping-container">
                             <a href="<?php echo esc_url($major_buy_link['url']); ?>"
                                class="major-shopping"><?php echo esc_attr($major_buy_link['title']); ?></a>
                         </div>
-                    <?php }
+                    <?php } }
                 } ?>
             </div>
         </div>
