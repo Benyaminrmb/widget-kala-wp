@@ -21,7 +21,7 @@ if(have_rows('frontpage_brands',$page_id)){?>
                     $after = '</a>';
                 }
                 if($image){
-                    echo $before.wp_get_attachment_image($image,'medium',false,['class'=>'w-full grayscale flex rounded-md group-hover:grayscale-0']).$after;
+                    echo $before.wp_get_attachment_image($image,'medium',false,['class'=>'w-full grayscale flex rounded-five group-hover:grayscale-0']).$after;
                 }
                 ?>
             </div>
