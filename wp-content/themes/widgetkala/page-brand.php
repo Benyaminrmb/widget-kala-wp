@@ -49,9 +49,9 @@ if ($post_categories && $post_count) {
     ]);
 
     ?>
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 md:mt-24 mt-10">
-        <div class="w-full">
-            <div class="grid gap-x-7 grid-cols-12 justify-between mb-4">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 md:mt-24 mt-10 mb-5 lg:mb-44">
+        <div class="w-full flex flex-col gap-12">
+            <div class="grid gap-x-7 grid-cols-12 justify-between mb-1">
                 <div class="col-span-6 md:col-span-10 flex gap-x-5"><span class="flex"><span class="horizontalLines"></span></span>
                     <div class="flex text-gray-600 text-xl">نقد و بررسی برندها</div>
                 </div>
@@ -75,7 +75,7 @@ if ($post_categories && $post_count) {
                 } ?>
                 </div>
             <?php } else { ?>
-                <div class="grid mt-7 gap-7 grid-cols-3">
+                <div class="grid mt-1 gap-7 grid-cols-3">
                     <?php if ($articles->have_posts()) { ?>
                         <?php
                         $index = 0;
