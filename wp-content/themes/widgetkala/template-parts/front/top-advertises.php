@@ -41,7 +41,7 @@
             <?php
             foreach ($mobile_images as $item) {
                 $item_html = '<div class="item">';
-                $item_html .= (isset($item['link']['url'])) ? '<a href="' . $item['link']['url'] . '" class="rounded-five overflow-hidden mx-auto">' : '<div class="rounded-md overflow-hidden">';
+                $item_html .= (isset($item['link']['url'])) ? '<a href="' . $item['link']['url'] . '" class="rounded-five overflow-hidden mx-auto">' : '<div class="rounded-md overflow-hidden mx-auto">';
                 $item_html .= wp_get_attachment_image($item['img'], 'mobile_slider', false, ['class' => 'w-full rounded-five', 'title' => $item['link']]);
                 $item_html .= (isset($item['link']['url'])) ? '</a>' : '</div>';
                 $item_html .= '</div>';
