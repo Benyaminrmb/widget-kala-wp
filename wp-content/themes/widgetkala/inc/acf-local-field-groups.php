@@ -1273,6 +1273,68 @@ if (function_exists('acf_add_local_field_group')):
         'show_in_rest' => 0,
     ));
 
+    acf_add_local_field_group(array(
+        'key' => 'group_62ae3ef3f214a',
+        'title' => 'گزینه های تماس با ما',
+        'fields' => array(
+            array(
+                'key' => 'field_62ae3efca3421',
+                'label' => 'کد فرم تماس',
+                'name' => 'contact_form_code',
+                'type' => 'text',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'maxlength' => '',
+            ),
+            array(
+                'key' => 'field_62ae3f1ba3422',
+                'label' => 'لوکیشن نقشه',
+                'name' => 'map_location',
+                'type' => 'google_map',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'center_lat' => '',
+                'center_lng' => '',
+                'zoom' => '',
+                'height' => '',
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'page_template',
+                    'operator' => '==',
+                    'value' => 'template-contact.php',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => true,
+        'description' => '',
+        'show_in_rest' => 0,
+    ));
+
 endif;
 
 function product_categyries_field($field)
