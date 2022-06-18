@@ -29,7 +29,7 @@ global $product;
     ?>
 
     <button type="submit" class="cart-button single_add_to_cart_button button alt">
-        <span class="md:flex hidden">
+        <span class="md:flex inline">
         <?php echo esc_html($product->single_add_to_cart_text()); ?>
         </span>
         <span class="btn-cart-icon icon icon-trolley"></span>

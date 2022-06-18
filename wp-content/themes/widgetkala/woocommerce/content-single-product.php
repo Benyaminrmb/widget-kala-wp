@@ -32,7 +32,11 @@ if (post_password_required()) {
 }
 ?>
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class('container mt-10 mx-auto px-4 lg:px-6', $product); ?>>
-    <div class="product-box-container">
+    <?php if(wp_is_mobile()){
+        wc_get_template_part('mobile/content-single-product');
+    }else{?>
+
+        <div class="product-box-container">
         <div class="short-description-container">
             <div class="single-product-title">
                 <?php
@@ -87,6 +91,8 @@ if (post_password_required()) {
      */
     do_action('woocommerce_after_single_product_summary');
     ?>
+
+    <?php }?>
 </div>
 
 <?php do_action('woocommerce_after_single_product'); ?>
