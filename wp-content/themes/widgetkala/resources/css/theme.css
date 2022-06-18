@@ -1516,7 +1516,7 @@ footer .footer-list h2 {
     @apply w-full md:w-auto
 }
 
-svg.svg-icon {
+footer svg.svg-icon {
     @apply fill-white
 }
 
@@ -1543,4 +1543,25 @@ svg.svg-icon {
 
 .footer-list:last-child li:nth-child(even) {
     @apply mr-[25px] md:mr-0;
+}
+.form-input{
+    @apply rounded-md bg-customLightgray4 py-3 px-5
+}
+.main-contact-form label{
+    @apply text-base_16 flex justify-between
+}
+.main-contact-form label span{
+    @apply flex
+}
+.main-contact-form .form-input{
+    @apply text-base_12
+}
+.main-contact-form div[role="form"]{
+    @apply flex flex-wrap w-full
+}
+.main-contact-form div[role="form"]{
+    @apply flex flex-wrap w-full
+}
+.main-contact-form form .btn{
+    @apply flex flex-wrap bg-customDarkblue p-2 text-base text-white rounded-md
 }
