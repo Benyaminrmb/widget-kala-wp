@@ -1446,11 +1446,24 @@ footer svg.svg-icon {
 .form-input{
     @apply rounded-md bg-customLightgray4 py-3 px-5
 }
+.main-contact-form form{
+    @apply flex flex-wrap w-full gap-3
+
+}
 .main-contact-form label{
-    @apply text-base_16 flex justify-between
+    @apply text-base_16 flex justify-between gap-16 w-full
 }
 .main-contact-form label span{
     @apply flex
+}
+.main-contact-form label span:last-child{
+    @apply flex w-2/3
+}
+.main-contact-form label span:last-child span:last-child{
+    @apply hidden
+}
+.main-contact-form label span:last-child input[type="submit"]{
+    @apply flex w-2/3 justify-center
 }
 .main-contact-form .form-input{
     @apply text-base_12
@@ -1463,4 +1476,7 @@ footer svg.svg-icon {
 }
 .main-contact-form form .btn{
     @apply flex flex-wrap bg-customDarkblue p-2 text-base text-white rounded-md
+}
+.main-contact-form div[role="form"]{
+
 }
