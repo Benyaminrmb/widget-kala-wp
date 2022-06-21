@@ -12,7 +12,7 @@ get_header();
         <div class="page-title-center my-12">
             <h1 class="text-center heading-with-icon mb-5">تماس با ما</h1>
         </div>
-        <div class="grid grid-cols-12 w-full">
+        <div class="grid grid-cols-12 gap-8 w-full">
             <div class="block flex-wrap col-span-6">
                 <div class="flex flex-wrap w-full gap-5 main-contact-form">
                    <span class="w-full text-bold text-base_22 text-customDarkblue2">
