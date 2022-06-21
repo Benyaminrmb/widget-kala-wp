@@ -6,7 +6,8 @@
     <!-- styles -->
     <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<?php $body_class = (wp_is_mobile()) ? 'is-mobile' : ''; ?>
+<body <?php body_class($body_class); ?>>
 <div class="grid grid-cols-12 gap-x-5">
     <header class="col-span-12">
         <nav aria-label="Top" class="container mx-auto px-4 sm:px-6 lg:px-8 nav-container">
@@ -81,13 +82,14 @@
                     while (have_rows('header_options', 'options')) {
                         the_row();
                         $major_buy_link = get_sub_field('major_buy_link');
-                        if($major_buy_link){
-                        ?>
-                        <div class="major-shopping-container">
-                            <a href="<?php echo esc_url($major_buy_link['url']); ?>"
-                               class="major-shopping"><?php echo esc_attr($major_buy_link['title']); ?></a>
-                        </div>
-                    <?php } }
+                        if ($major_buy_link) {
+                            ?>
+                            <div class="major-shopping-container">
+                                <a href="<?php echo esc_url($major_buy_link['url']); ?>"
+                                   class="major-shopping"><?php echo esc_attr($major_buy_link['title']); ?></a>
+                            </div>
+                        <?php }
+                    }
                 } ?>
             </div>
         </div>

@@ -103,6 +103,7 @@ module.exports = {
                 customBlack: '#707070 ',
                 customMediumGray: '#4B4E59',
                 customLighterMediumGray: '#595C67',
+                customYellow : '#EBF315',
             },
         },
     },

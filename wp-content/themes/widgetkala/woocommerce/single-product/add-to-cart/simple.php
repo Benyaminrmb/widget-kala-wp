@@ -48,18 +48,12 @@ if ( $product->is_in_stock() ) : ?>
 
             do_action( 'woocommerce_after_add_to_cart_quantity' );
             ?>
-
             <button type="submit" value="<?php echo esc_attr( $product->get_id() ); ?>" class="single_add_to_cart_button cart-button gap-x-4">
-                <span class="md:flex hidden">
+                <span class="md:flex inline">
                     <?php echo esc_html( $product->single_add_to_cart_text() ); ?>
                 </span>
                 <span class="btn-cart-icon icon icon-trolley"></span>
             </button>
-
-
-
-<!--		<button type="submit" name="add-to-cart" value="--><?php //echo esc_attr( $product->get_id() ); ?><!--" class="single_add_to_cart_button button alt">--><?php //echo esc_html( $product->single_add_to_cart_text() ); ?><!--</button>-->
-
 		<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
 	</form>
 
