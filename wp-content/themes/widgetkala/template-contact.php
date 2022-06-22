@@ -9,11 +9,11 @@ get_header();
 ?>
 
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="page-title-center my-12">
+        <div class="page-title-center my-6 md:my-12">
             <h1 class="text-center heading-with-icon mb-5">تماس با ما</h1>
         </div>
-        <div class="grid grid-cols-12 gap-8 w-full">
-            <div class="block flex-wrap col-span-6">
+        <div class="grid grid-cols-12 gap-8 w-full ">
+            <div class="block order-2 md:order-1 flex-wrap col-span-12 md:col-span-6">
                 <div class="flex flex-wrap w-full gap-5 main-contact-form">
                    <span class="w-full text-bold text-base_22 text-customDarkblue2">
                        با ما در ارتباط باشید
@@ -30,7 +30,7 @@ get_header();
                     
                 </div>
             </div>
-            <div class="block  flex-wrap col-span-6  gap-5">
+            <div class="block order-1 md:order-2 flex-wrap col-span-12 md:col-span-6  gap-5">
                 <div class="flex flex-wrap w-full">
                     <img src="<?php bloginfo('template_url'); ?>/map.png" style="height: 480px" class="w-full flex flex-wrap" alt="">
                 </div>
@@ -42,7 +42,7 @@ get_header();
                            </span>
                         </div>
                     </div>
-                    <div class="flex w-full md:w-auto">
+                    <div class="hidden md:flex w-full md:w-auto">
                         <div class="flex gap-x-3 w-full md:w-auto justify-center">
                             <?php
                             if (have_rows('footer_social_links', 'options')) {
