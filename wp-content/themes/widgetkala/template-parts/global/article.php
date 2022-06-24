@@ -1,4 +1,4 @@
-<div class="flex col-span-1 relative">
+<div class="flex col-span-3 relative md:col-span-1">
     <div class="post-item">
         <a href="<?php the_permalink(); ?>" class="post-image-container">
             <?php the_post_thumbnail(

@@ -286,7 +286,7 @@ footer.site-footer {
 }
 
 .product-section-container {
-    @apply mb-7 mt-24
+    @apply md:mb-7 md:mt-24
 }
 
 .product-tabs-content {
