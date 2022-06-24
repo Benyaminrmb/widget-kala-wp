@@ -942,7 +942,7 @@ input:checked ~ .parent {
 }
 
 header .icon-trolley {
-    @apply  md:text-3xl text-4xl
+    @apply md:text-3xl text-4xl
 }
 
 .paginate-btn.active {
@@ -1551,6 +1551,13 @@ header .icon-trolley {
     @apply flex flex-wrap gap-x-3 gap-y-1 w-full
 }
 
+.filter-button, .orderby-container {
+    @apply w-full flex justify-evenly items-stretch border border-customLightgray2 text-customLightgray2 rounded-[2px] p-[5px] text-xs leading-[25px];
+}
+
+.orderby-container select {
+    @apply appearance-none;
+}
 
 .is-mobile.archive .product-tabs-content.active {
     @apply flex-col gap-5
@@ -1696,9 +1703,11 @@ footer svg.svg-icon {
 .main-contact-form div[role="form"] {
 
 }
-.comment-respond .logged-in-as{
+
+.comment-respond .logged-in-as {
     @apply hidden !important
 }
-.comment-respond .comment-textbox{
+
+.comment-respond .comment-textbox {
     /*@apply col-span-3 !important*/
 }

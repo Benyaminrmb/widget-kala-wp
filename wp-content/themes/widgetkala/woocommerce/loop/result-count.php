@@ -17,8 +17,8 @@
  * @version     3.7.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+if (!defined('ABSPATH')) {
+    exit;
 }
 
 $per_page = filter_input(INPUT_GET, 'perpage', FILTER_SANITIZE_NUMBER_INT);
@@ -30,7 +30,7 @@ $orderby_options = array(
     '24' => '24',
     '36' => '36'
 );
-foreach( $orderby_options as $value => $label ) {
+foreach ($orderby_options as $value => $label) {
     global $wp_query;
 //    echo '<li><a href="'.esc_attr($value).'">'.esc_attr($label).'</a>';
 //    echo get_query_var('paged');
@@ -42,11 +42,16 @@ foreach( $orderby_options as $value => $label ) {
 //
 //    }
     ?>
-    <li><a href="<?php echo ($value != $per_page) ? add_query_arg(['paged'=>1,'perpage'=>esc_attr( $value )]) : '#';?>"><?php echo esc_html( $label ); ?></a></li>
-<?php //    echo "<option ".selected( $per_page, $value )." value='?perpage=$value'>$label</option>";
+    <li><a href="<?php echo ($value != $per_page) ? add_query_arg(['paged' => 1, 'perpage' => esc_attr($value)]) : '#'; ?>"><?php echo esc_html($label); ?></a></li>
+    <?php //    echo "<option ".selected( $per_page, $value )." value='?perpage=$value'>$label</option>";
 }
 echo '</ul>';
 echo '</div>';
-
-
-?>
+if (wp_is_mobile()) {
+    ?>
+    <button class="filter-button">
+        <?php mt_svg_icon('orderby');
+        _e('فیلتر کردن', 'widgetize');
+        ?>
+    </button>
+<?php } ?>

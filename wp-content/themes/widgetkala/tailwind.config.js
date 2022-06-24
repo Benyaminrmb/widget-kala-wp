@@ -1,6 +1,7 @@
 module.exports = {
     content: [
         './*.{js,php,html}',
+        './inc/*.php',
         './template-parts/*.php',
         './template-parts/*/*.php',
         './woocommerce/checkout/*.php',
@@ -13,7 +14,9 @@ module.exports = {
         './woocommerce/taxonomy-product-brand.php',
         './woocommerce/taxonomy-product-cat.php',
         './woocommerce/taxonomy-product-tag.php',
-        './woocommerce/single-product/tabs/tabs.php'
+        './woocommerce/single-product/tabs/tabs.php',
+        './woocommerce/loop/orderby.php',
+        './woocommerce/loop/result-count.php'
     ],
     theme: {
         screens: {

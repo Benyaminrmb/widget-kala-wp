@@ -38,12 +38,13 @@ add_action('mt_wc_template_single_meta', 'woocommerce_template_single_meta', 40)
 add_action('woocommerce_after_add_to_cart_form', 'mt_wc_template_single_add_to_cart_footer_logo', 10);
 
 if (!function_exists('mt_reorder_tabs')) {
-    add_filter('woocommerce_product_tabs', 'mt_reorder_tabs',98);
-    function mt_reorder_tabs($tabs){
-        $tabs['description']['title'] = __('بررسی محصول','widgetize');
+    add_filter('woocommerce_product_tabs', 'mt_reorder_tabs', 98);
+    function mt_reorder_tabs($tabs)
+    {
+        $tabs['description']['title'] = __('بررسی محصول', 'widgetize');
         $tabs['description']['priority'] = 20;
         $tabs['additional_information']['priority'] = 10;
-        $tabs['additional_information']['title'] = __('ویژگی محصول','widgetize');
+        $tabs['additional_information']['title'] = __('ویژگی محصول', 'widgetize');
 
         return $tabs;
     }
@@ -78,7 +79,7 @@ if (!function_exists('mt_wc_cat_header_start')) {
     add_action('mt_wc_cat_header', 'mt_wc_cat_header_start', 10);
     function mt_wc_cat_header_start()
     {
-        echo '<div class="flex w-full justify-between">';
+        echo '<div class="flex w-full justify-between gap-2.5">';
     }
 }
 
