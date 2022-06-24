@@ -50,7 +50,7 @@ echo '</div>';
 if (wp_is_mobile()) {
     ?>
     <button class="filter-button">
-        <?php mt_svg_icon('orderby');
+        <?php mt_svg_icon('filter');
         _e('فیلتر کردن', 'widgetize');
         ?>
     </button>

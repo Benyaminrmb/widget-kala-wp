@@ -79,7 +79,7 @@ if (!function_exists('mt_wc_cat_header_start')) {
     add_action('mt_wc_cat_header', 'mt_wc_cat_header_start', 10);
     function mt_wc_cat_header_start()
     {
-        echo '<div class="flex w-full justify-between gap-2.5">';
+        echo '<div class="wc-tax-header-start flex w-full justify-between gap-2.5">';
     }
 }
 

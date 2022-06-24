@@ -1559,6 +1559,18 @@ header .icon-trolley {
     @apply appearance-none;
 }
 
+.sidebar-filter-container {
+    @apply col-span-3 block flex-wrap;
+}
+
+.mobile-sidebar-filter-container {
+    @apply w-full block flex-wrap rounded-t-five fixed top-0 z-[40] bg-white -right-[100%] transition transition-all
+}
+
+.mobile-sidebar-filter-container.active {
+    @apply right-0 transition transition-all
+}
+
 .is-mobile.archive .product-tabs-content.active {
     @apply flex-col gap-5
 }
@@ -1576,7 +1588,27 @@ header .icon-trolley {
 }
 
 .is-mobile.archive .archive-product-item .item-price {
-    @apply flex content-start flex-row-reverse  justify-start;
+    @apply flex items-start flex-row justify-end font-bold text-lg gap-8
+}
+
+.is-mobile.archive .archive-product-item .item-price .woocommerce-Price-amount.amount bdi {
+    @apply text-customLightblue border-none;
+}
+
+.is-mobile.archive .archive-product-item .item-price ins {
+    text-decoration: none;
+}
+
+.is-mobile.archive .archive-product-item .woocommerce-Price-amount.amount span.woocommerce-Price-currencySymbol {
+    @apply text-xs font-light
+}
+
+.is-mobile.archive .archive-product-item .item-price del {
+    @apply decoration-0 relative text-customBlack after:absolute after:h-px after:w-full after:right-0 after:top-1/2
+}
+
+.is-mobile.archive .archive-product-item .item-price del .woocommerce-Price-amount.amount bdi {
+    @apply text-customBlack
 }
 
 .is-mobile.archive .archive-product-item h4.product-title {

@@ -75,4 +75,15 @@ jQuery(document).ready(function ($) {
         }
 
     });
+
+    $('body').on('click', '.filter-button', function (e) {
+        e.preventDefault();
+        let filter_container = $('.mobile-sidebar-filter-container');
+        filter_container.addClass('active');
+    });
+    $('body').on('click', '.close-filters', function (e) {
+        e.preventDefault();
+        let filter_container = $('.mobile-sidebar-filter-container');
+        filter_container.removeClass('active');
+    });
 });

@@ -5,6 +5,7 @@ module.exports = {
         './template-parts/*.php',
         './template-parts/*/*.php',
         './woocommerce/checkout/*.php',
+        './woocommerce/global/*.php',
         './woocommerce/single-product/tabs/*.php',
         './woocommerce/loop/orderby.php',
         './woocommerce/loop/pagination.php',
