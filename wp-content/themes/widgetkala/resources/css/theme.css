@@ -655,7 +655,7 @@ input:checked ~ .parent {
 }
 
 .single-post .single-content {
-    @apply bg-customDarkblue/5 border border-customLightgraytwo gap-4 grid grid-cols-12 p-6 px-9 relative rounded-md w-full;
+    @apply md:bg-customDarkblue/5 bg-white md:border border-0 border-customLightgraytwo gap-4 grid grid-cols-12 md:py-6 md:px-9 py-6 relative rounded-md w-full;
 }
 
 .single-post .single-top-container {
@@ -663,7 +663,7 @@ input:checked ~ .parent {
 }
 
 .single-post .single-meta-container {
-    @apply block flex-wrap col-span-7 pl-8;
+    @apply block flex-wrap col-span-12 md:col-span-7 md:pl-8 p-0 order-2 md:order-1;
 
 }
 
@@ -689,7 +689,7 @@ input:checked ~ .parent {
 
 
 .single-post .single-image-container {
-    @apply flex flex-wrap col-span-5 overflow-hidden -mt-24 -ml-6 mr-6 rounded-md;
+    @apply flex flex-wrap col-span-12 md:col-span-5 overflow-hidden md:-mt-24 md:-ml-6 md:mr-6 m-0 rounded-md order-1 md:order-2;
 }
 
 .single-post .post-content {
@@ -773,7 +773,7 @@ input:checked ~ .parent {
 }
 
 .commentlist-container {
-    @apply mt-12 mb-20 rounded-md py-10 px-12 bg-customDarkblue/5 grid gap-y-5 gap-x-6
+    @apply mt-12 mb-20 rounded-md py-10 px-12 md:bg-customDarkblue/5 bg-white grid gap-y-5 gap-x-6
 }
 
 .commentlist-container article.comment {
@@ -781,7 +781,7 @@ input:checked ~ .parent {
 }
 
 .comment .comment-meta-first {
-    @apply flex-grow md:flex-1 w-full md:w-1/4 border-l border-customLightgraytwo text-center flex flex-col p-4 md:pl-12
+    @apply flex-grow md:flex-1 w-full md:w-1/4 md:border-l border-0 border-customLightgraytwo text-center flex flex-col p-4 md:pl-12
 }
 
 .comment .comment-content {
@@ -802,7 +802,7 @@ input:checked ~ .parent {
 }
 
 .comment .comment-meta-first .comment-avatar {
-    @apply mb-1.5;
+    @apply mb-1.5 md:justify-start justify-center flex md:block;
 }
 
 .comment .comment-meta-first .comment-author {
@@ -1648,4 +1648,10 @@ footer svg.svg-icon {
 }
 .main-contact-form div[role="form"]{
 
+}
+.comment-respond .logged-in-as{
+    @apply hidden !important
+}
+.comment-respond .comment-textbox{
+    /*@apply col-span-3 !important*/
 }
