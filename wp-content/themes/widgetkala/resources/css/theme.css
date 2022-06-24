@@ -93,7 +93,7 @@ header .nav-container > div {
 }
 
 .cart-button .cart-count-badge {
-    @apply flex absolute h-7 w-7 text-center text-white -top-2 -left-2 overflow-hidden md:overflow-visible;
+    @apply flex absolute h-7 w-7 text-center text-white -top-2 -right-3 overflow-hidden md:overflow-visible;
 }
 
 
@@ -943,7 +943,7 @@ input:checked ~ .parent {
 }
 
 header .icon-trolley {
-    /*@apply text-3xl*/
+    @apply  md:text-3xl text-4xl
 }
 
 .paginate-btn.active {
