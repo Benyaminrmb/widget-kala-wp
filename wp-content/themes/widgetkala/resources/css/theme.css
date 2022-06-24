@@ -35,8 +35,7 @@ button {
 /*#Header */
 
 header .nav-container > div {
-    @apply border-t border-customDarkblue rounded-b;
-    border-top-width: 3px;
+    @apply border-t border-customDarkblue rounded-b border-t-[3px]
 }
 
 footer.site-footer {
