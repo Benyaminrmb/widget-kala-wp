@@ -29,7 +29,7 @@ $brands = get_terms(['taxonomy' => 'product_brand', 'hide_empty' => false])
                     </form>
                 </div>
             </div>
-            <div class="grid gap-x-6 gap-y-12 grid-cols-4">
+            <div class="main-brands-list">
                 <?php
                 if ($brands) {
                     foreach ($brands as $brand) {
@@ -50,7 +50,7 @@ if ($post_categories && $post_count) {
 
     ?>
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 md:mt-24 mt-10 mb-5 lg:mb-44">
-        <div class="w-full flex flex-col gap-12">
+        <div class="w-full md:flex hidden flex-col gap-12">
             <div class="grid gap-x-7 grid-cols-12 justify-between mb-1">
                 <div class="col-span-6 md:col-span-10 flex gap-x-5"><span class="flex"><span class="horizontalLines"></span></span>
                     <div class="flex text-gray-600 text-xl">نقد و بررسی برندها</div>

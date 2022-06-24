@@ -1743,3 +1743,6 @@ footer svg.svg-icon {
 .comment-respond .comment-textbox {
     /*@apply col-span-3 !important*/
 }
+.main-brands-list{
+    @apply grid gap-x-6 gap-y-12 md:grid-cols-4 grid-cols-2
+}
