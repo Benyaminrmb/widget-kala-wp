@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $per_page = filter_input(INPUT_GET, 'perpage', FILTER_SANITIZE_NUMBER_INT);
-echo '<div class="flex items-center gap-x-3">';
+echo '<div class="hidden md:flex items-center gap-x-3">';
 echo '<span class="flex">نمایش تعداد :</span>';
 echo '<ul class="flex gap-x-5 text-xs text-customLighterMediumGray">';
 $orderby_options = array(
@@ -48,14 +48,5 @@ foreach( $orderby_options as $value => $label ) {
 echo '</ul>';
 echo '</div>';
 
+
 ?>
-<!--<div class="flex items-center gap-x-3">-->
-<!--    <span class="flex">تعداد نمایش :</span>-->
-<!--    <ul-->
-<!--            class="flex gap-x-5 text-xs text-customLighterMediumGray"-->
-<!--    >-->
-<!--        <li><a href>12</a></li>-->
-<!--        <li><a href>24</a></li>-->
-<!--        <li><a href>48</a></li>-->
-<!--    </ul>-->
-<!--</div>-->

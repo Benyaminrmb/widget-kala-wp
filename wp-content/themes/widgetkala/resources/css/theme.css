@@ -454,10 +454,8 @@ footer.site-footer {
 }
 
 .section-title {
-    @apply text-customBlack font-bold text-base_17 md:text-xl relative;
-    /*font: normal bold 22px/30px "IRANSans", Tahoma, sans-serif;*/
-
-    @apply after:hidden after:w-0.5 after:absolute after:bg-gray-600 after:h-6 after:left-0 after:top-1 after:mx-14
+    @apply text-customBlack font-bold text-base_17 md:text-xl relative
+    after:hidden after:w-0.5 after:absolute after:bg-gray-600 after:h-6 after:left-0 after:top-1 after:mx-14
 }
 
 .heading-with-icon {
@@ -624,21 +622,19 @@ input:checked ~ .parent {
 
 /*woocommerce*/
 .woocommerce .category-title {
-    @apply horizontalLines text-customDarkblue cursor-pointer text-xl font-light leading-7
+    @apply horizontalLines text-customDarkblue flex gap-2.5 md:gap-6 md:text-lg font-medium text-[17px] md:before:-top-1.5
 }
 
 .woocommerce .category-description {
-    @apply text-xs text-gray-500 leading-7 text-justify line-clamp-3;
+    @apply hidden md:block text-xs text-gray-500 leading-7 text-justify line-clamp-3
 }
 
 .woocommerce .scroll-to-products {
-    @apply bg-customLightblue absolute left-1/2 -ml-3.5 -bottom-2.5 w-7 h-5 flex justify-center items-center
+    @apply hidden md:flex bg-customLightblue absolute left-1/2 -ml-3.5 -bottom-2.5 w-7 h-5 flex justify-center items-center
 }
 
 .error-title {
-    @apply text-customLightblue font-bold mb-4;
-    font-size: 130px;
-    line-height: 175px;
+    @apply text-customLightblue font-bold mb-4 text-[130px] leading-[175px]
 }
 
 .return-to-home {
@@ -1544,7 +1540,44 @@ header .icon-trolley {
 }
 
 .woocommerce .comment-form-cookies-consent {
-    @apply hidden;
+    @apply hidden
+}
+
+.archive.woocommerce-page.tax-product_cat .title-box-container {
+    @apply relative w-full md:flex md:flex-wrap md:border md:border-customGray md:rounded-md md:p-5
+}
+
+.archive.woocommerce-page.tax-product_cat .child-categories {
+    @apply flex flex-wrap gap-x-3 gap-y-1 w-full
+}
+
+
+.is-mobile.archive .product-tabs-content.active {
+    @apply flex-col gap-5
+}
+
+.is-mobile.archive .archive-product-item {
+    @apply flex justify-between items-stretch flex-col border border-customDarkblue/10 rounded-five overflow-hidden pl-1.5 pr-3 py-2.5
+}
+
+.is-mobile.archive .archive-product-item .product-tabs-content.active {
+    @apply flex-col gap-5
+}
+
+.is-mobile.archive .archive-product-item .item-title {
+    @apply flex justify-between items-stretch;
+}
+
+.is-mobile.archive .archive-product-item .item-price {
+    @apply flex content-start flex-row-reverse  justify-start;
+}
+
+.is-mobile.archive .archive-product-item h4.product-title {
+    @apply pt-3.5
+}
+
+.is-mobile.archive .archive-product-item img {
+    @apply w-[110px] h-20
 }
 
 
@@ -1604,41 +1637,47 @@ footer svg.svg-icon {
 .form-input {
     @apply rounded-md bg-customLightgray4 py-3 px-5
 }
-.main-contact-form form{
+
+.main-contact-form form {
     @apply flex flex-wrap w-full gap-3 lg:pl-12 pl-0
 
 }
 
-.main-contact-form form div span input,.main-contact-form form div span textarea{
+.main-contact-form form div span input, .main-contact-form form div span textarea {
     @apply flex flex-wrap;
     width: 307px;
 
 }
-.main-contact-form div{
+
+.main-contact-form div {
     @apply text-base_14 md:text-base_16 flex justify-between gap-16 w-full items-center
 }
 
 .main-contact-form div span {
     @apply flex
 }
-.main-contact-form div span:last-child label{
+
+.main-contact-form div span:last-child label {
     @apply flex w-full
 }
-.main-contact-form form div:not([aria-hidden="true"]) label span{
+
+.main-contact-form form div:not([aria-hidden="true"]) label span {
     @apply after:content-['*']
 }
 
-.main-contact-form form div:nth-child(6){
+.main-contact-form form div:nth-child(6) {
     @apply justify-end
 }
 
-.main-contact-form div span:last-child span:last-child{
+.main-contact-form div span:last-child span:last-child {
     @apply hidden
 }
-.main-contact-form div span:last-child input[type="submit"]{
+
+.main-contact-form div span:last-child input[type="submit"] {
     @apply flex justify-center
 }
-.main-contact-form .form-input{
+
+.main-contact-form .form-input {
     @apply text-base_12
 }
 

@@ -29,10 +29,8 @@ $catalog_orderby_options = apply_filters(
     )
 );
 ?>
-<div class="flex items-center gap-x-3">
-
+<div class="hidden md:flex items-center gap-x-3">
     <?php ?>
-
     <span class="flex">
         <?php mt_svg_icon('orderby');?>
     </span>
@@ -47,3 +45,7 @@ $catalog_orderby_options = apply_filters(
     <?php endforeach; ?>
     </ul>
 </div>
+<?php if(wp_is_mobile()) {?>
+    <?php mt_svg_icon('orderby');?>
+    
+<?php }
