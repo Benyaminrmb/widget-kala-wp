@@ -8,6 +8,10 @@ get_header();
 
 ?>
 
+
+
+
+
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="page-title-center my-6 md:my-12">
             <h1 class="text-center heading-with-icon mb-5">تماس با ما</h1>
@@ -19,20 +23,21 @@ get_header();
                        با ما در ارتباط باشید
                    </span>
 
+
                     <span class="w-full  text-base_16 text-customBlack">
                         صنعت چاپ و با استفاده صنعت چاپ و با استفاده صنعت چاپ و با استفاده صنعت چاپ و با استفاده صنعت چاپ و با استفاده صنعت چاپ و با استفاده صنعت
                    </span>
                     <?php $form_code = get_field('contact_form_code');
-                   echo do_shortcode($form_code);
-                   ?>
+                    echo do_shortcode($form_code);
+                    ?>
 
 
-                    
                 </div>
             </div>
             <div class="block order-1 md:order-2 flex-wrap col-span-12 md:col-span-6  gap-5">
                 <div class="flex flex-wrap w-full">
-                    <img src="<?php bloginfo('template_url'); ?>/map.png" style="height: 480px" class="w-full flex flex-wrap" alt="">
+                    <img src="<?php bloginfo('template_url'); ?>/map.png" style="height: 480px"
+                         class="w-full flex flex-wrap" alt="">
                 </div>
                 <div class="flex justify-between w-full gap-x-3 mt-4 ">
                     <div class="hidden md:flex gap-x-3 w-full">
