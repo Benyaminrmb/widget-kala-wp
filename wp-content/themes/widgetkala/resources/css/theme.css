@@ -39,6 +39,10 @@ header .nav-container > div {
     border-top-width: 3px;
 }
 
+footer.site-footer {
+    @apply bg-customMediumGray w-full overflow-hidden
+}
+
 .logo-container {
     @apply mb-0.5
 }
@@ -1224,6 +1228,10 @@ header .icon-trolley {
 
 }
 
+.woocommerce div.product p.price {
+    @apply text-customRed font-bold text-[27px]
+}
+
 .woocommerce div.product p.price del, .woocommerce div.product span.price del {
     @apply text-black text-lg font-bold;
 }
@@ -1597,27 +1605,33 @@ footer svg.svg-icon {
 .form-input {
     @apply rounded-md bg-customLightgray4 py-3 px-5
 }
-.main-contact-form form{
+
+.main-contact-form form {
     @apply flex flex-wrap w-full gap-3
 
 }
-.main-contact-form label{
+
+.main-contact-form label {
     @apply text-base_16 flex justify-between gap-16 w-full
 }
 
 .main-contact-form label span {
     @apply flex
 }
-.main-contact-form label span:last-child{
+
+.main-contact-form label span:last-child {
     @apply flex w-2/3
 }
-.main-contact-form label span:last-child span:last-child{
+
+.main-contact-form label span:last-child span:last-child {
     @apply hidden
 }
-.main-contact-form label span:last-child input[type="submit"]{
+
+.main-contact-form label span:last-child input[type="submit"] {
     @apply flex w-2/3 justify-center
 }
-.main-contact-form .form-input{
+
+.main-contact-form .form-input {
     @apply text-base_12
 }
 
@@ -1632,6 +1646,7 @@ footer svg.svg-icon {
 .main-contact-form form .btn {
     @apply flex flex-wrap bg-customDarkblue p-2 text-base text-white rounded-md
 }
-.main-contact-form div[role="form"]{
+
+.main-contact-form div[role="form"] {
 
 }
