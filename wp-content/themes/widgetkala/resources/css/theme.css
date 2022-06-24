@@ -91,6 +91,7 @@ footer.site-footer {
     md:hover:bg-customDarkblue md:ring-1 md:ring-slate-900/10;
 }
 
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt,
 .woocommerce #respond input#submit.alt.disabled, .woocommerce #respond input#submit.alt.disabled:hover, .woocommerce #respond input#submit.alt:disabled, .woocommerce #respond input#submit.alt:disabled:hover, .woocommerce #respond input#submit.alt:disabled[disabled], .woocommerce #respond input#submit.alt:disabled[disabled]:hover, .woocommerce a.button.alt.disabled, .woocommerce a.button.alt.disabled:hover, .woocommerce a.button.alt:disabled, .woocommerce a.button.alt:disabled:hover, .woocommerce a.button.alt:disabled[disabled], .woocommerce a.button.alt:disabled[disabled]:hover, .woocommerce button.button.alt.disabled, .woocommerce button.button.alt.disabled:hover, .woocommerce button.button.alt:disabled, .woocommerce button.button.alt:disabled:hover, .woocommerce button.button.alt:disabled[disabled], .woocommerce button.button.alt:disabled[disabled]:hover, .woocommerce input.button.alt.disabled, .woocommerce input.button.alt.disabled:hover, .woocommerce input.button.alt:disabled, .woocommerce input.button.alt:disabled:hover, .woocommerce input.button.alt:disabled[disabled], .woocommerce input.button.alt:disabled[disabled]:hover {
     @apply bg-customLightblue;
 }
@@ -1182,7 +1183,7 @@ header .icon-trolley {
 }
 
 .woocommerce-product-details__short-description ul li {
-    @apply min-w-full md:min-w-[48%]
+    @apply min-w-full md:min-w-[48%] md:text-sm
 }
 
 .woocommerce .product .mobile-single-product .product-title {
@@ -1743,6 +1744,7 @@ footer svg.svg-icon {
 .comment-respond .comment-textbox {
     /*@apply col-span-3 !important*/
 }
-.main-brands-list{
+
+.main-brands-list {
     @apply grid gap-x-6 gap-y-12 md:grid-cols-4 grid-cols-2
 }
