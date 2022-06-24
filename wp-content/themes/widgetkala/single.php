@@ -13,7 +13,7 @@ while (have_posts()): the_post();
                     <div class="single-content">
                         <div class="single-top-container">
                             <div class="single-meta-container">
-                                <div class="flex flex-wrap w-full gap-12 pb-4">
+                                <div class="flex flex-wrap w-full gap-12 pb-4 justify-between md:justify-start ">
                                     <div class="flex justify-center gap-3">
                                         <?php mt_svg_icon('calendar', [18, 15]); ?>
                                         <span class="flex text-xs text-customGray"><?php echo sprintf(__('منتشر شده در : %s', 'widgetize'), get_the_date()); ?></span>
@@ -30,8 +30,8 @@ while (have_posts()): the_post();
 
                                     </div>
                                 </div>
-                                <div class="flex flex-nowrap gap-4 items-stretch py-4 border-y border-y-customGray/50">
-                                    <div class="h-full flex-grow flex flex-col gap-8">
+                                <div class="flex flex-wrap md:flex-nowrap gap-4 items-stretch py-4 border-y border-y-customGray/50">
+                                    <div class="md:w-auto w-full h-full flex-grow flex flex-col gap-4 md:gap-8">
                                         <div class="flex gap-4"><?php
                                             printf(
                                                 '<span class="meta-title"> %1$s</span><div class="meta-value">%2$s</div>',
@@ -47,7 +47,7 @@ while (have_posts()): the_post();
                                             );
                                             ?></div>
                                     </div>
-                                    <div class="h-full">
+                                    <div class="h-full md:flex hidden">
                                         <div class="flex flex-col gap-8">
                                         <span class="meta-title">
                                           اشتراک گذاری این مطلب

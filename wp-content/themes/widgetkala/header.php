@@ -30,12 +30,15 @@
                         <?php if (WC()->cart->get_cart_contents_count()) { ?>
                             <a href="<?php echo wc_get_cart_url(); ?>" class="cart-button gap-x-4">
                                 <span class="md:flex hidden"><?php wc_cart_totals_subtotal_html(); ?></span>
-                                <span class="icon flex text-customDarkblue md:text-white icon-trolley"></span>
-
-                                <span class="cart-count-badge">
+                                <span class="icon flex relative text-customDarkblue md:text-white icon-trolley">
+<span class="cart-count-badge">
                      <span class="animate"></span>
                      <span class="count">
 	                     <span class="w-full text-xs"><?php echo WC()->cart->get_cart_contents_count() ?></span></span></span>
+
+                                </span>
+
+
                             </a>
                         <?php } else { ?>
                             <a href="<?php echo get_permalink(wc_get_page_id('shop')) ?>" class="cart-button gap-x-4">
