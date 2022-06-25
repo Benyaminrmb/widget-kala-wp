@@ -57,8 +57,8 @@ $sticky = new WP_Query($args);
                                             '</a></h2>'); ?>
                                     </div>
                                     <div class="w-full">
-                            <span class="text-justify text-sm">
-                            <?php echo wp_trim_words(get_the_excerpt(), 10, '&hellip;'); ?>
+                            <span class="article-excerpt">
+                            <?php echo wp_trim_words(get_the_excerpt()); ?>
                             </span></div>
                                     <div class="w-full justify-between flex">
                                         <div class="flex items-center text-gray-500 gap-x-2"><span
