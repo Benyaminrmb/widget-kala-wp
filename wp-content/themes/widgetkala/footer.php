@@ -135,7 +135,7 @@
     <div class="container md:mt-7 pt-7 sm:pt-3 mx-auto px-4 sm:px-6 lg:px-8">
         <div class="md:grid flex flex-wrap justify-center gap-x-7 grid-cols-2 border-b-2 border-customLighterMediumGray pb-7">
             <div class="col-span-1 flex flex-wrap gap-4 main-footer-social">
-                <div class="flex justify-center md:justify-start w-full">
+                <div class="flex justify-center w-full">
                     <?php
                     if (function_exists('the_custom_logo')) {
                         the_custom_logo();
@@ -184,9 +184,9 @@
                 ?>
             </div>
         </div>
-        <div class="container mx-auto  px-4 sm:px-6 lg:px-8 mt-7 grid gap-x-7 grid-cols-1 md:grid-cols-2 pb-7">
-            <div class="md:flex hidden flex-wrap col-span-1 gap-4">
-                <div class="flex gap-x-3 w-full">
+        <div class="container mx-auto mt-7 grid gap-x-7 grid-cols-1 md:grid-cols-2 pb-7">
+            <div class="hidden md:flex flex-col h-full justify-start gap-4">
+                <div class="flex gap-x-3 w-full mb-10">
                     <div class="flex">
                         <?php mt_svg_icon('footer_title_icon'); ?>
                     </div>
@@ -217,8 +217,8 @@
                 </div>
             </div>
             <div class="grid grid-cols-2 col-span-1 gap-4">
-                <div class="flex-wrap flex col-span-1 gap-4">
-                    <div class="flex gap-x-3 w-full">
+                <div class="flex-wrap flex col-span-1 flex-col h-full justify-start gap-4">
+                    <div class="flex gap-x-3 w-full mb-10">
                         <div class="flex">
                             <?php mt_svg_icon('footer_title_icon'); ?>
                         </div>

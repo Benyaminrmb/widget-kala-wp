@@ -19,26 +19,22 @@ $args = array(
 $sticky = new WP_Query($args);
 
 ?>
-<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="articles-container container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="w-full">
         <div class="grid my-7 gap-x-7 grid-cols-12 justify-between">
             <div class="col-span-12 justify-between flex gap-x-5">
                 <div class="flex flex-wrap gap-4">
                     <span class="flex"><span
                                 class="horizontalLines"></span></span>
-                    <div class="section-title">مقالات ما</div>
+                    <div class="section-title"><?php _e('مقالات ما','widgetize');?></div>
                 </div>
-
-
                 <div class=" justify-end flex">
                     <a href="<?php echo esc_url(get_permalink(get_option('page_for_posts'))) ?>"
                        class="custom-btn-secondary-outline">
-                        مقالات بیشتر را بخوانید
+                        <span class="flex gap-2"><?php _e('مقالات بیشتر را بخوانید', 'widgetize'); ?></span>
                     </a>
                 </div>
-
             </div>
-
         </div>
         <?php if (wp_is_mobile()) {
             if ($articles->have_posts()) { ?>
@@ -46,19 +42,18 @@ $sticky = new WP_Query($args);
                     <?php while ($articles->have_posts()) {
                         $articles->the_post(); ?>
                         <div class="item">
-
                             <div class="grid min-w-full grid-cols-7 gap-4 row-span-1 w-full border border-customDarkWhite rounded-md p-4">
                                 <div class="grid justify-center text-xl font-thin items-center grid-rows-2 col-span-2 w-full h-full bg-customLightSky rounded-md">
-                                    <div class="flex h-full border-b-2 border-gray-100 row-span-1 items-center justify-center">
+                                    <div class="date-day">
                                         <?php the_time('d'); ?>
                                     </div>
-                                    <div class="flex h-full row-span-1 items-center justify-center">
+                                    <div class="date-month">
                                         <?php the_time('F'); ?>
                                     </div>
                                 </div>
                                 <div class="col-span-5 font-thin gap-4 flex flex-wrap">
                                     <div class="w-full">
-                                        <?php the_title('<h2 class="text-base font-medium"><a href="' . esc_url(get_permalink()) . '">',
+                                        <?php the_title('<h2 class="article-title"><a href="' . esc_url(get_permalink()) . '">',
                                             '</a></h2>'); ?>
                                     </div>
                                     <div class="w-full">
@@ -117,21 +112,21 @@ $sticky = new WP_Query($args);
                         $articles->the_post(); ?>
                         <div class="grid min-w-full grid-cols-7 gap-4 row-span-1 w-full border border-customDarkWhite rounded-md p-4">
                             <div class="grid justify-center text-22  items-center grid-rows-2 col-span-2 w-full h-full bg-customLightSky rounded-md">
-                                <div class="flex h-full border-b-2 border-gray-100 row-span-1 items-center justify-center">
+                                <div class="date-day">
                                     <?php the_time('d'); ?>
                                 </div>
-                                <div class="flex h-full row-span-1 items-center justify-center">
+                                <div class="date-month">
                                     <?php the_time('F'); ?>
                                 </div>
                             </div>
                             <div class="col-span-5 font-thin gap-4 flex flex-wrap">
                                 <div class="w-full">
-                                    <?php the_title('<h2 class="text-base font-medium"><a href="' . esc_url(get_permalink()) . '">',
+                                    <?php the_title('<h2 class="article-title"><a href="' . esc_url(get_permalink()) . '">',
                                         '</a></h2>'); ?>
                                 </div>
                                 <div class="w-full">
-                            <span class="text-justify text-sm">
-                            <?php echo wp_trim_words(get_the_excerpt(), 10, '&hellip;'); ?>
+                            <span class="article-excerpt">
+                            <?php echo wp_trim_words(get_the_excerpt()); ?>
                             </span></div>
                                 <div class="w-full justify-between flex">
                                     <div class="flex items-center text-gray-500 gap-x-2"><span

@@ -38,8 +38,13 @@ header .nav-container > div {
     @apply border-t border-customDarkblue rounded-b border-t-[3px]
 }
 
+img.custom-logo {
+    @apply transform scale-125
+    /*transform: scale(1.3);*/
+}
+
 footer.site-footer {
-    @apply bg-customMediumGray w-full overflow-hidden
+    @apply !bg-customMediumGray w-full overflow-hidden
 }
 
 .logo-container {
@@ -106,11 +111,12 @@ footer.site-footer {
 }
 
 .cart-button .cart-count-badge .count {
-    @apply relative inline-flex items-center rounded-full text-center h-7 w-7 shadow-2xl bg-customDarkblue;
+    @apply relative inline-flex items-center rounded-full text-center h-7 w-7 shadow-2xl bg-customDarkblue text-base;
+    font-family: "IRANSans", Tahoma, sans-serif;
 }
 
 .register-button {
-    @apply gap-x-2 items-center px-2 border hover:bg-customLightgray text-customDarkblue font-medium rounded-five;
+    @apply gap-x-2 items-center px-2 border hover:bg-customLightgray text-customDarkblue font-light rounded-five;
 }
 
 .menu-section {
@@ -126,12 +132,14 @@ footer.site-footer {
 }
 
 .main-menu .divider {
-    @apply relative after:w-0.5
+    @apply relative
+    -mx-6
+    after:w-0.5
     after:absolute
-    after:bg-customLightgray
+    after:bg-white/40
     after:h-5
     after:left-0
-    after:top-2;
+    after:top-3;
 }
 
 .main-menu .nav-item {
@@ -151,6 +159,10 @@ footer.site-footer {
     focus:before:top-0 focus:text-orange-400
     active:before:top-0 active:text-orange-400;
     line-height: 45px;
+}
+
+.main-menu .nav-item.small-text {
+    @apply !text-base_12
 }
 
 .main-menu .nav-link.active,
@@ -256,7 +268,7 @@ footer.site-footer {
 
 
 .tabs {
-    @apply md:flex hidden text-sm items-center gap-x-5 text-gray-500 flex-wrap;
+    @apply md:flex hidden text-base gap-x-5 text-gray-500 flex-wrap font-light
 }
 
 .tabs li {
@@ -264,7 +276,7 @@ footer.site-footer {
 }
 
 .tabs .active {
-    @apply relative text-customDarkblue after:w-0.5 after:mx-auto after:absolute after:bg-customLightblue after:inset-x-0 after:h-2 after:top-6;
+    @apply relative font-bold text-customDarkblue after:w-0.5 after:mx-auto after:absolute after:bg-customLightblue after:inset-x-0 after:h-2 after:top-6;
 }
 
 .text-over-image {
@@ -296,7 +308,7 @@ footer.site-footer {
 }
 
 .product-tabs-content.active {
-    @apply flex mt-5 gap-x-6 md:grid-cols-12 justify-between md:grid md:mt-7 overflow-x-auto md:overflow-x-hidden
+    @apply flex mt-5 -mx-4 p-4 gap-x-12 md:grid-cols-12 justify-between md:grid md:mt-7 overflow-x-auto md:overflow-x-hidden
 }
 
 .product-archive-content .single-product-item,
@@ -310,6 +322,13 @@ footer.site-footer {
     @apply hover:before:w-1/2 hover:before:left-1/4 hover:before:right-1/4;
 }
 
+.single-product-item .image-container {
+    @apply relative pb-8 after:h-0.5 after:bg-customDarkblue/30 after:w-3/4 after:absolute after:left-[12.5%] after:bottom-4
+}
+
+.single-product-item .product-title {
+    @apply text-base font-normal mb-4
+}
 
 .single-product-item .product-brands-list {
     @apply mb-4 flex cursor-pointer text-orange-500 text-sm justify-end w-full;
@@ -317,19 +336,23 @@ footer.site-footer {
 }
 
 .single-product-item .price-removed {
-    @apply flex line-through text-gray-700 text-lg font-bold w-full whitespace-nowrap md:whitespace-normal;
+    @apply flex line-through text-gray-700 text-lg font-bold w-full whitespace-nowrap md:whitespace-normal mb-2
 }
 
 .single-product-item .price-removed span {
-    @apply after:content-[attr(data-after)] after:text-xs after:left-0 after:font-light  items-center relative;
+    @apply after:content-[attr(data-after)] after:text-xs after:left-0 after:font-light  items-center relative
 }
 
 .single-product-item .product-price {
-    @apply flex gap-x-4 items-center justify-between text-gray-700 text-lg font-bold w-full;
+    @apply flex gap-x-4 items-center justify-start text-gray-700 text-lg font-bold w-full;
 }
 
 .single-product-item .product-price > span {
     @apply after:content-[attr(data-after)] after:text-xs after:font-light after:left-0 text-customLightblue items-center relative
+}
+
+.single-product-item .product-price .add-to-cart-button {
+    @apply mr-auto
 }
 
 /*.single-product-item:hover:before {*/
@@ -347,7 +370,7 @@ footer.site-footer {
 }
 
 .custom-btn-secondary-outline {
-    @apply md:border leading-8 hover:bg-customLightblue hover:text-white transition ease-in-out duration-150 w-full rounded-md text-sm border-customLightblue text-customLightblue px-3 text-center;
+    @apply md:border text-base font-light leading-[40px] hover:bg-customLightblue hover:text-white transition ease-in-out duration-150 w-full rounded-five border-customLightblue text-customLightblue px-3 text-center
 }
 
 .pagination-container {
@@ -409,7 +432,7 @@ footer.site-footer {
 
 
 .news-letter {
-    @apply relative w-full text-gray-600 focus-within:text-gray-300
+    @apply h-12 relative w-full text-gray-600 focus-within:text-gray-300
     before:w-2 before:h-2 before:rounded-full before:absolute before:bg-customLightblue before:right-4 before:top-5
 }
 
@@ -456,7 +479,10 @@ footer.site-footer {
 
 .section-title {
     @apply text-customBlack font-bold text-base_17 md:text-xl relative
-    after:hidden after:w-0.5 after:absolute after:bg-gray-600 after:h-6 after:left-0 after:top-1 after:mx-14
+}
+
+.product-tabs .section-title {
+    @apply md:pl-[100px] after:hidden md:after:block after:w-0.5 after:absolute after:bg-gray-600 after:h-6 after:left-0 after:top-1 after:mx-[50px]
 }
 
 .heading-with-icon {
@@ -487,7 +513,7 @@ footer.site-footer {
 
 .horizontalLines {
     @apply relative
-    before:relative before:w-5 before:md:top-0 before:-top-1.5 before:h-5 before:right-0 before:block before:pt-2 before:content-horizontalLines;
+    before:relative before:md:top-0 before:-top-1.5 before:right-0 before:block before:pt-2 before:content-horizontalLines;
 }
 
 .darkHorizontalLines {
@@ -578,6 +604,27 @@ input:checked ~ .parent {
 
 .post-item .post-text {
     @apply mt-4 text-justify font-light text-sm;
+}
+
+.articles-container .article-title {
+    @apply text-base font-medium overflow-hidden line-clamp-1
+}
+
+.articles-container .article-excerpt {
+    @apply text-justify text-sm line-clamp-2;
+    /*display: -webkit-box;*/
+    /*-webkit-line-clamp: 4;*/
+    /*-webkit-box-orient: vertical;*/
+    /*overflow: hidden;*/
+    /*text-overflow: ellipsis;*/
+}
+
+.articles-container .date-day {
+    @apply font-bold flex h-full border-b-2 border-gray-100 row-span-1 items-center justify-center
+}
+
+.articles-container .date-month {
+    @apply font-bold flex h-full row-span-1 items-center justify-center
 }
 
 .is-mobile .breadcrumb-container {
@@ -943,7 +990,7 @@ input:checked ~ .parent {
 }
 
 header .icon-trolley {
-    @apply md:text-3xl text-4xl
+    @apply md:text-3xl text-4xl md:leading-[2rem]
 }
 
 .paginate-btn.active {
@@ -1271,7 +1318,7 @@ header .icon-trolley {
 }
 
 .woocommerce .mobile-single-product button.single_add_to_cart_button {
-    @apply flex fixed bottom-0.5 w-full bg-customLightblue text-white rounded-five z-30 items-center justify-center left-0 right-0 float-none
+    @apply flex fixed bottom-0.5 w-full bg-customLightblue text-white rounded-five z-30 items-center justify-center left-0 right-0 float-none leading-[45px]
 }
 
 .woocommerce .mobile-single-product button.single_add_to_cart_button .icon {
@@ -1552,12 +1599,20 @@ header .icon-trolley {
     @apply flex flex-wrap gap-x-3 gap-y-1 w-full
 }
 
+.archive.woocommerce-page.tax-product_cat .child-categories a.btn-custom-outline-dark-blue {
+    @apply py-1.5
+}
+
 .filter-button, .orderby-container {
-    @apply w-full flex justify-evenly items-stretch border border-customLightgray2 text-customLightgray2 rounded-[2px] p-[5px] text-xs leading-[25px];
+    @apply gap-4 relative w-full flex justify-start items-stretch border border-customLightgray2 text-customLightgray2 rounded-[2px] p-[5px] text-xs leading-[25px];
+}
+
+.orderby-container .svg-icon {
+    @apply z-1
 }
 
 .orderby-container select {
-    @apply appearance-none;
+    @apply appearance-none bg-white absolute w-full h-full pr-12 top-0 right-0
 }
 
 .sidebar-filter-container {
@@ -1572,7 +1627,7 @@ header .icon-trolley {
     @apply right-0 transition transition-all
 }
 
-.is-mobile.archive .product-tabs-content.active {
+.is-mobile.archive:not(.woocommerce-shop) .product-tabs-content.active {
     @apply flex-col gap-5
 }
 
@@ -1697,6 +1752,10 @@ footer svg.svg-icon {
     @apply flex
 }
 
+.main-contact-form div label {
+    @apply hidden md:block
+}
+
 .main-contact-form div span:last-child label {
     @apply flex w-full
 }
@@ -1706,7 +1765,7 @@ footer svg.svg-icon {
 }
 
 .main-contact-form form div:nth-child(6) {
-    @apply justify-end
+    @apply justify-start md:justify-end
 }
 
 .main-contact-form div span:last-child span:last-child {

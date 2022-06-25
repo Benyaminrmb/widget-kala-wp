@@ -32,9 +32,9 @@ if (is_shop() || is_front_page() || is_singular('product')) {
 ?>
 
 <div <?php wc_product_class(['single-product-item', 'group', $col_class], $product); ?>>
-    <div class="w-full flex justify-center">
-        <a href="<?php the_permalink(); ?>">
-            <img src="<?php the_post_thumbnail_url('thumbnail'); ?>" alt="<?php the_title(); ?>" class="w-full rounded-lg">
+    <div class="w-full image-container">
+        <a href="<?php the_permalink(); ?>" class="block text-center">
+            <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php the_title(); ?>" class="w-full rounded-lg">
         </a>
     </div>
     <div class="flex">

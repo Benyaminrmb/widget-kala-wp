@@ -49,7 +49,7 @@
             } ?>
         </div>
     <?php } else { ?>
-        <div class="hidden md:grid gap-x-7 grid-cols-12 justify-between">
+        <div class="hidden md:grid gap-6 grid-cols-12 justify-between">
             <div class="md:col-span-4 col-span-12">
                 <div class="w-full flex h-full">
                     <?php
@@ -83,7 +83,7 @@
             </div>
         </div>
 
-        <div class="hidden md:grid mt-7 gap-x-7 grid-cols-12 justify-between">
+        <div class="hidden md:grid mt-6 gap-x-6 grid-cols-12 justify-between">
             <?php foreach ($bottom_images as $k => $item) {
                 ?>
                 <div class="col-span-3">
