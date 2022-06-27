@@ -1,7 +1,5 @@
 <?php
-$page_id       = get_option('page_on_front');
-$categories    = get_field('frontpage_sales_categories', $page_id);
-$archive_link  = get_field('best_sellers_button_link',$page_id);
+/** @var array $args */
 $query_params  = [
     'post_type'      => 'product',
     'posts_per_page' => '8',
@@ -10,9 +8,9 @@ $query_params  = [
 ];
 $tab_arguments = [
     'container_class' => 'best-sellers-container',
-    'section_title'   => 'پرفروش ترین ها',
-    'categories'      => $categories,
-    'archive_link'    => $archive_link,
+    'section_title'   => $args['page_title'] ?? 'پرفروش ترین ها',
+    'categories'      => $args['categories'] ?? [],
+    'archive_link'    => $args['archive_link'] ?? '#',
     'query_params'    => $query_params
 ];
 

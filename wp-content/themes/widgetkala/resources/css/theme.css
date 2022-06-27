@@ -161,7 +161,7 @@ footer.site-footer {
     line-height: 45px;
 }
 
-.main-menu .nav-item.small-text {
+.main-menu .nav-item.small-text, .main-menu .nav-item.small-text .nav-link {
     @apply !text-base_12
 }
 
@@ -268,7 +268,7 @@ footer.site-footer {
 
 
 .tabs {
-    @apply md:flex hidden text-base gap-x-5 text-gray-500 flex-wrap font-light
+    @apply md:flex hidden text-base gap-x-12 text-gray-500 flex-wrap font-light
 }
 
 .tabs li {
@@ -303,12 +303,12 @@ footer.site-footer {
 }
 
 .product-tabs-content {
-    row-gap: 3.125rem;
-    @apply hidden;
+    /*row-gap: 3.125rem;*/
+    @apply hidden gap-y-6;
 }
 
 .product-tabs-content.active {
-    @apply flex mt-5 -mx-4 p-4 gap-x-12 md:grid-cols-12 justify-between md:grid md:mt-7 overflow-x-auto md:overflow-x-hidden
+    @apply flex mt-5 -mx-4 p-4 gap-x-6 md:grid-cols-12 justify-between md:grid md:mt-7 overflow-x-auto md:overflow-x-hidden
 }
 
 .product-archive-content .single-product-item,
@@ -362,7 +362,8 @@ footer.site-footer {
 /*}*/
 
 .woocommerce a.button.add-to-cart-button, .add-to-cart-button {
-    @apply border-2 bg-white p-0 flex hover:bg-customDarkblue hover:text-white transition duration-150 items-center justify-center rounded-five border-customDarkblue text-4xl;
+    border: inherit;
+    @apply !border !border-2 bg-white p-0 flex hover:bg-customDarkblue hover:text-white transition duration-150 items-center justify-center rounded-five border-customDarkblue text-4xl;
 }
 
 .group:hover a.button.add-to-cart-button, .woocommerce a.button.add-to-cart-button:hover, .add-to-cart-button:hover {
@@ -607,7 +608,7 @@ input:checked ~ .parent {
 }
 
 .articles-container .article-title {
-    @apply text-base font-medium overflow-hidden line-clamp-1
+    @apply text-base font-bold md:font-medium overflow-hidden line-clamp-1
 }
 
 .articles-container .article-excerpt {
@@ -640,11 +641,26 @@ input:checked ~ .parent {
 }
 
 .breadcrumb-container {
-    @apply bg-customDarkblue text-white p-3 md:rounded-t-lg flex bottom-0 -mx-4 md:mx-0
+    @apply bg-customDarkblue text-white p-3 md:rounded-t-lg flex bottom-0 -mx-4 md:mx-0 text-sm
+}
+
+.breadcrumb {
+    @apply overflow-x-auto overflow-y-hidden whitespace-nowrap leading-8
+}
+
+.breadcrumb::-webkit-scrollbar {
+    @apply w-1 h-1
+}
+
+.breadcrumb::-webkit-scrollbar,
+.breadcrumb::-webkit-scrollbar-button,
+.breadcrumb::-webkit-scrollbar-track-piece,
+.breadcrumb::-webkit-scrollbar-thumb {
+    @apply bg-customMediumGray/10
 }
 
 .breadcrumb-container .breadcrumb-title {
-    @apply whitespace-nowrap pl-10;
+    @apply whitespace-nowrap md:pl-[45px] leading-8;
 }
 
 .breadcrumb-container .breadcrumb-item + .breadcrumb-item {
@@ -675,6 +691,55 @@ input:checked ~ .parent {
 
 .woocommerce .category-description {
     @apply hidden md:block text-xs text-gray-500 leading-7 text-justify line-clamp-3
+}
+
+.woocommerce .description-container {
+    @apply py-5 px-7 mt-36 rounded-five border border-customGray text-customGray text-base_12 leading-6
+
+}
+
+.woocommerce .description-container p {
+    @apply mb-4
+}
+
+.woocommerce .description-container .title {
+    @apply horizontalLines text-customDarkblue flex gap-2.5 md:gap-6 md:text-lg font-medium text-[17px] md:before:-top-1.5
+}
+
+.woocommerce .faq-container {
+    @apply my-4
+}
+
+.woocommerce .faq-container .faq-item {
+    @apply rounded-five border py-2 px-8 border-customBlack/20 mt-3
+}
+
+.woocommerce .faq-container .faq-item.active {
+    @apply border-customDarkblue
+}
+
+.woocommerce .faq-container .faq-item .question {
+    @apply text-base text-customBlack leading-[46px]
+}
+
+.woocommerce .faq-container .faq-item .question-icon {
+
+}
+
+.woocommerce .faq-container .faq-item.active .question {
+    @apply pt-2.5 pb-3
+}
+
+.woocommerce .faq-container .faq-item .answer {
+    @apply text-base_12 text-customGray h-0 opacity-0 invisible transition transition-all duration-300
+}
+
+.woocommerce .faq-container .faq-item.active .answer {
+    @apply h-auto transition transition-all duration-300 opacity-100 visible
+}
+
+.woocommerce .faq-container .faq-item .answer-icon {
+
 }
 
 .woocommerce .scroll-to-products {
@@ -1701,7 +1766,7 @@ footer .footer-list h2 {
 }
 
 footer svg.svg-icon {
-    @apply fill-white
+    @apply fill-white w-5 h-5 md:w-6 md:h-6
 }
 
 .main-footer-list {

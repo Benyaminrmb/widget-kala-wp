@@ -86,4 +86,15 @@ jQuery(document).ready(function ($) {
         let filter_container = $('.mobile-sidebar-filter-container');
         filter_container.removeClass('active');
     });
+
+    /*faq show hide question*/
+    $('body').on('click', '.faq-item .question', function (e) {
+        e.preventDefault();
+        let faq_container = $(this).closest('.faq-container'),
+            curr_item = $(this).parent('.faq-item');
+            // item_answer = curr_item.find('.answer');
+        faq_container.find('.faq-item').removeClass('active');
+        curr_item.toggleClass('active');
+
+    })
 });

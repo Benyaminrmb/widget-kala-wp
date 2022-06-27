@@ -150,7 +150,7 @@
                         </span>
                     </div>
                 </div>
-                <div class="flex justify-between w-full gap-x-3 mb-4 ">
+                <div class="flex justify-between w-full gap-x-3 mb-12 md:mb-4 mt-3">
                     <div class="hidden md:flex gap-x-3 w-full">
                         <div class="flex">
                             <?php mt_svg_icon('footer_title_icon'); ?>
@@ -229,7 +229,7 @@
                             <div class="flex">
                                 <?php mt_svg_icon('phone_call', 27); ?>
                             </div>
-                            <div class="flex gap-3 text-white text-xs"><?php the_field('footer_phone', 'options'); ?></div>
+                            <div class="flex gap-3 text-white text-base"><?php the_field('footer_phone', 'options'); ?></div>
                         </div>
                     <?php }
                     if (get_field('footer_email', 'options')) {
@@ -238,7 +238,7 @@
                             <div class="flex">
                                 <?php mt_svg_icon('email', 27); ?>
                             </div>
-                            <div class="flex gap-3 text-white text-xs"><?php the_field('footer_email', 'options'); ?></div>
+                            <div class="flex gap-3 text-white text-base"><?php the_field('footer_email', 'options'); ?></div>
                         </div>
                     <?php } ?>
                 </div>

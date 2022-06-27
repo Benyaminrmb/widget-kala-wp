@@ -8,6 +8,7 @@ $top_big_image    = get_field('top_big_image', $page_id);
 ?>
 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid gap-x-7 gap-2 grid-cols-12 justify-between">
+        <?php if(!wp_is_mobile()){ ?>
         <div class="col-span-12 md:col-span-4">
             <div class="w-full flex h-full">
                 <?php
@@ -26,6 +27,7 @@ $top_big_image    = get_field('top_big_image', $page_id);
                 ?>
             </div>
         </div>
+        <?php }?>
         <div class="col-span-12 md:col-span-8">
             <div class="w-full flex h-full">
                 <?php

@@ -13,7 +13,7 @@ $container_class = implode(' ',$container_class);
     <?php
     if ($categories) : ?>
         <div class="w-full product-tabs">
-            <div class="flex mt-7 gap-x-7 gap-y-4 justify-between whitespace-nowrap md:flex-nowrap">
+            <div class="flex mt-7 gap-x-7 gap-y-4 items-center justify-between whitespace-nowrap md:flex-nowrap">
                 <div class="flex gap-5"><span class="horizontalLines"></span>
                     <h4 class="flex text-gray-600 section-title">
                         <?php echo esc_attr($section_title);?>

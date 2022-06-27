@@ -152,7 +152,7 @@ if (class_exists('WP_Bootstrap_Navwalker') && !function_exists('mt_bs5_dropdown_
 }
 if (function_exists('wp_pagenavi')) {
     add_filter('wp_pagenavi', __NAMESPACE__ . '\\mt_pagination', 10, 2);
-    function mt_pagination($html)
+    function mt_pagination($html = '')
     {
         $out = str_replace(
             [
