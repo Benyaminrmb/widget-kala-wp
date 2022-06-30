@@ -947,11 +947,47 @@ input:checked ~ .parent {
 }
 
 .woocommerce-cart article.page .woocommerce .cart-collaterals {
-    @apply col-span-12 bg-customLightgraytwo rounded-b-md px-6 py-7 md:col-span-4
+    @apply col-span-12 md:col-span-4
+}
+
+.woocommerce-cart article.page .woocommerce .cart-collaterals .cart_totals {
+    @apply bg-customLightgraytwo rounded-b-md px-6 py-7 md:col-span-4
 }
 
 .woocommerce-cart article.page .woocommerce table.shop_table {
     @apply border-transparent overflow-hidden
+}
+
+.woocommerce-cart article.page .woocommerce .cart-collaterals .cart_totals table.shop_table {
+    @apply rounded-none border-t-customBlack/30;
+}
+
+.woocommerce-cart article.page .woocommerce .cart-collaterals .cart_totals h2 {
+    @apply pb-4 font-bold;
+}
+
+.woocommerce-cart article.page .woocommerce .cart-collaterals .cart_totals table.shop_table .cart-subtotal > * {
+    @apply border-b border-customBlack/30;
+}
+
+.woocommerce-cart article.page .woocommerce .cart-collaterals .cart_totals table.shop_table .order-total > * {
+    @apply border-t border-customBlack/30;
+}
+
+.woocommerce table.shop_table th {
+    @apply text-base
+}
+
+.woocommerce table.shop_table td {
+    @apply text-sm
+}
+
+.woocommerce table.shop_table td.product-subtotal {
+    @apply text-[17px]
+}
+
+.woocommerce table.shop_table td.product-subtotal .woocommerce-Price-currencySymbol {
+    @apply text-xs
 }
 
 .woocommerce-cart article.page .woocommerce table.shop_table.woocommerce-cart-form__contents {
@@ -975,7 +1011,7 @@ input:checked ~ .parent {
 }
 
 .woocommerce-cart article.page .woocommerce table.cart .quantity-container {
-    @apply inline-block rounded-md bg-white inline-block border border-customGray w-auto h-11 pt-1
+    @apply rounded-md bg-white flex border border-customGray w-auto h-11 py-3
 }
 
 .woocommerce-cart article.page .woocommerce table.cart .input-text.qty {
@@ -986,9 +1022,10 @@ input:checked ~ .parent {
 
 .woocommerce-cart article.page .woocommerce table.cart .plus,
 .woocommerce-cart article.page .woocommerce table.cart .minus {
-    @apply py-1 px-2 text-base
+    @apply px-2 text-base
 }
 
+.woocommerce-cart article.page .woocommerce .cart-collaterals,
 .woocommerce-cart article.page .woocommerce .cart-collaterals .cart_totals {
     @apply float-none w-full
 }
@@ -1000,18 +1037,19 @@ input:checked ~ .parent {
 }
 
 .woocommerce-cart article.page .woocommerce .coupon .input-text {
-    @apply w-44 rounded-md border-customGray
+    @apply w-44 rounded-md border-customGray h-10
 }
 
 .woocommerce-cart article.page .woocommerce button.button[name="update_cart"] {
-    @apply bg-white border border-customLightblue rounded-md text-sm text-center
+    border: inherit;
+    @apply border-inherit bg-white border-[1px] h-10 border-customLightblue rounded-md text-sm text-center
 }
 
 .woocommerce-cart article.page .woocommerce .coupon button.button[name="apply_coupon"],
 .woocommerce-cart article.page .woocommerce a.button.alt {
-    @apply bg-customDarkblue text-white
+    @apply bg-customDarkblue text-white h-10
     hover:bg-customRed hover:text-white
-    focus:bg-customRed focus:text-white
+    focus:bg-customRed focus:text-white py-0 leading-10 whitespace-nowrap
 }
 
 .woocommerce-checkout .select2-container--default .select2-selection--single,
@@ -1052,6 +1090,55 @@ input:checked ~ .parent {
     @apply bg-customDarkblue text-white rounded-md w-full py-2 mt-4 block !float-none
     hover:bg-customRed hover:text-customDarkblue
     focus:bg-customRed focus:text-customDarkblue
+}
+
+.woocommerce-checkout-review-order .woocommerce-checkout-review-order-table tfoot .order-total th, .woocommerce-checkout-review-order .woocommerce-checkout-review-order-table tfoot .order-total td {
+    @apply bg-customLightblue h-[58px];
+}
+
+.woocommerce-checkout-review-order .woocommerce-checkout-review-order-table tfoot .order-total .amount {
+    @apply text-[22px] -my-2.5;
+}
+
+.woocommerce-checkout-review-order .woocommerce-checkout-review-order-table tfoot .order-total .amount .woocommerce-Price-currencySymbol {
+    @apply text-xs !font-light text-right;
+}
+
+.woocommerce table.shop_table {
+    @apply overflow-hidden;
+}
+
+#add_payment_method #payment, .woocommerce-cart #payment, .woocommerce-checkout #payment {
+    @apply bg-transparent;
+}
+
+#add_payment_method #payment, .woocommerce-cart #payment .payment_methods, .woocommerce-checkout #payment .payment_methods {
+    @apply flex justify-start w-full relative gap-2 flex-row !border-none;
+}
+
+#add_payment_method #payment, .woocommerce-cart #payment .payment_methods .input-radio, .woocommerce-checkout #payment .payment_methods .input-radio {
+    @apply accent-customRed my-4 mx-0;
+}
+
+#add_payment_method #payment, .woocommerce-cart #payment .payment_methods .payment_box, .woocommerce-checkout #payment .payment_methods .payment_box {
+    @apply absolute left-4 right-4 !hidden;
+    width: calc(100% - 2rem);
+}
+
+#add_payment_method #payment, .woocommerce-cart #payment .payment_methods label img, .woocommerce-checkout #payment .payment_methods label img {
+    @apply hidden;
+}
+
+#add_payment_method #payment, .woocommerce-cart #payment .payment_methods .payment_box:before, .woocommerce-checkout #payment .payment_methods .payment_box:before {
+    @apply content-none;
+}
+
+.woocommerce-terms-and-conditions-wrapper {
+    @apply bg-customDarkblue/10 text-customDarkblue py-3 px-4 rounded-five;
+}
+
+#add_payment_method #payment ul.payment_methods li, .woocommerce-cart #payment ul.payment_methods li, .woocommerce-checkout #payment ul.payment_methods li {
+    @apply ml-4 leading-3;
 }
 
 header .icon-trolley {

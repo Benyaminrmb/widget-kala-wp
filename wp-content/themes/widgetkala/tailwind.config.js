@@ -111,5 +111,6 @@ module.exports = {
             },
         },
     },
+    darkMode : 'media',
     plugins: [require('@tailwindcss/line-clamp')],
 }

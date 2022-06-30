@@ -37,7 +37,7 @@ jQuery(document).ready(function ($) {
         items: 1,
     });
 
-    $('body').on('click', '.product-category-tab button', function (e) {
+    $(document).on('click', '.product-category-tab button', function (e) {
         e.preventDefault();
         let cat_id = $(this).data('category-id');
         let parent_li = $(this).parent();
@@ -54,7 +54,7 @@ jQuery(document).ready(function ($) {
     });
 
     /*woocommerce quantity input*/
-    $('form.cart,form.woocommerce-cart-form').on('click', '.btn.plus, .btn.minus', function () {
+    $(document).on('click', '.quantity .btn.plus, .quantity .btn.minus', function () {
         let qty = $(this).closest('.quantity-container').find('.qty'),
             val = parseFloat(qty.val()),
             max = parseFloat(qty.attr('max')),
@@ -73,28 +73,38 @@ jQuery(document).ready(function ($) {
                 qty.val(val - step);
             }
         }
-
+        qty.trigger("change");
     });
 
-    $('body').on('click', '.filter-button', function (e) {
+    $(document).on('click', '.filter-button', function (e) {
         e.preventDefault();
         let filter_container = $('.mobile-sidebar-filter-container');
         filter_container.addClass('active');
     });
-    $('body').on('click', '.close-filters', function (e) {
+    $(document).on('click', '.close-filters', function (e) {
         e.preventDefault();
         let filter_container = $('.mobile-sidebar-filter-container');
         filter_container.removeClass('active');
     });
 
     /*faq show hide question*/
-    $('body').on('click', '.faq-item .question', function (e) {
+    $(document).on('click', '.faq-item .question', function (e) {
         e.preventDefault();
         let faq_container = $(this).closest('.faq-container'),
             curr_item = $(this).parent('.faq-item');
-            // item_answer = curr_item.find('.answer');
+        // item_answer = curr_item.find('.answer');
         faq_container.find('.faq-item').removeClass('active');
         curr_item.toggleClass('active');
 
     })
+
+    /*sidebar filter box in product-archive pages*/
+    $(document).ready(function () {
+        $("#search-brand-input").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $(".brand-list .brand-item").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
 });

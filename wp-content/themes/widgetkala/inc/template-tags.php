@@ -334,7 +334,7 @@ if (!function_exists('change_js_view_cart_button')) {
         return $params;
     }
 }
-add_filter('woocommerce_get_script_data', 'change_js_view_cart_button', 10, 2);
+//add_filter('woocommerce_get_script_data', 'change_js_view_cart_button', 10, 2);
 
 if (!function_exists('mt_ajax_products')) {
     function mt_ajax_products($params = [])

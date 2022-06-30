@@ -50,6 +50,16 @@ if (!function_exists('mt_reorder_tabs')) {
     }
 }
 
+function mt_plus_button_before_qty(){
+    echo '<button class="btn btn-sm rounded-right plus" type="button" aria-label="">+</button>';
+}
+add_action('woocommerce_before_quantity_input_field','mt_plus_button_before_qty');
+function mt_minus_button_after_qty(){
+    echo '<button class="btn btn-sm rounded-start minus" type="button" aria-label="">-</button>';
+}
+add_action('woocommerce_after_quantity_input_field','mt_minus_button_after_qty');
+
+
 if (!function_exists('mt_wc_template_single_add_to_cart_footer_logo')) {
     function mt_wc_template_single_add_to_cart_footer_logo()
     {

@@ -30,13 +30,8 @@ else {
         esc_html__('%s quantity', 'woocommerce'), wp_strip_all_tags($args[ 'product_name' ])
     ) : esc_html__('Quantity', 'woocommerce');
     ?>
-    <div class="quantity">
+    <div class="quantity-container quantity">
         <?php do_action('woocommerce_before_quantity_input_field'); ?>
-        <label class="screen-reader-text"
-               for="<?php echo esc_attr($input_id); ?>"><?php echo esc_attr($label); ?></label>
-        <div class="quantity-container"
-             aria-label="<?php echo esc_attr($input_id); ?>">
-            <button class="btn btn-sm rounded-right plus" type="button" aria-label="">+</button>
             <input type="number" id="<?php echo esc_attr($input_id); ?>"
                    class="<?php echo esc_attr(implode(' ', (array) $classes)); ?>"
                    step="<?php echo esc_attr($step); ?>" min="<?php echo esc_attr($min_value); ?>"
@@ -46,9 +41,6 @@ else {
                 'Qty', 'Product quantity input tooltip', 'woocommerce'
             ); ?>" size="3" placeholder="<?php echo esc_attr($placeholder); ?>"
                    inputmode="<?php echo esc_attr($inputmode); ?>" />
-            <button class="btn btn-sm rounded-start minus" type="button" aria-label="">-</button>
-        </div>
-
         <?php do_action('woocommerce_after_quantity_input_field'); ?>
     </div>
     <?php
