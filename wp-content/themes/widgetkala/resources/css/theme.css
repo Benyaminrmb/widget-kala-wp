@@ -1130,7 +1130,7 @@ input:checked ~ .parent {
 }
 
 #add_payment_method #payment, .woocommerce-cart #payment .payment_methods .payment_box:before, .woocommerce-checkout #payment .payment_methods .payment_box:before {
-    @apply content-none;
+    @apply content-none
 }
 
 .woocommerce-terms-and-conditions-wrapper {
