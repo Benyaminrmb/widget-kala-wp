@@ -136,8 +136,13 @@
                 $login = wp_login_url(mt_current_URL());
                 if (!is_user_logged_in()) {
                     ?>
-                    <a href="<?php echo esc_url($login); ?>" class="login-button"><?php _e('ورود', 'widgetize'); ?></a>
-                    <a href="<?php echo esc_url($register); ?>" class="register-button"><?php _e('ثبت نام', 'widgetize'); ?></a>
+
+
+<!--                    <a href="--><?php //echo esc_url($login); ?><!--" class="login-button">--><?php //_e('ورود', 'widgetize'); ?><!--</a>-->
+<!--                    <a href="--><?php //echo esc_url($register); ?><!--" class="register-button">--><?php //_e('ثبت نام', 'widgetize'); ?><!--</a>-->
+
+                    <a href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>" class="login-button"><?php _e('ورود', 'widgetize'); ?></a>
+                    <a href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>" class="register-button"><?php _e('ثبت نام', 'widgetize'); ?></a>
                 <?php } else { ?>
                     <a href="<?php echo esc_url($login); ?>" class="profile-button"><?php _e('حساب کاربری', 'widgetize'); ?></a>
                 <?php } ?>
