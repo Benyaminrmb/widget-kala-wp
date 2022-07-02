@@ -64,7 +64,10 @@ if (post_password_required()) {
             </div>
             <?php do_action('mt_wc_template_single_top_categories'); ?>
             <div class="single-product-add-to-cart">
-                <?php do_action('mt_wc_template_single_add_to_cart'); ?>
+                <?php
+                do_action('mt_wc_template_single_add_to_cart');
+//                do_action('woocommerce_single_product_summary');
+                ?>
             </div>
         </div>
         <div class="gallery-container">

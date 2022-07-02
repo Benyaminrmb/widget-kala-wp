@@ -25,8 +25,19 @@
                             <?php foreach ($brands as $brand) { ?>
                                 <div class="flex w-full justify-between items-center flex-wrap brand-item">
                                     <div class="flex gap-x-3 items-center">
+                                        <?php $current_url =  home_url().add_query_arg(null,null);
+                                        $url = add_query_arg('product_brand[]',$brand->term_id);
+                                        $checked = '';
+                                        if(in_array($brand->term_id,get_query_var('product_brand'))){
+                                            $checked = ' checked="checked" ';
+                                        }
+                                        ?>
                                         <div class="flex">
-                                            <input id="brand-checkbox-<?php echo $brand->term_id ?>" value="<?php echo $brand->term_id; ?>" type="checkbox" class="w-4 h-4 accent-customDarkblue"/>
+                                            <input data-url="<?php echo $url; ?>" data-current-url="<?php echo $current_url; ?>" id="brand-checkbox-<?php echo $brand->term_id ?>"
+                                                   <?php echo $checked ?>
+                                                   value="<?php echo $brand->term_id; ?>"
+                                                   type="checkbox"
+                                                   class="w-4 h-4 accent-customDarkblue ajax-filter"/>
                                         </div>
                                         <label class="flex text-base" for="brand-checkbox-<?php echo $brand->term_id ?>"><?php echo $brand->name; ?></label>
                                     </div>
@@ -96,8 +107,22 @@
                             <?php foreach ($brands as $brand) { ?>
                                 <div class="brand-item flex w-full justify-between items-center flex-wrap">
                                     <div class="flex gap-x-2 items-center">
+                                        <?php $current_url =  home_url().add_query_arg(null,null);
+                                        $url = add_query_arg('product_brand',$brand->term_id);
+                                        $checked = '';
+                                        $brands_arg = get_query_var('product_brand',[]);
+//                                        var_dump($brands_arg);
+//                                        if(in_array($brand->term_id,(array))){
+//                                            $checked = ' checked="checked" ';
+//                                        }
+                                        ?>
                                         <div class="flex">
-                                            <input id="brand-checkbox-<?php echo $brand->term_id ?>" value="<?php echo $brand->term_id; ?>" type="checkbox" class="w-4 h-4 accent-customDarkblue"/>
+                                            <input data-url="<?php echo $url; ?>" data-current-url="<?php echo $current_url; ?>" id="brand-checkbox-<?php echo $brand->term_id ?>"
+                                                <?php echo $checked ?>
+                                                   value="<?php echo $brand->term_id; ?>"
+                                                   type="checkbox"
+                                                   name="product_brand[]"
+                                                   class="w-4 h-4 accent-customDarkblue ajax-filter"/>
                                         </div>
                                         <label class="flex" for="brand-checkbox-<?php echo $brand->term_id ?>"><?php echo $brand->name; ?></label>
                                     </div>
@@ -112,29 +137,19 @@
                     <div class="flex border-b border-customDarkWhite py-4 w-full">
                         <div class="flex w-full justify-between items-center flex-wrap">
                             <span class="flex text-customGray text-base">آیتم‌های موجود</span>
-                            <div class="flex">
-                                <label for="toggleA" class="cursor-pointer">
-                                    <span class="relative">
-                                        <input type="checkbox" id="toggleA" class="sr-only"/>
-                                        <span class="block parent bg-customLightgraytwo w-14 h-7 rounded-md"></span>
-                                        <span class="dot absolute left-1 top-1 bg-customGray w-5 h-5 rounded-full transition"></span>
-                                    </span>
+                                <label for="toggleA" class="switch-check">
+                                    <input type="checkbox" id="toggleA" name="only-available"/>
+                                    <span class="slider"></span>
                                 </label>
-                            </div>
                         </div>
                     </div>
                     <div class="flex mt-3 w-full pt-4">
                         <div class="flex w-full justify-between items-center flex-wrap">
                             <span class="flex text-customGray text-base">آیتم‌های تخفیف دار</span>
-                            <div class="flex">
-                                <label for="toggleB" class="cursor-pointer">
-                                    <span class="relative">
-                                        <input type="checkbox" id="toggleB" class="sr-only"/>
-                                        <span class="block parent bg-customLightgraytwo w-14 h-7 rounded-md"></span>
-                                        <span class="dot absolute left-1 top-1 bg-customGray w-5 h-5 rounded-full transition"></span>
-                                    </span>
-                                </label>
-                            </div>
+                            <label for="toggleB" class="switch-check">
+                                <input type="checkbox" id="toggleB" name="only-discounted"/>
+                                <span class="slider"></span>
+                            </label>
                         </div>
                     </div>
                 </div>

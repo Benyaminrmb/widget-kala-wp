@@ -548,14 +548,24 @@ footer.site-footer {
 }
 
 /* Toggle A */
-input:checked ~ .dot {
-    transform: translateX(140%);
-    background-color: #fff;
+.switch-check {
+    @apply inline-block w-14 h-7 relative rounded-five overflow-hidden
 }
 
-input:checked ~ .parent {
+.switch-check input {
+    @apply opacity-0 w-0 h-0
+}
 
-    background-color: #50a8ea;
+.switch-check .slider {
+    @apply absolute cursor-pointer top-0 left-0 bottom-0 right-0 bg-customLightgraytwo rounded-five duration-300
+    before:absolute before:top-1 before:left-1 before:w-5
+    before:h-5 before:bg-customGray before:rounded-full
+    before:transition before:transition-all
+    before:duration-300
+}
+
+.switch-check input:checked + .slider {
+    @apply bg-customLightblue before:left-8 before:bg-white before:transition before:transition-all
 }
 
 .archive-title {
@@ -1555,7 +1565,7 @@ header .icon-trolley {
 
 .product .mobile-single-product .main-footer-logo,
 .product .single-product-add-to-cart .main-footer-logo {
-    @apply flex flex-nowrap bg-customLightgray3 gap-3 justify-center py-2 md:px-8 mt-4 -mx-4 text-sm
+    @apply flex flex-nowrap bg-customLightgray3 gap-3 justify-center py-2 md:px-8 mt-4 -mx-8 text-sm
 }
 
 .product .mobile-single-product .main-footer-logo {

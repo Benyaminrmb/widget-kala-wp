@@ -28,7 +28,7 @@ global $product;
     do_action('woocommerce_after_add_to_cart_quantity');
     ?>
 
-    <button type="submit" class="cart-button single_add_to_cart_button button alt">
+    <button type="submit" class="cart-button single_add_to_cart_button button alt" name="add-to-cart">
         <span class="md:flex inline">
         <?php echo esc_html($product->single_add_to_cart_text()); ?>
         </span>

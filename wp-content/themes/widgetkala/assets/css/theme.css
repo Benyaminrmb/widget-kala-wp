@@ -3530,14 +3530,68 @@ footer.site-footer{
 }
 
 /* Toggle A */
-input:checked ~ .dot {
-    transform: translateX(140%);
-    background-color: #fff;
+.switch-check{
+  position: relative;
+  display: inline-block;
+  height: 1.75rem;
+  width: 3.5rem;
+  overflow: hidden;
+  border-radius: 5px;
 }
 
-input:checked ~ .parent {
+.switch-check input{
+  height: 0px;
+  width: 0px;
+  opacity: 0;
+}
 
-    background-color: #50a8ea;
+.switch-check .slider{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  cursor: pointer;
+  border-radius: 5px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(216 216 216 / var(--tw-bg-opacity));
+  transition-duration: 300ms;
+}
+
+.switch-check .slider::before{
+  position: absolute;
+  top: 0.25rem;
+  left: 0.25rem;
+  height: 1.25rem;
+  width: 1.25rem;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(145 149 160 / var(--tw-bg-opacity));
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  content: var(--tw-content);
+  transition-duration: 300ms;
+}
+
+.switch-check input:checked + .slider{
+  --tw-bg-opacity: 1;
+  background-color: rgb(80 168 234 / var(--tw-bg-opacity));
+}
+
+.switch-check input:checked + .slider::before{
+  left: 2rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  content: var(--tw-content);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .archive-title{
@@ -5885,8 +5939,8 @@ header .icon-trolley{
 
 .product .mobile-single-product .main-footer-logo, 
 .product .single-product-add-to-cart .main-footer-logo{
-  margin-left: -1rem;
-  margin-right: -1rem;
+  margin-left: -2rem;
+  margin-right: -2rem;
   margin-top: 1rem;
   display: flex;
   flex-wrap: nowrap;

@@ -116,7 +116,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 
 		<?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
 
-		<button type="submit" class="cart-button single_add_to_cart_button button alt">
+		<button type="submit" class="cart-button single_add_to_cart_button button alt" name="add-to-cart">
             <span class="md:flex inline">
             <?php echo esc_html( $product->single_add_to_cart_text() ); ?>
             </span>
