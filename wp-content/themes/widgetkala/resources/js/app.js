@@ -87,6 +87,36 @@ jQuery(document).ready(function ($) {
         filter_container.removeClass('active');
     });
 
+    $(document).on('change', '.ajax-product-filters', function (e) {
+        e.preventDefault();
+
+        let current_url = $(this).data('current-url'),
+            target_url = $(this).data('url'),
+            content = $('.main-content');
+        console.log(current_url)
+        console.log(target_url)
+        content.addClass('loading');
+        $.ajax({
+            type: 'get',
+            url: target_url,
+            success: function (response) {
+                let page_title = $(response).filter('title').text(),
+                    content_html = $(response).find('.main-content').html();
+                document.title = page_title;
+                window.history.pushState({}, '', target_url);
+                content.html(content_html);
+            },
+            error: function (error) {
+                alert('error loading content');
+                console.log(error);
+            },
+            complete: function () {
+                content.removeClass('loading');
+            }
+        })
+
+    });
+
     /*faq show hide question*/
     $(document).on('click', '.faq-item .question', function (e) {
         e.preventDefault();

@@ -21,31 +21,56 @@
                     <?php $brands = mt_wc_get_brands();
                     if ($brands){ ?>
                     <div class="flex flex-wrap mt-3 w-full pb-4 border-b">
-                        <div class="flex flex-wrap flex-col w-full gap-y-4 overflow-y-scroll h-280 thin-scrollbar px-2 brand-list">
-                            <?php foreach ($brands as $brand) { ?>
-                                <div class="flex w-full justify-between items-center flex-wrap brand-item">
-                                    <div class="flex gap-x-3 items-center">
-                                        <?php $current_url =  home_url().add_query_arg(null,null);
-                                        $url = add_query_arg('product_brand[]',$brand->term_id);
+                        <div class="flex flex-wrap w-full flex-col gap-y-4 overflow-y-scroll h-280 thin-scrollbar px-2 brand-list">
+                            <?php
+                            $current_url = mt_current_URL();
+                            $get_brands = explode('-',$_GET['brand']);
+                            //                            $get_brands = array_values($get_brands);
+                            echo '<code style="color:greenyellow">'.json_encode($get_brands).'</code>';
+                            $new_brands = $get_brands;
+                            foreach ($brands as $brand) { ?>
+                                <div class="brand-item flex w-full justify-between items-center flex-wrap">
+                                    <div class="flex gap-x-2 items-center">
+                                        <?php
                                         $checked = '';
-                                        if(in_array($brand->term_id,get_query_var('product_brand'))){
+                                        if(in_array($brand->term_id,$get_brands)){
                                             $checked = ' checked="checked" ';
                                         }
+
+
+                                        if($key = array_search($brand->term_id,$get_brands) !== false) {
+                                            $st = '<span style="color: red">'.$brand->term_id.'</span>';
+                                            unset($new_brands[$key]);
+                                        }else{
+                                            $new_brands[] = $brand->term_id;
+                                            $st = '<span style="color: green">'.$brand->term_id.'</span>';
+                                        }
+                                        //                                        $new_brands  = $get_brands;
+                                        $brand_string = implode('-',$new_brands);
+                                        $url = add_query_arg('brand',$brand_string);
+                                        //                                        echo '<code>'.$url.'</code>';
                                         ?>
                                         <div class="flex">
-                                            <input data-url="<?php echo $url; ?>" data-current-url="<?php echo $current_url; ?>" id="brand-checkbox-<?php echo $brand->term_id ?>"
-                                                   <?php echo $checked ?>
+                                            <input title="<?php echo $brand_string ?>"
+                                                   data-url="<?php echo $url; ?>"
+                                                   data-current-url="<?php echo $current_url; ?>"
+                                                   id="brand-checkbox-<?php echo $brand->term_id ?>"
+                                                <?php echo $checked ?>
                                                    value="<?php echo $brand->term_id; ?>"
                                                    type="checkbox"
-                                                   class="w-4 h-4 accent-customDarkblue ajax-filter"/>
+                                                   class="w-4 h-4 accent-customDarkblue ajax-product-filters"/>
                                         </div>
-                                        <label class="flex text-base" for="brand-checkbox-<?php echo $brand->term_id ?>"><?php echo $brand->name; ?></label>
+                                        <label class="flex" for="brand-checkbox-<?php echo $brand->term_id ?>"><?php echo $brand->name. ' - '.$st; ?></label>
                                     </div>
                                     <div class="flex">
                                         <span class="text-customGray text-xs"><?php echo $brand->slug; ?></span>
                                     </div>
                                 </div>
-                            <?php } ?>
+                                <?php
+
+                            }
+                            $_GET['brand'] = $new_brands;
+                            ?>
                         </div>
                         <?php } ?>
                     </div>
@@ -89,9 +114,9 @@
             </div>
             <div class="flex flex-wrap p-3 py-4">
                 <div class="flex w-full justify-between border-b pb-4">
-                                <span class="flex text-customGray text-base">
-                                  جستجو کنید
-                                </span>
+                    <span class="flex text-customGray text-base">
+                      جستجو کنید
+                    </span>
                     <span class="flex">+</span>
                 </div>
                 <div class="flex mt-3 flex-wrap w-full">
@@ -104,33 +129,55 @@
                     if ($brands){ ?>
                     <div class="flex flex-wrap mt-3 w-full pb-4 border-b">
                         <div class="flex flex-wrap w-full flex-col gap-y-4 overflow-y-scroll h-280 thin-scrollbar px-2 brand-list">
-                            <?php foreach ($brands as $brand) { ?>
+                            <?php
+                            $current_url = mt_current_URL();
+                            $get_brands = explode('-',$_GET['brand']);
+//                            $get_brands = array_values($get_brands);
+                            echo '<code style="color:greenyellow">'.json_encode($get_brands).'</code>';
+                            $new_brands = $get_brands;
+                            foreach ($brands as $brand) { ?>
                                 <div class="brand-item flex w-full justify-between items-center flex-wrap">
                                     <div class="flex gap-x-2 items-center">
-                                        <?php $current_url =  home_url().add_query_arg(null,null);
-                                        $url = add_query_arg('product_brand',$brand->term_id);
+                                        <?php
                                         $checked = '';
-                                        $brands_arg = get_query_var('product_brand',[]);
-//                                        var_dump($brands_arg);
-//                                        if(in_array($brand->term_id,(array))){
-//                                            $checked = ' checked="checked" ';
-//                                        }
+                                        if(in_array($brand->term_id,$get_brands)){
+                                            $checked = ' checked="checked" ';
+                                        }
+
+
+                                        if($key = array_search($brand->term_id,$get_brands) !== false) {
+                                            $st = '<span style="color: red">'.$brand->term_id.'</span>';
+                                            unset($new_brands[$key]);
+                                        }else{
+                                            $new_brands[] = $brand->term_id;
+                                            $st = '<span style="color: green">'.$brand->term_id.'</span>';
+                                        }
+//                                        $new_brands  = $get_brands;
+                                        $brand_string = implode('-',$new_brands);
+                                        $url = add_query_arg('brand',$brand_string);
+//                                        echo '<code>'.$url.'</code>';
                                         ?>
                                         <div class="flex">
-                                            <input data-url="<?php echo $url; ?>" data-current-url="<?php echo $current_url; ?>" id="brand-checkbox-<?php echo $brand->term_id ?>"
+                                            <input title="<?php echo $brand_string ?>"
+                                                   data-url="<?php echo $url; ?>"
+                                                   data-current-url="<?php echo $current_url; ?>"
+                                                   id="brand-checkbox-<?php echo $brand->term_id ?>"
                                                 <?php echo $checked ?>
                                                    value="<?php echo $brand->term_id; ?>"
                                                    type="checkbox"
-                                                   name="product_brand[]"
-                                                   class="w-4 h-4 accent-customDarkblue ajax-filter"/>
+                                                   class="w-4 h-4 accent-customDarkblue ajax-product-filters"/>
                                         </div>
-                                        <label class="flex" for="brand-checkbox-<?php echo $brand->term_id ?>"><?php echo $brand->name; ?></label>
+                                        <label class="flex" for="brand-checkbox-<?php echo $brand->term_id ?>"><?php echo $brand->name. ' - '.$st; ?></label>
                                     </div>
                                     <div class="flex">
                                         <span class="text-customGray text-xs"><?php echo $brand->slug; ?></span>
                                     </div>
                                 </div>
-                            <?php } ?>
+                            <?php
+
+                            }
+                            $_GET['brand'] = $new_brands;
+                            ?>
                         </div>
                         <?php } ?>
                     </div>
@@ -157,3 +204,4 @@
         </div>
     </div>
 <?php endif;
+//get_sidebar('shop');

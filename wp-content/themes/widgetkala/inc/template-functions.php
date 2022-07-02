@@ -248,6 +248,7 @@ if (!function_exists('mt_wc_get_brands')) {
         $defaults = array(
             'taxonomy' => 'product_brand',
             'hide_empty' => false,
+            'orderby'=>'id'
         );
         $args = wp_parse_args($args, $defaults);
         return get_terms($args);
@@ -256,7 +257,7 @@ if (!function_exists('mt_wc_get_brands')) {
 if (!function_exists('mt_current_URL')) {
     function mt_current_URL()
     {
-        return home_url( add_query_arg( NULL, NULL ) );
+//        return home_url( add_query_arg( NULL, NULL ) );
         $env = $_SERVER; // context is safe and necessary
         $pageURL = 'http';
         if (is_ssl()) {

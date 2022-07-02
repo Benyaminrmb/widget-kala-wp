@@ -1,9 +1,9 @@
 <?php
-if (!function_exists('mt_setup')) {
+if ( ! function_exists('mt_setup')) {
     function mt_setup()
     {
-        require_once get_stylesheet_directory() . '/inc/class-wp-bootstrap-navwalker.php';
-        load_theme_textdomain('widgetize', get_template_directory() . '/languages');
+        require_once get_stylesheet_directory().'/inc/class-wp-bootstrap-navwalker.php';
+        load_theme_textdomain('widgetize', get_template_directory().'/languages');
         add_theme_support('automatic-feed-links');
         add_theme_support('title-tag');
         add_theme_support('post-thumbnails');
@@ -16,7 +16,7 @@ if (!function_exists('mt_setup')) {
         register_nav_menus(
             [
                 'primary' => __('Primary', 'widgetize'),
-                'mobile' => __('Mobile', 'widgetize'),
+                'mobile'  => __('Mobile', 'widgetize'),
                 //				'secondary' => __( 'Secondary', 'widgetize' ),
             ]
         );
@@ -45,9 +45,9 @@ if (!function_exists('mt_setup')) {
         add_theme_support(
             'custom-logo',
             [
-                'height' => 40,
-                'width' => 145,
-                'flex-width' => true,
+                'height'      => 40,
+                'width'       => 145,
+                'flex-width'  => true,
                 'flex-height' => true,
             ]
         );
@@ -69,26 +69,34 @@ if (!function_exists('mt_setup')) {
 
     add_action('after_setup_theme', 'mt_setup');
 }
-if (!function_exists('mt_register_widgets')) {
+if ( ! function_exists('mt_register_widgets')) {
     function mt_register_widgets()
     {
         register_sidebar(
-
             [
-                'id' => 'footer-1',
-                'name' => esc_html__('footer-1', 'widgetkala'),
-                'description' => esc_html__('please add only list and links to this widget area', 'widgetkala'),
+                'id'            => 'footer-1',
+                'name'          => esc_html__('footer-1', 'widgetkala'),
+                'description'   => esc_html__('please add only list and links to this widget area', 'widgetkala'),
                 'before_widget' => '<div id="%1$s" class="footer-list block flex-wrap gap-4 col-span-1 w-full %2$s">',
-                'after_widget' => '</div></div>',
-                'before_title' => '<div class="flex w-full"><h4 class="text-white text-base_16">',
-                'after_title' => '</h4></div><div class="flex w-full">'
+                'after_widget'  => '</div></div>',
+                'before_title'  => '<div class="flex w-full"><h4 class="text-white text-base_16">',
+                'after_title'   => '</h4></div><div class="flex w-full">'
             ]
         );
+        register_sidebar([
+            'id'            => 'shop',
+            'name'          => esc_html__('shop', 'widgetkala'),
+            'description'   => esc_html__('please add only list and links to this widget area', 'widgetkala'),
+            'before_widget' => '<div id="%1$s" class="footer-list block flex-wrap gap-4 col-span-1 w-full %2$s">',
+            'after_widget'  => '</div></div>',
+            'before_title'  => '<div class="flex w-full"><h4 class="text-white text-base_16">',
+            'after_title'   => '</h4></div><div class="flex w-full">'
+        ]);
     }
 
     add_action('widgets_init', 'mt_register_widgets');
 }
-if (!function_exists('mt_excerpt_more')) {
+if ( ! function_exists('mt_excerpt_more')) {
     function mt_excerpt_more($link)
     {
         if (is_admin()) {
@@ -104,12 +112,12 @@ if (!function_exists('mt_excerpt_more')) {
             )
         );
 
-        return ' &hellip; ' . $link;
+        return ' &hellip; '.$link;
     }
 
     add_filter('excerpt_more', 'mt_excerpt_more');
 }
-if (!function_exists('mt_content_width')) {
+if ( ! function_exists('mt_content_width')) {
     function mt_content_width()
     {
         $GLOBALS['content_width'] = apply_filters('mt_content_width', 1140);
@@ -117,7 +125,7 @@ if (!function_exists('mt_content_width')) {
 
     add_action('after_setup_theme', 'mt_content_width', 0);
 }
-if (!function_exists('mt_scripts')) {
+if ( ! function_exists('mt_scripts')) {
     function mt_scripts()
     {
         wp_enqueue_style('mt-style', get_stylesheet_uri(), [], wp_get_theme()->get('Version'));
@@ -176,23 +184,24 @@ if (function_exists('wp_is_mobile')) {
     add_filter('wp_is_mobile', 'customized_wp_is_mobile', 99, 1);
     function customized_wp_is_mobile()
     {
-        error_log('agent is = '.$_SERVER['HTTP_USER_AGENT'].PHP_EOL,3,'mobile.log');
-            return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo
+        error_log('agent is = '.$_SERVER['HTTP_USER_AGENT'].PHP_EOL, 3, 'mobile.log');
+
+        return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo
 |fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i"
-                , $_SERVER["HTTP_USER_AGENT"]);
+            , $_SERVER["HTTP_USER_AGENT"]);
 
     }
 }
 
-require get_template_directory() . '/inc/svg-icons.php';
-require get_template_directory() . '/inc/template-functions.php';
-require get_template_directory() . '/inc/acf/acf.php';
-require get_template_directory() . '/inc/product_brand-tax.php';
-require get_template_directory() . '/inc/wc-customized.php';
-define('THEME_ACF_PATH', get_template_directory() . '/inc/acf/');
+require get_template_directory().'/inc/svg-icons.php';
+require get_template_directory().'/inc/template-functions.php';
+require get_template_directory().'/inc/acf/acf.php';
+require get_template_directory().'/inc/product_brand-tax.php';
+require get_template_directory().'/inc/wc-customized.php';
+define('THEME_ACF_PATH', get_template_directory().'/inc/acf/');
 define('THEME_ACF_URL', get_theme_file_uri('/inc/acf/'));
 add_filter('acf/settings/url', function ($url) {
     return THEME_ACF_URL;
 });
-require get_template_directory() . '/inc/acf-local-field-groups.php';
-require get_template_directory() . '/inc/template-tags.php';
+require get_template_directory().'/inc/acf-local-field-groups.php';
+require get_template_directory().'/inc/template-tags.php';

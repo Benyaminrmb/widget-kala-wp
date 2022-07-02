@@ -151,4 +151,4 @@
     </div>
     <div class="mobile-menu-backdrop"></div>
 
-    <div class="col-span-12 mt-7">
+    <div class="main-content col-span-12 mt-7">

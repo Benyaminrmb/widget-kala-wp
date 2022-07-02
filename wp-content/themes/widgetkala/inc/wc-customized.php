@@ -37,37 +37,41 @@ add_action('mt_wc_template_single_sharing', 'woocommerce_template_single_sharing
 add_action('mt_wc_template_single_meta', 'woocommerce_template_single_meta', 40);
 add_action('woocommerce_after_add_to_cart_form', 'mt_wc_template_single_add_to_cart_footer_logo', 10);
 
-if (!function_exists('mt_reorder_tabs')) {
+if ( ! function_exists('mt_reorder_tabs')) {
     add_filter('woocommerce_product_tabs', 'mt_reorder_tabs', 98);
     function mt_reorder_tabs($tabs)
     {
-        $tabs['description']['title'] = __('بررسی محصول', 'widgetize');
-        $tabs['description']['priority'] = 20;
+        $tabs['description']['title']               = __('بررسی محصول', 'widgetize');
+        $tabs['description']['priority']            = 20;
         $tabs['additional_information']['priority'] = 10;
-        $tabs['additional_information']['title'] = __('ویژگی محصول', 'widgetize');
+        $tabs['additional_information']['title']    = __('ویژگی محصول', 'widgetize');
 
         return $tabs;
     }
 }
 
-function mt_plus_button_before_qty(){
+function mt_plus_button_before_qty()
+{
     echo '<button class="btn btn-sm rounded-right plus" type="button" aria-label="">+</button>';
 }
-add_action('woocommerce_before_quantity_input_field','mt_plus_button_before_qty');
-function mt_minus_button_after_qty(){
+
+add_action('woocommerce_before_quantity_input_field', 'mt_plus_button_before_qty');
+function mt_minus_button_after_qty()
+{
     echo '<button class="btn btn-sm rounded-start minus" type="button" aria-label="">-</button>';
 }
-add_action('woocommerce_after_quantity_input_field','mt_minus_button_after_qty');
+
+add_action('woocommerce_after_quantity_input_field', 'mt_minus_button_after_qty');
 
 
-if (!function_exists('mt_wc_template_single_add_to_cart_footer_logo')) {
+if ( ! function_exists('mt_wc_template_single_add_to_cart_footer_logo')) {
     function mt_wc_template_single_add_to_cart_footer_logo()
     {
         wc_get_template('single-product/add-to-cart/footer-logo.php');
     }
 }
 
-if (!function_exists('mt_wc_template_single_top_categories')) {
+if ( ! function_exists('mt_wc_template_single_top_categories')) {
     function mt_wc_template_single_top_categories()
     {
         wc_get_template('single-product/top-categories.php');
@@ -78,14 +82,14 @@ function mt_pre_get_products_query($query)
 {
     $per_page = filter_input(INPUT_GET, 'perpage', FILTER_SANITIZE_NUMBER_INT);
 //    echo $per_page;die();
-    if ($query->is_main_query() && !is_admin() && is_post_type_archive('product')) {
+    if ($query->is_main_query() && ! is_admin() && is_post_type_archive('product')) {
 //        echo 'test';
         $query->set('posts_per_page', $per_page);
     }
 //    echo get_query_var('posts_per_page');
 }
 
-if (!function_exists('mt_wc_cat_header_start')) {
+if ( ! function_exists('mt_wc_cat_header_start')) {
     add_action('mt_wc_cat_header', 'mt_wc_cat_header_start', 10);
     function mt_wc_cat_header_start()
     {
@@ -93,7 +97,7 @@ if (!function_exists('mt_wc_cat_header_start')) {
     }
 }
 
-if (!function_exists('mt_wc_cat_header_end')) {
+if ( ! function_exists('mt_wc_cat_header_end')) {
     add_action('mt_wc_cat_header', 'mt_wc_cat_header_end', 50);
     function mt_wc_cat_header_end()
     {
@@ -103,3 +107,29 @@ if (!function_exists('mt_wc_cat_header_end')) {
 
 add_action('mt_wc_cat_header', 'woocommerce_catalog_ordering', 20);
 add_action('mt_wc_cat_header', 'woocommerce_result_count', 30);
+
+function mt_pre_get_posts($query)
+{
+    if (is_admin()) {
+        return $query;
+    }
+
+    if (isset($_GET['brand']) && $_GET['brand'] != '') {
+        $tax_query = array(
+            array(
+                'taxonomy'         => 'product_brand',
+                'field'            => 'id',
+                'terms'            => explode('-',$_GET['brand']),
+                'operator'         => 'IN',
+                'include_children' => true,
+            )
+        );
+
+        $query->tax_query->queries[]      = $tax_query;
+        $query->query_vars['tax_query'][] = $tax_query;
+    }
+
+    return $query;
+}
+
+add_action('woocommerce_product_query', 'mt_pre_get_posts');
