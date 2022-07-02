@@ -95,7 +95,8 @@ jQuery(document).ready(function ($) {
             content = $('.main-content');
         console.log(current_url)
         console.log(target_url)
-        content.addClass('loading');
+        content.addClass('spinner_loading');
+        $('body').addClass('has_loading');
         $.ajax({
             type: 'get',
             url: target_url,
@@ -111,7 +112,8 @@ jQuery(document).ready(function ($) {
                 console.log(error);
             },
             complete: function () {
-                content.removeClass('loading');
+                $('body').removeClass('has_loading');
+                content.removeClass('spinner_loading');
             }
         })
 

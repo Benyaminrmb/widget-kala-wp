@@ -6,13 +6,13 @@ $image_id = get_term_meta($current_cat->term_id, 'thumbnail_id', true);
         <div class="col-span-12 mt-7">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid gap-x-5 gap-y-10 grid-cols-12">
-                    <div class="col-span-3 flex flex-wrap">
+                    <div class="hidden md:col-span-3 flex flex-wrap">
                         <div class="w-full flex h-full">
                             <?php echo wp_get_attachment_image($image_id, 'medium', false,
                                 ['class' => 'w-full h-full border rounded-lg']); ?>
                         </div>
                     </div>
-                    <div class="col-span-9 gap-5 flex flex-wrap flex-col justify-between">
+                    <div class="col-span-12 md:col-span-9 gap-5 flex flex-wrap flex-col justify-between">
                         <?php
                         $children_categories = get_terms([
                             'taxonomy' => 'product_cat', 'parent' => $current_cat->term_id, 'hide_empty' => false,
@@ -69,8 +69,11 @@ $image_id = get_term_meta($current_cat->term_id, 'thumbnail_id', true);
              * Hook: woocommerce_shop_loop.
              */
             do_action('woocommerce_shop_loop');
-
-            wc_get_template_part('content', 'product');
+            if (wp_is_mobile()) {
+                wc_get_template_part('mobile/archive-product-item');
+            } else {
+                wc_get_template_part('content', 'product');
+            }
         }
     }
 

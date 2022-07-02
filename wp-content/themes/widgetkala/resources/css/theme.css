@@ -1837,6 +1837,18 @@ header .icon-trolley {
     @apply w-[110px] h-20
 }
 
+body.has_loading {
+    @apply overflow-hidden
+}
+
+.spinner_loading {
+    @apply cursor-wait opacity-50 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:cursor-wait before:pointer-events-none
+    before:bg-white/60 before:z-[120] before:bg-no-repeat before:bg-center before:bg-[url('../images/spinner.gif')]
+}
+
+.spinner_loading > * {
+    @apply pointer-events-none
+}
 
 .text-22 {
     @apply !text-[22px]
@@ -1897,7 +1909,6 @@ footer svg.svg-icon {
 
 .main-contact-form form {
     @apply flex flex-wrap w-full gap-3 lg:pl-12 pl-0
-
 }
 
 .main-contact-form form div span input, .main-contact-form form div span textarea {
