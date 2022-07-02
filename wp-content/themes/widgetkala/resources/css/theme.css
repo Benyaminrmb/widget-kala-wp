@@ -175,7 +175,7 @@ footer.site-footer {
 }
 
 .main-menu .menu-item:hover .dropdown-menu {
-    @apply visible opacity-100 top-full
+    @apply visible opacity-100 top-full z-1
 }
 
 .main-menu .menu-item .dropdown-toggle {
