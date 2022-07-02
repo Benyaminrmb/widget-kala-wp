@@ -129,6 +129,21 @@ function mt_pre_get_posts($query)
         $query->query_vars['tax_query'][] = $tax_query;
     }
 
+    if (isset($_GET['pcat']) && $_GET['pcat'] != '') {
+        $tax_query = array(
+            array(
+                'taxonomy'         => 'product_cat',
+                'field'            => 'id',
+                'terms'            => explode('-',$_GET['pcat']),
+                'operator'         => 'IN',
+                'include_children' => true,
+            )
+        );
+
+        $query->tax_query->queries[]      = $tax_query;
+        $query->query_vars['tax_query'][] = $tax_query;
+    }
+
     return $query;
 }
 

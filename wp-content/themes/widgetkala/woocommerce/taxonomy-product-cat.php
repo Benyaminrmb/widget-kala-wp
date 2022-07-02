@@ -47,7 +47,7 @@ $image_id    = get_term_meta($current_cat->term_id, 'thumbnail_id', true); ?>
                             <a href="#" class="scroll-to-products"><?php mt_svg_icon('arrow_down', [8, 11]) ?></a>
                         </div>
                     </div>
-                    <?php wc_get_template_part('global/sidebar', 'filter'); ?>
+                    <?php wc_get_template_part('global/sidebar', 'filter-brands'); ?>
                     <div class="md:col-span-9 col-span-12 gap-4 md:gap-0 flex flex-wrap flex-col">
                         <?php do_action('mt_wc_cat_header'); ?>
                         <?php if (woocommerce_product_loop()) {
