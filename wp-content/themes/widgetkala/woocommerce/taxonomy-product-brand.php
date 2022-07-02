@@ -6,7 +6,7 @@ $image_id = get_term_meta($current_cat->term_id, 'thumbnail_id', true);
         <div class="col-span-12 mt-7">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid gap-x-5 gap-y-10 grid-cols-12">
-                    <div class="hidden md:col-span-3 flex flex-wrap">
+                    <div class="hidden md:col-span-3 md:flex md:flex-wrap">
                         <div class="w-full flex h-full">
                             <?php echo wp_get_attachment_image($image_id, 'medium', false,
                                 ['class' => 'w-full h-full border rounded-lg']); ?>

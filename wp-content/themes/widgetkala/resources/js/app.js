@@ -96,6 +96,8 @@ jQuery(document).ready(function ($) {
         console.log(current_url)
         console.log(target_url)
         content.addClass('spinner_loading');
+        window.scrollTo({top: 0, behavior: 'smooth'});
+        window.scroll(0, 0);
         $('body').addClass('has_loading');
         $.ajax({
             type: 'get',

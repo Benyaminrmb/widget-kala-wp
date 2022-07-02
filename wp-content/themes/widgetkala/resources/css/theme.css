@@ -1842,7 +1842,7 @@ body.has_loading {
 }
 
 .spinner_loading {
-    @apply cursor-wait opacity-50 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:cursor-wait before:pointer-events-none
+    @apply h-[90vh] cursor-wait opacity-50 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:cursor-wait before:pointer-events-none overflow-hidden
     before:bg-white/60 before:z-[120] before:bg-no-repeat before:bg-center before:bg-[url('../images/spinner.gif')]
 }
 
