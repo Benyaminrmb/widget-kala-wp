@@ -136,7 +136,7 @@
                                         <label class="flex" for="brand-checkbox-<?php echo $brand->term_id ?>"><?php echo $brand->name; ?></label>
                                     </div>
                                     <div class="flex">
-                                        <span class="text-customGray text-xs"><?php echo $brand->slug; ?></span>
+                                        <span class="text-customGray text-xs"><?php echo urldecode($brand->slug); ?></span>
                                     </div>
                                 </div>
                                 <?php

@@ -62,7 +62,7 @@
                                             <label class="flex" for="brand-checkbox-<?php echo $category->term_id ?>"><?php echo $category->name; ?></label>
                                         </div>
                                         <div class="flex">
-                                            <span class="text-customGray text-xs"><?php echo $category->slug; ?></span>
+                                            <span class="text-customGray text-xs"><?php echo urldecode($category->slug); ?></span>
                                         </div>
                                     </div>
                                     <?php
