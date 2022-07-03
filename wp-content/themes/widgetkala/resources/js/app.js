@@ -89,16 +89,29 @@ jQuery(document).ready(function ($) {
 
     $(document).on('change', '.ajax-product-filters', function (e) {
         e.preventDefault();
-
-        let current_url = $(this).data('current-url'),
-            target_url = $(this).data('url'),
+        let filter_type = $(this).data('type');
+        let checked_array = [];
+        let all_checked = $('.ajax-product-filters:checkbox:checked');
+        all_checked.each(function () {
+            checked_array.push($(this).val());
+        })
+        console.log(checked_array);
+        let current_url = window.location.href.split('?')[0];
+        let query_key = '';
+        if (filter_type == 'category') {
+            query_key = 'pcat';
+        }
+        if (filter_type == 'brand') {
+            query_key = 'brand';
+        }
+        let target_url = current_url + '?' + query_key + '=' + checked_array.join('-'),
             content = $('.main-content');
-        console.log(current_url)
         console.log(target_url)
         content.addClass('spinner_loading');
-        window.scrollTo({top: 0, behavior: 'smooth'});
-        window.scroll(0, 0);
         $('body').addClass('has_loading');
+        window.scrollTo({top: 0, behavior: 'smooth'});
+
+
         $.ajax({
             type: 'get',
             url: target_url,
@@ -135,9 +148,10 @@ jQuery(document).ready(function ($) {
     /*sidebar filter box in product-archive pages*/
     $(document).ready(function () {
         $("#search-brand-input").on("keyup", function () {
-            var value = $(this).val().toLowerCase();
+            var searched_query = $(this).val().toLowerCase();
+            console.log(searched_query)
             $(".brand-list .brand-item").filter(function () {
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                $(this).toggle($(this).text().toLowerCase().indexOf(searched_query) > -1)
             });
         });
     });

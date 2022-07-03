@@ -130,33 +130,18 @@
                                             if (in_array($category->term_id, $get_categories)) {
                                                 $checked = ' checked="checked" ';
                                             }
-
-
-                                            if ($key = array_search($category->term_id, $get_categories) !== false) {
-                                                $st = '<span style="color: red">'.$category->term_id.'</span>';
-                                                unset($new_categories[$key]);
-                                            } else {
-                                                $new_categories[] = $category->term_id;
-                                                $st               = '<span style="color: green">'.$category->term_id.'</span>';
-                                            }
-                                            //                                        $new_brands  = $get_brands;
-                                            $category_string = implode('-', $new_categories);
-                                            $url             = add_query_arg('pcat', $category_string);
                                             ?>
                                             <div class="flex">
-                                                <input title="<?php echo $category_string ?>"
-                                                       data-url="<?php echo $url; ?>"
-                                                       data-current-url="<?php echo $current_url; ?>"
-                                                       id="brand-checkbox-<?php echo $category->term_id ?>"
+                                                <input data-type="category" id="category-checkbox-<?php echo $category->term_id ?>"
                                                     <?php echo $checked ?>
                                                        value="<?php echo $category->term_id; ?>"
                                                        type="checkbox"
                                                        class="w-4 h-4 accent-customDarkblue ajax-product-filters"/>
                                             </div>
-                                            <label class="flex" for="brand-checkbox-<?php echo $category->term_id ?>"><?php echo $category->name; ?></label>
+                                            <label class="flex" for="category-checkbox-<?php echo $category->term_id ?>"><?php echo $category->name; ?></label>
                                         </div>
                                         <div class="flex">
-                                            <span class="text-customGray text-xs"><?php echo $category->slug; ?></span>
+                                            <span class="text-customGray text-xs"><?php echo urldecode($category->slug); ?></span>
                                         </div>
                                     </div>
                                     <?php

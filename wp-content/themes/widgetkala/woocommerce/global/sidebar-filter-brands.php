@@ -23,10 +23,7 @@
                         <div class="flex flex-wrap mt-3 w-full pb-4 border-b overflow-y-scroll h-280">
                             <div class="flex flex-wrap w-full flex-col gap-y-4 thin-scrollbar px-2 brand-list">
                                 <?php
-                                $current_url = mt_current_URL();
-                                $get_brands  = explode('-', $_GET['brand']);
-                                //                            $get_brands = array_values($get_brands);
-                                //                            echo '<code style="color:greenyellow">'.json_encode($get_brands).'</code>';
+                                $get_brands = explode('-', $_GET['brand']);
                                 $new_brands = $get_brands;
                                 foreach ($brands as $brand) { ?>
                                     <div class="brand-item flex w-full justify-between items-center flex-wrap">
@@ -36,25 +33,9 @@
                                             if (in_array($brand->term_id, $get_brands)) {
                                                 $checked = ' checked="checked" ';
                                             }
-
-
-                                            if ($key = array_search($brand->term_id, $get_brands) !== false) {
-                                                $st = '<span style="color: red">'.$brand->term_id.'</span>';
-                                                unset($new_brands[$key]);
-                                            } else {
-                                                $new_brands[] = $brand->term_id;
-                                                $st           = '<span style="color: green">'.$brand->term_id.'</span>';
-                                            }
-                                            //                                        $new_brands  = $get_brands;
-                                            $brand_string = implode('-', $new_brands);
-                                            $url          = add_query_arg('brand', $brand_string);
-                                            //                                        echo '<code>'.$url.'</code>';
                                             ?>
                                             <div class="flex">
-                                                <input title="<?php echo $brand_string ?>"
-                                                       data-url="<?php echo $url; ?>"
-                                                       data-current-url="<?php echo $current_url; ?>"
-                                                       id="brand-checkbox-<?php echo $brand->term_id ?>"
+                                                <input data-type="brand" id="brand-checkbox-<?php echo $brand->term_id ?>"
                                                     <?php echo $checked ?>
                                                        value="<?php echo $brand->term_id; ?>"
                                                        type="checkbox"
@@ -63,7 +44,7 @@
                                             <label class="flex" for="brand-checkbox-<?php echo $brand->term_id ?>"><?php echo $brand->name; ?></label>
                                         </div>
                                         <div class="flex">
-                                            <span class="text-customGray text-xs"><?php echo $brand->slug; ?></span>
+                                            <span class="text-customGray text-xs"><?php echo urldecode($brand->slug); ?></span>
                                         </div>
                                     </div>
                                     <?php
@@ -131,10 +112,7 @@
                     <div class="flex flex-wrap mt-3 w-full pb-4 border-b">
                         <div class="flex flex-wrap w-full flex-col gap-y-4 overflow-y-scroll h-280 thin-scrollbar px-2 brand-list">
                             <?php
-                            $current_url = mt_current_URL();
-                            $get_brands  = explode('-', $_GET['brand']);
-                            //                            $get_brands = array_values($get_brands);
-                            //                            echo '<code style="color:greenyellow">'.json_encode($get_brands).'</code>';
+                            $get_brands = explode('-', $_GET['brand']);
                             $new_brands = $get_brands;
                             foreach ($brands as $brand) { ?>
                                 <div class="brand-item flex w-full justify-between items-center flex-wrap">
@@ -145,24 +123,11 @@
                                             $checked = ' checked="checked" ';
                                         }
 
-
-                                        if ($key = array_search($brand->term_id, $get_brands) !== false) {
-                                            $st = '<span style="color: red">'.$brand->term_id.'</span>';
-                                            unset($new_brands[$key]);
-                                        } else {
-                                            $new_brands[] = $brand->term_id;
-                                            $st           = '<span style="color: green">'.$brand->term_id.'</span>';
-                                        }
-                                        //                                        $new_brands  = $get_brands;
                                         $brand_string = implode('-', $new_brands);
                                         $url          = add_query_arg('brand', $brand_string);
-                                        //                                        echo '<code>'.$url.'</code>';
                                         ?>
                                         <div class="flex">
-                                            <input title="<?php echo $brand_string ?>"
-                                                   data-url="<?php echo $url; ?>"
-                                                   data-current-url="<?php echo $current_url; ?>"
-                                                   id="brand-checkbox-<?php echo $brand->term_id ?>"
+                                            <input data-type="brand" id="brand-checkbox-<?php echo $brand->term_id ?>"
                                                 <?php echo $checked ?>
                                                    value="<?php echo $brand->term_id; ?>"
                                                    type="checkbox"
