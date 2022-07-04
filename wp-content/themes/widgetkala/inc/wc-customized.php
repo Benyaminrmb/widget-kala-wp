@@ -148,3 +148,4 @@ function mt_pre_get_posts($query)
 }
 
 add_action('woocommerce_product_query', 'mt_pre_get_posts');
+add_filter( 'woocommerce_show_variation_price', '__return_true' );
