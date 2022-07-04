@@ -11,7 +11,7 @@ $image_id    = get_term_meta($current_cat->term_id, 'thumbnail_id', true); ?>
                                 ['class' => 'w-full h-full border rounded-lg']); ?>
                         </div>
                     </div>
-                    <div class="md:col-span-9 col-span-12 gap-5 flex flex-wrap flex-col justify-between">
+                    <div class="md:col-span-9 col-span-12 gap-5 flex flex-wrap flex-col justify-start">
                         <?php
                         $children_categories = get_terms([
                             'taxonomy' => 'product_cat', 'parent' => $current_cat->term_id, 'hide_empty' => false,
