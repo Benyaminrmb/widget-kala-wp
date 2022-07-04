@@ -1243,7 +1243,7 @@ header .icon-trolley {
 }
 
 .woocommerce .single-product-title {
-    @apply mb-7;
+    @apply mb-5;
 }
 
 .woocommerce .single-product-title .product_title {
@@ -1251,7 +1251,7 @@ header .icon-trolley {
 }
 
 .woocommerce .single-product-title .subtitle {
-    @apply text-base text-customDarkblue font-normal
+    @apply text-base text-customDarkblue font-normal mt-[7px] text-customBlack
 }
 
 .woocommerce span.onsale {
@@ -1315,7 +1315,7 @@ header .icon-trolley {
 }
 
 .product-main-category .posted_in a {
-    @apply text-customRed font-bold text-base font-light
+    @apply text-customRed text-base font-normal
 }
 
 .woocommerce-product-details__short-description {
@@ -1324,6 +1324,18 @@ header .icon-trolley {
 
 .product form.cart {
     @apply flex w-full flex-wrap border border-customLightgray2 rounded-md justify-center
+}
+
+.product form.cart.variations_form .variations label {
+    @apply text-base mb-8
+}
+
+.product form.cart.variations_form .variations .value {
+    @apply pr-[30px]
+}
+
+.product form.cart.variations_form .variations select {
+    @apply text-sm !max-w-[80%]
 }
 
 .product-box-container {
@@ -1388,7 +1400,7 @@ header .icon-trolley {
 }
 
 .woocommerce-product-details__short-description ul {
-    @apply flex flex-wrap gap-3
+    @apply flex flex-wrap gap-2.5
 }
 
 .woocommerce-product-details__short-description ul li {
