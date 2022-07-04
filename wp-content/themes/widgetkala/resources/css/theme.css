@@ -1565,7 +1565,7 @@ header .icon-trolley {
 
 .product .mobile-single-product .main-footer-logo,
 .product .single-product-add-to-cart .main-footer-logo {
-    @apply flex flex-nowrap bg-customLightgray3 gap-3 justify-center py-2 md:px-8 mt-4 -mx-4 text-sm
+    @apply flex flex-nowrap bg-customLightgray3 gap-3 justify-center py-2 md:px-8 mt-4 -mx-4 md:-mx-8 text-sm
 }
 
 .product .mobile-single-product .main-footer-logo {
