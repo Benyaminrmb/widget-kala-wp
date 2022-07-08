@@ -121,7 +121,8 @@ if ( ! function_exists('show_mt_product_like_button')) {
     function show_mt_product_like_button()
     {
         echo '<div class="like-product-button">';
-        mt_svg_icon('love', 20);
+        echo do_shortcode('[yith_wcwl_add_to_wishlist]');
+//        mt_svg_icon('love', 20);
         echo '</div>';
     }
 }

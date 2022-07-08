@@ -44,7 +44,7 @@ $image_id    = get_term_meta($current_cat->term_id, 'thumbnail_id', true); ?>
                                     </div>
                                 </div>
                             </div>
-                            <a href="#" class="scroll-to-products"><?php mt_svg_icon('arrow_down', [8, 11]) ?></a>
+                            <a href="#" class="scroll-to-description"><?php mt_svg_icon('arrow_down', [8, 11]) ?></a>
                         </div>
                     </div>
                     <?php wc_get_template_part('global/sidebar', 'filter-brands'); ?>
@@ -89,11 +89,14 @@ $image_id    = get_term_meta($current_cat->term_id, 'thumbnail_id', true); ?>
                              */
                             do_action('woocommerce_after_shop_loop');
                         }
-                        ?>
-                        <div class="container description-container">
-                            <?php echo $current_cat->description; ?>
-                        </div>
-                        <?php if (have_rows('faq', 'product_cat_'.$current_cat->term_id)) { ?>
+                        if ($current_cat->description) {
+                            ?>
+                            <div id="category-description" class="container description-container">
+                                <?php echo $current_cat->description; ?>
+                            </div>
+                            <?php
+                        }
+                        if (have_rows('faq', 'product_cat_'.$current_cat->term_id)) { ?>
                             <div class="faq-container">
                                 <?php
                                 while (have_rows('faq', 'product_cat_'.$current_cat->term_id)) {
@@ -102,13 +105,13 @@ $image_id    = get_term_meta($current_cat->term_id, 'thumbnail_id', true); ?>
                                     $answer   = get_sub_field('answer'); ?>
                                     <div class="faq-item">
                                         <div class="question flex items-center gap-4">
-                                            <span class="question-icon flex"><?php mt_svg_icon('question',30); ?></span>
+                                            <span class="question-icon flex"><?php mt_svg_icon('question', 30); ?></span>
                                             <span class="flex">
                                                 <?php echo $question; ?>
                                             </span>
                                         </div>
                                         <div class="answer flex items-center gap-4">
-                                            <span class="answer-icon"><?php mt_svg_icon('answer',30); ?></span>
+                                            <span class="answer-icon"><?php mt_svg_icon('answer', 30); ?></span>
                                             <span class="flex py-2  w-full border-t border-customDarkWhite">
                                                 <?php echo $answer ?>
                                             </span>

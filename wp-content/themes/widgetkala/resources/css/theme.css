@@ -2,6 +2,8 @@
 @import './iransans.css';
 @import 'owl.carousel/dist/assets/owl.carousel.css';
 @import 'owl.carousel/dist/assets/owl.theme.default.css';
+@import '@fancyapps/ui/dist/fancybox.css';
+/*@import '@fancyapps/ui/dist/panzoom.css';*/
 
 @tailwind base;
 @tailwind components;
@@ -44,7 +46,7 @@ img.custom-logo {
 }
 
 footer.site-footer {
-    @apply !bg-customMediumGray w-full overflow-hidden
+    @apply !bg-customMediumGray w-full overflow-hidden mb-12 sm:mb-0
 }
 
 .logo-container {
@@ -98,7 +100,7 @@ footer.site-footer {
 
 .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt,
 .woocommerce #respond input#submit.alt.disabled, .woocommerce #respond input#submit.alt.disabled:hover, .woocommerce #respond input#submit.alt:disabled, .woocommerce #respond input#submit.alt:disabled:hover, .woocommerce #respond input#submit.alt:disabled[disabled], .woocommerce #respond input#submit.alt:disabled[disabled]:hover, .woocommerce a.button.alt.disabled, .woocommerce a.button.alt.disabled:hover, .woocommerce a.button.alt:disabled, .woocommerce a.button.alt:disabled:hover, .woocommerce a.button.alt:disabled[disabled], .woocommerce a.button.alt:disabled[disabled]:hover, .woocommerce button.button.alt.disabled, .woocommerce button.button.alt.disabled:hover, .woocommerce button.button.alt:disabled, .woocommerce button.button.alt:disabled:hover, .woocommerce button.button.alt:disabled[disabled], .woocommerce button.button.alt:disabled[disabled]:hover, .woocommerce input.button.alt.disabled, .woocommerce input.button.alt.disabled:hover, .woocommerce input.button.alt:disabled, .woocommerce input.button.alt:disabled:hover, .woocommerce input.button.alt:disabled[disabled], .woocommerce input.button.alt:disabled[disabled]:hover {
-    @apply bg-customLightblue;
+    @apply bg-customLightblue hover:bg-customDarkblue2
 }
 
 .cart-button .cart-count-badge {
@@ -752,7 +754,7 @@ footer.site-footer {
 
 }
 
-.woocommerce .scroll-to-products {
+.woocommerce .scroll-to-description {
     @apply hidden md:flex bg-customLightblue absolute left-1/2 -ml-3.5 -bottom-2.5 w-7 h-5 flex justify-center items-center
 }
 
@@ -1243,7 +1245,7 @@ header .icon-trolley {
 }
 
 .woocommerce .single-product-title {
-    @apply mb-5;
+    @apply mb-[21px];
 }
 
 .woocommerce .single-product-title .product_title {
@@ -1267,15 +1269,20 @@ header .icon-trolley {
 }
 
 .woocommerce .share-links .share-items {
-    @apply hidden absolute left-full top-0 w-0 transition duration-300 transition-all;
+    @apply opacity-0 block px-4 absolute left-full top-0 w-auto transition duration-300 transition-all;
 }
 
-.woocommerce .share-links:hover .share-items {
-    @apply block w-auto bg-white;
+.woocommerce .share-links:hover .share-items,
+.woocommerce .share-links .share-items.active {
+    @apply opacity-100 bg-white;
 }
 
 .woocommerce .share-links .share-items .social-share-list {
     @apply flex gap-x-2;
+}
+
+.social-share-list li a .svg-icon {
+    @apply fill-customGray
 }
 
 .social-share-list .telegram:hover .svg-icon {
@@ -1335,7 +1342,11 @@ header .icon-trolley {
 }
 
 .product form.cart.variations_form .variations select {
-    @apply text-sm !max-w-[80%]
+    @apply text-sm !max-w-[80%] border border-customLightgray2 bg-transparent
+}
+
+.woocommerce-variation.single_variation {
+    @apply pt-8 border-t border-t-customLightgray2
 }
 
 .product-box-container {
@@ -1351,44 +1362,49 @@ header .icon-trolley {
     @apply col-span-5 w-full
 }
 
-.gallery-container .flex-viewport {
+.gallery-container .slider-container {
     @apply border border-customLightgray2 rounded-five mb-4
 }
 
-.woocommerce div.product .gallery-container div.images .flex-control-thumbs {
-    @apply flex gap-4 mt-4 overflow-x-auto mb-2;
+.gallery-container .thumbnail-slider .item .content {
+    @apply overflow-hidden border border-customLightgray2 rounded-five
+    hover:border hover:border-customDarkblue hover:overflow-hidden hover:rounded-five
 }
 
-.flex-control-thumbs::-webkit-scrollbar {
-    @apply w-1 h-1 bg-customLightgraytwo mt-2
-}
-
-.flex-control-thumbs::-webkit-scrollbar-button {
-    @apply bg-customBlack w-0 h-0
-}
-
-.flex-control-thumbs::-webkit-scrollbar-track-piece {
-    @apply bg-customLightgray
-}
-
-.flex-control-thumbs::-webkit-scrollbar-thumb {
-    @apply bg-customBlack
-}
-
-.woocommerce div.product div.images .flex-control-thumbs li {
-    @apply w-full float-none col-span-3 overflow-hidden border border-customLightgray2 rounded-five basis-1/5 grow-0 shrink-0
-}
-
-.woocommerce div.product div.images .flex-control-thumbs li img.flex-active, .woocommerce div.product div.images .flex-control-thumbs li img:hover {
+.gallery-container .thumbnail-slider .item .content.active {
     @apply border border-customDarkblue overflow-hidden rounded-five
 }
 
-.woocommerce div.product .woocommerce-product-gallery--columns-4 .flex-control-thumbs li:nth-child(4n+1) {
-    @apply clear-none
+.gallery-container .thumbnail-slider .item .content img {
+    @apply w-16 h-16
+}
+
+.thumbnail-slider-container {
+    @apply w-[315px] mx-auto mt-1;
+}
+
+#thumbnailSlider .owl-nav {
+    @apply relative block;
+}
+
+#thumbnailSlider .owl-nav > button {
+    @apply absolute inline-block my-0 mx-4 text-4xl opacity-100 -top-12 transition transition-colors text-customGray hover:text-customDarkblue
+}
+
+#thumbnailSlider .owl-nav > button.disabled {
+    @apply text-customBlack hidden;
+}
+
+#thumbnailSlider .owl-nav > .owl-prev {
+    @apply -right-[3.75rem];
+}
+
+#thumbnailSlider .owl-nav > .owl-next {
+    @apply -left-[3.75rem];
 }
 
 .woocommerce .woocommerce-product-rating {
-    @apply inline-block mb-2
+    @apply inline-block !mb-2
 }
 
 .single-product-add-to-cart {
@@ -1435,6 +1451,17 @@ header .icon-trolley {
     @apply mr-6
 }
 
+.yith-wcwl-add-to-wishlist {
+    @apply !mt-0
+}
+
+.woocommerce a.add_to_wishlist.button.alt {
+    @apply !p-0;
+}
+
+.yith-wcwl-icon {
+    @apply text-[20px] !mr-0;
+}
 
 .woocommerce .single-product-add-to-cart .price {
     @apply flex items-center justify-center w-full mb-6 text-customRed
@@ -1476,7 +1503,11 @@ header .icon-trolley {
 
 .product .mobile-single-product form.cart .quantity .quantity-container,
 .product .single-product-add-to-cart form.cart .quantity .quantity-container {
-    @apply border py-2 px-3 border-customLightGray rounded-md
+    @apply border py-2 px-3 border-customLightGray rounded-md ml-4
+}
+
+.quantity .quantity-container .qty {
+    @apply w-7
 }
 
 .product .mobile-single-product form.cart .quantity .quantity-container button.plus,

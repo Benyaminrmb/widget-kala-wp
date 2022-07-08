@@ -20,8 +20,8 @@
                             <label for="search-brand-input" class="sr-only"><?php _e('برند خود را جستجو کنید', 'widgetize'); ?></label>
                             <input id="search-brand-input" placeholder="برند خود را جستجو کنید" class="p-2 text-gray-600 w-full border rounded-md"/>
                         </div>
-                        <div class="flex flex-wrap mt-3 w-full pb-4 border-b overflow-y-scroll h-280">
-                            <div class="flex flex-wrap w-full flex-col gap-y-4 thin-scrollbar px-2 brand-list">
+                        <div class="flex flex-wrap mt-3 w-full pb-4 thin-scrollbar border-b overflow-y-scroll h-280">
+                            <div class="flex flex-wrap w-full gap-y-4 px-2 brand-list">
                                 <?php
                                 $get_brands = explode('-', $_GET['brand']);
                                 $new_brands = $get_brands;
@@ -110,7 +110,7 @@
                     $brands = mt_wc_get_brands();
                     if ($brands){ ?>
                     <div class="flex flex-wrap mt-3 w-full pb-4 border-b">
-                        <div class="flex flex-wrap w-full flex-col gap-y-4 overflow-y-scroll h-280 thin-scrollbar px-2 brand-list">
+                        <div class="flex flex-wrap w-full gap-y-4 overflow-y-scroll h-280 thin-scrollbar px-2 brand-list">
                             <?php
                             $get_brands = explode('-', $_GET['brand']);
                             $new_brands = $get_brands;

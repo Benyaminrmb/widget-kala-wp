@@ -15,41 +15,55 @@
  * @version 3.5.1
  */
 
-defined( 'ABSPATH' ) || exit;
-
-// Note: `wc_get_gallery_image_html` was added in WC 3.3.2 and did not exist prior. This check protects against theme overrides being used on older versions of WC.
-if ( ! function_exists( 'wc_get_gallery_image_html' ) ) {
-	return;
-}
+defined('ABSPATH') || exit;
 
 global $product;
 
-$columns           = apply_filters( 'woocommerce_product_thumbnails_columns', 4 );
 $post_thumbnail_id = $product->get_image_id();
-$wrapper_classes   = apply_filters(
-	'woocommerce_single_product_image_gallery_classes',
-	array(
-		'woocommerce-product-gallery',
-		'woocommerce-product-gallery--' . ( $post_thumbnail_id ? 'with-images' : 'without-images' ),
-		'woocommerce-product-gallery--columns-' . absint( $columns ),
-		'images',
-	)
-);
+$attachment_ids    = $product->get_gallery_image_ids();
+if ( ! $post_thumbnail_id) {
+    return;
+}
 ?>
-<div class="<?php echo esc_attr( implode( ' ', array_map( 'sanitize_html_class', $wrapper_classes ) ) ); ?>" data-columns="<?php echo esc_attr( $columns ); ?>" style="opacity: 0; transition: opacity .25s ease-in-out;">
-	<figure class="woocommerce-product-gallery__wrapper">
-		<?php
-		if ( $post_thumbnail_id ) {
-			$html = wc_get_gallery_image_html( $post_thumbnail_id, true );
-		} else {
-			$html  = '<div class="woocommerce-product-gallery__image--placeholder">';
-			$html .= sprintf( '<img src="%s" alt="%s" class="wp-post-image" />', esc_url( wc_placeholder_img_src( 'woocommerce_single' ) ), esc_html__( 'Awaiting product image', 'woocommerce' ) );
-			$html .= '</div>';
-		}
-
-		echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id ); // phpcs:disable WordPress.XSS.EscapeOutput.OutputNotEscaped
-
-		do_action( 'woocommerce_product_thumbnails' );
-		?>
-	</figure>
+<div class="woocommerce-product-gallery images">
+    <figure class="woocommerce-product-gallery__wrapper">
+        <div class="product-image">
+            <div class="slider-container">
+                <div id="slider" class="slider owl-carousel">
+                    <div class="item">
+                        <div class="content">
+                            <a class="fancybox" rel="group" href="<?php echo wp_get_attachment_image_src($post_thumbnail_id, 'full')[0] ?>" data-fancybox="gallery" data-caption="<?php the_title_attribute(); ?>">
+                                <?php echo wp_get_attachment_image($post_thumbnail_id, 'full', false, ['class' => 'rounded-five overflow-hidden w-full zoom']); ?>
+                            </a>
+                        </div>
+                    </div>
+                    <?php foreach ($attachment_ids as $attachment_id) { ?>
+                        <div class="item">
+                            <div class="content">
+                                <a class="fancybox" rel="group" href="<?php echo wp_get_attachment_image_src($attachment_id, 'full')[0]; ?>" data-fancybox="gallery" data-caption="<?php the_title_attribute(); ?>">
+                                    <?php echo wp_get_attachment_image($attachment_id, 'full', false, ['class' => 'rounded-five overflow-hidden w-full zoom']); ?>
+                                </a>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
+            <div class="thumbnail-slider-container">
+                <div id="thumbnailSlider" class="thumbnail-slider owl-carousel columns-3">
+                    <div class="item">
+                        <div class="content">
+                            <?php echo wp_get_attachment_image($post_thumbnail_id, 'thumbnail', false, ['class' => 'rounded-five overflow-hidden w-full']); ?>
+                        </div>
+                    </div>
+                    <?php foreach ($attachment_ids as $attachment_id) { ?>
+                        <div class="item">
+                            <div class="content">
+                                <?php echo wp_get_attachment_image($attachment_id, 'thumbnail', false, ['class' => 'rounded-five overflow-hidden w-full']); ?>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
+    </figure>
 </div>

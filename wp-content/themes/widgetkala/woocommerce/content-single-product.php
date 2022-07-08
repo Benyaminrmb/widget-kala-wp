@@ -28,74 +28,76 @@ do_action('woocommerce_before_single_product');
 
 if (post_password_required()) {
     echo get_the_password_form(); // WPCS: XSS ok.
+
     return;
 }
 ?>
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class('container mt-10 mx-auto px-4 lg:px-6', $product); ?>>
-    <?php if(wp_is_mobile()){
+    <?php if (wp_is_mobile()) {
         wc_get_template_part('mobile/content-single-product');
-    }else{?>
+    } else { ?>
 
         <div class="product-box-container">
-        <div class="short-description-container">
-            <div class="single-product-title">
+            <div class="short-description-container">
+                <div class="single-product-title">
+                    <?php
+                    /**
+                     * Hook : mt_wc_template_single_title
+                     *
+                     * @hooked woocommerce_template_single_title - 5
+                     */
+                    do_action('mt_wc_template_single_title');
+                    //		/**
+                    //		 * Hook: woocommerce_single_product_summary.
+                    //		 *
+                    //		 * @hooked woocommerce_template_single_title - 5
+                    //		 * @hooked woocommerce_template_single_rating - 10
+                    //		 * @hooked woocommerce_template_single_price - 10
+                    //		 * @hooked woocommerce_template_single_excerpt - 20
+                    //		 * @hooked woocommerce_template_single_add_to_cart - 30
+                    //		 * @hooked woocommerce_template_single_meta - 40
+                    //		 * @hooked woocommerce_template_single_sharing - 50
+                    //		 * @hooked WC_Structured_Data::generate_product_data() - 60
+                    //		 */
+                    //		do_action( 'woocommerce_single_product_summary' );
+
+                    ?>
+                </div>
+                <?php do_action('mt_wc_template_single_top_categories'); ?>
+                <div class="single-product-add-to-cart">
+                    <?php
+                    do_action('mt_wc_template_single_add_to_cart');
+                    //                do_action('woocommerce_single_product_summary');
+                    ?>
+                </div>
+            </div>
+            <div class="gallery-container">
                 <?php
+                do_action('mt_wc_template_single_rating');
+                do_action('mt_wc_template_single_sharing');
                 /**
-                 * Hook : mt_wc_template_single_title
+                 * Hook: woocommerce_before_single_product_summary.
                  *
-                 * @hooked woocommerce_template_single_title - 5
+                 * @hooked woocommerce_show_product_sale_flash - 10
+                 * @hooked woocommerce_show_product_images - 20
                  */
-                do_action('mt_wc_template_single_title');
-                //		/**
-                //		 * Hook: woocommerce_single_product_summary.
-                //		 *
-                //		 * @hooked woocommerce_template_single_title - 5
-                //		 * @hooked woocommerce_template_single_rating - 10
-                //		 * @hooked woocommerce_template_single_price - 10
-                //		 * @hooked woocommerce_template_single_excerpt - 20
-                //		 * @hooked woocommerce_template_single_add_to_cart - 30
-                //		 * @hooked woocommerce_template_single_meta - 40
-                //		 * @hooked woocommerce_template_single_sharing - 50
-                //		 * @hooked WC_Structured_Data::generate_product_data() - 60
-                //		 */
-                //		do_action( 'woocommerce_single_product_summary' );
 
-                ?>
-            </div>
-            <?php do_action('mt_wc_template_single_top_categories'); ?>
-            <div class="single-product-add-to-cart">
-                <?php
-                do_action('mt_wc_template_single_add_to_cart');
-//                do_action('woocommerce_single_product_summary');
+                do_action('woocommerce_before_single_product_summary');
                 ?>
             </div>
         </div>
-        <div class="gallery-container">
-            <?php
-            do_action('mt_wc_template_single_rating');
-            do_action('mt_wc_template_single_sharing');
-            /**
-             * Hook: woocommerce_before_single_product_summary.
-             *
-             * @hooked woocommerce_show_product_sale_flash - 10
-             * @hooked woocommerce_show_product_images - 20
-             */
-            do_action('woocommerce_before_single_product_summary');
-            ?>
-        </div>
-    </div>
-    <?php
-    /**
-     * Hook: woocommerce_after_single_product_summary.
-     *
-     * @hooked woocommerce_output_product_data_tabs - 10
-     * @hooked woocommerce_upsell_display - 15
-     * @hooked woocommerce_output_related_products - 20
-     */
-    do_action('woocommerce_after_single_product_summary');
-    ?>
+        <?php
+        /**
+         * Hook: woocommerce_after_single_product_summary.
+         *
+         * @hooked woocommerce_output_product_data_tabs - 10
+         * @hooked woocommerce_upsell_display - 15
+         * @hooked woocommerce_output_related_products - 20
+         */
+        do_action('woocommerce_after_single_product_summary');
+        ?>
 
-    <?php }?>
+    <?php } ?>
 </div>
 
 <?php do_action('woocommerce_after_single_product'); ?>

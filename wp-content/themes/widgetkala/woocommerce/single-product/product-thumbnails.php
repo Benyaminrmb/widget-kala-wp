@@ -31,3 +31,23 @@ if ( $attachment_ids && $product->get_image_id() ) {
 		echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', wc_get_gallery_image_html( $attachment_id ), $attachment_id ); // phpcs:disable WordPress.XSS.EscapeOutput.OutputNotEscaped
 	}
 }
+?>
+<div class="product-image">
+    <div class="slider-container">
+        <div id="slider" class="slider owl-carousel">
+            <div class="item">
+                <div class="content">
+                    <a class="fancybox" rel="group" href="https://adak.shop/wp-content/uploads/2020/05/20VE-1.jpg"  data-fancybox="gallery">
+                        <img src="https://adak.shop/wp-content/uploads/2020/05/20VE-1.jpg" class="zoom">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="thumbnail-slider-container">
+        <div id="thumbnailSlider" class="thumbnail-slider owl-carousel columns-3">
+            <div class="item">
+                <div class="content">
+                    <img src="https://adak.shop/wp-content/uploads/2020/05/20VE-1.jpg" width="100" height="100"></div></div><div class="item"><div class="content"><img src="https://adak.shop/wp-content/uploads/2020/05/20VE-2.jpg" width="100" height="100"></div></div><div class="item"><div class="content"><img src="https://adak.shop/wp-content/uploads/2020/05/20VE-3.jpg" width="100" height="100"></div></div><div class="item"><div class="content"><img src="https://adak.shop/wp-content/uploads/2020/05/20VE-4.jpg" width="100" height="100"></div></div><div class="item"><div class="content"><img src="https://adak.shop/wp-content/uploads/2020/05/20VE-6.jpg" width="100" height="100"></div></div><div class="item"><div class="content"><img src="https://adak.shop/wp-content/uploads/2020/05/20VE-7.jpg" width="100" height="100"></div></div><div class="item"><div class="content"><img src="https://adak.shop/wp-content/uploads/2020/05/20VE-8.jpg" width="100" height="100"></div></div><div class="item"><div class="content"><img src="https://adak.shop/wp-content/uploads/2020/05/20VE-9.jpg" width="100" height="100"></div></div>        </div>
+    </div>
+</div>

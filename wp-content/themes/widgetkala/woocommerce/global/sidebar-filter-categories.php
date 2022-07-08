@@ -22,7 +22,7 @@
                             <input id="search-brand-input" placeholder="دسته خود را جستجو کنید" class="p-2 text-gray-600 w-full border rounded-md"/>
                         </div>
                         <div class="flex flex-wrap mt-3 w-full pb-4 border-b overflow-y-scroll h-280">
-                            <div class="flex flex-wrap w-full flex-col gap-y-4 thin-scrollbar px-2 brand-list">
+                            <div class="flex flex-wrap w-full gap-y-4 thin-scrollbar px-2 brand-list">
                                 <?php
                                 $current_url    = mt_current_URL();
                                 $get_categories = explode('-', $_GET['pcat']);
@@ -37,7 +37,6 @@
                                                 $checked = ' checked="checked" ';
                                             }
 
-
                                             if ($key = array_search($category->term_id, $get_categories) !== false) {
                                                 $st = '<span style="color: red">'.$category->term_id.'</span>';
                                                 unset($new_categories[$key]);
@@ -50,10 +49,7 @@
                                             $url             = add_query_arg('pcat', $category_string);
                                             ?>
                                             <div class="flex">
-                                                <input title="<?php echo $category_string ?>"
-                                                       data-url="<?php echo $url; ?>"
-                                                       data-current-url="<?php echo $current_url; ?>"
-                                                       id="brand-checkbox-<?php echo $category->term_id ?>"
+                                                <input data-type="category" id="brand-checkbox-<?php echo $category->term_id ?>"
                                                     <?php echo $checked ?>
                                                        value="<?php echo $category->term_id; ?>"
                                                        type="checkbox"
@@ -115,8 +111,8 @@
                             <label for="search-brand-input" class="sr-only"><?php _e('دسته خود را جستجو کنید', 'widgetize'); ?></label>
                             <input id="search-brand-input" placeholder="دسته خود را جستجو کنید" class="p-2 text-gray-600 w-full border rounded-md"/>
                         </div>
-                        <div class="flex flex-wrap mt-3 w-full pb-4 border-b overflow-y-scroll h-280">
-                            <div class="flex flex-wrap w-full flex-col gap-y-4 thin-scrollbar px-2 brand-list">
+                        <div class="flex flex-wrap mt-3 w-full pb-4  thin-scrollbar border-b overflow-y-scroll h-280">
+                            <div class="flex flex-wrap w-full gap-y-4 px-2 brand-list">
                                 <?php
                                 $current_url    = mt_current_URL();
                                 $get_categories = explode('-', $_GET['pcat']);
