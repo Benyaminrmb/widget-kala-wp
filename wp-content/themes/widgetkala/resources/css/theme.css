@@ -421,7 +421,7 @@ footer.site-footer {
 }
 
 .pagination-container .page:nth-child(n+4) {
-    @apply hidden
+    @apply hidden md:flex
 }
 
 .pagination-container .page:hover,

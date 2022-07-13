@@ -9,7 +9,7 @@
         <div class="address-item">
             <address>
                 <i class="icon icon-pin"></i>
-                بندردیلم خیابان پاسداران نبش کوچه فاطمی فروشگاه فاطمی
+                استان بوشهر، بندردیلم خیابان پاسداران نبش کوچه فاطمی فروشگاه فاطمی
             </address>
             <span class="tel">
                 <a href="tel:07733240250">07733240250</a>
@@ -19,16 +19,16 @@
         <div class="address-item">
             <address>
                 <i class="icon icon-pin"></i>
-                بندردیلم خیابان ساحلی پاساژ دریملند پلاک۱۰
+                استان بوشهر، بندردیلم خیابان ساحلی پاساژ دریملند  پلاک 10 فروشگاه ویجت کالا
             </address>
             <span class="tel"><a href="tel:+989173708740">09173708740</a></span>
         </div>
         <div class="address-item">
             <address>
                 <i class="icon icon-pin"></i>
-                10 Street 24, Al Murar, Dubai, United Arab Emirates
+                10street 24,Frij Al Murar-Deira-Dubai-U.A.E
             </address>
-            <span class="tel"><a href="tel:+971545661265">+971 54 566 1265</a></span>
+            <span class="tel"><a href="tel:+971545661265" style="direction:ltr">+971545661265</a></span>
         </div>
         <small class="text-center text-white-50 w-full">هفت روز هفته از ساعت 10 صبح تا 8 شب پاسخگوی شما هستیم.</small>
     </section>
@@ -40,7 +40,7 @@
                 <div class="address-item">
                     <address>
                         <i class="icon icon-pin"></i>
-                        بندردیلم خیابان پاسداران نبش کوچه فاطمی فروشگاه فاطمی
+                        استان بوشهر، بندردیلم خیابان پاسداران نبش کوچه فاطمی فروشگاه فاطمی
                     </address>
                     <span class="tel"><a href="tel:07733240250">07733240250</a>
                         <a href="tel:09121719903">09121719903</a></span>
@@ -48,16 +48,16 @@
                 <div class="address-item">
                     <address>
                         <i class="icon icon-pin"></i>
-                        بندردیلم خیابان ساحلی پاساژ دریملند پلاک۱۰
+                        استان بوشهر، بندردیلم خیابان ساحلی پاساژ دریملند  پلاک 10 فروشگاه ویجت کالا
                     </address>
                     <span class="tel"><a href="tel:+989173708740">09173708740</a></span>
                 </div>
                 <div class="address-item">
                     <address>
                         <i class="icon icon-pin"></i>
-                        10 Street 24, Al Murar, Dubai, United Arab Emirates
+                        10street 24,Frij Al Murar-Deira-Dubai-U.A.E
                     </address>
-                    <span class="tel"><a href="tel:+971545661265">+971 54 566 1265</a></span>
+                    <span class="tel"><a href="tel:+971545661265" style="direction:ltr">+971545661265</a></span>
                 </div>
             </div>
             <div class="w-1/2 p-12 text-center border-r-[3px_solid_white]">
@@ -83,13 +83,6 @@
             </div>
             <?php }
             ?>
-
-
-            <li title="" data-toggle="tooltip" data-placement="bottom" data-original-title="اینستاگرام"><a href="https://www.instagram.com/pspro.ir/" target="_blank"><i class="icon-font icon-font-instagram"></i></a></li>
-            <li title="" data-toggle="tooltip" data-placement="bottom" data-original-title="تلگرام"><a href="http://t.me/pspro" target="_blank"><i class="icon-font icon-font-telegram"></i></a></li>
-            <li title="" data-toggle="tooltip" data-placement="bottom" data-original-title="توییتر"><a href="https://twitter.com/psproir" target="_blank"><i class="icon-font icon-font-twitter"></i></a></li>
-            <li title="" data-toggle="tooltip" data-placement="bottom" data-original-title="یوتیوب"><a href="https://www.youtube.com/channel/UCEzT6U4u8331UkPBx5nOe2A?sub_confirmation=1" target="_blank"><i class="icon-font icon-font-youtube"></i></a></li>
-
         </div>
     </div>
 <?php } ?>
