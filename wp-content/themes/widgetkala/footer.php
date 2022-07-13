@@ -226,12 +226,17 @@ get_template_part('template-parts/global/breadcrumb'); ?>
                         </div>
                         <div class="flex"><span class="text-white"><?php the_field('footer_contact_title', 'options'); ?></span></div>
                     </div>
-                    <?php if (get_field('footer_phone', 'options')) { ?>
-                        <div class="flex items-center gap-x-3 w-full">
+                    <?php if (have_rows('footer_phone_list', 'options')) { ?>
+                        <div class="flex items-start gap-x-3 w-full">
                             <div class="flex">
                                 <?php mt_svg_icon('phone_call', 27); ?>
                             </div>
-                            <div class="flex gap-3 text-white text-base"><?php the_field('footer_phone', 'options'); ?></div>
+                            <div class="flex gap-2 text-white text-base flex-col">
+                                <?php while (have_rows('footer_phone_list', 'options')) {
+                                    the_row();
+                                    printf('<a href="%s">%s</a>', 'tel:'.get_sub_field('phone'), get_sub_field('phone'));
+                                } ?>
+                            </div>
                         </div>
                     <?php }
                     if (get_field('footer_email', 'options')) {
