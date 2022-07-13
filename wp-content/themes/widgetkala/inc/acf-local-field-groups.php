@@ -492,6 +492,66 @@ if (function_exists('acf_add_local_field_group')):
         'title'  => 'تنظیمات صفحه اصلی',
         'fields' => [
             [
+                'key'               => 'frontpage_mobile_slider_field',
+                'label'             => 'اسلایدر موبایل',
+                'name'              => 'frontpage_mobile_slider',
+                'type'              => 'repeater',
+                'instructions'      => '',
+                'required'          => 0,
+                'conditional_logic' => 0,
+                'wrapper'           => [
+                    'width' => '',
+                    'class' => '',
+                    'id'    => '',
+                ],
+                'collapsed'         => 'image',
+                'min'               => 0,
+                'max'               => 6,
+                'layout'            => 'table',
+                'button_label'      => 'اسلاید جدید',
+                'sub_fields'        => [
+                    [
+                        'key'               => 'link_field',
+                        'label'             => 'لینک اسلاید',
+                        'name'              => 'link',
+                        'type'              => 'link',
+                        'instructions'      => '',
+                        'required'          => 0,
+                        'conditional_logic' => 0,
+                        'wrapper'           => [
+                            'width' => '50%',
+                            'class' => '',
+                            'id'    => '',
+                        ],
+                        'return_format'     => 'array',
+                    ],
+                    [
+                        'key'               => 'image_field',
+                        'label'             => 'برند',
+                        'name'              => 'image',
+                        'type'              => 'image',
+                        'instructions'      => '',
+                        'required'          => 0,
+                        'conditional_logic' => 0,
+                        'wrapper'           => [
+                            'width' => '50%',
+                            'class' => '',
+                            'id'    => '',
+                        ],
+                        'return_format'     => 'id',
+                        'preview_size'      => 'thumbnail',
+                        'library'           => 'all',
+                        'min_width'         => '',
+                        'min_height'        => '',
+                        'min_size'          => '',
+                        'max_width'         => '',
+                        'max_height'        => '',
+                        'max_size'          => '',
+                        'mime_types'        => ''
+                    ]
+                ],
+            ],
+            [
                 'key'               => 'top_small_image',
                 'label'             => 'تصویر کوچک (سمت راست)',
                 'name'              => 'small_image',
@@ -1712,4 +1772,8 @@ add_filter('acf/load_field/name=frontpage_sales_categories', 'product_categories
 add_filter('acf/load_field/name=latest_product_categories', 'product_categories_field');
 add_filter('acf/load_field/name=frontpage_have_discount_categories', 'product_categories_field');
 
+function mt_google_map_api_key() {
+    acf_update_setting('google_api_key', MT_GOOGLE_KEY);
+}
+add_action('acf/init', 'mt_google_map_api_key');
 //add_filter('acf/load_field/name=social_icon', 'mt_social_links');

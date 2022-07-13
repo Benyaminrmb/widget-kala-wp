@@ -95,7 +95,7 @@ if ( ! function_exists('mt_share_links')) {
         }
         $html[]       = '<ul class="unstyled-list social-share-list">';
         $active_icons = [
-            'twitter', 'gmail', 'telegram', 'whatsapp', 'facebook', 'linkedin',
+            'gmail', 'telegram', 'whatsapp'
         ];
         //		$final_icons  = array_merge(
         //			array_diff($icons, $active_icons),
@@ -340,3 +340,52 @@ if ( ! function_exists('mt_customize_register')) {
 
 }
 add_action('customize_register', 'mt_customize_register');
+
+if ( ! function_exists('mt_ajax_live_search')) {
+    function mt_ajax_live_search()
+    {
+        $keyword   = $_REQUEST['s'];
+        $main_args = array(
+            'orderby'     => 'title',
+            'order'       => 'DESC',
+//            'return'      => 'ids',
+//            'numberposts' => 10,
+//            'paged'       => 1
+        );
+        if ($keyword != '') {
+
+            $args = array(
+                'post_type' => 'product',
+                's'         => $keyword,
+                'fields'    => 'ids'
+            );
+
+            $query = new WP_Query($args);
+
+            $main_args ['include'] = $query->posts;
+        }
+
+        $products = wc_get_products($main_args);
+//        wp_send_json([$products, $main_args]);
+//        wp_die();
+        $result = [];
+        foreach ($products as $product) {
+            $img_id   = $product->get_image_id();
+            $title    = $product->get_title();
+            $link     = $product->get_permalink();
+            $result[] = [
+                'image' =>wp_get_attachment_image_url($img_id),
+                'link'  => $link,
+                'title' => $title
+            ];
+
+        }
+
+        wp_send_json($result);
+        wp_die();
+
+    }
+
+    add_action('wp_ajax_mt_live_search', 'mt_ajax_live_search');
+    add_action('wp_ajax_nopriv_mt_live_search', 'mt_ajax_live_search');
+}

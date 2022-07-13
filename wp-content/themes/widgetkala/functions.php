@@ -1,4 +1,5 @@
 <?php
+defined('MT_GOOGLE_KEY') OR define('MT_GOOGLE_KEY','AIzaSyDbpVUUXQyrIIm9G8HL-5WRiuzl5bIlrJQ');
 if ( ! function_exists('mt_setup')) {
     function mt_setup()
     {
@@ -8,9 +9,9 @@ if ( ! function_exists('mt_setup')) {
         add_theme_support('title-tag');
         add_theme_support('post-thumbnails');
         add_theme_support('woocommerce');
-        add_image_size('mobile_slider', 390, 220, true);
-        add_image_size('post_archive', 365, 273, true);
-        add_image_size('mobile_product_archive', 110, 80, true);
+        add_image_size('mobile_slider', 390, 220);
+        add_image_size('post_archive', 365, 273);
+        add_image_size('mobile_product_archive', 110, 80);
 //        add_image_size('transcript_archive', 330, 324, true);
         set_post_thumbnail_size(1140, 9999);
         register_nav_menus(
@@ -172,12 +173,136 @@ if ( ! function_exists('mt_scripts')) {
 //			'mt-bootstrap', mt_asset( 'js/bootstrap.bundle.min.js', FALSE ), [ 'jquery' ],
 //			wp_get_theme()->get( 'Version' ), TRUE
 //		);
-        wp_enqueue_script(
+        if(is_page_template('template-contact.php')){
+            wp_enqueue_script('google_map','https://maps.googleapis.com/maps/api/js?key='.MT_GOOGLE_KEY);
+            add_action('wp_footer','mt_contact_footer');
+        }
+        wp_register_script(
             'mt-app', mt_asset('js/app.js', false), [], wp_get_theme()->get('Version'), true
         );
+        wp_localize_script('mt-app', 'mt_ajax', [
+            'ajax_url' => admin_url('admin-ajax.php'),
+        ]);
+        wp_enqueue_script('mt-app');
+
     }
 
     add_action('wp_enqueue_scripts', 'mt_scripts');
+}
+
+if(!function_exists('mt_contact_footer')){
+    function mt_contact_footer(){?>
+        <script type="text/javascript">
+            (function( $ ) {
+                function initMap( $el ) {
+                    var $markers = $el.find('.marker');
+                    var mapArgs = {
+                        zoom        : $el.data('zoom') || 16,
+                        mapTypeId   : google.maps.MapTypeId.ROADMAP
+                    };
+                    var map = new google.maps.Map( $el[0], mapArgs );
+
+                    // Add markers.
+                    map.markers = [];
+                    $markers.each(function(){
+                        initMarker( $(this), map );
+                    });
+
+                    // Center map based on markers.
+                    centerMap( map );
+
+                    // Return map instance.
+                    return map;
+                }
+
+                /**
+                 * initMarker
+                 *
+                 * Creates a marker for the given jQuery element and map.
+                 *
+                 * @date    22/10/19
+                 * @since   5.8.6
+                 *
+                 * @param   jQuery $el The jQuery element.
+                 * @param   object The map instance.
+                 * @return  object The marker instance.
+                 */
+                function initMarker( $marker, map ) {
+
+                    // Get position from marker.
+                    var lat = $marker.data('lat');
+                    var lng = $marker.data('lng');
+                    var latLng = {
+                        lat: parseFloat( lat ),
+                        lng: parseFloat( lng )
+                    };
+
+                    // Create marker instance.
+                    var marker = new google.maps.Marker({
+                        position : latLng,
+                        map: map
+                    });
+
+                    // Append to reference for later use.
+                    map.markers.push( marker );
+
+                    // If marker contains HTML, add it to an infoWindow.
+                    if( $marker.html() ){
+
+                        // Create info window.
+                        var infowindow = new google.maps.InfoWindow({
+                            content: $marker.html()
+                        });
+
+                        // Show info window when marker is clicked.
+                        google.maps.event.addListener(marker, 'click', function() {
+                            infowindow.open( map, marker );
+                        });
+                    }
+                }
+
+                /**
+                 * centerMap
+                 *
+                 * Centers the map showing all markers in view.
+                 *
+                 * @date    22/10/19
+                 * @since   5.8.6
+                 *
+                 * @param   object The map instance.
+                 * @return  void
+                 */
+                function centerMap( map ) {
+
+                    // Create map boundaries from all map markers.
+                    var bounds = new google.maps.LatLngBounds();
+                    map.markers.forEach(function( marker ){
+                        bounds.extend({
+                            lat: marker.position.lat(),
+                            lng: marker.position.lng()
+                        });
+                    });
+
+                    // Case: Single marker.
+                    if( map.markers.length == 1 ){
+                        map.setCenter( bounds.getCenter() );
+
+                        // Case: Multiple markers.
+                    } else{
+                        map.fitBounds( bounds );
+                    }
+                }
+
+// Render maps on page load.
+                $(document).ready(function(){
+                    $('.acf-map').each(function(){
+                        var map = initMap( $(this) );
+                    });
+                });
+
+            })(jQuery);
+        </script>
+    <?php }
 }
 
 if (function_exists('wp_is_mobile')) {

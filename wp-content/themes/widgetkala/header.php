@@ -16,11 +16,9 @@
                     <?php echo mt_svg_icon('menu_toggle'); ?>
                 </div>
                 <div class="col-span-2 flex-wrap flex logo-container">
-                    <?php
-                    if (function_exists('the_custom_logo')) {
-                        the_custom_logo();
-                    }
-                    ?>
+                    <a href="<?php echo home_url(); ?>">
+                        <img src="<?php mt_asset('images/logo.svg'); ?>" width="140" height="37" alt="<?php bloginfo(); ?>" class="custom-logo">
+                    </a>
                 </div>
                 <div class="col-span-5 flex-wrap flex hidden md:block md:-ml-2.5">
                     <?php get_search_form(); ?>
@@ -50,7 +48,7 @@
                     </div>
                     <a class="register-button md:inline-flex hidden"
                        href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>">
-                        <?php if (!is_user_logged_in()) { ?>
+                        <?php if ( ! is_user_logged_in()) { ?>
                             ورود | ثبت نام
                         <?php } else { ?>
                             حساب کاربری
@@ -69,16 +67,16 @@
                 <?php
                 wp_nav_menu(
                     [
-                        'theme_location' => 'primary',
-                        'depth' => 2,
-                        'container' => '',
+                        'theme_location'  => 'primary',
+                        'depth'           => 3,
+                        'container'       => '',
                         'container_class' => '',
-                        'container_id' => '',
-                        'menu_class' => 'navbar-nav main-menu',
-                        'menu_id' => 'main-menu',
-                        'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
-                        'walker' => new WP_Bootstrap_Navwalker(),
-                        'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                        'container_id'    => '',
+                        'menu_class'      => 'navbar-nav main-menu',
+                        'menu_id'         => 'main-menu',
+                        'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+                        'walker'          => new WP_Bootstrap_Navwalker(),
+                        'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
                     ]
                 );
                 if (have_rows('header_options', 'options')) {
@@ -101,11 +99,9 @@
     <div class="mobile-menu-section menu-section">
         <div class="container p-4">
             <div class="flex justify-between gap-3">
-                <?php
-                if (function_exists('the_custom_logo')) {
-                    the_custom_logo();
-                }
-                ?>
+                <a href="<?php echo home_url(); ?>">
+                    <img src="<?php mt_asset('images/logo.svg'); ?>" width="210" height="42" alt="<?php bloginfo(); ?>" class="menu-logo">
+                </a>
                 <button type="button" class="navbar-close">
                     <?php echo mt_svg_icon('close'); ?>
                 </button>
@@ -115,16 +111,16 @@
             <?php
             wp_nav_menu(
                 [
-                    'theme_location' => 'primary',
-                    'depth' => 2,
-                    'container' => '',
+                    'theme_location'  => 'mobile',
+                    'depth'           => 3,
+                    'container'       => '',
                     'container_class' => '',
-                    'container_id' => '',
-                    'menu_class' => 'navbar-nav mobile-menu',
-                    'menu_id' => 'main-menu',
-                    'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
-                    'walker' => new WP_Bootstrap_Navwalker(),
-                    'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                    'container_id'    => '',
+                    'menu_class'      => 'navbar-nav mobile-menu',
+                    'menu_id'         => 'main-menu',
+                    'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+                    'walker'          => new WP_Bootstrap_Navwalker(),
+                    'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
                 ]
             );
             ?>
@@ -133,13 +129,13 @@
             <div class="flex justify-center gap-4">
                 <?php
                 $register = wp_registration_url();
-                $login = wp_login_url(mt_current_URL());
-                if (!is_user_logged_in()) {
+                $login    = wp_login_url(mt_current_URL());
+                if ( ! is_user_logged_in()) {
                     ?>
 
 
-<!--                    <a href="--><?php //echo esc_url($login); ?><!--" class="login-button">--><?php //_e('ورود', 'widgetize'); ?><!--</a>-->
-<!--                    <a href="--><?php //echo esc_url($register); ?><!--" class="register-button">--><?php //_e('ثبت نام', 'widgetize'); ?><!--</a>-->
+                    <!--                    <a href="--><?php //echo esc_url($login); ?><!--" class="login-button">--><?php //_e('ورود', 'widgetize'); ?><!--</a>-->
+                    <!--                    <a href="--><?php //echo esc_url($register); ?><!--" class="register-button">--><?php //_e('ثبت نام', 'widgetize'); ?><!--</a>-->
 
                     <a href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>" class="login-button"><?php _e('ورود', 'widgetize'); ?></a>
                     <a href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>" class="register-button"><?php _e('ثبت نام', 'widgetize'); ?></a>

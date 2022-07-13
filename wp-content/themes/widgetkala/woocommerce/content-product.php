@@ -20,7 +20,7 @@ defined('ABSPATH') || exit;
 global $product;
 
 // Ensure visibility.
-if (empty($product) || !$product->is_visible()) {
+if (empty($product) || ! $product->is_visible()) {
     return;
 }
 $col_class = '';
@@ -37,7 +37,7 @@ if (is_shop() || is_front_page() || is_singular('product')) {
             <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php the_title(); ?>" class="w-full rounded-lg">
         </a>
     </div>
-    <div class="flex">
+    <div class="block w-full">
         <h3 class="product-title">
             <a href="<?php the_permalink(); ?>">
                 <?php echo $product->get_title(); ?>
@@ -46,24 +46,27 @@ if (is_shop() || is_front_page() || is_singular('product')) {
     </div>
     <?php echo(get_the_term_list(get_the_ID(), 'product_brand', '<div class="product-brands-list">', '&nbsp;,&nbsp;', '</div>')); ?>
     <?php
-    if ($product->get_regular_price() != $product->get_price()) { ?>
+    $sale_price     =  $product->get_price();
+    $regular_price  =  $product->get_regular_price();
+    if($product->is_type('variable')){
+        $sale_price     =  $product->get_variation_sale_price( 'min', true );
+        $regular_price  =  $product->get_variation_regular_price( 'max', true );
+    }
+    if ($regular_price > $sale_price) { ?>
         <div class="price-removed">
             <span data-after="<?php echo esc_attr(get_woocommerce_currency_symbol()); ?>" class="">
-                <?php echo $product->get_regular_price(); ?>
+                <?php echo number_format_i18n( $regular_price); ?>
             </span>
         </div>
     <?php }
     ?>
     <div class="product-price">
-        <span data-after="<?php echo esc_attr(get_woocommerce_currency_symbol()) ?>" class="">
-            <?php echo $product->get_price(); ?>
+        <span data-after="<?php echo esc_attr(get_woocommerce_currency_symbol()) ?>" class="sale-price">
+            <?php echo number_format_i18n($sale_price); ?>
         </span>
         <?php
-        $regular_price = (float)$product->get_regular_price();
-        $sale_price = (float)$product->get_sale_price();
-        if ($sale_price != 0 || !empty($sale_price)) {
-            $percentage = round(100 - ($sale_price / $regular_price * 100)) . '%';
-            ?>
+        if ($sale_price > 0 && ! empty($sale_price) && $regular_price > 0 &&$regular_price > $sale_price) {
+            $percentage = round(100 - ($sale_price / $regular_price * 100)).'%'; ?>
             <div class="px-2 py-1 bg-customLightGray text-xs rounded">
                 <?php echo $percentage; ?>
             </div>

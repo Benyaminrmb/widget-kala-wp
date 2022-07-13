@@ -1,4 +1,8 @@
-<?php get_template_part('template-parts/global/breadcrumb'); ?>
+<?php
+if (is_front_page() || is_page_template('template-contact.php')) {
+    get_template_part('template-parts/global/contact-box');
+}
+get_template_part('template-parts/global/breadcrumb'); ?>
 </div>
 </div>
 <footer class="site-footer">
@@ -136,11 +140,9 @@
         <div class="md:grid flex flex-wrap justify-center gap-x-7 grid-cols-2 border-b-2 border-customLighterMediumGray pb-7">
             <div class="col-span-1 flex flex-wrap gap-4 main-footer-social">
                 <div class="flex justify-center w-full">
-                    <?php
-                    if (function_exists('the_custom_logo')) {
-                        the_custom_logo();
-                    }
-                    ?>
+                    <a href="<?php echo home_url(); ?>">
+                        <img src="<?php mt_asset('images/logo.svg'); ?>" width="140" height="37" alt="<?php bloginfo(); ?>" class="custom-logo">
+                    </a>
                 </div>
 
                 <div class="md:flex hidden w-full">
@@ -153,7 +155,7 @@
                 <div class="flex justify-between w-full gap-x-3 mb-12 md:mb-4 mt-3">
                     <div class="hidden md:flex gap-x-3 w-full">
                         <div class="flex">
-                            <?php mt_svg_icon('footer_title_icon'); ?>
+                            <?php mt_svg_icon('widgetkala'); ?>
                         </div>
                         <div class="flex"><span class="text-white"><?php the_field('social_title', 'options'); ?></span></div>
                     </div>
@@ -166,8 +168,8 @@
                                     $social_link = get_sub_field('social_link');
                                     $social_icon = get_sub_field('social_icon');
                                     if ($social_link && $social_icon) {
-                                        echo '<span class="flex"><a target="' . $social_link['target'] . '" href="' . $social_link['url'] . '">' . mt_svg_icon($social_icon,
-                                                24, false) . '</a></span>';
+                                        echo '<span class="flex"><a target="'.$social_link['target'].'" href="'.$social_link['url'].'">'.mt_svg_icon($social_icon,
+                                                24, false).'</a></span>';
                                     }
                                 }
                             }
@@ -188,7 +190,7 @@
             <div class="hidden md:flex flex-col h-full justify-start gap-4">
                 <div class="flex gap-x-3 w-full mb-10">
                     <div class="flex">
-                        <?php mt_svg_icon('footer_title_icon'); ?>
+                        <?php mt_svg_icon('widgetkala'); ?>
                     </div>
                     <div class="flex">
                         <span class="text-white"><?php
@@ -220,7 +222,7 @@
                 <div class="flex-wrap flex col-span-1 flex-col h-full justify-start gap-4">
                     <div class="flex gap-x-3 w-full mb-10">
                         <div class="flex">
-                            <?php mt_svg_icon('footer_title_icon'); ?>
+                            <?php mt_svg_icon('widgetkala'); ?>
                         </div>
                         <div class="flex"><span class="text-white"><?php the_field('footer_contact_title', 'options'); ?></span></div>
                     </div>
@@ -245,7 +247,7 @@
                 <div class="flex-wrap flex col-span-1 gap-4">
                     <div class="flex gap-x-3 w-full">
                         <div class="flex">
-                            <?php mt_svg_icon('footer_title_icon'); ?>
+                            <?php mt_svg_icon('widgetkala'); ?>
                         </div>
                         <div class="flex"><span class="text-white"><?php
                                 if (get_field('namad_title', 'options')) {
@@ -269,12 +271,12 @@
                             if (have_rows('footer_logo_scripts', 'options')) {
                                 while (have_rows('footer_logo_scripts', 'options')) {
                                     the_row();
-                                    echo '<div class="flex w-1/3">' . get_sub_field('script') . '</div>';
+                                    echo '<div class="flex w-1/3">'.get_sub_field('script').'</div>';
                                 }
                             } else {
-                                echo '<div class="flex w-1/3"><img alt="namad1" class="w-full" src="' . mt_asset('images/sample/namad1.png', false) . '"></div>';
-                                echo '<div class="flex w-1/3"><img alt="namad2" class="w-full" src="' . mt_asset('images/sample/namad2.png', false) . '"></div>';
-                                echo '<div class="flex w-1/3"><img alt="namad3" class="w-full" src="' . mt_asset('images/sample/namad3.png', false) . '"></div>';
+                                echo '<div class="flex w-1/3"><img alt="namad1" class="w-full" src="'.mt_asset('images/sample/namad1.png', false).'"></div>';
+                                echo '<div class="flex w-1/3"><img alt="namad2" class="w-full" src="'.mt_asset('images/sample/namad2.png', false).'"></div>';
+                                echo '<div class="flex w-1/3"><img alt="namad3" class="w-full" src="'.mt_asset('images/sample/namad3.png', false).'"></div>';
                             }
                             ?>
 

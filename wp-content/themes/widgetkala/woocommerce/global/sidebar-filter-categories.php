@@ -2,34 +2,32 @@
     <div class="mobile-sidebar-filter-container">
         <div class="w-full flex flex-wrap border border-customDarkWhite rounded-md overflow-hidden">
             <div class="flex w-full bg-customLightblue p-3 pr-12 px-4 justify-between">
-                <span class="darkHorizontalLines text-white">فیلتر ها</span>
+                <span class="darkHorizontalLines text-white"><?php _e('فیلتر ها', 'widgetize'); ?></span>
                 <span class="close-filters">&times;</span>
             </div>
             <div class="flex flex-wrap p-3 py-4">
                 <div class="flex w-full justify-between border-b pb-4">
-                    <span class="flex text-customGray text-base">
-                        جستجو کنید
-                    </span>
+                    <span class="flex text-customGray text-base"><?php _e('جستجو کنید', 'widgetize'); ?></span>
                     <span class="flex">+</span>
                 </div>
 
                 <div class="flex mt-3 flex-wrap w-full">
                     <?php $categories = mt_wc_get_brand_categories();
                     if ($categories) { ?>
-                        <div class="flex w-full text-base">دسته بندی ها</div>
+                        <div class="flex w-full text-base"><?php _e('دسته بندی ها', 'widgetize'); ?></div>
                         <div class="flex mt-3 w-full">
                             <label for="search-brand-input" class="sr-only"><?php _e('دسته خود را جستجو کنید', 'widgetize'); ?></label>
                             <input id="search-brand-input" placeholder="دسته خود را جستجو کنید" class="p-2 text-gray-600 w-full border rounded-md"/>
                         </div>
-                        <div class="flex flex-wrap mt-3 w-full pb-4 border-b overflow-y-scroll h-280">
-                            <div class="flex flex-wrap w-full gap-y-4 thin-scrollbar px-2 brand-list">
+                        <div class="flex flex-wrap mt-3 w-full pb-4 thin-scrollbar border-b overflow-y-scroll h-290">
+                            <div class="brand-list">
                                 <?php
                                 $current_url    = mt_current_URL();
                                 $get_categories = explode('-', $_GET['pcat']);
                                 $new_categories = $get_categories;
                                 foreach ($categories as $category) {
                                     ?>
-                                    <div class="brand-item flex w-full justify-between items-center flex-wrap">
+                                    <div class="brand-item">
                                         <div class="flex gap-x-2 items-center">
                                             <?php
                                             $checked = '';
@@ -70,7 +68,7 @@
                     <?php } ?>
                     <div class="flex border-b border-customDarkWhite py-4 w-full">
                         <div class="flex w-full justify-between items-center flex-wrap">
-                            <span class="flex text-customGray text-base">آیتم‌های موجود</span>
+                            <span class="flex text-customGray text-base"><?php _e('آیتم‌های موجود','widgetize');?></span>
                             <label for="toggleA" class="switch-check">
                                 <input type="checkbox" id="toggleA" name="only-available"/>
                                 <span class="slider"></span>
@@ -79,7 +77,7 @@
                     </div>
                     <div class="flex mt-3 w-full pt-4">
                         <div class="flex w-full justify-between items-center flex-wrap">
-                            <span class="flex text-customGray text-base">آیتم‌های تخفیف دار</span>
+                            <span class="flex text-customGray text-base"><?php _e('آیتم‌های تخفیف دار','widgetize'); ?></span>
                             <label for="toggleB" class="switch-check">
                                 <input type="checkbox" id="toggleB" name="only-discounted"/>
                                 <span class="slider"></span>
@@ -111,15 +109,15 @@
                             <label for="search-brand-input" class="sr-only"><?php _e('دسته خود را جستجو کنید', 'widgetize'); ?></label>
                             <input id="search-brand-input" placeholder="دسته خود را جستجو کنید" class="p-2 text-gray-600 w-full border rounded-md"/>
                         </div>
-                        <div class="flex flex-wrap mt-3 w-full pb-4  thin-scrollbar border-b overflow-y-scroll h-280">
-                            <div class="flex flex-wrap w-full gap-y-4 px-2 brand-list">
+                        <div class="flex flex-wrap mt-3 w-full pb-4 thin-scrollbar border-b overflow-y-scroll h-290">
+                            <div class="brand-list">
                                 <?php
                                 $current_url    = mt_current_URL();
                                 $get_categories = explode('-', $_GET['pcat']);
                                 $new_categories = $get_categories;
                                 foreach ($categories as $category) {
                                     ?>
-                                    <div class="brand-item flex w-full justify-between items-center flex-wrap">
+                                    <div class="brand-item">
                                         <div class="flex gap-x-2 items-center">
                                             <?php
                                             $checked = '';

@@ -19,13 +19,13 @@ jQuery(document).ready(function ($) {
     });
 
     $('.owl-slider').owlCarousel({
-        loop: true, rtl: true, margin: 16, dots: true, items: 1,
+        loop: true, rtl: true, dots: true, items: 1,
     });
     $('.owl-brands').owlCarousel({
         loop: true, rtl: true, margin: 16, dots: true, items: 2
     });
     $('.owl-posts').owlCarousel({
-        loop: true, rtl: true, margin: 16, dots: true, items: 1,
+        autoHeight: true, loop: true, rtl: true, dots: true, items: 1,
     });
 
     $(document).on('click', '.product-category-tab button', function (e) {
@@ -83,40 +83,63 @@ jQuery(document).ready(function ($) {
         filter_container.removeClass('active');
     });
 
-    $(document).on('change', '.ajax-product-filters', function (e) {
+
+    let current_request = null,
+        search_ms = 0,
+        search_min_length = 3,
+        timer;
+    $(".live-search").after("<ul class='live-result thin-scrollbar'></ul>").keyup(function () {
+        clearTimeout(timer);
+        let keyword = this.value;
+        if (keyword.length >= search_min_length) {
+            current_request = $.ajax({
+                type: "get",
+                url: mt_ajax.ajax_url,
+                cache: true,
+                data: {s: keyword, action: 'mt_live_search'},
+                beforeSend: function () {
+                    $('form.search-box').addClass('loading');
+                    if (current_request != null) {
+                        current_request.abort();
+                    }
+                },
+                success: function (data) {
+                    // console.log(data);
+                    $('.live-result').html('');
+                    let results = data;
+                    console.log(results);
+                    $(results).each(function (key, value) {
+                        console.log(key, value);
+
+                        let img = (value.image) ? "<img src='" + value.image + "' alt='' />" : "";
+
+                        $('.live-result').append('<li><a href="' + value.link + '">' + img + '<span>' + (value.type ? value.type + ": " : "") + value.title + '</span></a></li>');
+                    });
+                    $('.live-result li a').click(function () {
+                        if ($(this).attr('href') != '#') {
+                            // loading(1);
+                            $('.live-search').val($(this).text());
+                        }
+                    });
+                }
+            });
+        } else {
+            $('.live-result').html('');
+        }
+    }).blur(function () {
+        $(".live-result").fadeOut(500);
+    }).focus(function () {
+        if (this.value.length >= search_min_length) {
+            $(".live-result").show();
+        }
+    });
+    $('form.search-box').on('submit', function (e) {
         e.preventDefault();
-        let filter_type = $(this).data('type');
-        let checked_array = [];
-        let all_checked = $('.ajax-product-filters:checkbox:checked');
-        all_checked.each(function () {
-            checked_array.push($(this).val());
-        })
-        console.log(checked_array);
+        $('.live-search').keyup();
+    })
 
-        // let current_url = window.location.href.split('?')[0];
-        let url = new URL(window.location.href);
-        let search_params = url.searchParams;
-
-// add "topic" parameter
-        search_params.set('paged', '1');
-
-
-        let query_key = '';
-        if (filter_type == 'category') {
-            query_key = 'pcat';
-        }
-        if (filter_type == 'brand') {
-            query_key = 'brand';
-        }
-
-        search_params.set(query_key, checked_array.join('-'));
-        url.search = search_params.toString();
-        // current_url.search = url_params.toString();
-
-        let target_url = url.toString();
-        // let target_url = current_url.toString(),/*current_url + '?paged=1' + query_key + '=' + checked_array.join('-')*/,
+    const shop_main_content_ajax = function (target_url) {
         let content = $('.main-content');
-        console.log(target_url)
         content.addClass('spinner_loading');
         if ($('.close-filters').length) {
             $('.mobile-sidebar-filter-container').removeClass('active');
@@ -146,7 +169,52 @@ jQuery(document).ready(function ($) {
                 content.removeClass('spinner_loading');
             }
         })
+    }
 
+    $(document).on('change', '.ajax-product-filters', function (e) {
+        e.preventDefault();
+        let filter_type = $(this).data('type');
+        let checked_array = [];
+        let all_checked = $('.ajax-product-filters:checkbox:checked');
+        all_checked.each(function () {
+            checked_array.push($(this).val());
+        })
+        // console.log(checked_array);
+
+        // let current_url = window.location.href.split('?')[0];
+        let url = new URL(window.location.href);
+        let search_params = url.searchParams;
+
+// add "topic" parameter
+        search_params.set('paged', '1');
+
+
+        let query_key = '';
+        if (filter_type == 'category') {
+            query_key = 'pcat';
+        }
+        if (filter_type == 'brand') {
+            query_key = 'brand';
+        }
+
+        search_params.set(query_key, checked_array.join('-'));
+        url.search = search_params.toString();
+        // current_url.search = url_params.toString();
+
+        let target_url = url.toString();
+        // let target_url = current_url.toString(),/*current_url + '?paged=1' + query_key + '=' + checked_array.join('-')*/,
+        shop_main_content_ajax(target_url);
+    });
+
+
+    $(document).on('change', 'select#orderby', function (e) {
+        let url = new URL(window.location.href);
+        let search_params = url.searchParams;
+        search_params.set('paged', '1');
+        search_params.set('orderby', $(this).val());
+        url.search = search_params.toString();
+        let target_url = url.toString();
+        shop_main_content_ajax(target_url);
     });
 
     /*faq show hide question*/
@@ -170,9 +238,29 @@ jQuery(document).ready(function ($) {
         });
     });
 
+    $(document).ready(function () {
+        const $img = $(".main-brands-list .brand-item");
+        $(".search-brands.search-box #search_query").on("keyup", function () {
+            let searched_query = $(this).val().toLowerCase();
+            // console.log(searched_query)
+            $img.filter(function () {
+                // console.log($(this).find('img').attr('alt'));
+                let val = $(this).find('img').attr('alt');
+                if (typeof val != 'undefined') {
+                    $(this).toggle(val.toLowerCase().indexOf(searched_query) > -1)
+                }
+            });
+
+            // $img.hide();
+            // const val = this.value.trim().toLowerCase();
+            // if (val === "") return;
+            // $img.filter(function() { return this.alt.toLowerCase().includes(val)  }).show()
+        });
+    });
+
     let slider = $("#slider"), thumbnailSlider = $("#thumbnailSlider"), duration = 500;
     slider.owlCarousel({
-        loop: false, nav: false, dots: false, rtl: true, items: 1, mouseDrag: false
+        autoHeight: true, loop: false, nav: false, dots: false, rtl: true, items: 1, mouseDrag: false
     });
 
     thumbnailSlider.owlCarousel({

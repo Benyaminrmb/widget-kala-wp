@@ -15,6 +15,10 @@
         box-shadow: 0 1px 25px rgba(0, 0, 0, 0.1);
     }
 
+    .tooltip-customRed {
+        @apply inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-customRed rounded-lg border border-gray-200 shadow-sm opacity-0
+    }
+
     input[type="number"]::-webkit-inner-spin-button,
     input[type="number"]::-webkit-outer-spin-button {
         -webkit-appearance: none;
@@ -41,12 +45,19 @@ header .nav-container > div {
 }
 
 img.custom-logo {
-    @apply transform scale-125
-    /*transform: scale(1.3);*/
+    @apply transform scale-150 md:scale-100 lg:scale-125
+}
+
+header img.custom-logo {
+    @apply lg:-translate-x-5
 }
 
 footer.site-footer {
-    @apply !bg-customMediumGray w-full overflow-hidden mb-12 sm:mb-0
+    @apply !bg-customMediumGray w-full overflow-hidden
+}
+
+.single-product footer.site-footer {
+    @apply mb-12 sm:mb-0;
 }
 
 .logo-container {
@@ -57,6 +68,22 @@ footer.site-footer {
 .search-box {
     @apply relative w-full text-gray-600 focus-within:text-gray-300
     before:absolute before:block before:inset-x-4 md:before:inset-x-8 before:rounded-full before:h-1 before:-top-0.5 before:bg-customDarkblue
+}
+
+.live-result {
+    @apply block absolute top-10 right-px left-px bg-white z-999 shadow shadow-sm text-right max-h-[300px] overflow-y-scroll
+}
+
+.live-result li a {
+    @apply px-4 py-1.5 text-customDarkblue leading-[28px] border-b border-b-customGray flex items-center content-start hover:bg-customLightgraytwo hover:text-customRed
+}
+
+.live-result li a img {
+    @apply w-8 ml-4;
+}
+
+.live-result li a span {
+    @apply text-base leading-[22px]
 }
 
 .search-box .submit-button {
@@ -172,12 +199,16 @@ footer.site-footer {
     @apply before:top-0 text-white;
 }
 
-.main-menu .menu-item .dropdown-menu {
+.main-menu .menu-item > .dropdown-menu {
     @apply invisible opacity-0 absolute right-0 rounded-five shadow w-48 bg-white leading-6 top-40 transition transition-all duration-200 px-2.5
 }
 
-.main-menu .menu-item:hover .dropdown-menu {
+.main-menu .menu-item:hover > .dropdown-menu {
     @apply visible opacity-100 top-full z-1
+}
+
+.main-menu .menu-item .dropdown-menu .dropdown-menu {
+    @apply !right-full !top-0
 }
 
 .main-menu .menu-item .dropdown-toggle {
@@ -329,11 +360,11 @@ footer.site-footer {
 }
 
 .single-product-item .product-title {
-    @apply text-base font-normal mb-4
+    @apply text-base font-normal mb-1
 }
 
 .single-product-item .product-brands-list {
-    @apply mb-4 flex cursor-pointer text-orange-500 text-sm justify-end w-full;
+    @apply mb-1 flex cursor-pointer text-orange-500 text-sm justify-end w-full;
     line-height: 1rem;
 }
 
@@ -350,7 +381,7 @@ footer.site-footer {
 }
 
 .single-product-item .product-price > span {
-    @apply after:content-[attr(data-after)] after:text-xs after:font-light after:left-0 text-customLightblue items-center relative
+    @apply after:content-[attr(data-after)] after:text-xs after:font-light after:left-0 bg-customLightblue text-white py-[5px] px-[7px] rounded-[3px] items-center relative whitespace-nowrap
 }
 
 .single-product-item .product-price .add-to-cart-button {
@@ -377,7 +408,7 @@ footer.site-footer {
 }
 
 .pagination-container {
-    @apply flex justify-evenly w-full;
+    @apply flex justify-center items-center md:gap-8 w-full gap-2
 }
 
 .pagination-container .page,
@@ -386,7 +417,11 @@ footer.site-footer {
 .pagination-container .pages-container,
 .pagination-container .wp-pagenavi,
 .pagination-container .prev-link {
-    @apply flex justify-evenly items-center border border-customDarkWhite rounded-md px-3 py-2 gap-3
+    @apply flex justify-evenly items-center border border-customDarkWhite rounded-md px-3 py-0.5 gap-3
+}
+
+.pagination-container .page:nth-child(n+4) {
+    @apply hidden
 }
 
 .pagination-container .page:hover,
@@ -535,6 +570,10 @@ footer.site-footer {
     height: 280px;
 }
 
+.h-290 {
+    @apply h-[290px];
+}
+
 .thin-scrollbar::-webkit-scrollbar {
     width: 1px; /* width of the entire scrollbar */
 }
@@ -579,29 +618,32 @@ footer.site-footer {
 }
 
 .post-item .post-image-container {
-    @apply relative overflow-hidden block w-full rounded-md;
-    @apply before:bg-gradient-to-b before:from-transparent before:to-customDarkblue before:block before:absolute
+    @apply relative overflow-hidden block w-full rounded-md z-1
+    before:bg-gradient-to-b before:from-transparent before:to-customDarkblue before:block before:absolute
     before:h-full before:w-full before:opacity-0 before:top-0 before:left-0 before:z-10 before:transition-all
-    hover:before:opacity-100 after:p-4 after:rounded-2xl after:bg-customDarkWhite/70;
-    z-index: 1;
+    hover:before:opacity-100 after:p-4 after:rounded-2xl after:bg-customDarkWhite/70
+    after:absolute after:transition-all after:ease-in-out after:duration-150 after:right-1/2 after:bg-logo-image after:z-20
+    after:translate-x-1/2 after:bg-no-repeat after:bg-center after:w-[190px] after:h-[110px] after:block after:-top-[110px] after:bg-[length:160px]
+    hover:after:top-[calc(50%-55px)]
+    focus:after:top-[calc(50%-55px)]
 }
 
-.post-item .post-image-container:after {
-    @apply absolute transition-all ease-in-out duration-150 right-1/2
-    bg-logo-image z-20 translate-x-1/2
-    bg-no-repeat bg-center;
-    width: 190px;
-    height: 110px;
-    display: block;
-    top: -110px;
-    /*left: 50%;*/
-    /*transform: translateX(-50%);*/
-}
+/*.post-item .post-image-container:after {*/
+/*    @apply absolute transition-all ease-in-out duration-150 right-1/2*/
+/*    bg-logo-image z-20 translate-x-1/2*/
+/*    bg-no-repeat bg-center;*/
+/*    width: 190px;*/
+/*    height: 110px;*/
+/*    display: block;*/
+/*    top: -110px;*/
+/*    !*left: 50%;*!*/
+/*    !*transform: translateX(-50%);*!*/
+/*}*/
 
-.post-item .post-image-container:hover:after,
-.post-item .post-image-container:focus:after {
-    top: calc(50% - 55px);
-}
+/*.post-item .post-image-container:hover:after,*/
+/*.post-item .post-image-container:focus:after {*/
+/*    top: calc(50% - 55px);*/
+/*}*/
 
 .post-item .meta-data {
     @apply bottom-0 text-white flex flex-nowrap justify-between opacity-0 p-3 absolute transition-all w-full z-10;
@@ -825,7 +867,7 @@ footer.site-footer {
 }
 
 .page-title-center,
-.comments-area .title-container {
+.comment-respond .title-container {
     @apply mx-auto flex justify-center items-center col-span-12
 }
 
@@ -833,32 +875,37 @@ footer.site-footer {
     @apply !mt-4 !mb-4
 }
 
-.comments-area .comment-reply-title {
+.comment-reply-title {
     @apply mt-14 mb-16
 }
 
-.comments-area .comment-respond {
+#cancel-comment-reply-link {
+    @apply text-customRed px-4
+}
+
+.woocommerce #reviews #respond,
+.comment-respond {
     @apply rounded-md py-10 px-12 bg-customDarkblue/5
 }
 
-.comments-area .comment-form {
+.comment-form {
     @apply grid gap-y-5 gap-x-6 grid-cols-1 md:grid-cols-3
 }
 
-.comments-area .comment-form .logged-in-as,
-.comments-area .comment-form .author-detail {
+.comment-form .logged-in-as,
+.comment-form .author-detail {
     @apply flex col-span-1 relative flex-col
 }
 
-.comments-area .comment-form .comment-textbox {
+.comment-form .comment-textbox {
     @apply flex col-span-2 relative flex-col
 }
 
-.comments-area .comment-form .author-detail {
+.comment-form .author-detail {
     @apply gap-5 placeholder-customGray
 }
 
-.comments-area .comment-form .form-control {
+.comment-form .form-control {
     @apply bg-white px-4 py-2 rounded-five border border-customLightGray w-full h-full
     focus:border-customDarkblue focus:outline-none
     focus-visible:border-customDarkblue focus-visible:outline-none
@@ -872,25 +919,26 @@ footer.site-footer {
     @apply absolute top-4 left-4;
 }
 
-.comments-area .comment-form .author-detail [name='author'] {
+.comment-form .author-detail [name='author'] {
 
 }
 
-.comments-area .comment-form .author-detail [name='email'] {
+.comment-form .author-detail [name='email'] {
 }
 
-.comments-area .comment-form .author-detail [name='phone'] {
+.comment-form .author-detail [name='phone'] {
 }
 
-.comments-area .comment-form .comment-textbox textarea {
-    max-height: 190px;
+.woocommerce #reviews #comment,
+.comment-form .comment-textbox textarea {
+    @apply max-h-[190px] h-auto
 }
 
-.comments-area .comment-form .form-submit {
+.comment-form .form-submit {
     @apply flex col-span-3 relative justify-end items-end
 }
 
-.comments-area .comment-form .form-submit button.submit {
+.comment-form .form-submit button.submit {
     @apply py-2 px-4 rounded-five cursor-pointer bg-customDarkblue text-white border border-r-transparent
     hover:bg-customRed hover:text-white hover:outline-none
     focus:bg-customRed focus:text-white focus:outline-none
@@ -900,7 +948,7 @@ footer.site-footer {
     @apply mt-12 mb-20 rounded-md py-10 px-12 md:bg-customDarkblue/5 bg-white grid gap-y-5 gap-x-6
 }
 
-.commentlist-container article.comment {
+.commentlist article.comment {
     @apply flex flex-col md:flex-row md:flex-nowrap mb-11 md:mb-16;
 }
 
@@ -926,7 +974,7 @@ footer.site-footer {
 }
 
 .comment .comment-meta-first .comment-avatar {
-    @apply mb-1.5 md:justify-start justify-center flex md:block;
+    @apply mb-1.5 md:justify-start justify-center flex md:block md:mx-auto;
 }
 
 .comment .comment-meta-first .comment-author {
@@ -946,7 +994,7 @@ footer.site-footer {
 }
 
 .woocommerce-error, .woocommerce-info, .woocommerce-message, .return-to-shop, .cart-empty.woocommerce-info,
-.woocommerce-cart article.page .woocommerce .woocommerce-notices-wrapper {
+.woocommerce-cart article.page .woocommerce .woocommerce-notices-wrapper, .flexible-shipping-notice-container {
     @apply col-span-12 my-4;
 }
 
@@ -1203,19 +1251,35 @@ header .icon-trolley {
 }
 
 .owl-slider .item a {
-    width: 100%;
+    @apply w-full
+}
+
+.owl-slider .item {
+    @apply px-2
 }
 
 .owl-slider .item, .owl-slider .item img {
-    height: 100%;
+    @apply h-full
 }
 
 .owl-carousel.owl-slider .owl-stage-outer {
     @apply -z-10
 }
 
+.owl-dots {
+    @apply flex justify-center items-center
+}
+
+.owl-theme .owl-dots .owl-dot {
+    @apply block
+}
+
+.owl-theme .owl-dots .owl-dot span {
+    @apply block rounded-[1px] h-0.5 w-8 m-1
+}
+
 .owl-slider .owl-nav.disabled + .owl-dots {
-    @apply z-10 -mt-10
+    @apply z-10 -mt-6
 }
 
 .owl-brands .owl-dots .owl-dot span,
@@ -1693,7 +1757,7 @@ header .icon-trolley {
     @apply fill-customLightblue
 }
 
-.woocommerce-tabs.wc-tabs-wrapper ul li a {
+.woocommerce-tabs.wc-tabs-wrapper ul.tabs li a {
     @apply flex text-sm text-customDarkblue !important;
 }
 
@@ -1744,17 +1808,17 @@ header .icon-trolley {
 /*    focus-visible:border-customDarkblue focus-visible:outline-none*/
 /*}*/
 
-.woocommerce #reviews .title-container {
-    @apply hidden;
-}
+/*.woocommerce #reviews .title-container {*/
+/*    @apply hidden;*/
+/*}*/
 
-.woocommerce #reviews #comment {
-    @apply h-40 border border-customLightgray2 rounded
-}
+/*.woocommerce #reviews #comment {*/
+/*    @apply h-40 border border-customLightgray2 rounded*/
+/*}*/
 
-.woocommerce #reviews .comment-form .form-submit .btn.submit {
-    @apply order-2
-}
+/*.woocommerce #reviews .comment-form .form-submit .btn.submit {*/
+/*    @apply order-2*/
+/*}*/
 
 .woocommerce #reviews .comment-form .form-submit .comment-form-rating {
     @apply order-1 mb-0 mx-8 mt-4
@@ -1824,6 +1888,18 @@ header .icon-trolley {
     @apply col-span-3 block flex-wrap;
 }
 
+.brand-list {
+    @apply flex px-2 gap-y-4 flex-wrap w-full h-fit
+}
+
+.brand-list .brand-item {
+    @apply flex flex-row w-full items-center justify-between flex-wrap
+}
+
+.brand-list .brand-item label {
+    @apply text-[14px]
+}
+
 .mobile-sidebar-filter-container {
     @apply w-full block flex-wrap rounded-t-five fixed top-0 z-[40] bg-white -right-[100%] transition transition-all
 }
@@ -1845,7 +1921,7 @@ header .icon-trolley {
 }
 
 .is-mobile.archive .archive-product-item .item-title {
-    @apply flex justify-between items-stretch;
+    @apply flex justify-between items-stretch gap-2
 }
 
 .is-mobile.archive .archive-product-item .item-price {
@@ -1872,13 +1948,17 @@ header .icon-trolley {
     @apply text-customBlack
 }
 
-.is-mobile.archive .archive-product-item h4.product-title {
-    @apply pt-3.5
+.is-mobile.archive .archive-product-item .item-title h4.product-title {
+    @apply pt-3.5 w-3/4
 }
 
-.is-mobile.archive .archive-product-item img {
-    @apply w-[110px] h-20
+.is-mobile.archive .archive-product-item .item-title > a {
+    @apply w-1/4
 }
+
+/*.is-mobile.archive .archive-product-item img {*/
+/*    @apply w-[110px] h-20*/
+/*}*/
 
 body.has_loading {
     @apply overflow-hidden
@@ -1955,13 +2035,20 @@ footer svg.svg-icon {
 }
 
 .main-contact-form form div span input, .main-contact-form form div span textarea {
-    @apply flex flex-wrap;
-    width: 307px;
+    @apply flex flex-wrap md:w-[307px] w-full;
 
 }
 
 .main-contact-form div {
-    @apply text-base_14 md:text-base_16 flex justify-between gap-16 w-full items-center
+    @apply text-base_14 md:text-base_16 flex justify-between gap-16 w-full items-center;
+}
+
+.main-contact-form div.content {
+    @apply mt-4 block text-customBlack
+}
+
+.main-contact-form div.content h2 {
+    @apply text-customDarkblue
 }
 
 .main-contact-form div span {
@@ -2013,7 +2100,7 @@ footer svg.svg-icon {
 }
 
 .comment-respond .logged-in-as {
-    @apply hidden !important
+    /*@apply hidden !important*/
 }
 
 .comment-respond .comment-textbox {
@@ -2022,4 +2109,55 @@ footer svg.svg-icon {
 
 .main-brands-list {
     @apply grid gap-x-6 gap-y-12 md:grid-cols-4 grid-cols-2
+}
+
+.acf-map {
+    @apply w-full h-[270px] relative overflow-hidden md:h-[400px]
+}
+
+.contact-box {
+    @apply text-[1rem] flex flex-wrap justify-center text-white mx-3 mt-4 mb-3 p-4 shadow-[0_30px_40px_-20px_customDarkBlue] rounded-[1.3rem]
+    md:relative md:my-6;
+    background: repeating-linear-gradient(rgba(0, 0, 0, 0.5) 5px, rgba(0, 0, 0, 0) 10px), url(../images/contact-box-bg-mobile.jpg) center 10%/cover;
+    @apply md:bg-none;
+}
+
+.contact-box.desktop {
+    @apply px-4 sm:px-6 lg:px-8 mx-auto container
+}
+
+.contact-box.desktop .box-img {
+    @apply w-full hidden h-[350px] object-cover rounded-[25px]
+}
+
+.contact-box.desktop .content {
+    @apply bg-[url(../images/contact-box-bg.jpg)] bg-no-repeat bg-cover flex container mx-auto px-4 py-6 relative text-white rounded-[25px]
+}
+
+.contact-box .address-item {
+    @apply flex flex-wrap items-center px-4 my-3 gap-x-4 gap-y-2
+}
+
+.contact-box .address-item .icon {
+    @apply text-4xl
+}
+
+.contact-box .address-item .tel {
+    @apply w-full flex gap-4 pr-10;
+}
+
+.contact-box .address-item address {
+    @apply font-bold not-italic flex gap-4
+}
+
+.contact-box .social-list {
+    @apply flex gap-4 p-6 justify-center
+}
+
+.contact-box .social-link-item {
+    @apply text-white hover:text-customRed
+}
+
+.contact-box .social-link-item svg {
+    @apply transition-[fill] fill-white hover:fill-customRed
 }

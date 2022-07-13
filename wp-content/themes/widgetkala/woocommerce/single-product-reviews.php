@@ -40,10 +40,19 @@ if (!comments_open()) {
         </h2>
 
         <?php if (have_comments()) : ?>
-            <ol class="commentlist">
-                <?php wp_list_comments(apply_filters('woocommerce_product_review_list_args', array('callback' => 'woocommerce_comments'))); ?>
+<!--            <ol class="commentlist">
+                <?php /*wp_list_comments(apply_filters('woocommerce_product_review_list_args', array('callback' => 'woocommerce_comments'))); */?>
             </ol>
-
+-->
+        <ul class="commentlist">
+            <?php wp_list_comments(
+                [
+                    'callback' => 'mt_comment',
+                    'style'    => 'ol',
+                    'type'     => 'comment',
+                ]
+            ) ?>
+        </ul>
             <?php
             if (get_comment_pages_count() > 1 && get_option('page_comments')) :
                 echo '<nav class="woocommerce-pagination">';
@@ -71,13 +80,17 @@ if (!comments_open()) {
                 <?php
                 $commenter = wp_get_current_commenter();
                 $comment_form = array(
+                    'title_reply_before'   => '<div class="title-container"><h4 id="reply-title" class="heading-with-icon comment-reply-title">',
+                    'title_reply_after'    => '</h4></div>',
+                    'comment_notes_after'  => '',
+                    'comment_notes_before' => '',
                     /* translators: %s is product title */
                     'title_reply' => have_comments() ? esc_html__('Add a review', 'woocommerce') : sprintf(esc_html__('Be the first to review &ldquo;%s&rdquo;', 'woocommerce'), get_the_title()),
                     /* translators: %s is product title */
                     'title_reply_to' => esc_html__('Leave a Reply to %s', 'woocommerce'),
-                    'title_reply_before' => '<span id="reply-title" class="comment-reply-title">',
-                    'title_reply_after' => '</span>',
-                    'comment_notes_after' => '',
+//                    'title_reply_before' => '<span id="reply-title" class="comment-reply-title">',
+//                    'title_reply_after' => '</span>',
+//                    'comment_notes_after' => '',
                     'label_submit' => esc_html__('Submit', 'woocommerce'),
                     'logged_in_as' => '',
                     'comment_field' => '',
@@ -145,8 +158,8 @@ if (!comments_open()) {
                     <?php
                     $consent = empty($commenter[ 'comment_author_email' ]) ? 'yes' :
                         'no';
-                    $comment_form =                         [
-                        'title_reply_before'   => '<div class="title-container hidden"><h4 id="reply-title" class="heading-with-icon comment-reply-title">',
+                    $comment_form = [
+                        'title_reply_before'   => '<div class="title-container"><h4 id="reply-title" class="heading-with-icon comment-reply-title">',
                         'title_reply_after'    => '</h4></div>',
                         'comment_notes_after'  => '',
                         'comment_notes_before' => '',
