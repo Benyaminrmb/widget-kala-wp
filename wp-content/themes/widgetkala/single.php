@@ -68,6 +68,20 @@ while (have_posts()): the_post();
 
                         <div class="post-content">
                             <?php the_content(); ?>
+                            <?php
+                            if (have_rows('faq')) { ?>
+                                <h2 class="faq-title"><?php _e('پرسش و پاسخ های متداول', 'widgetize'); ?></h2>
+                                <ol>
+                                    <?php while (have_rows('faq')) {
+                                        the_row(); ?>
+                                        <li>
+                                            <strong><?php the_sub_field('question'); ?></strong>
+                                            <p><?php the_sub_field('answer'); ?></p>
+                                        </li>
+                                    <?php } ?>
+                                </ol>
+                            <?php }
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -77,7 +91,7 @@ while (have_posts()): the_post();
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <?php get_template_part('template-parts/post/related-posts'); ?>
 
-            <?php if ( comments_open() || get_comments_number() ){
+            <?php if (comments_open() || get_comments_number()) {
                 comments_template();
             } ?>
         </div>

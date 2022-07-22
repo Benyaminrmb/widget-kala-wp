@@ -1400,6 +1400,90 @@ if (function_exists('acf_add_local_field_group')):
     ));
 
     acf_add_local_field_group(array(
+        'key'                   => 'group_post_options',
+        'title'                 => 'گزینه های نوشته',
+        'fields'                => array(
+            array(
+                'key'               => 'field_faq',
+                'label'             => 'سوال و جواب',
+                'name'              => 'faq',
+                'type'              => 'repeater',
+                'instructions'      => '',
+                'required'          => 0,
+                'conditional_logic' => 0,
+                'wrapper'           => array(
+                    'width' => '',
+                    'class' => '',
+                    'id'    => '',
+                ),
+                'collapsed'         => '',
+                'min'               => 0,
+                'max'               => 0,
+                'layout'            => 'table',
+                'button_label'      => '',
+                'sub_fields'        => array(
+                    array(
+                        'key'               => 'field_question',
+                        'label'             => 'سوال',
+                        'name'              => 'question',
+                        'type'              => 'text',
+                        'instructions'      => '',
+                        'required'          => 1,
+                        'conditional_logic' => 0,
+                        'wrapper'           => array(
+                            'width' => '',
+                            'class' => '',
+                            'id'    => '',
+                        ),
+                        'default_value'     => '',
+                        'placeholder'       => 'سوال',
+                        'prepend'           => '',
+                        'append'            => '',
+                        'maxlength'         => 379,
+                    ),
+                    array(
+                        'key'               => 'field_answer',
+                        'label'             => 'جواب',
+                        'name'              => 'answer',
+                        'type'              => 'textarea',
+                        'instructions'      => '',
+                        'required'          => 0,
+                        'conditional_logic' => 0,
+                        'wrapper'           => array(
+                            'width' => '',
+                            'class' => '',
+                            'id'    => '',
+                        ),
+                        'default_value'     => '',
+                        'placeholder'       => '',
+                        'maxlength'         => '',
+                        'rows'              => 4,
+                        'new_lines'         => '',
+                    ),
+                ),
+            ),
+        ),
+        'location'              => array(
+            array(
+                array(
+                    'param'    => 'post_type',
+                    'operator' => '==',
+                    'value'    => 'post',
+                ),
+            ),
+        ),
+        'menu_order'            => 0,
+        'position'              => 'normal',
+        'style'                 => 'default',
+        'label_placement'       => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen'        => '',
+        'active'                => true,
+        'description'           => '',
+        'show_in_rest'          => 0,
+    ));
+
+    acf_add_local_field_group(array(
         'key'                   => 'group_62ac4ffcce021',
         'title'                 => 'گزینه های صفحه برند',
         'fields'                => array(
@@ -1751,7 +1835,7 @@ if (function_exists('acf_add_local_field_group')):
                 array(
                     'param'    => 'page',
                     'operator' => '==',
-                    'value'    => '6',
+                    'value'    => wc_get_page_id('shop'),
                 ),
             ),
         ),

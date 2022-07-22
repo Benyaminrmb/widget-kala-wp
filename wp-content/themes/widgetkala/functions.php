@@ -11,7 +11,8 @@ if ( ! function_exists('mt_setup')) {
         add_theme_support('woocommerce');
         add_image_size('mobile_slider', 390, 220);
         add_image_size('post_archive', 365, 273);
-        add_image_size('mobile_product_archive', 110, 80);
+        add_image_size('mobile_product_archive', 110, 110);
+        add_filter('newsletter_enqueue_style', '__return_false');
 //        add_image_size('transcript_archive', 330, 324, true);
         set_post_thumbnail_size(1140, 9999);
         register_nav_menus(

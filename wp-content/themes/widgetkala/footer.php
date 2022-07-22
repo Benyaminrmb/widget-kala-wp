@@ -212,10 +212,11 @@ get_template_part('template-parts/global/breadcrumb'); ?>
                         ?></span>
                 </div>
                 <div class="flex w-full news-letter">
-                    <input title="your email" type="email" name="subscribe-email"
+                    <?php echo do_shortcode('[newsletter_form type="minimal"]'); ?>
+                    <!--<input title="your email" type="email" name="subscribe-email"
                            placeholder="برای اطلاع از جدیدترین محصولات ما ایمیل خود را برای ما ارسال کنید"
                            autocomplete="off">
-                    <span class="submit-button"><button type="submit" class="hover:shadow-outline"><span>ارسال ایمیل</span></button></span>
+                    <span class="submit-button"><button type="submit" class="hover:shadow-outline"><span>ارسال ایمیل</span></button></span>-->
                 </div>
             </div>
             <div class="grid grid-cols-2 col-span-1 gap-4">

@@ -19,11 +19,13 @@
         @apply inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-customRed rounded-lg border border-gray-200 shadow-sm opacity-0
     }
 
+    input.qty,
+    input[type="number"],
     input[type="number"]::-webkit-inner-spin-button,
     input[type="number"]::-webkit-outer-spin-button {
+        @apply appearance-none m-0 overflow-hidden;
         -webkit-appearance: none;
-        -moz-appearance: textfield;
-        margin: 0;
+        -moz-appearance: none;
     }
 }
 body {
@@ -469,14 +471,18 @@ footer.site-footer {
 }
 
 
-.news-letter {
+.tnp.tnp-subscription-minimal {
+    @apply w-full;
+}
+
+.tnp.tnp-subscription-minimal form, .news-letter {
     @apply h-12 relative w-full text-gray-600 focus-within:text-gray-300
     before:w-2 before:h-2 before:rounded-full before:absolute before:bg-customLightblue before:right-4 before:top-5
 }
 
-.news-letter .submit-button button {
+.tnp.tnp-subscription-minimal form input.tnp-submit, .news-letter .submit-button button {
     @apply absolute justify-center inset-y-2.5 left-2.5 flex items-center px-4 bg-customLightblue transition ease-linear
-    rounded-five text-black
+    rounded-five text-black cursor-pointer
     hover:bg-customDarkblue hover:text-customLightblue
     focus:bg-customDarkblue focus:text-customLightblue
 }
@@ -489,7 +495,7 @@ footer.site-footer {
     @apply text-3xl;
 }
 
-.news-letter input[type='email'],
+.tnp.tnp-subscription-minimal form input.tnp-email, .news-letter input[type='email'],
 .news-letter input[type='text'] {
     @apply pl-40 pr-8 transition transition-all ease-linear py-0.5 h-full text-sm text-white border block w-full rounded-md bg-transparent placeholder-customGray
     focus:outline-none focus:bg-white focus:text-gray-900 focus:bg-transparent focus:text-white focus:border-customLightblue focus:placeholder-transparent
@@ -628,23 +634,6 @@ footer.site-footer {
     focus:after:top-[calc(50%-55px)]
 }
 
-/*.post-item .post-image-container:after {*/
-/*    @apply absolute transition-all ease-in-out duration-150 right-1/2*/
-/*    bg-logo-image z-20 translate-x-1/2*/
-/*    bg-no-repeat bg-center;*/
-/*    width: 190px;*/
-/*    height: 110px;*/
-/*    display: block;*/
-/*    top: -110px;*/
-/*    !*left: 50%;*!*/
-/*    !*transform: translateX(-50%);*!*/
-/*}*/
-
-/*.post-item .post-image-container:hover:after,*/
-/*.post-item .post-image-container:focus:after {*/
-/*    top: calc(50% - 55px);*/
-/*}*/
-
 .post-item .meta-data {
     @apply bottom-0 text-white flex flex-nowrap justify-between opacity-0 p-3 absolute transition-all w-full z-10;
 }
@@ -690,7 +679,7 @@ footer.site-footer {
     @apply flex whitespace-nowrap
 }
 
-.is-mobile .breadcrumb-item {
+.breadcrumb-item {
     @apply flex;
 }
 
@@ -699,18 +688,19 @@ footer.site-footer {
 }
 
 .breadcrumb {
-    @apply overflow-x-auto overflow-y-hidden whitespace-nowrap leading-8
+    @apply overflow-x-auto overflow-y-hidden whitespace-nowrap leading-8;
+    scrollbar-width: thin;
 }
 
 .breadcrumb::-webkit-scrollbar {
-    @apply w-1 h-1
+    @apply w-1 h-1;
 }
 
 .breadcrumb::-webkit-scrollbar,
 .breadcrumb::-webkit-scrollbar-button,
 .breadcrumb::-webkit-scrollbar-track-piece,
 .breadcrumb::-webkit-scrollbar-thumb {
-    @apply bg-customMediumGray/10
+    @apply bg-customMediumGray/10;
 }
 
 .breadcrumb-container .breadcrumb-title {
@@ -817,11 +807,46 @@ footer.site-footer {
 }
 
 .single-post h1.post-title {
-    @apply relative text-customDarkblue mr-10 text-xl font-light leading-7 before:content-horizontalLines before:absolute before:-right-8 before:top-0;
+    @apply relative text-customDarkblue mr-10 text-[20px] font-bold leading-7 before:content-horizontalLines before:absolute before:-right-8 before:top-0;
 }
 
 .single-post .single-content {
     @apply md:bg-customDarkblue/5 bg-white md:border border-0 border-customLightgraytwo gap-4 grid grid-cols-12 md:py-6 md:px-9 py-6 relative rounded-md w-full;
+}
+
+.single-post .single-content h2,
+.single-post .single-content .h2 {
+    @apply text-base_17 font-bold mb-5 mt-[70px]
+}
+
+.single-post .single-content h3,
+.single-post .single-content .h3 {
+    @apply text-[15px] font-medium mb-[15px] mt-[30px]
+}
+
+.single-post .single-content a,
+.single-post .single-content .link {
+    @apply text-[14px] font-bold text-customLightblue hover:text-customDarkblue
+}
+
+.single-post .single-content ul li {
+    @apply list-disc mr-4 mb-3
+}
+
+.single-post .single-content ol li {
+    @apply list-decimal mr-4 mb-3
+}
+
+.single-post .single-content .aligncenter {
+    @apply mx-auto my-3 float-none
+}
+
+.single-post .single-content .alignright {
+    @apply float-right my-3 ml-4
+}
+
+.single-post .single-content .alignleft {
+    @apply float-left my-3 mr-4
 }
 
 .single-post .single-top-container {
@@ -885,11 +910,11 @@ footer.site-footer {
 
 .woocommerce #reviews #respond,
 .comment-respond {
-    @apply rounded-md py-10 px-12 bg-customDarkblue/5
+    @apply rounded-md py-8 px-6 md:py-10 md:px-12 bg-customDarkblue/5
 }
 
 .comment-form {
-    @apply grid gap-y-5 gap-x-6 grid-cols-1 md:grid-cols-3
+    @apply flex flex-col md:grid md:gap-y-5 gap-6 grid-cols-1 md:grid-cols-3
 }
 
 .comment-form .logged-in-as,
@@ -931,7 +956,7 @@ footer.site-footer {
 
 .woocommerce #reviews #comment,
 .comment-form .comment-textbox textarea {
-    @apply max-h-[190px] h-auto
+    @apply max-h-[175px] h-auto
 }
 
 .comment-form .form-submit {
@@ -1185,8 +1210,16 @@ footer.site-footer {
     width: calc(100% - 2rem);
 }
 
-#add_payment_method #payment, .woocommerce-cart #payment .payment_methods label img, .woocommerce-checkout #payment .payment_methods label img {
-    @apply hidden;
+.woocommerce-cart #payment ul.payment_methods li, .woocommerce-checkout #payment ul.payment_methods li {
+    @apply flex justify-center items-center gap-2
+}
+
+.woocommerce-cart #payment .payment_methods label, .woocommerce-checkout #payment .payment_methods label {
+    @apply flex flex-row-reverse items-center justify-center
+}
+
+.woocommerce-cart #payment .payment_methods label img, .woocommerce-checkout #payment .payment_methods label img {
+    @apply max-h-[60px] max-w-[60px] overflow-hidden !m-1;
 }
 
 #add_payment_method #payment, .woocommerce-cart #payment .payment_methods .payment_box:before, .woocommerce-checkout #payment .payment_methods .payment_box:before {
@@ -1383,6 +1416,15 @@ header .icon-trolley {
 
 .product-main-category .posted_in {
     @apply flex gap-1 font-medium text-base text-customDarkblue
+}
+
+.product-main-category .posted_in.categories {
+    @apply max-w-[57%] whitespace-nowrap overflow-x-auto;
+    scrollbar-width: thin;
+}
+
+.product-main-category .posted_in.categories::-webkit-scrollbar {
+    @apply w-1 h-1;
 }
 
 .product-main-category .posted_in a {
@@ -2160,4 +2202,8 @@ footer svg.svg-icon {
 
 .contact-box .social-link-item svg {
     @apply transition-[fill] fill-white hover:fill-customRed
+}
+
+#qlwapp.mobile {
+    @apply !bottom-56
 }
